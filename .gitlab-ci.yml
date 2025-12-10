@@ -9,14 +9,13 @@ stages:
   - test
   - secret-detection
 
-include:
-  - template: Security/Secret-Detection.gitlab-ci.yml
-
-variables:
-  SECRET_DETECTION_ENABLED: "true"
-
+# Jobs de sécurité existants
 sast:
   stage: test
 
-secret_detection:
-  stage: secret-detection
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Security/SAST.gitlab-ci.yml
+
+variables:
+  SECRET_DETECTION_ENABLED: "true"
