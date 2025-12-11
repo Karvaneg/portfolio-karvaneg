@@ -1,18 +1,18 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge"
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
-      <div>PORTFOLIO KARVANEG</div>
-      {/* Section Hero */}
-      {/* Section À propos */}
-      {/* Section Skills */}
-      {/* Section Experience */}
-      {/* Section Projects */}
-      {/* Section Contact */}
-    </main>
+    <>
+      <main className="min-h-screen pt-16">
+        <div>PORTFOLIO KARVANEG</div>
+        {/* Section Hero */}
+        {/* Section À propos */}
+        {/* Section Skills */}
+        {/* Section Experience */}
+        {/* Section Projects */}
+        {/* Section Contact */}
+      </main>
+      <ScrollToTop />
+    </>
   );
 }
