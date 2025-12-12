@@ -1,4 +1,4 @@
-import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/layout/footer/footer";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 
 export default function Home() {
