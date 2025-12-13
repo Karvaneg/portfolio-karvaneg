@@ -1,12 +1,12 @@
 import { Footer } from "@/components/layout/footer/footer";
-import { Navigation } from "@/components/layout/header/navigation";
+import { Header } from "@/components/layout/header/header";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 
 export default function Home() {
   return (
     <>
       <main className="min-h-screen pt-16">
-        <Navigation />
+        <Header />
         {/* Section Hero */}
         {/* Section À propos */}
         {/* Section Skills */}
