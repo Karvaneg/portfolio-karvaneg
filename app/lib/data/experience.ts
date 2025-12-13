@@ -1,11 +1,4 @@
-export interface Experience {
-  period: string
-  title: string
-  company: string
-  description: string
-  technologies: readonly string[]
-  link: string | null
-}
+import { Experience } from "@/types/data"
 
 export const experiences: readonly Experience[] = [
   {

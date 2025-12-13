@@ -1,11 +1,12 @@
 import { Footer } from "@/components/layout/footer/footer";
+import { Header } from "@/components/layout/header/header";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 
 export default function Home() {
   return (
     <>
       <main className="min-h-screen pt-16">
-        <div>PORTFOLIO KARVANEG</div>
+        <Header />
         {/* Section Hero */}
         {/* Section À propos */}
         {/* Section Skills */}

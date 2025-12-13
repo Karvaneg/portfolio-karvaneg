@@ -1,11 +1,5 @@
-import { ReactNode } from "react";
 import { dsTokens } from "@/design-system/tokens";
-
-interface SocialIconButtonProps {
-  href: string;
-  label: string;
-  icon: ReactNode;
-}
+import { SocialIconButtonProps } from "@/types/ui";
 
 export function SocialIconButton({ href, label, icon }: SocialIconButtonProps) {
   return (
