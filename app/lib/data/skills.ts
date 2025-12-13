@@ -1,16 +1,5 @@
-import type { LucideIcon } from "lucide-react"
 import { Code2, Database, Palette, Users, Rocket, GitBranch } from "lucide-react"
-
-export interface Skill {
-  name: string
-  level: number
-}
-
-export interface SkillCategory {
-  title: string
-  icon: LucideIcon
-  skills: readonly Skill[]
-}
+import { SkillCategory } from "@/types/data"
 
 export const skillCategories: readonly SkillCategory[] = [
   {

@@ -1,11 +1,4 @@
-export interface Project {
-  title: string
-  description: string
-  image: string
-  technologies: readonly string[]
-  github: string | null
-  live: string | null
-}
+import { Project } from "@/types/data"
 
 export const projects: readonly Project[] = [
   {

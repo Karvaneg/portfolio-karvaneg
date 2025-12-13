@@ -1,7 +1,4 @@
-export interface MenuItem {
-  id: string
-  label: string
-}
+import { MenuItem } from "@/types/data"
 
 export const menuItems: readonly MenuItem[] = [
   { id: "accueil", label: "Accueil" },
