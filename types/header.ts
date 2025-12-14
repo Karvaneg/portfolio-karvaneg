@@ -1,3 +1,8 @@
+export interface MenuItem {
+  id: string
+  label: string
+}
+
 export interface LogoProps {
   scrollToSection: (sectionId: string) => void
 }
@@ -11,7 +16,7 @@ export interface NavigationProps {
 }
 
 export interface MenuItemButtonProps {
-  item: { id: string; label: string }
+  item: MenuItem
   activeSection: string
   onClick: () => void
   className?: string

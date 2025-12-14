@@ -1,4 +1,5 @@
 import { MenuItemButtonProps } from "@/types/header"
+import { dsTokens } from "@/design-system/tokens"
 
 export function MenuItemButton({
   item,
@@ -9,7 +10,7 @@ export function MenuItemButton({
   ariaCurrent,
 }: MenuItemButtonProps) {
   const baseClass = "transition-colors hover:text-primary"
-  const activeClass = activeSection === item.id ? "text-primary" : "text-muted-foreground"
+  const activeClass = activeSection === item.id ? dsTokens.color.primary : dsTokens.color.onSurface
 
   return (
     <button

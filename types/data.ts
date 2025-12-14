@@ -1,10 +1,5 @@
 import { LucideIcon } from "lucide-react"
 
-export interface MenuItem {
-  id: string
-  label: string
-}
-
 export interface Skill {
   name: string
   level: number

@@ -1,4 +1,4 @@
-import { MenuItem } from "@/types/data"
+import { MenuItem } from "@/types/header"
 
 export const menuItems: readonly MenuItem[] = [
   { id: "accueil", label: "Accueil" },
