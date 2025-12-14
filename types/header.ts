@@ -1,18 +1,21 @@
+export type ScrollToSection = (sectionId: string) => void;
+export type OnMenuClick = (sectionId: string) => void;
+
 export interface MenuItem {
   id: string
   label: string
 }
 
 export interface LogoProps {
-  scrollToSection: (sectionId: string) => void
+  scrollToSection: ScrollToSection
 }
 
 export interface NavigationProps {
   activeSection: string
   isOpen: boolean
   toggleMenu: () => void
-  onMenuClick: (sectionId: string) => void
-  scrollToSection: (sectionId: string) => void
+  onMenuClick: OnMenuClick
+  scrollToSection: ScrollToSection
 }
 
 export interface MenuItemButtonProps {
@@ -26,20 +29,20 @@ export interface MenuItemButtonProps {
 
 export interface DesktopMenuProps {
   activeSection: string
-  onMenuClick: (sectionId: string) => void
-  scrollToSection: (sectionId: string) => void
+  onMenuClick: OnMenuClick
+  scrollToSection: ScrollToSection
 }
 
 export interface MobileMenuProps {
   activeSection: string
   isOpen: boolean
-  onMenuClick: (sectionId: string) => void
-  scrollToSection: (sectionId: string) => void
+  onMenuClick: OnMenuClick
+  scrollToSection: ScrollToSection
 }
 
 export interface MenuItemsListProps {
   activeSection: string
-  onMenuClick: (sectionId: string) => void
+  onMenuClick: OnMenuClick
   itemClassName: string
   role?: string
 }
