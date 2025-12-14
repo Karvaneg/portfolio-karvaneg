@@ -21,5 +21,6 @@ export const dsTokens = {
   size: {
     iconSm: "w-4 h-4",
     iconMd: "w-5 h-5",
+    iconLg: "w-6 h-6",
   },
 };
