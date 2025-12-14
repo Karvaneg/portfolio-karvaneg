@@ -1,15 +1,23 @@
 import { SocialIconButton } from "./SocialIconButton";
-import { socialLinks } from "@/app/lib/data/social-links";
+import { getSocialLinks } from "@/lib/social-links-utils";
 
-export function SocialLinksGroup() {
+interface SocialLinksGroupProps {
+  className?: string
+  iconClassName?: string
+}
+
+export function SocialLinksGroup({ className, iconClassName }: SocialLinksGroupProps = {}) {
+  const socialLinks = getSocialLinks(iconClassName);
+
   return (
     <nav className="flex items-center gap-4" aria-label="Liens réseaux sociaux">
       {socialLinks.map(link => (
-        <SocialIconButton 
+        <SocialIconButton
           key={link.id}
           href={link.href}
           label={link.label}
           icon={link.icon}
+          className={className}
         />
       ))}
     </nav>
