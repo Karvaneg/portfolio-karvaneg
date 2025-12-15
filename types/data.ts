@@ -15,6 +15,7 @@ export interface Project {
   title: string
   description: string
   image: string
+  hint: string | null
   technologies: readonly string[]
   github: string | null
   live: string | null
