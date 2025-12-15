@@ -4,5 +4,5 @@ interface SectionSubTitleProps {
 }
 
 export function SectionSubTitle({ children, className }: SectionSubTitleProps) {
-  return <p className={`text-muted-foreground max-w-2xl mx-auto text-pretty ${className || ''}`}>{children}</p>;
+  return <h3 className={`text-xl font-semibold ${className || ''}`}>{children}</h3>;
 }
