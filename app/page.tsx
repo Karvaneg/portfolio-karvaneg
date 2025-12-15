@@ -4,6 +4,7 @@ import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { Hero } from "./sections/hero/hero";
 import { About } from "./sections/about/about";
 import { Skills } from "./sections/skills/skills";
+import { Experience } from "./sections/experience/experience";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
-        {/* Section Experience */}
+        <Experience />
         {/* Section Projects */}
         {/* Section Contact */}
       </main>
