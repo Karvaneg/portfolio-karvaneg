@@ -1,4 +1,8 @@
-export function ExperienceTechnologies({ technologies }: { technologies: readonly string[] }) {
+interface ExperienceTechnologiesProps {
+  technologies: readonly string[]
+}
+
+export function ExperienceTechnologies({ technologies }: ExperienceTechnologiesProps) {
   return (
     <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => (
