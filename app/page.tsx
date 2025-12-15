@@ -6,6 +6,7 @@ import { About } from "./sections/about/about";
 import { Skills } from "./sections/skills/skills";
 import { Experience } from "./sections/experience/experience";
 import { Projects } from "./sections/projects/projects";
+import { Contact } from "./sections/contact/contact";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        {/* Section Contact */}
+        <Contact />
       </main>
       <Footer />
       <ScrollToTop />
