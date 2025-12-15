@@ -7,7 +7,7 @@ export interface Skill {
 
 export interface SkillCategory {
   title: string
-  icon: LucideIcon | null
+  icon: LucideIcon
   skills: readonly Skill[]
 }
 
