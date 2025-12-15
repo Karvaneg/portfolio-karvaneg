@@ -1,7 +1,7 @@
 "use client"
 
-import { Logo } from "./logo"
-import { Navigation } from "./navigation"
+import { Logo } from "./Logo"
+import { Navigation } from "./Navigation"
 import { MobileMenu } from "./MobileMenu"
 import { useHeaderLogic } from "@/app/hooks/useHeaderLogic"
 
