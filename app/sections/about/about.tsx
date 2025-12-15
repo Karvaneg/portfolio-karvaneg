@@ -1,8 +1,8 @@
 
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { Technologies } from "./technologies";
-import { Description } from "./description";
+import { Technologies } from "./AboutTechnologies";
+import { Description } from "./AboutDescription";
 
 export function About() {
   return (

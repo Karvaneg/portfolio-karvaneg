@@ -2,7 +2,13 @@ import { SectionSubTitle } from "@/components/ui/SectionSubTitle"
 import { ExternalLink } from "lucide-react"
 import Link from "next/link"
 
-export function ExperienceTitle({ title, company, link }: { title: string; company: string; link: string | null }) {
+interface ExperienceTitleProps {
+  title: string
+  company: string
+  link: string | null
+}
+
+export function ExperienceTitle({ title, company, link }: ExperienceTitleProps) {
   return (
     <div>
         <SectionSubTitle className="group-hover:text-primary transition-colors">

@@ -5,6 +5,7 @@ import { Hero } from "./sections/hero/hero";
 import { About } from "./sections/about/about";
 import { Skills } from "./sections/skills/skills";
 import { Experience } from "./sections/experience/experience";
+import { Projects } from "./sections/projects/projects";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <About />
         <Skills />
         <Experience />
-        {/* Section Projects */}
+        <Projects />
         {/* Section Contact */}
       </main>
       <Footer />
