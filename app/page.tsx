@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/header/header";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { Hero } from "./sections/hero/hero";
 import { About } from "./sections/about/about";
+import { Skills } from "./sections/skills/skills";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
-        {/* Section Skills */}
+        <Skills />
         {/* Section Experience */}
         {/* Section Projects */}
         {/* Section Contact */}
