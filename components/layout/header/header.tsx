@@ -1,8 +1,9 @@
 "use client"
 
 import { Logo } from "./Logo"
-import { Navigation } from "./Navigation"
 import { MobileMenu } from "./MobileMenu"
+import { MobileMenuWrapper } from "./MobileMenuWrapper"
+import { Navigation } from "./Navigation"
 import { useHeaderLogic } from "@/app/hooks/useHeaderLogic"
 
 export function Header() {
@@ -25,15 +26,16 @@ export function Header() {
               scrollToSection={scrollToSection}
             />
           </div>
+          <MobileMenuWrapper isOpen={isOpen}>
+            <MobileMenu
+              activeSection={activeSection}
+              isOpen={isOpen}
+              onMenuClick={handleMenuClick}
+              scrollToSection={scrollToSection}
+            />
+          </MobileMenuWrapper>
         </div>
       </nav>
-
-      <MobileMenu
-        activeSection={activeSection}
-        isOpen={isOpen}
-        onMenuClick={handleMenuClick}
-        scrollToSection={scrollToSection}
-      />
     </header>
   )
 }
