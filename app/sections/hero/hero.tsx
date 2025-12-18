@@ -1,5 +1,5 @@
 import { profileData } from "@/app/lib/data/profile"
-import { SocialLinksGroup } from "@/components/ui/SocialLinksGroup"
+import { SocialLinksGroup } from "@/components/ui/social-networks/SocialLinksGroup"
 import Image from "next/image"
 import { dsTokens } from "@/design-system/tokens"
 
@@ -33,7 +33,7 @@ export function Hero() {
             </p>
 
             <nav className="flex gap-4 pt-4" aria-label="Liens de contact">
-              <SocialLinksGroup className={`${dsTokens.color.onSurface} hover:text-foreground`} iconClassName={dsTokens.size.iconLg} />
+              <SocialLinksGroup />
             </nav>
           </div>
         </div>

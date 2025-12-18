@@ -1,9 +1,9 @@
-import { ReactNode } from "react"
+import { ReactElement } from "react"
 
 export interface SocialIconButtonProps {
   href: string
   label: string
-  icon: ReactNode
+  icon: ReactElement<{ className?: string }>
   className?: string
 }
 
@@ -11,5 +11,5 @@ export interface SocialLink {
   id: string
   href: string
   label: string
-  icon: ReactNode
+  icon: ReactElement<{ className?: string }>
 }

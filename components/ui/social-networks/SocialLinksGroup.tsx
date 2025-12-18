@@ -1,12 +1,15 @@
 import { SocialIconButton } from "./SocialIconButton";
 import { getSocialLinks } from "@/lib/social-links-utils";
 
+export type SocialLinksGroupVariant = "hero" | "footer";
+
 interface SocialLinksGroupProps {
   className?: string
   iconClassName?: string
+  variant?: SocialLinksGroupVariant;
 }
 
-export function SocialLinksGroup({ className, iconClassName }: SocialLinksGroupProps = {}) {
+export function SocialLinksGroup({ className, iconClassName, variant = "hero" }: SocialLinksGroupProps = {}) {
   const socialLinks = getSocialLinks(iconClassName);
 
   return (
@@ -18,6 +21,7 @@ export function SocialLinksGroup({ className, iconClassName }: SocialLinksGroupP
           label={link.label}
           icon={link.icon}
           className={className}
+          variant={variant}
         />
       ))}
     </nav>

@@ -1,4 +1,4 @@
-import { SocialLinksGroup } from "../../ui/SocialLinksGroup";
+import { SocialLinksGroup } from "../../ui/social-networks/SocialLinksGroup";
 import { FooterBranding } from "./footer-branding";
 
 export function Footer() {
@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <FooterBranding />
-          <SocialLinksGroup />
+          <SocialLinksGroup variant="footer" />
         </div>
       </div>
     </footer>
