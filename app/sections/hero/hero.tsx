@@ -31,10 +31,7 @@ export function Hero() {
             <p className={`text-lg md:text-xl ${dsTokens.color.onSurface} max-w-2xl text-pretty leading-relaxed`}>
               {profileData.description}
             </p>
-
-            <nav className="flex gap-4 pt-4" aria-label="Liens de contact">
-              <SocialLinksGroup />
-            </nav>
+            <SocialLinksGroup />
           </div>
         </div>
       </div>

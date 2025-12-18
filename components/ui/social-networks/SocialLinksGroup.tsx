@@ -13,7 +13,7 @@ export function SocialLinksGroup({ className, iconClassName, variant = "hero" }:
   const socialLinks = getSocialLinks(iconClassName);
 
   return (
-    <nav className="flex items-center gap-4" aria-label="Liens réseaux sociaux">
+    <nav className="flex items-center gap-4" aria-label="Liens réseaux sociaux et contact">
       {socialLinks.map(link => (
         <SocialIconButton
           key={link.id}
