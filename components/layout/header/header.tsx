@@ -4,7 +4,7 @@ import { Logo } from "./Logo"
 import { MobileMenu } from "./MobileMenu"
 import { MobileMenuWrapper } from "./MobileMenuWrapper"
 import { Navigation } from "./Navigation"
-import { useHeaderLogic } from "@/app/hooks/useHeaderLogic"
+import { useHeaderLogic } from "@/app/hooks/use-header-logic"
 
 export function Header() {
   const { activeSection, isOpen, toggleMenu, handleMenuClick, scrollToSection } = useHeaderLogic()

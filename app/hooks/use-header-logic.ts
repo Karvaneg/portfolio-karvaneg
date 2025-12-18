@@ -1,4 +1,4 @@
-import { useActiveSection, useMenuState, useScrollToSection } from "./useNavigation"
+import { useActiveSection, useMenuState, useScrollToSection } from "./use-navigation"
 
 export function useHeaderLogic() {
   const activeSection = useActiveSection()
