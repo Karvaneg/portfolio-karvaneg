@@ -1,5 +1,6 @@
 import { MenuItemButtonProps } from "@/types/header"
 import { dsTokens } from "@/design-system/tokens"
+import { cn } from "@/lib/utils"
 
 export function MenuItemButton({
   item,
@@ -16,7 +17,7 @@ export function MenuItemButton({
     <button
       key={item.id}
       onClick={onClick}
-      className={`${baseClass} ${activeClass} ${className}`}
+      className={cn(baseClass, activeClass, className)}
       role={role}
       aria-current={ariaCurrent ? "page" : undefined}
     >

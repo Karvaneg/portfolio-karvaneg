@@ -1,18 +1,18 @@
 "use client"
 
-import { ReactNode } from "react"
+import { cn } from "@/lib/utils"
 
 interface MobileMenuWrapperProps {
   isOpen: boolean
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export function MobileMenuWrapper({ isOpen, children }: MobileMenuWrapperProps) {
   return (
     <div
-      className={`md:hidden grid transition-[grid-template-rows] duration-300 ease-in-out ${
-        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-      }`}
+      className={cn("md:hidden grid transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none", 
+      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")} 
+      aria-hidden={!isOpen}
     >
       <div className="overflow-hidden">
         {children}
@@ -20,4 +20,3 @@ export function MobileMenuWrapper({ isOpen, children }: MobileMenuWrapperProps) 
     </div>
   )
 }
-

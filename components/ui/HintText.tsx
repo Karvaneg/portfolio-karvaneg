@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils"
+
 interface HintTextProps {
   children: React.ReactNode
   className?: string
@@ -5,7 +7,7 @@ interface HintTextProps {
 
 export function HintText({ children, className }: HintTextProps) {
   return (
-    <p className={`text-xs text-muted-foreground/80 italic ${className ?? ""}`}>
+    <p className={cn("text-xs text-muted-foreground/80 italic", className)}>
       {children}
     </p>
   )
