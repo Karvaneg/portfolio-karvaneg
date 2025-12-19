@@ -17,7 +17,7 @@ export function Logo({ scrollToSection }: LogoProps) {
         priority
         />
         <span
-        className="text-3xl font-bold tracking-widest font-cinzel bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent animate-gradient"
+        className="text-3xl font-bold tracking-widest font-display bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent animate-gradient"
         aria-label="KARVANEG"
         >
         KARVANEG
