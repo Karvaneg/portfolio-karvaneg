@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cinzel, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,15 +44,14 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={[
+      className={cn([
         inter.variable,
         jetbrainsMono.variable,
         cinzel.variable,
-        "scroll-smooth",
-      ].join(" ")}
+      ].join(" "))}
     >
       <body
-        className="font-sans antialiased"
+        className={cn("dark font-sans antialiased")}
       >
         {children}
         <Toaster richColors position="top-center" />

@@ -1,6 +1,7 @@
 import { IconSize } from "@/design-system/tokens";
 import { SocialIconButton } from "./SocialIconButton";
 import { getSocialLinks } from "@/lib/social-links-utils";
+import { cn } from "@/lib/utils";
 
 export type SocialLinksGroupVariant = "hero" | "footer";
 
@@ -14,7 +15,7 @@ export function SocialLinksGroup({ className, iconClassName, variant = "hero" }:
   const socialLinks = getSocialLinks(iconClassName);
 
   return (
-    <nav className="flex items-center gap-4" aria-label="Liens réseaux sociaux et contact">
+    <nav className={cn("flex items-center gap-4")} aria-label="Liens réseaux sociaux et contact">
       {socialLinks.map(link => (
         <SocialIconButton
           key={link.id}

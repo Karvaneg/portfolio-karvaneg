@@ -11,7 +11,7 @@ export function MenuItemButton({
   ariaCurrent,
 }: MenuItemButtonProps) {
   const baseClass = "transition-colors hover:text-primary"
-  const activeClass = activeSection === item.id ? dsTokens.color.primary : dsTokens.color.onSurface
+  const activeClass = activeSection === item.id ? dsTokens.color.primary : dsTokens.color.textSecondary
 
   return (
     <button

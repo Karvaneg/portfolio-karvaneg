@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ProjectLinks } from "./ProjectLinks"
 import { ProjectTitle } from "./ProjectTitle"
 
@@ -11,7 +12,7 @@ interface ProjectHeaderProps {
 
 export function ProjectHeader ({ header }: ProjectHeaderProps) {
     return (
-        <div className="flex items-center justify-between">
+        <div className={cn("flex items-center justify-between")}>
             <ProjectTitle title={header.title} />
             <ProjectLinks links={header} />
         </div>

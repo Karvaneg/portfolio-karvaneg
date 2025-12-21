@@ -1,3 +1,5 @@
+import { dsTokens } from "@/design-system/tokens";
+import { cn } from "@/lib/utils";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
@@ -11,16 +13,16 @@ interface ProjectLinksProps {
 
 export function ProjectLinks ({ links }: ProjectLinksProps) {
     return (
-        <nav className="flex gap-3" aria-label={`Liens du projet ${links.title}`}>
+        <nav className={cn("flex gap-3")} aria-label={`Liens du projet ${links.title}`}>
             {links.github && (
                 <Link
                 href={links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className={cn("text-muted-foreground hover:text-foreground transition-colors")}
                 aria-label={`Voir le code source de ${links.title} sur GitHub`}
                 >
-                <Github className="w-5 h-5" aria-hidden="true" />
+                <Github className={cn(dsTokens.size.iconLg)} aria-hidden="true" />
                 </Link>
             )}
             {links.live && (
@@ -28,10 +30,10 @@ export function ProjectLinks ({ links }: ProjectLinksProps) {
                 href={links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className={cn("text-muted-foreground hover:text-foreground transition-colors")}
                 aria-label={`Voir ${links.title} en ligne`}
                 >
-                <ExternalLink className="w-5 h-5" aria-hidden="true" />
+                <ExternalLink className={cn(dsTokens.size.iconLg)} aria-hidden="true" />
                 </Link>
             )}
         </nav>

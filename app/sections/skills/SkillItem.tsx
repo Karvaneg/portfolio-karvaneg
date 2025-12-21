@@ -1,3 +1,6 @@
+import { dsTokens } from "@/design-system/tokens"
+import { cn } from "@/lib/utils"
+
 interface SkillItemProps {
   name: string
   level: number
@@ -6,15 +9,15 @@ interface SkillItemProps {
 export function SkillItem({ name, level }: SkillItemProps) {
   return (
     <div>
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium">{name}</span>
-        <span className="text-sm text-muted-foreground" aria-label={`${level} pourcent`}>
+      <div className={cn("flex items-center justify-between mb-2")}>
+        <span className={cn("text-sm font-medium")}>{name}</span>
+        <span className={cn(dsTokens.color.textSecondary, "text-sm")} aria-label={`${level} pourcent`}>
           {level}%
         </span>
       </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
+      <div className={cn("h-2 bg-muted rounded-full overflow-hidden")}>
         <div
-          className={`h-full bg-primary transition-all duration-500 ease-out ${
+          className={cn(`h-full bg-primary transition-all duration-500 ease-out ${
             level >= 90
               ? "w-[90%]"
               : level >= 85
@@ -26,7 +29,7 @@ export function SkillItem({ name, level }: SkillItemProps) {
                     : level >= 70
                       ? "w-[70%]"
                       : "w-3/5"
-          }`}
+          }`)}
           role="progressbar"
           aria-valuenow={level}
           aria-valuemin={0}

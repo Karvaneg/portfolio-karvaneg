@@ -1,10 +1,15 @@
 import { aboutData } from "@/app/lib/data/about";
+import { dsTokens } from "@/design-system/tokens";
+import { cn } from "@/lib/utils";
 
 export function Description() {
   return (
-    <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+    <div className={cn(
+        "space-y-6 text-lg leading-relaxed",
+        dsTokens.color.textSecondary
+      )}>
     {aboutData.paragraphs.map((paragraph, index) => (
-        <p key={index} className="text-pretty">
+        <p key={index} className={cn("text-pretty")}>
         {paragraph}
         </p>
     ))}

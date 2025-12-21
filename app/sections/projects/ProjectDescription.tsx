@@ -1,9 +1,11 @@
+import { cn } from "@/lib/utils"
+
 interface ProjectDescriptionProps {
   description: string
 }
 
 export function ProjectDescription({ description }: ProjectDescriptionProps) {
     return (
-        <p className="text-muted-foreground text-sm leading-relaxed text-pretty">{description}</p>
+        <p className={cn("text-muted-foreground text-sm leading-relaxed text-pretty")}>{description}</p>
     )
 }

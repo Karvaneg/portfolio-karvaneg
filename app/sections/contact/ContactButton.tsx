@@ -1,13 +1,15 @@
 import { contactData } from "@/app/lib/data/contact";
 import { Button } from "@/components/ui/button";
+import { dsTokens } from "@/design-system/tokens";
+import { cn } from "@/lib/utils";
 import { Mail } from "lucide-react";
 
 export function ContactButton() {
     return(
-        <div className="pt-4">
-            <Button asChild size="lg" className="gap-2">
+        <div className={cn("pt-4")}>
+            <Button asChild size="lg" className={cn("gap-2")}>
               <a href={`mailto:${contactData.email}`}>
-                <Mail className="w-5 h-5" aria-hidden="true" />
+                <Mail className={cn(dsTokens.size.iconMd)} aria-hidden="true" />
                 Me contacter
               </a>
             </Button>

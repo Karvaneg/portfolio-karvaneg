@@ -7,11 +7,12 @@ import { Skills } from "./sections/skills/skills";
 import { Experience } from "./sections/experience/experience";
 import { Projects } from "./sections/projects/projects";
 import { Contact } from "./sections/contact/contact";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen pt-16">
+      <main className={cn("min-h-screen pt-16")}>
         <Header />
         <Hero />
         <About />

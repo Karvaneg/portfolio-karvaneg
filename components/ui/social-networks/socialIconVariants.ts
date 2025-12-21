@@ -10,7 +10,7 @@ export const getSocialIconVariantConfig = (
     case "hero":
       return {
         wrapper: cn(
-          dsTokens.color.onSurface,
+          dsTokens.color.textSecondary,
           "hover:text-foreground",
         ),
         icon: dsTokens.size.iconLg,
@@ -22,9 +22,9 @@ export const getSocialIconVariantConfig = (
             dsTokens.space.sm,
             dsTokens.radius.md,
             dsTokens.color.surface,
-            dsTokens.color.onSurface,
-            dsTokens.color.surfaceHover,
-            dsTokens.color.primaryHover,
+            dsTokens.color.textSecondary,
+            dsTokens.interaction.hoverSurface,
+            dsTokens.interaction.hoverTextPrimary,
             "transition-colors",
             "flex items-center justify-center"
         ),

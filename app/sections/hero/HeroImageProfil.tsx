@@ -3,6 +3,7 @@
 import { useCopyToClipboard } from "@/app/hooks/use-copy-to-clipboard";
 import { contactData } from "@/app/lib/data/contact";
 import { profileData } from "@/app/lib/data/profile";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export function HeroImageProfil(){
@@ -14,7 +15,7 @@ export function HeroImageProfil(){
         })
     }
     return (
-        <div className="shrink-0">
+        <div className={cn("shrink-0")}>
             <div 
                 onClick={handleClick}
                 onKeyDown={(e) => {
@@ -23,14 +24,14 @@ export function HeroImageProfil(){
                 role="button"
                 tabIndex={0}
                 aria-label="Copier l’adresse email"
-                className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-primary/30 ring-offset-4 ring-offset-background shadow-2xl shadow-primary/20 hover:ring-primary/50 transition-all duration-300 cursor-pointer"
+                className={cn("relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-primary/30 ring-offset-4 ring-offset-background shadow-2xl shadow-primary/20 hover:ring-primary/50 transition-all duration-300 cursor-pointer")}
             >
                 <Image
                 src={profileData.image || "/placeholder.svg"}
                 alt={profileData.imageAlt}
                 width={256}
                 height={256}
-                className="object-cover rounded-full"
+                className={cn("object-cover rounded-full")}
                 priority
                 sizes="(max-width: 768px) 192px, 256px"
                 />

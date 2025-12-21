@@ -9,8 +9,8 @@ interface SectionContainerProps {
 export function SectionContainer({ id, children, className }: SectionContainerProps) {
   return (
     <section id={id} className={cn("min-h-screen flex items-center justify-center px-6 py-20", className)}>
-      <div className="max-w-6xl w-full">
-        <div className="space-y-12">
+      <div className={cn("max-w-6xl w-full")}>
+        <div className={cn("space-y-12")}>
           {children}
         </div>
       </div>
