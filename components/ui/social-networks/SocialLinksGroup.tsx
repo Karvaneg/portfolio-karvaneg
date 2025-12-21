@@ -1,3 +1,4 @@
+import { IconSize } from "@/design-system/tokens";
 import { SocialIconButton } from "./SocialIconButton";
 import { getSocialLinks } from "@/lib/social-links-utils";
 
@@ -5,7 +6,7 @@ export type SocialLinksGroupVariant = "hero" | "footer";
 
 interface SocialLinksGroupProps {
   className?: string
-  iconClassName?: string
+  iconClassName?: IconSize
   variant?: SocialLinksGroupVariant;
 }
 

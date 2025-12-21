@@ -3,6 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+====================================================
+DESIGN SYSTEM – GLOBAL CONTRACT
+
+- :root / .dark      → TOKENS BRUTS (jamais utilisés directement)
+- --color-*          → API Tailwind & composants
+- --font-*           → API typographique
+- Toute nouvelle couleur DOIT être mappée via @theme
+====================================================
+*/
+
 /* ========================================
    Design System - Tokens de couleurs
    ======================================== */
@@ -56,6 +67,12 @@
   --transition-normal: 300ms;
   --transition-slow: 500ms;
   --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Alias sémantiques */
+  --surface: var(--card);
+  --surface-muted: var(--muted);
+  --text-primary: var(--foreground);
+  --text-secondary: var(--muted-foreground)
 }
 
 .dark {
@@ -98,6 +115,12 @@
   --sidebar-accent-foreground: oklch(0.92 0.01 250);
   --sidebar-border: oklch(0.25 0.01 250);
   --sidebar-ring: oklch(0.55 0.18 200);
+
+  /* Alias sémantiques - Mode sombre */
+  --surface: var(--card);
+  --surface-muted: var(--muted);
+  --text-primary: var(--foreground);
+  --text-secondary: var(--muted-foreground);
 }
 
 /* ========================================
@@ -152,6 +175,23 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Motion */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Animations */
+  --anim-fade-in: fade-in 0.5s ease-out;
+  --anim-slide-up: slide-up 0.6s ease-out;
+  --anim-gradient: gradient-shift 3s ease infinite;
+
+  /* Alias exposés */
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }
 
 /* ========================================
@@ -210,15 +250,13 @@
 }
 
 /* Classes d'animation réutilisables */
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
-}
-
 .animate-fade-in {
-  animation: fade-in 0.5s ease-out;
+  animation: var(--anim-fade-in);
 }
-
 .animate-slide-up {
-  animation: slide-up 0.6s ease-out;
+  animation: var(--anim-slide-up);
+}
+.animate-gradient {
+  animation: var(--anim-gradient);
+  background-size: 200% 200%;
 }
