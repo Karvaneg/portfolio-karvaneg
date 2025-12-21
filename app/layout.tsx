@@ -3,6 +3,7 @@ import { Cinzel, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,17 +45,17 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={cn([
+      className={[
         inter.variable,
         jetbrainsMono.variable,
         cinzel.variable,
-      ].join(" "))}
+      ].join(" ")}
     >
-      <body
-        className={cn("dark font-sans antialiased")}
-      >
-        {children}
-        <Toaster richColors position="top-center" />
+      <body className="font-sans antialiased">
+        <ThemeProvider>
+          {children}
+          <Toaster richColors position="top-center" />
+        </ThemeProvider>
       </body>
     </html>
   );
