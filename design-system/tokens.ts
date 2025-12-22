@@ -34,6 +34,7 @@ export const dsTokens = {
     md: "rounded-md",
     lg: "rounded-lg",
     xl: "rounded-xl",
+    pill: "rounded-full",
   },
 
   size: {

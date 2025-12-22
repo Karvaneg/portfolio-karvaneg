@@ -31,7 +31,7 @@ export function ScrollToTop() {
       onClick={handleClick}
       size="icon"
       aria-label="Retour en haut de page"
-      className={cn("fixed bottom-8 right-8 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110")}
+      className={cn(dsTokens.radius.pill,"fixed bottom-8 right-8 z-50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110")}
     >
       <ArrowUp className={cn(dsTokens.size.iconLg)} aria-hidden="true" />
     </Button>
