@@ -1,10 +1,10 @@
 'use client'
 
 import { toast } from "sonner"
-import { uiMessages, type UiAction } from "@/app/lib/ui-messages"
+import { uiMessages, type UiMessageKey, getUiMessage } from "@/app/lib/constants/ui-messages"
 
 interface CopyOptions {
-  action?: UiAction
+  action?: UiMessageKey
 }
 
 export function useCopyToClipboard() {
@@ -12,20 +12,20 @@ export function useCopyToClipboard() {
     value: string,
     options?: CopyOptions
   ): Promise<boolean> => {
-    const action: UiAction = options?.action ?? "copy"
+    const action: UiMessageKey = options?.action ?? "copy"
 
     try {
       await navigator.clipboard.writeText(value)
 
       toast.success(
-        uiMessages.success[action],
+        getUiMessage("success", action),
         { duration: uiMessages.meta.successDuration }
       )
 
       return true
     } catch {
       toast.error(
-        uiMessages.error[action],
+        getUiMessage("error", action),
         { duration: uiMessages.meta.errorDuration }
       )
 

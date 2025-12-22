@@ -1,8 +1,3 @@
-export type UiAction =
-  | "copy"
-  | "copy-email"
-  | "copy-link"
-
 export const uiMessages = {
   success: {
     copy: "Contenu copié avec succès ✓",
@@ -28,3 +23,21 @@ export const uiMessages = {
     infoDuration: 3000,
   },
 } as const
+
+// -----------------------------------
+// Typage strict basé sur l'objet lui-même
+// -----------------------------------
+
+export type UiMessageCategory = keyof typeof uiMessages; 
+// "success" | "error" | "info" | "meta"
+
+export type UiMessageKey = keyof typeof uiMessages.success; 
+// "copy" | "copy-email" | "copy-link"
+
+// Fonction utilitaire sécurisée
+export function getUiMessage(
+  category: Exclude<UiMessageCategory, "meta">, // exclut meta qui n’est pas un message affichable
+  key: UiMessageKey
+) {
+  return uiMessages[category][key];
+}
