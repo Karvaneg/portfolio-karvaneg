@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import {
   getSocialIconVariantConfig,
   SocialIconVariant,
-} from "./socialIconVariants";
+} from "./social-icon-variants";
 
 export interface SocialIconButtonProps {
   href: string;

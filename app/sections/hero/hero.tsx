@@ -1,6 +1,6 @@
-import { SocialLinksGroup } from "@/components/ui/social-networks/SocialLinksGroup"
-import { HeroDescriptionProfil } from "./HeroDecriptionProfil"
-import { HeroImageProfil } from "./HeroImageProfil"
+import { SocialLinksGroup } from "@/components/ui-kit/social-networks/social-links-group"
+import { HeroDescriptionProfil } from "./hero-decription-profil"
+import { HeroImageProfil } from "./hero-image-profil"
 import { cn } from "@/lib/utils"
 
 export function Hero() {

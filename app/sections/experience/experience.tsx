@@ -1,10 +1,10 @@
 import { experiences } from "@/app/lib/data/experience"
-import { SectionContainer } from "@/components/ui/SectionContainer"
-import { SectionTitle } from "@/components/ui/SectionTitle"
-import { ExperienceTechnologies } from "./ExperienceTechnologies"
-import { ExperienceDescription } from "./ExperienceDescription"
-import { ExperiencePeriod } from "./ExperiencePeriod"
-import { ExperienceTitle } from "./ExperienceTitle"
+import { SectionContainer } from "@/components/ui-kit/section-container"
+import { SectionTitle } from "@/components/ui-kit/section-title"
+import { ExperienceTechnologies } from "./experience-technologies"
+import { ExperienceDescription } from "./experience-description"
+import { ExperiencePeriod } from "./experience-period"
+import { ExperienceTitle } from "./experience-title"
 import { cn } from "@/lib/utils"
 
 export function Experience() {

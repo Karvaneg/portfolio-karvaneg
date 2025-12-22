@@ -11,7 +11,7 @@ export function ProjectTechnologies ({ technologies }: ProjectTechnologiesProps)
             {technologies.map((tech) => (
             <span
                 key={tech}
-                className={cn(dsTokens.color.primarySoft, dsTokens.color.primary, "px-3 py-1 rounded-full text-xs font-medium")}
+                className={cn(dsTokens.color.primarySoft, dsTokens.color.primary, dsTokens.radius.pill, "px-3 py-1 text-xs font-medium")}
                 role="listitem"
             >
                 {tech}

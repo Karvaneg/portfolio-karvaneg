@@ -15,7 +15,7 @@ export function SkillItem({ name, level }: SkillItemProps) {
           {level}%
         </span>
       </div>
-      <div className={cn("h-2 bg-muted rounded-full overflow-hidden")}>
+      <div className={cn(dsTokens.radius.pill, "h-2 bg-muted overflow-hidden")}>
         <div
           className={cn(`h-full bg-primary transition-all duration-500 ease-out ${
             level >= 90

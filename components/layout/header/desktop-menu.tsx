@@ -1,6 +1,6 @@
 import { DesktopMenuProps } from "@/types/header"
-import { MenuItemsList } from "./MenuItemsList"
-import { ContactButton } from "./ContactButton"
+import { MenuItemsList } from "./menu-items-list"
+import { ContactButton } from "./contact-button"
 
 export function DesktopMenu({ activeSection, onMenuClick, scrollToSection }: DesktopMenuProps) {
   return (

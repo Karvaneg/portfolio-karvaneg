@@ -1,5 +1,5 @@
 import { aboutData } from "@/app/lib/data/about";
-import { SectionSubTitle } from "@/components/ui/SectionSubTitle";
+import { SectionSubTitle } from "@/components/ui-kit/section-sub-title";
 import { dsTokens } from "@/design-system/tokens";
 import { cn } from "@/lib/utils";
 

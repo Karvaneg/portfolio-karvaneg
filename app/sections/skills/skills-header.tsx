@@ -1,4 +1,4 @@
-import { SectionTitle } from "@/components/ui/SectionTitle"
+import { SectionTitle } from "@/components/ui-kit/section-title"
 import { cn } from "@/lib/utils"
 
 export function SkillsHeader() {

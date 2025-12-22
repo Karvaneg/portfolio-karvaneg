@@ -1,9 +1,9 @@
 import { contactData } from "@/app/lib/data/contact"
-import { SectionTitle } from "@/components/ui/SectionTitle"
-import { ContactDetails } from "./ContactDetails"
-import { ContactDescription } from "./ContactDescription"
-import { ContactFooterNote } from "./ContactFooterNote"
-import { ContactButton } from "./ContactButton"
+import { SectionTitle } from "@/components/ui-kit/section-title"
+import { ContactDetails } from "./contact-details"
+import { ContactDescription } from "./contact-description"
+import { ContactFooterNote } from "./contact-footer-note"
+import { ContactButton } from "./contact-button"
 import { cn } from "@/lib/utils"
 
 export function Contact() {

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { ProjectLinks } from "./ProjectLinks"
-import { ProjectTitle } from "./ProjectTitle"
+import { ProjectLinks } from "./project-links"
+import { ProjectTitle } from "./project-title"
 
 interface ProjectHeaderProps {
   header: {

@@ -1,8 +1,8 @@
 "use client"
 
 import { NavigationProps } from "@/types/header"
-import { DesktopMenu } from "./DesktopMenu"
-import { ToggleMenuButton } from "./ToggleMenuButton"
+import { DesktopMenu } from "./desktop-menu"
+import { ToggleMenuButton } from "./toggle-menu-button"
 
 export function Navigation({
   activeSection,

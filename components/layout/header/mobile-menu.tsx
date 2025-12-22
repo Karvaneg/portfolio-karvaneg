@@ -1,6 +1,6 @@
 import { MobileMenuProps } from "@/types/header"
-import { MenuItemsList } from "./MenuItemsList"
-import { ContactButton } from "./ContactButton"
+import { MenuItemsList } from "./menu-items-list"
+import { ContactButton } from "./contact-button"
 
 export function MobileMenu({ activeSection, isOpen, onMenuClick, scrollToSection }: MobileMenuProps) {
   if (!isOpen) return null

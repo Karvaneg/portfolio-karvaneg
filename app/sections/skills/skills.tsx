@@ -1,6 +1,6 @@
 import { skillCategories } from "@/app/lib/data/skills"
-import { SkillsHeader } from "./SkillsHeader"
-import { SkillCategoryCard } from "./SkillCategoryCard"
+import { SkillsHeader } from "./skills-header"
+import { SkillCategoryCard } from "./skill-category-card"
 import { cn } from "@/lib/utils"
 
 export function Skills() {

@@ -1,9 +1,9 @@
 "use client"
 
-import { Logo } from "./Logo"
-import { MobileMenu } from "./MobileMenu"
-import { MobileMenuWrapper } from "./MobileMenuWrapper"
-import { Navigation } from "./Navigation"
+import { Logo } from "./logo"
+import { MobileMenu } from "./mobile-menu"
+import { MobileMenuWrapper } from "./mobile-menu-wrapper"
+import { Navigation } from "./navigation"
 import { useHeaderLogic } from "@/app/hooks/use-header-logic"
 
 export function Header() {
