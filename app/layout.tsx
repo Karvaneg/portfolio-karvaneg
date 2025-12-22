@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Cinzel, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import { cn } from "@/lib/utils";
 import { ThemeProvider } from "./providers";
 
 const inter = Inter({
