@@ -7,12 +7,15 @@ import { Skills } from "./sections/skills/skills";
 import { Experience } from "./sections/experience/experience";
 import { Projects } from "./sections/projects/projects";
 import { Contact } from "./sections/contact/contact";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui-kit/theme-toggle";
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen pt-16">
+      <main className={cn("min-h-screen pt-16")}>
         <Header />
+        <ThemeToggle />
         <Hero />
         <About />
         <Skills />

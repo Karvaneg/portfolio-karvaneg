@@ -1,15 +1,16 @@
 import { footerData } from "@/app/lib/data/footer"
 import { dsTokens } from "@/design-system/tokens"
+import { cn } from "@/lib/utils"
 
 export function FooterBranding() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <div className="text-center md:text-left">
-      <p className={`text-sm ${dsTokens.color.onSurface}`}>
+    <div className={cn("text-center md:text-left")}>
+      <p className={cn("text-sm", dsTokens.color.textSecondary)}>
         {currentYear} {footerData.name} — {footerData.title}
       </p>
-      <p className={`text-xs ${dsTokens.color.onSurface} mt-1`}>
+      <p className={cn("text-xs mt-1", dsTokens.color.textSecondary)}>
         {footerData.tagline}
       </p>
     </div>

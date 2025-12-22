@@ -1,5 +1,5 @@
 import * as icons from "lucide-react";
-import { dsTokens } from "@/design-system/tokens";
+import { IconSize } from "@/design-system/tokens";
 import { socialData } from "@/app/lib/data/social-links";
 import { SocialLink } from "@/types/ui";
 
@@ -7,7 +7,7 @@ const iconNameMap: Record<string, string> = {
   email: 'Mail',
 };
 
-export function getSocialLinks(iconClassName = dsTokens.size.iconMd): SocialLink[] {
+export function getSocialLinks(iconClassName?: IconSize): SocialLink[] {
   return Object.entries(socialData).map(
     ([id, href]) => {
       const iconName = iconNameMap[id] || id.charAt(0).toUpperCase() + id.slice(1);

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SCROLL_CONSTANTS } from "@/app/lib/constants/scroll"
+import { dsTokens } from "@/design-system/tokens"
+import { cn } from "@/lib/utils"
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
@@ -29,9 +31,9 @@ export function ScrollToTop() {
       onClick={handleClick}
       size="icon"
       aria-label="Retour en haut de page"
-      className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+      className={cn(dsTokens.radius.pill,"fixed bottom-8 right-8 z-50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110")}
     >
-      <ArrowUp className="w-5 h-5" aria-hidden="true" />
+      <ArrowUp className={cn(dsTokens.size.iconLg)} aria-hidden="true" />
     </Button>
   )
 }

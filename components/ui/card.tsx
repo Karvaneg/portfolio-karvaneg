@@ -2,6 +2,8 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+// AUTO-GENERATED – DO NOT EDIT
+
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div

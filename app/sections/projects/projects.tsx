@@ -1,23 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { projects } from "@/app/lib/data/projects"
-import { SectionTitle } from "@/components/ui/SectionTitle"
-import { SectionContainer } from "@/components/ui/SectionContainer"
-import { ProjectScreen } from "./ProjectScreen"
-import { ProjectHeader } from "./projectHeader/ProjectHeader"
-import { ProjectTechnologies } from "./ProjectTechnologies"
-import { ProjectDescription } from "./ProjectDescription"
-import { HintText } from "@/components/ui/HintText"
+import { SectionTitle } from "@/components/ui-kit/section-title"
+import { SectionContainer } from "@/components/ui-kit/section-container"
+import { ProjectScreen } from "./project-screen"
+import { ProjectHeader } from "./projectHeader/project-header"
+import { ProjectTechnologies } from "./project-technologies"
+import { ProjectDescription } from "./project-description"
+import { HintText } from "@/components/ui-kit/hint-text"
+import { cn } from "@/lib/utils"
+import { dsTokens } from "@/design-system/tokens"
 
 export function Projects() {
   return (
     <SectionContainer id="projets">
         <SectionTitle>Projets Significatifs</SectionTitle>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className={cn("grid md:grid-cols-2 gap-6")}>
             {projects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden hover:shadow-xl transition-shadow">
-                    <CardContent className="p-0">
+                <Card key={index} className={cn("group overflow-hidden hover:shadow-xl transition-shadow")}>
+                    <CardContent className={cn(dsTokens.space.xxs)}>
                         <ProjectScreen project={project} index={index} />
-                        <div className="p-6 space-y-4">
+                        <div className={cn(dsTokens.space.xl, "space-y-4")}>
                             <ProjectHeader header={project} />
                             <ProjectDescription description={project.description} />
                             {project.live && (
