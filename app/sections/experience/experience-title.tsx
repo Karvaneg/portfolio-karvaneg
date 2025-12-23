@@ -25,7 +25,7 @@ export function ExperienceTitle({ title, company, link }: ExperienceTitleProps) 
             aria-label={ariaLabels.externalLink(`le site de ${company}`)}
             >
               <ExternalLink 
-                className={cn(dsTokens.size.iconSm, "opacity-0 group-hover:opacity-100 transition-opacity")} 
+                className={cn(dsTokens.size.iconMd, "opacity-0 group-hover:opacity-100 transition-opacity")} 
                 aria-hidden="true" 
               />
             </Link>
