@@ -4,11 +4,12 @@ import { SectionTitle } from "@/components/ui-kit/section-title"
 import { SectionContainer } from "@/components/ui-kit/section-container"
 import { ProjectScreen } from "./project-screen"
 import { ProjectHeader } from "./projectHeader/project-header"
-import { ProjectTechnologies } from "./project-technologies"
-import { ProjectDescription } from "./project-description"
+
 import { HintText } from "@/components/ui-kit/hint-text"
 import { cn } from "@/lib/utils"
 import { dsTokens } from "@/design-system/tokens"
+import { ProjectDescription } from "./project-description"
+import { ProjectTechnologies } from "./project-technologies"
 
 export function Projects() {
   return (
