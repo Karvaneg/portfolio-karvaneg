@@ -10,8 +10,11 @@ export function FooterBranding() {
       <p className={cn("text-sm", dsTokens.color.textSecondary)}>
         {currentYear} {footerData.name} — {footerData.title}
       </p>
-      <p className={cn("text-xs mt-1", dsTokens.color.textSecondary)}>
+      <p className={cn("text-xs italic mt-1", dsTokens.color.textSecondary)}>
         {footerData.tagline}
+      </p>
+      <p className={cn("text-xs mt-1", dsTokens.color.textSecondary)}>
+        {footerData.techline}
       </p>
     </div>
   )
