@@ -25,7 +25,7 @@ export const experiences: readonly Experience[] = [
     company: "Beephone",
     description:
       "Responsable d'une équipe de 3 personnes dans le reconditionnement d'iPhone. Réalisation de diagnostics, réparations et tests, gestion des stocks en pièces détachées, respect des procédures qualité, service après-vente technique et gestion RH (absences, congés, fiches horaires).",
-    technologies: ["Gestion d'équipe", "Qualité", "SAV"],
+    technologies: ["Gestion d'équipe", "Qualité", "SAV technique"],
     link: null,
   },
 ] as const

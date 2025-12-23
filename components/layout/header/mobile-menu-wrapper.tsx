@@ -14,7 +14,7 @@ export function MobileMenuWrapper({ isOpen, children }: MobileMenuWrapperProps) 
       isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")} 
       aria-hidden={!isOpen}
     >
-      <div className="overflow-hidden">
+      <div className={cn("overflow-hidden")}>
         {children}
       </div>
     </div>

@@ -1,40 +1,13 @@
-import type { Metadata, Viewport } from "next";
-import { Cinzel, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "./providers";
+import { inter, jetbrainsMono, cinzel } from "@/app/lib/fonts"
+import { metadata } from "@/app/lib/metadata"
+import { viewport } from "@/app/lib/viewport"
+import { Toaster } from "sonner";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-})
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-jetbrains",
-})
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-  variable: "--font-cinzel",
-})
+export { metadata, viewport };
 
-export const metadata: Metadata = {
-  title: "Portfolio – Karvaneg",
-  description: "Portfolio professionnel | Développeuse Full Stack.",
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-  ],
-}
+/* ---------------- Layout ---------------- */
 
 export default function RootLayout({
   children,
@@ -49,11 +22,12 @@ export default function RootLayout({
         jetbrainsMono.variable,
         cinzel.variable,
       ].join(" ")}
+      suppressHydrationWarning
     >
       <body className="font-sans antialiased">
         <ThemeProvider>
           {children}
-          <Toaster richColors position="top-center" />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

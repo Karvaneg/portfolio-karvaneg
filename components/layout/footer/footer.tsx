@@ -1,6 +1,7 @@
+
 import { cn } from "@/lib/utils";
-import { SocialLinksGroup } from "../../ui-kit/social-networks/social-links-group";
 import { FooterBranding } from "./footer-branding";
+import { SocialLinksGroup } from "@/components/ui-kit/social-networks/social-links-group";
 
 export function Footer() {
 
