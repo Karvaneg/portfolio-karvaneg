@@ -9,11 +9,11 @@ export { metadata, viewport };
 
 /* ---------------- Layout ---------------- */
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="fr"
@@ -22,7 +22,6 @@ export default function RootLayout({
         jetbrainsMono.variable,
         cinzel.variable,
       ].join(" ")}
-      suppressHydrationWarning
     >
       <body className="font-sans antialiased">
         <ThemeProvider>
