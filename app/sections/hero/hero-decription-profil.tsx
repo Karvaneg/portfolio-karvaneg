@@ -11,7 +11,12 @@ export function HeroDescriptionProfil() {
         </div>
 
         <p className={cn("text-lg md:text-xl max-w-2xl text-pretty leading-relaxed", dsTokens.color.textSecondary)}>
-            {profileData.description}
+            {profileData.description.map((desc) => (
+                <span key={desc.line}>
+                    {desc.line}
+                    <br />
+                </span>
+            ))}
         </p>
     </>
   )
