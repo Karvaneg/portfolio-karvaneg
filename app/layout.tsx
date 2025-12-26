@@ -4,6 +4,7 @@ import { inter, jetbrainsMono, cinzel } from "@/app/lib/fonts"
 import { metadata } from "@/app/lib/metadata"
 import { viewport } from "@/app/lib/viewport"
 import { Toaster } from "sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export { metadata, viewport };
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider>
           {children}
           <Toaster />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
