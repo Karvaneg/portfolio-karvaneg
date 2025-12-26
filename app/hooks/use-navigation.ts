@@ -1,44 +1,66 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useCallback, useState, useSyncExternalStore } from "react"
 import { menuItems } from "@/app/lib/data/navigation"
 import { SCROLL_CONSTANTS } from "@/app/lib/constants/scroll"
 
-export function useActiveSection() {
-  const [activeSection, setActiveSection] = useState("accueil")
+function getActiveSection() {
+  if (typeof window === "undefined") return "accueil"
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = menuItems.map((item) => document.getElementById(item.id))
-      const scrollPosition = window.scrollY + SCROLL_CONSTANTS.SECTION_DETECTION_OFFSET
+  const scrollPosition =
+    window.scrollY + SCROLL_CONSTANTS.SECTION_DETECTION_OFFSET
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i]
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(menuItems[i].id)
-          break
-        }
-      }
+  for (let i = menuItems.length - 1; i >= 0; i--) {
+    const section = document.getElementById(menuItems[i].id)
+    if (section && section.offsetTop <= scrollPosition) {
+      return menuItems[i].id
     }
+  }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  return "accueil"
+}
 
-  return activeSection
+function subscribe(callback: () => void) {
+  let rafId: number | null = null
+  const handler = () => {
+    if (rafId === null) {
+      rafId = requestAnimationFrame(() => {
+        callback()
+        rafId = null
+      })
+    }
+  }
+
+  window.addEventListener("scroll", handler)
+  return () => {
+    window.removeEventListener("scroll", handler)
+    if (rafId !== null) cancelAnimationFrame(rafId)
+  }
+}
+
+
+export function useActiveSection() {
+  return useSyncExternalStore(
+    subscribe,
+    getActiveSection,
+    () => "accueil" // SSR fallback
+  )
 }
 
 export function useMenuState() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), [])
+  const closeMenu = useCallback(() => setIsOpen(false), [])
+
 
   return { isOpen, toggleMenu, closeMenu }
 }
 
 export function useScrollToSection() {
   const scrollToSection = (sectionId: string) => {
+    if (typeof window === "undefined") return
+
     const section = document.getElementById(sectionId)
     if (section) {
       const offsetTop = section.offsetTop - SCROLL_CONSTANTS.NAVIGATION_OFFSET
