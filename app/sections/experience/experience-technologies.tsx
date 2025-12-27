@@ -1,5 +1,4 @@
-import { dsTokens } from "@/design-system/tokens"
-import { cn } from "@/lib/utils"
+import { TechBadgeList } from "@/components/ui-kit/tech-badge-list"
 
 interface ExperienceTechnologiesProps {
   technologies: readonly string[]
@@ -7,15 +6,9 @@ interface ExperienceTechnologiesProps {
 
 export function ExperienceTechnologies({ technologies }: ExperienceTechnologiesProps) {
   return (
-    <div className={cn("flex flex-wrap gap-2")}>
-        {technologies.map((tech) => (
-        <span
-          key={tech}
-          className={cn(dsTokens.color.primarySoft, dsTokens.color.primary, dsTokens.radius.pill, "px-3 py-1 text-xs font-medium")}
-        >
-          {tech}
-        </span>
-        ))}
-    </div>           
+    <TechBadgeList
+      technologies={technologies}
+      size="xs"
+    />         
   )
 }
