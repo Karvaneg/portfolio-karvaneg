@@ -18,17 +18,21 @@ export function SkillItem({ name, level }: SkillItemProps) {
       <div className={cn(dsTokens.radius.pill, "h-2 bg-muted overflow-hidden")}>
         <div
           className={cn(`h-full bg-primary transition-all duration-500 ease-out ${
-            level >= 90
-              ? "w-[90%]"
-              : level >= 85
-                ? "w-[85%]"
-                : level >= 80
-                  ? "w-4/5"
-                  : level >= 75
-                    ? "w-3/4"
-                    : level >= 70
-                      ? "w-[70%]"
-                      : "w-3/5"
+            level >= 100
+              ? "w-full"
+              : level >= 95
+                ? "w-[95%]"
+                : level >= 90
+                  ? "w-[90%]"
+                  : level >= 85
+                    ? "w-[85%]"
+                    : level >= 80
+                      ? "w-4/5"
+                      : level >= 75
+                        ? "w-3/4"
+                        : level >= 70
+                          ? "w-[70%]"
+                          : "w-3/5"
           }`)}
           role="progressbar"
           aria-valuenow={level}
