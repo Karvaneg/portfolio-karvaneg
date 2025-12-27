@@ -13,3 +13,13 @@ export interface SocialLink {
   label: string
   icon: ReactElement<{ className?: string }>
 }
+
+export interface ProgressProps {
+  value: number
+  min?: number
+  max?: number
+  step?: number
+  label: string
+  showValue?: boolean
+  className?: string
+}

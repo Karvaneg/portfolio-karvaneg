@@ -1,7 +1,7 @@
 import * as icons from "lucide-react";
 import { IconSize } from "@/design-system/tokens";
 import { socialData } from "@/app/lib/data/social-links";
-import { SocialLink } from "@/types/ui";
+import { SocialLink } from "@/types/ui-kit";
 
 const iconNameMap: Record<string, string> = {
   email: 'Mail',
