@@ -8,7 +8,7 @@ export const skillCategories: readonly SkillCategory[] = [
     skills: [
       { name: "React / TypeScript", level: 85 },
       { name: "HTML5 / CSS3 / Sass", level: 95 },
-      { name: "Styled Components", level: 80 },
+      { name: "Styled Components", level: 90 },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const skillCategories: readonly SkillCategory[] = [
     skills: [
       { name: "Git / GitHub / GitLab", level: 90 },
       { name: "Docker / CI/CD", level: 80 },
-      { name: "Méthode Agile / Trello", level: 85 },
+      { name: "Méthode Agile / Trello", level: 95 },
     ],
   },
   {
