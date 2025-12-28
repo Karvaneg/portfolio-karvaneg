@@ -8,14 +8,42 @@
 stages:
   - test
   - secret-detection
+  - mirror
 
 # Jobs de sécurité existants
 sast:
   stage: test
 
 include:
-  - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
 
 variables:
   SECRET_DETECTION_ENABLED: "true"
+
+# Job de mirroring optimisé
+mirror_to_github:
+  stage: mirror
+  image: debian:stable
+  before_script:
+    - apt-get update && apt-get install -y git openssh-client
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+    # IMPORTANT : GitLab CI ne crée pas la branche main → on la recrée
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
+    - git fetch origin main
+    - git checkout -B main origin/main
+
+    # Remote GitHub
+    - git remote remove github || true
+    - git remote add github git@github.com:Karvaneg/portfolio-karvaneg.git
+
+  script:
+    - GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' git push github main --force
+    - GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' git push github --tags --force
+
+  only:
+    - main
