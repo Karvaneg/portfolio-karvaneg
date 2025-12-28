@@ -1,5 +1,6 @@
 # Dependencies
 /node_modules
+.pnpm-store/
 
 # Next.js build output
 /.next/
@@ -15,6 +16,9 @@ next-env.d.ts
 .pnpm-debug.log*
 *.log
 
+# Editor directories and files
+.vscode
+
 # Environment variables
 .env*
 !.env.example
@@ -22,3 +26,7 @@ next-env.d.ts
 # Misc / secrets
 *.pem
 .vercel
+
+# SSH keys
+id_rsa.pub
+id_rsa
