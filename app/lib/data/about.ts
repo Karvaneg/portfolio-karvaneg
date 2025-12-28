@@ -1,7 +1,7 @@
 export const aboutData = {
   paragraphs: [
     "Je suis une développeuse web passionnée par la création d'applications performantes et bien structurées. Mon travail se situe à l'intersection du code propre et de l'expérience utilisateur, avec une attention particulière portée à l'accessibilité et aux bonnes pratiques de développement.",
-    "J'ai travaillé pendant deux ans comme développeuse fullstack au Conservatoire Botanique National Sud-Atlantique, où j'ai développé des portails thématiques et refait le site institutionnel. J'ai conçu et intégré des interfaces web responsives, développé en PHP front et back-end, optimisé des bases de données PostgreSQL/PostGIS, pratiqué le DevOps (CI/CD, Docker, déploiements), et veillé au respect des standards WCAG pour l'accessibilité.",
+    "J'ai travaillé pendant deux ans comme développeuse fullstack au Conservatoire Botanique National Sud-Atlantique, où j'ai développé des portails thématiques et refondu entièrement le site institutionnel. J'ai conçu et intégré des interfaces web responsives, développé en PHP front et back-end, optimisé des bases de données PostgreSQL/PostGIS, pratiqué le DevOps (CI/CD, Docker, déploiements), et veillé au respect des standards WCAG pour l'accessibilité.",
     "Depuis la fin de mon contrat, je me perfectionne en React en entreprise avec ViDev à travers le développement de l'application Crazee-Burger et une formation complète. Je vais poursuivre avec la formation TypeScript du même auteur pour approfondir mes compétences. En parallèle, j'explore React Native avec Hermes pour le développement mobile. Le DevOps m'intéresse également beaucoup, domaine dans lequel j'ai acquis de l'expérience lors de mon passage au CBNSA.",
     "Ma ténacité et ma passion pour le codage me poussent à chercher constamment des solutions aux problématiques rencontrées. J'accorde une grande importance à la lisibilité du code, à la clarté des interfaces et à la documentation. Le travail en équipe et l'envie de continuer d'apprendre sont au cœur de ma démarche professionnelle.",
   ],
@@ -26,4 +26,4 @@ export const aboutData = {
     "Node.js",
     "API REST",
   ],
-} as const
+} as const;
