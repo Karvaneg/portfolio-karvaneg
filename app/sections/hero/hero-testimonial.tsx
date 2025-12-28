@@ -1,4 +1,3 @@
-
 import { Testimonial } from "@/components/ui-kit/testimonial";
 import { cn } from "@/lib/utils";
 import { getFeaturedTestimonial } from "@/lib/testimonials";
