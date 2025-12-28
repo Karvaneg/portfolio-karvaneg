@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio – Karvaneg
 
-## Getting Started
+Développeuse Full Stack  
+Projets, expérimentations et design system personnel.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## À propos
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ce dépôt contient le code source de mon portfolio personnel.  
+Il présente une sélection de projets web, des composants UI, ainsi que mes choix techniques en matière d’architecture, d’accessibilité et de design.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ce portfolio est pensé comme un **espace vivant**, à la fois vitrine et terrain d’expérimentation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Ce que vous trouverez ici
 
-To learn more about Next.js, take a look at the following resources:
+- Projets front-end et full stack
+- Composants React / UI Kit
+- Design system maison
+- Animations et micro-interactions
+- Approche orientée lisibilité, maintenabilité et UX
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Chaque projet est documenté et, lorsque c’est possible, accompagné d’une démo.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Stack technique
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js** (App Router)
+- **React & TypeScript**
+- **Tailwind CSS / SCSS**
+- Design tokens & composants réutilisables
+- Intégrations backend (Symfony sur certains projets)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Déploiement
+
+Le portfolio est déployé sur Vercel.
+
+---
+
+## 🔒 À propos de ce miroir GitHub
+
+Ce dépôt GitHub est un **miroir en lecture** seule du vrai projet hébergé sur GitLab.
+
+- ❌ Issues : désactivées
+
+- ❌ PR : refusées
+
+- ✔️ Consultation du code : **OK**
+
+- ✔️ Portfolio / vitrine professionnelle : **OK**
+
+## 👩‍💻 Auteur
+
+**Karvaneg** — Développeuse Web Fullstack (React, Twig, Symfony, NodeJS, Express, Docker, DBeaver, MongoDB,…)
+
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-KARVANEG-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marielecarvennec/)
