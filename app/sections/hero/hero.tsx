@@ -2,6 +2,7 @@ import { SocialLinksGroup } from "@/components/ui-kit/social-networks/social-lin
 import { HeroDescriptionProfil } from "./hero-decription-profil"
 import { HeroImageProfil } from "./hero-image-profil"
 import { cn } from "@/lib/utils"
+import { HeroTestimonial } from "./hero-testimonial"
 
 export function Hero() {
   return (
@@ -14,6 +15,7 @@ export function Hero() {
             <SocialLinksGroup />
           </div>
         </div>
+        <HeroTestimonial />
       </div>
     </section>
   )
