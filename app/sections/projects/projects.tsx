@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { projects } from "@/app/lib/data/projects"
-import { SectionTitle } from "@/components/ui-kit/section-title"
-import { SectionContainer } from "@/components/ui-kit/section-container"
+import { SectionTitle } from "@/components/ui-kit/section/section-title"
+import { SectionContainer } from "@/components/ui-kit/section/section-container"
 import { ProjectScreen } from "./project-screen"
 import { ProjectHeader } from "./projectHeader/project-header"
 

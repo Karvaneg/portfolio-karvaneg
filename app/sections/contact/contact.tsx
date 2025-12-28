@@ -1,5 +1,5 @@
 import { contactData } from "@/app/lib/data/contact"
-import { SectionTitle } from "@/components/ui-kit/section-title"
+import { SectionTitle } from "@/components/ui-kit/section/section-title"
 import { ContactDetails } from "./contact-details"
 import { ContactDescription } from "./contact-description"
 import { ContactButton } from "./contact-button"

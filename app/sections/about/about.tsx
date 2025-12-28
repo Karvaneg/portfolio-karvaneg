@@ -1,6 +1,6 @@
 
-import { SectionContainer } from "@/components/ui-kit/section-container";
-import { SectionTitle } from "@/components/ui-kit/section-title";
+import { SectionContainer } from "@/components/ui-kit/section/section-container";
+import { SectionTitle } from "@/components/ui-kit/section/section-title";
 import { Description } from "./about-description";
 import { Technologies } from "./about-technologies";
 

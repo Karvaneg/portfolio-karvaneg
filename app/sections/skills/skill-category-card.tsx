@@ -1,6 +1,6 @@
 import { SkillCategory } from "@/types/data"
 import { Card, CardContent } from "@/components/ui/card"
-import { SectionSubTitle } from "@/components/ui-kit/section-sub-title"
+import { SectionSubTitle } from "@/components/ui-kit/section/section-sub-title"
 import { SkillItem } from "./skill-item"
 import { dsTokens } from "@/design-system/tokens"
 import { cn } from "@/lib/utils"

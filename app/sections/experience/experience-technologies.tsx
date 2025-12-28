@@ -1,5 +1,4 @@
-import { TechBadgeList } from "@/components/ui-kit/tech-badge-list"
-
+import { TechBadgeList } from "@/components/ui-kit/tech-badge/tech-badge-list"
 interface ExperienceTechnologiesProps {
   technologies: readonly string[]
 }

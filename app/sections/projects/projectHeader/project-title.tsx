@@ -1,4 +1,4 @@
-import { SectionSubTitle } from "@/components/ui-kit/section-sub-title";
+import { SectionSubTitle } from "@/components/ui-kit/section/section-sub-title";
 import { cn } from "@/lib/utils";
 
 interface ProjectTitleProps {

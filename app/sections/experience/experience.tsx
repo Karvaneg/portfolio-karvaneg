@@ -1,6 +1,6 @@
 import { experiences } from "@/app/lib/data/experience"
-import { SectionContainer } from "@/components/ui-kit/section-container"
-import { SectionTitle } from "@/components/ui-kit/section-title"
+import { SectionContainer } from "@/components/ui-kit/section/section-container"
+import { SectionTitle } from "@/components/ui-kit/section/section-title"
 import { ExperienceDescription } from "./experience-description"
 import { ExperienceTechnologies } from "./experience-technologies"
 import { ExperiencePeriod } from "./experience-period"

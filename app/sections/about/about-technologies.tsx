@@ -1,6 +1,6 @@
 import { aboutData } from "@/app/lib/data/about";
-import { SectionSubTitle } from "@/components/ui-kit/section-sub-title";
-import { TechBadgeList } from "@/components/ui-kit/tech-badge-list";
+import { SectionSubTitle } from "@/components/ui-kit/section/section-sub-title";
+import { TechBadgeList } from "@/components/ui-kit/tech-badge/tech-badge-list";
 import { cn } from "@/lib/utils";
 
 export function Technologies() {
