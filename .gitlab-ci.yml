@@ -40,6 +40,7 @@ mirror_to_github:
     # Remote GitHub
     - git remote remove github || true
     - git remote add github git@github.com:Karvaneg/portfolio-karvaneg.git
+    - git push github main --force
 
   script:
     - GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' git push github main --force
