@@ -12,8 +12,7 @@ export function VerticalMarker({ className, children }: VerticalMarkerProps) {
         <span
         aria-hidden
         className={cn(
-            "absolute left-0 w-[3px] rounded-full top-1 bottom-1",  dsTokens.color.borderBg,
-            className
+            "absolute left-0 w-[3px] rounded-full top-1 bottom-1",  dsTokens.color.borderBg
         )}
         />
         {children}

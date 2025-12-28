@@ -12,14 +12,13 @@ export function HeroDescriptionProfil() {
         </div>
         
         <VerticalMarker>
-            <p className={cn("text-lg md:text-xl max-w-2xl text-pretty leading-relaxed", dsTokens.color.textSecondary)}>
+            <div className={cn("text-lg md:text-xl max-w-2xl text-pretty leading-relaxed", dsTokens.color.textSecondary)}>
                 {profileData.description.map((desc) => (
-                    <span key={desc.line}>
+                    <p key={desc.line}>
                         {desc.line}
-                        <br />
-                    </span>
+                    </p>
                 ))}
-            </p>
+            </div>
         </VerticalMarker>
     </>
   )
