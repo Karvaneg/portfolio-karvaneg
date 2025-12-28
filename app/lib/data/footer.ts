@@ -1,6 +1,11 @@
 export const footerData = {
   name: "Marie Le Carvennec",
   title: "Développeuse Web Fullstack",
-  tagline: "Interfaces fiables, accessibles et pensées pour durer.",
-  techline: "Développé avec Next.js & Tailwind CSS — Déployé sur Vercel",
+  techline: "Développé avec Next.js & Tailwind CSS · Déployé sur Vercel",
+  brandName: "Karvaneg",
+  explainBrandName: [
+    {line: "· Origine celtique de mon nom de famille, « celui qui a une forte mâchoire »."},
+    {line: "· Une métaphore de la ténacité et de l’engagement dans mon travail."},
+  ],
+  
 } as const

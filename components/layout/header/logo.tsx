@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils"
 export function Logo({ scrollToSection }: LogoProps) {
   return (
     <button
-        onClick={() => scrollToSection("accueil")}
+        onClick={() => scrollToSection("karvaneg")}
         className={cn("flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer")}
-        aria-label="Retour à l'accueil"
+        aria-label="Karvaneg — en savoir plus"
     >
         <Image
         src="/images/logokphotoroomombre.webp"

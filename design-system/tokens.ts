@@ -12,6 +12,7 @@ export const dsTokens = {
     onPrimary: "text-primary-foreground",
 
     border: "border-border",
+    borderBg: "bg-border", 
   },
 
   interaction: {
