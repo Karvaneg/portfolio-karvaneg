@@ -37,6 +37,28 @@ export const projects: readonly Project[] = [
     live: "https://cbnsa.fr/",
   },
   {
+    title: "Administration - CBNSA & Portails Thématiques",
+    description:
+      "Développement d'un portail d'administration commun pour le Conservatoire Botanique National Sud-Atlantique et ses portails thématiques. Gestion centralisée des contenus, utilisateurs et médias avec une interface intuitive. Mise en place de rôles et permissions pour sécuriser l'accès aux différentes sections.",
+    image: "/images/screen-portail-admin.png",
+    hint: null,
+    technologies: [
+      "Symfony",
+      "PHP",
+      "Twig",
+      "PostgreSQL",
+      "PostGIS",
+      "JavaScript",
+      "TypeScript",
+      "Docker",
+      "Sass",
+      "Tabulator",
+      "Design System",
+    ],
+    github: null,
+    live: null,
+  },
+  {
     title: "Portails Thématiques",
     description:
       "Développement de plusieurs portails au sein d’un écosystème commun, avec mise en place d’un design system pour harmoniser les interfaces et faciliter la création de nouveaux portails. Développement de fonctionnalités mutualisées (Actualités, Ressources, Partenaires), intégration d’un carnet d’adresses avec Tabulator et connexion à l’API REST d’OpenAgenda.",
