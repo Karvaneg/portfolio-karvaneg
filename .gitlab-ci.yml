@@ -8,12 +8,11 @@
 stages:
   - test
   - secret-detection
+  - build
+  - deploy
   - mirror
 
 # Jobs de sécurité existants
-sast:
-  stage: test
-
 include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
@@ -21,14 +20,51 @@ include:
 variables:
   SECRET_DETECTION_ENABLED: "true"
 
+# Job de déploiement vers Vercel
+.default_node_job:
+  image: node:20
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@latest --activate
+    - pnpm config set store-dir .pnpm-store
+
+build:
+  stage: build
+  extends: .default_node_job
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm run build
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  extends: .default_node_job
+  needs: ["build"]
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm dlx vercel --prod --confirm --token $VERCEL_TOKEN --org $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
+
+  only:
+    - main
+
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  paths:
+    - .pnpm-store
+
 # Job de mirroring optimisé
 mirror_to_github:
+  needs: ["deploy"]
   stage: mirror
   image: debian:stable
   before_script:
     - apt-get update && apt-get install -y git openssh-client
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - tr -d '\r' < ~/.ssh/id_rsa > ~/.ssh/id_rsa.clean && mv ~/.ssh/id_rsa.clean ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
     - ssh-keyscan github.com >> ~/.ssh/known_hosts
 
@@ -40,7 +76,6 @@ mirror_to_github:
     # Remote GitHub
     - git remote remove github || true
     - git remote add github git@github.com:Karvaneg/portfolio-karvaneg.git
-    - git push github main --force
 
   script:
     - GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' git push github main --force
