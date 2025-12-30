@@ -1,4 +1,4 @@
-import { Experience } from "@/types/data"
+import { Experience } from "@/types/data";
 
 export const experiences: readonly Experience[] = [
   {
@@ -6,8 +6,17 @@ export const experiences: readonly Experience[] = [
     title: "Développeuse Fullstack",
     company: "Conservatoire Botanique National Sud-Atlantique",
     description:
-      "Développement de portails thématiques et refonte du site institutionnel. Conception et intégration d'interfaces web responsives, mise en œuvre des standards WCAG, optimisation SEO et performances. Conception et optimisation de bases de données PostgreSQL/PostGIS, développement PHP front et back, intégration d'API tierces. Rédaction de cahiers des charges techniques, tests fonctionnels et unitaires, documentation technique.",
-    technologies: ["Symfony", "Twig", "PostgreSQL", "PostGIS", "Docker", "Sass", "PHP", "API REST"],
+      "Développement de portails thématiques et refonte du site institutionnel. Conception et intégration d'interfaces web responsives, mise en œuvre des standards WCAG, optimisation SEO et performances. Conception et optimisation de bases de données PostgreSQL/PostGIS, développement Symfony, intégration d'API tierces. Rédaction de cahiers des charges techniques, tests fonctionnels et unitaires, documentation technique.",
+    technologies: [
+      "Symfony",
+      "Twig",
+      "PostgreSQL",
+      "PostGIS",
+      "Docker",
+      "Sass",
+      "PHP",
+      "API REST",
+    ],
     link: "https://cbnsa.fr/",
   },
   {
@@ -16,7 +25,15 @@ export const experiences: readonly Experience[] = [
     company: "OpenClassrooms",
     description:
       "Formation intensive en développement web avec réalisation de 6 projets professionnalisants couvrant l'ensemble du stack : HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, et API REST. Validation de la certification professionnelle Développeur Intégrateur Web (Niveau 5) avec tous les projets validés au premier passage.",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "JavaScript", "HTML5", "CSS3"],
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+    ],
     link: "https://github.com/Karvaneg",
   },
   {
@@ -28,4 +45,4 @@ export const experiences: readonly Experience[] = [
     technologies: ["Gestion d'équipe", "Qualité", "SAV technique"],
     link: null,
   },
-] as const
+] as const;

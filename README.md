@@ -17,7 +17,11 @@ Il présente une sélection de projets web, des composants UI, ainsi que mes cho
 - **Next.js** (App Router)
 - **React & TypeScript**
 - **Tailwind CSS / SCSS**
-- Design tokens & composants réutilisables
+- Design system & composants réutilisables
+- Mise en pratique des principes DevOps :
+  - Pipelines GitLab CI/CD
+  - Mirroring Git (GitLab → GitHub)
+  - Déploiements automatisés (en cours)
 
 ---
 
