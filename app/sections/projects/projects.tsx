@@ -14,7 +14,7 @@ import { ProjectTechnologies } from "./project-technologies"
 export function Projects() {
   return (
     <SectionContainer id="projets">
-        <SectionTitle>Projets Significatifs</SectionTitle>
+        <SectionTitle>Réalisations Significatives</SectionTitle>
         <div className={cn("grid md:grid-cols-2 gap-6")}>
             {projects.map((project, index) => (
                 <Card key={index} className={cn("group overflow-hidden hover:shadow-xl transition-shadow")}>
