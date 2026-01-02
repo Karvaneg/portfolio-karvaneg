@@ -7,7 +7,7 @@ Projets, compétences et design system personnel.
 
 ## À propos
 
-Ce dépôt contient le code source de mon portfolio personnel.  
+Ce dépôt contient le code source de mon portfolio professionnel.  
 Il présente une sélection de projets web, des composants UI, ainsi que mes choix techniques en matière d’architecture, d’accessibilité et de design.
 
 ---
