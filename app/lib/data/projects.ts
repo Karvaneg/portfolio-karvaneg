@@ -18,6 +18,31 @@ export const projects: readonly Project[] = [
     live: "https://crazee-burger-karvaneg-karvanegs-projects.vercel.app/",
   },
   {
+    title: "Karvaneg - Portfolio Professionnel",
+    description:
+      "Développement complet d’un portfolio professionnel avec Next.js et TypeScript, intégrant animations fluides, interface responsive et accessibilité optimisée. Ce projet m'a permis de découvrir de nouvelles technologies et d’expérimenter le codage assisté par l’IA pour accélérer le développement et tester de nouvelles approches.",
+    image: "/images/screen-portfolio-karvaneg.png",
+    hint: null,
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "SCSS",
+      "CSS Variables",
+      "Design System",
+      "Dark Mode",
+      "Responsive",
+      "Animations",
+      "SEO",
+      "Git/GitLab",
+      "Vercel",
+      "IA assistée",
+    ],
+    github: "https://github.com/Karvaneg/portfolio-karvaneg",
+    live: "https://portfolio-karvaneg.vercel.app/",
+  },
+  {
     title: "CBNSA - Site Institutionnel",
     description:
       "Refonte complète du site institutionnel du Conservatoire Botanique National Sud-Atlantique. Développement avec Symfony, intégration d'interfaces responsives, optimisation du référencement SEO, respect des standards WCAG pour l'accessibilité, et gestion de bases de données PostgreSQL/PostGIS.",
