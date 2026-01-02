@@ -115,7 +115,7 @@ export const projects: readonly Project[] = [
       "Agile",
     ],
     github: null,
-    live: "https://preprod.vsol-na.fr/",
+    live: null,
   },
   {
     title: "Groupomania - Réseau Social d'Entreprise",
