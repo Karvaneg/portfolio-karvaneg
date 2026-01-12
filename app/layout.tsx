@@ -1,8 +1,8 @@
 import "./globals.css";
 import { ThemeProvider } from "./providers";
 import { inter, jetbrainsMono, cinzel } from "@/app/lib/fonts"
-import type { metadata } from "@/app/lib/metadata"
-import type { viewport } from "@/app/lib/viewport"
+import { metadata } from "@/app/lib/metadata"
+import { viewport } from "@/app/lib/viewport"
 import ClientUtilities from "./client-utilities";
 
 export { metadata, viewport };
