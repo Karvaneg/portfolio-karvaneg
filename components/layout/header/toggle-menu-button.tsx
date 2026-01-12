@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 export function ToggleMenuButton({ isOpen, toggleMenu }: ToggleMenuButtonProps) {
   return (
     <button
+      type="button"
       onClick={toggleMenu}
       className={cn("md:hidden text-foreground cursor-pointer", dsTokens.space.sm)}
       aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}

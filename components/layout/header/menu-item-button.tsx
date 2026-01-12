@@ -15,6 +15,7 @@ export function MenuItemButton({
 
   return (
     <button
+      type="button"
       key={item.id}
       onClick={onClick}
       className={cn(baseClass, activeClass, className)}
