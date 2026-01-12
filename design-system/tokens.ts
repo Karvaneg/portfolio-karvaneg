@@ -4,6 +4,7 @@ export const dsTokens = {
     surface: "bg-surface",
     surfaceMuted: "bg-surface-muted",
     primarySoft: "bg-primary/10",
+    bgPrimary: "bg-primary",
 
     textPrimary: "text-foreground",
     textSecondary: "text-muted-foreground",
@@ -12,7 +13,7 @@ export const dsTokens = {
     onPrimary: "text-primary-foreground",
 
     border: "border-border",
-    borderBg: "bg-border", 
+    borderBg: "bg-border",
   },
 
   interaction: {
@@ -52,4 +53,4 @@ export const dsTokens = {
     slideUp: "animate-slide-up",
   },
 } as const;
-export type IconSize = typeof dsTokens.size[keyof typeof dsTokens.size];
+export type IconSize = (typeof dsTokens.size)[keyof typeof dsTokens.size];
