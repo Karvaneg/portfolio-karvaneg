@@ -30,3 +30,6 @@ next-env.d.ts
 # SSH keys
 id_rsa.pub
 id_rsa
+
+# Documentation files
+setup.local.md
