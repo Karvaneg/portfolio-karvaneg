@@ -1,6 +1,6 @@
 "use client"
 
-import { NavigationProps } from "@/types/header"
+import type { NavigationProps } from "@/types/header"
 import { DesktopMenu } from "./desktop-menu"
 import { ToggleMenuButton } from "./toggle-menu-button"
 

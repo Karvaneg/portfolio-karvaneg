@@ -1,4 +1,4 @@
-import { MenuItemButtonProps } from "@/types/header"
+import type { MenuItemButtonProps } from "@/types/header"
 import { dsTokens } from "@/design-system/tokens"
 import { cn } from "@/lib/utils"
 

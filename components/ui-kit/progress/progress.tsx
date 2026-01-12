@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils"
-import { ProgressProps } from "@/types/ui-kit"
+import type { ProgressProps } from "@/types/ui-kit"
 import { useId } from "react"
 import { clamp, normalize } from "./progress.utils"
 

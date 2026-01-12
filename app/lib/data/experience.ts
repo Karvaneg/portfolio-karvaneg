@@ -1,4 +1,4 @@
-import { Experience } from "@/types/data";
+import type { Experience } from "@/types/data";
 
 export const experiences: readonly Experience[] = [
   {

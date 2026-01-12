@@ -1,4 +1,4 @@
-import { IconSize } from "@/design-system/tokens";
+import type { IconSize } from "@/design-system/tokens";
 import { SocialIconButton } from "./social-icon-button";
 import { getSocialLinks } from "@/lib/social-links-utils";
 import { cn } from "@/lib/utils";

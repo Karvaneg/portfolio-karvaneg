@@ -1,6 +1,6 @@
 import { menuItems } from "@/app/lib/data/navigation"
 import { MenuItemButton } from "./menu-item-button"
-import { MenuItemsListProps } from "@/types/header"
+import type { MenuItemsListProps } from "@/types/header"
 import { cn } from "@/lib/utils"
 
 export function MenuItemsList({ activeSection, onMenuClick, itemClassName, role }: MenuItemsListProps) {

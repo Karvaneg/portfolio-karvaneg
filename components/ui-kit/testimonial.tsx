@@ -1,6 +1,6 @@
 import { dsTokens } from "@/design-system/tokens";
 import { cn } from "@/lib/utils";
-import { TestimonialProps } from "@/types/ui-kit";
+import type { TestimonialProps } from "@/types/ui-kit";
 
 type TestimonialComponentProps = TestimonialProps & {
   className?: string;

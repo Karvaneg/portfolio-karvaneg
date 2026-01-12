@@ -1,4 +1,4 @@
-import { ToggleMenuButtonProps } from "@/types/header"
+import type { ToggleMenuButtonProps } from "@/types/header"
 import { Menu, X } from "lucide-react"
 import { dsTokens } from "@/design-system/tokens"
 import { cn } from "@/lib/utils"

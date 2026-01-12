@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { LogoProps } from "@/types/header"
+import type { LogoProps } from "@/types/header"
 import { cn } from "@/lib/utils"
 
 export function Logo({ scrollToSection }: LogoProps) {

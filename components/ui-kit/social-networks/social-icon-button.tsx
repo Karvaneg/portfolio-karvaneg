@@ -1,10 +1,10 @@
-import { cloneElement, ReactElement } from "react";
+
+import type { ReactElement } from "react";
+import { cloneElement } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import {
-  getSocialIconVariantConfig,
-  SocialIconVariant,
-} from "./social-icon-variants";
+import type { SocialIconVariant } from "./social-icon-variants";
+import { getSocialIconVariantConfig } from "./social-icon-variants";
 
 export interface SocialIconButtonProps {
   href: string;

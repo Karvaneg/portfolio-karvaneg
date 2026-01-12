@@ -1,4 +1,4 @@
-import { TestimonialProps } from "@/types/ui-kit";
+import type { TestimonialProps } from "@/types/ui-kit";
 
 export const testimonialsData: readonly TestimonialProps[] = [
   {

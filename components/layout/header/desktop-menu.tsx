@@ -1,4 +1,4 @@
-import { DesktopMenuProps } from "@/types/header"
+import type { DesktopMenuProps } from "@/types/header"
 import { MenuItemsList } from "./menu-items-list"
 import { ContactButton } from "./contact-button"
 import { cn } from "@/lib/utils"

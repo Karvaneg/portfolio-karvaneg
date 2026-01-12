@@ -1,4 +1,4 @@
-import { SkillCategory } from "@/types/data"
+import type { SkillCategory } from "@/types/data"
 import { Card, CardContent } from "@/components/ui/card"
 import { SectionSubTitle } from "@/components/ui-kit/section/section-sub-title"
 import { SkillItem } from "./skill-item"

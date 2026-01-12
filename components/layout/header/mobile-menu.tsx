@@ -1,4 +1,4 @@
-import { MobileMenuProps } from "@/types/header"
+import type { MobileMenuProps } from "@/types/header"
 import { MenuItemsList } from "./menu-items-list"
 import { ContactButton } from "./contact-button"
 import { cn } from "@/lib/utils"

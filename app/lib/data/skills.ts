@@ -6,7 +6,7 @@ import {
   Rocket,
   GitBranch,
 } from "lucide-react";
-import { SkillCategory } from "@/types/data";
+import type { SkillCategory } from "@/types/data";
 
 export const skillCategories: readonly SkillCategory[] = [
   {

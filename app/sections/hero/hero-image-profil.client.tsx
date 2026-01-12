@@ -4,7 +4,7 @@ import { useCopyToClipboard } from "@/app/hooks/use-copy-to-clipboard";
 import { contactData } from "@/app/lib/data/contact";
 import { dsTokens } from "@/design-system/tokens";
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export function HeroImageProfilClient({ children }: { children: ReactNode }) {
   const { copy } = useCopyToClipboard();

@@ -1,4 +1,4 @@
-import { Project } from "@/types/data";
+import type { Project } from "@/types/data";
 
 export const projects: readonly Project[] = [
   {
