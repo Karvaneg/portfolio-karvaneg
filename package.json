@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
     "build": "pnpm lint && next build",
-    "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx --max-warnings=0"
+    "start": "next start"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

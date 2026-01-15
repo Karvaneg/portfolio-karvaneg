@@ -1,6 +1,6 @@
 import { SocialLinksGroup } from "@/components/ui-kit/social-networks/social-links-group"
 import { HeroDescriptionProfil } from "./hero-decription-profil"
-import { HeroImageProfil } from "./hero-image-profil.server"
+import { HeroImageProfil } from "./hero-image-profil"
 import { cn } from "@/lib/utils"
 import { HeroTestimonial } from "./hero-testimonial"
 
