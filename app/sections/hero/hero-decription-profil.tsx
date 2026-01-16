@@ -8,7 +8,7 @@ export function HeroDescriptionProfil() {
     <>
         <div className={cn("space-y-4")}>
             <h1 className={cn("text-5xl md:text-7xl font-bold text-balance")}>{profileData.name}</h1>
-            <p className={cn("text-xl md:text-2xl", dsTokens.color.textSecondary)}>{profileData.title}</p>
+            <h2 className={cn("text-xl md:text-2xl", dsTokens.color.textSecondary)}>{profileData.title}</h2>
         </div>
         
         <VerticalMarker>
