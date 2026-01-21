@@ -1,8 +1,7 @@
-
-import { cn } from "@/lib/utils"
-import type { ProgressProps } from "@/types/ui-kit"
-import { useId } from "react"
-import { clamp, normalize } from "./progress.utils"
+import { cn } from '@/lib/utils';
+import type { ProgressProps } from '@/types/ui-kit';
+import { useId } from 'react';
+import { clamp, normalize } from './progress.utils';
 
 export function Progress({
   value,
@@ -13,13 +12,13 @@ export function Progress({
   showValue = true,
   className,
 }: ProgressProps) {
-  const id = useId()
+  const id = useId();
 
-  const normalizedValue = clamp(normalize(value, step), min, max)
-  const percentage = ((normalizedValue - min) / (max - min)) * 100
+  const normalizedValue = clamp(normalize(value, step), min, max);
+  const percentage = ((normalizedValue - min) / (max - min)) * 100;
 
   return (
-    <div className={cn("space-y-2", className)}>
+    <div className={cn('space-y-2', className)}>
       {/* Label */}
       <div className="flex items-center justify-between">
         <span id={id} className="text-sm font-medium">
@@ -27,12 +26,9 @@ export function Progress({
         </span>
 
         {showValue && (
-          <span
-            className="text-sm text-muted-foreground"
-            aria-hidden="true"
-          >
+          <span className="text-sm text-muted-foreground" aria-hidden="true">
             {normalizedValue}
-            {max === 100 && " %"}
+            {max === 100 && ' %'}
           </span>
         )}
       </div>
@@ -47,8 +43,8 @@ export function Progress({
         aria-valuetext={`${normalizedValue} sur ${max}`}
         tabIndex={0}
         className={cn(
-          "relative h-2 overflow-hidden rounded-full bg-muted",
-          "focus-visible:outline-2 focus-visible:outline-primary"
+          'relative h-2 overflow-hidden rounded-full bg-muted',
+          'focus-visible:outline-2 focus-visible:outline-primary',
         )}
       >
         <div
@@ -62,5 +58,5 @@ export function Progress({
         {label} : {normalizedValue} sur {max}
       </p>
     </div>
-  )
+  );
 }

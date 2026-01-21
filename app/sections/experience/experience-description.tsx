@@ -1,11 +1,9 @@
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils';
 
 interface ExperienceDescriptionProps {
-  description: string
+  description: string;
 }
 
 export function ExperienceDescription({ description }: ExperienceDescriptionProps) {
-  return (
-    <p className={cn("text-muted-foreground leading-relaxed text-pretty")}>{description}</p>       
-  )
+  return <p className={cn('text-muted-foreground leading-relaxed text-pretty')}>{description}</p>;
 }

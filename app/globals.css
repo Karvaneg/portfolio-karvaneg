@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,7 +72,7 @@ DESIGN SYSTEM – GLOBAL CONTRACT
   --surface: var(--card);
   --surface-muted: var(--muted);
   --text-primary: var(--foreground);
-  --text-secondary: var(--muted-foreground)
+  --text-secondary: var(--muted-foreground);
 }
 
 .dark {

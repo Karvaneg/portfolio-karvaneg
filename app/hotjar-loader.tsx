@@ -1,48 +1,43 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Script from "next/script";
-import CookieBanner from "./cookie-banner";
+import { useState } from 'react';
+import Script from 'next/script';
+import CookieBanner from './cookie-banner';
 
-const CONSENT_KEY = "analytics_consent";
+const CONSENT_KEY = 'analytics_consent';
 
-type Consent = "accepted" | "refused" | null;
+type Consent = 'accepted' | 'refused' | null;
 
 export default function HotjarLoader() {
   const [consent, setConsent] = useState<Consent>(() => {
-    if (typeof window === "undefined") return null;
+    if (typeof window === 'undefined') return null;
     return (localStorage.getItem(CONSENT_KEY) as Consent) ?? null;
   });
 
   const [forceOpen, setForceOpen] = useState(false);
 
   const accept = () => {
-    localStorage.setItem(CONSENT_KEY, "accepted");
-    setConsent("accepted");
+    localStorage.setItem(CONSENT_KEY, 'accepted');
+    setConsent('accepted');
     setForceOpen(false);
   };
 
   const refuse = () => {
-    localStorage.setItem(CONSENT_KEY, "refused");
-    setConsent("refused");
+    localStorage.setItem(CONSENT_KEY, 'refused');
+    setConsent('refused');
     setForceOpen(false);
   };
 
   return (
     <>
-      {consent === "accepted" && (
+      {consent === 'accepted' && (
         <Script
           src="https://t.contentsquare.net/uxa/134e75707d647.js"
           strategy="afterInteractive"
         />
       )}
 
-      <CookieBanner
-        consent={consent}
-        forceOpen={forceOpen}
-        onAccept={accept}
-        onRefuse={refuse}
-      />
+      <CookieBanner consent={consent} forceOpen={forceOpen} onAccept={accept} onRefuse={refuse} />
 
       <button
         type="button"

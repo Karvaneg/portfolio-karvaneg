@@ -1,22 +1,26 @@
-import type { IconSize } from "@/design-system/tokens";
-import { SocialIconButton } from "./social-icon-button";
-import { getSocialLinks } from "@/lib/social-links-utils";
-import { cn } from "@/lib/utils";
+import type { IconSize } from '@/design-system/tokens';
+import { SocialIconButton } from './social-icon-button';
+import { getSocialLinks } from '@/lib/social-links-utils';
+import { cn } from '@/lib/utils';
 
-export type SocialLinksGroupVariant = "hero" | "footer";
+export type SocialLinksGroupVariant = 'hero' | 'footer';
 
 interface SocialLinksGroupProps {
-  className?: string
-  iconClassName?: IconSize
+  className?: string;
+  iconClassName?: IconSize;
   variant?: SocialLinksGroupVariant;
 }
 
-export function SocialLinksGroup({ className, iconClassName, variant = "hero" }: SocialLinksGroupProps = {}) {
+export function SocialLinksGroup({
+  className,
+  iconClassName,
+  variant = 'hero',
+}: SocialLinksGroupProps = {}) {
   const socialLinks = getSocialLinks(iconClassName);
 
   return (
-    <nav className={cn("flex items-center gap-4")} aria-label="Liens réseaux sociaux et contact">
-      {socialLinks.map(link => (
+    <nav className={cn('flex items-center gap-4')} aria-label="Liens réseaux sociaux et contact">
+      {socialLinks.map((link) => (
         <SocialIconButton
           key={link.id}
           href={link.href}

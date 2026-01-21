@@ -1,8 +1,6 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next';
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  process.env.NEXT_LOCAL_SITE_URL!;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_LOCAL_SITE_URL!;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
