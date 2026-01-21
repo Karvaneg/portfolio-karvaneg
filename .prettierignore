@@ -1,0 +1,35 @@
+# Dependencies
+/node_modules
+.pnpm-store/
+
+# Next.js build output
+/.next/
+
+# Testing / coverage
+/coverage
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs & debug
+.pnpm-debug.log*
+*.log
+
+# Editor directories and files
+.vscode
+
+# Environment variables
+.env*
+!.env.example
+
+# Misc / secrets
+*.pem
+.vercel
+
+# SSH keys
+id_rsa.pub
+id_rsa
+
+# Documentation files
+setup.local.md

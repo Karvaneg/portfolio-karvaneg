@@ -1,15 +1,14 @@
-
-import type { ReactElement } from "react";
-import { cloneElement } from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import type { SocialIconVariant } from "./social-icon-variants";
-import { getSocialIconVariantConfig } from "./social-icon-variants";
+import type { ReactElement } from 'react';
+import { cloneElement } from 'react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import type { SocialIconVariant } from './social-icon-variants';
+import { getSocialIconVariantConfig } from './social-icon-variants';
 
 export interface SocialIconButtonProps {
   href: string;
   label: string;
-  icon: ReactElement<{ className?: string }>
+  icon: ReactElement<{ className?: string }>;
   variant?: SocialIconVariant;
   className?: string;
 }
@@ -18,11 +17,10 @@ export function SocialIconButton({
   href,
   label,
   icon,
-  variant = "hero",
+  variant = 'hero',
   className,
 }: SocialIconButtonProps) {
-  const { wrapper, icon: iconSize } =
-    getSocialIconVariantConfig(variant);
+  const { wrapper, icon: iconSize } = getSocialIconVariantConfig(variant);
 
   return (
     <Link
@@ -40,4 +38,3 @@ export function SocialIconButton({
     </Link>
   );
 }
-

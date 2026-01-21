@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { dsTokens } from "@/design-system/tokens";
-import { ariaLabels } from "@/design-system/a11y";
+import { useTheme } from 'next-themes';
+import { Moon, Sun } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { dsTokens } from '@/design-system/tokens';
+import { ariaLabels } from '@/design-system/a11y';
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <button
@@ -16,9 +16,9 @@ export function ThemeToggle() {
       role="switch"
       aria-checked={isDark}
       aria-label={ariaLabels.toggleTheme(isDark)}
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className={cn(
-        "inline-flex items-center justify-center transition-colors mt-2 ml-8 cursor-pointer",
+        'inline-flex items-center justify-center transition-colors mt-2 ml-8 cursor-pointer',
         dsTokens.size.iconLg,
         dsTokens.radius.md,
         dsTokens.interaction.hoverTextPrimary,
@@ -32,4 +32,3 @@ export function ThemeToggle() {
     </button>
   );
 }
-

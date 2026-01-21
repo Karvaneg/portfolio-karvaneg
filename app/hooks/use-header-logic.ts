@@ -1,14 +1,14 @@
-import { useActiveSection, useMenuState, useScrollToSection } from "./use-navigation"
+import { useActiveSection, useMenuState, useScrollToSection } from './use-navigation';
 
 export function useHeaderLogic() {
-  const activeSection = useActiveSection()
-  const { isOpen, toggleMenu, closeMenu } = useMenuState()
-  const scrollToSection = useScrollToSection()
+  const activeSection = useActiveSection();
+  const { isOpen, toggleMenu, closeMenu } = useMenuState();
+  const scrollToSection = useScrollToSection();
 
   const handleMenuClick = (sectionId: string) => {
-    scrollToSection(sectionId)
-    closeMenu()
-  }
+    scrollToSection(sectionId);
+    closeMenu();
+  };
 
   return {
     activeSection,
@@ -16,5 +16,5 @@ export function useHeaderLogic() {
     toggleMenu,
     handleMenuClick,
     scrollToSection,
-  }
+  };
 }

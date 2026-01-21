@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import type { NavigationProps } from "@/types/header"
-import { DesktopMenu } from "./desktop-menu"
-import { ToggleMenuButton } from "./toggle-menu-button"
+import type { NavigationProps } from '@/types/header';
+import { DesktopMenu } from './desktop-menu';
+import { ToggleMenuButton } from './toggle-menu-button';
 
 export function Navigation({
   activeSection,
@@ -11,7 +11,6 @@ export function Navigation({
   onMenuClick,
   scrollToSection,
 }: NavigationProps) {
-
   return (
     <>
       <DesktopMenu
@@ -19,10 +18,7 @@ export function Navigation({
         onMenuClick={onMenuClick}
         scrollToSection={scrollToSection}
       />
-      <ToggleMenuButton
-        isOpen={isOpen}
-        toggleMenu={toggleMenu}
-      />
+      <ToggleMenuButton isOpen={isOpen} toggleMenu={toggleMenu} />
     </>
-  )
+  );
 }

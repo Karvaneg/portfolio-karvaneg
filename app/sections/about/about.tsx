@@ -1,9 +1,7 @@
-
-import { SectionContainer } from "@/components/ui-kit/section/section-container";
-import { SectionTitle } from "@/components/ui-kit/section/section-title";
-import { Description } from "./about-description";
-import { Technologies } from "./about-technologies";
-
+import { SectionContainer } from '@/components/ui-kit/section/section-container';
+import { SectionTitle } from '@/components/ui-kit/section/section-title';
+import { Description } from './about-description';
+import { Technologies } from './about-technologies';
 
 export function About() {
   return (
@@ -12,5 +10,5 @@ export function About() {
       <Description />
       <Technologies />
     </SectionContainer>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import dynamic from "next/dynamic"
+import dynamic from 'next/dynamic';
 
 export const ThemeProvider = dynamic(
-  () => import("./theme-provider").then(m => m.ThemeProviderClient),
-  { ssr: false }
-)
+  () => import('./theme-provider').then((m) => m.ThemeProviderClient),
+  { ssr: false },
+);
