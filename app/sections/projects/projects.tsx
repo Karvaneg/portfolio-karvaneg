@@ -18,7 +18,7 @@ export function Projects() {
       <div className={cn('grid md:grid-cols-2 gap-6')}>
         {projects.map((project, index) => (
           <Card
-            key={index}
+            key={project.title}
             className={cn('group overflow-hidden hover:shadow-xl transition-shadow')}
           >
             <CardContent className={cn(dsTokens.space.xxs)}>
