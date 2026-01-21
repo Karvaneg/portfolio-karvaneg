@@ -3,7 +3,7 @@ import { projects } from '@/app/lib/data/projects';
 import { SectionTitle } from '@/components/ui-kit/section/section-title';
 import { SectionContainer } from '@/components/ui-kit/section/section-container';
 import { ProjectScreen } from './project-screen';
-import { ProjectHeader } from './projectHeader/project-header';
+import { ProjectHeader } from './project-header/project-header';
 
 import { HintText } from '@/components/ui-kit/hint-text';
 import { cn } from '@/lib/utils';
