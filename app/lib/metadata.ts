@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Karvaneg – Développeuse Full Stack',
     description: 'Portfolio – React, Next.js, TypeScript, Symfony.',
-    images: ['/og-image.png'],
+    images: ['/images/og-image.png'],
   },
 
   icons: {
