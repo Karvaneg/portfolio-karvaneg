@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Script from 'next/script';
 import CookieBanner from './cookie-banner';
 
@@ -11,26 +11,61 @@ type Consent = 'accepted' | 'refused' | null;
 export default function HotjarLoader() {
   const [consent, setConsent] = useState<Consent>(() => {
     if (typeof window === 'undefined') return null;
-    return (localStorage.getItem(CONSENT_KEY) as Consent) ?? null;
+    const value = localStorage.getItem(CONSENT_KEY);
+    return value === 'accepted' || value === 'refused' ? value : null;
   });
 
   const [forceOpen, setForceOpen] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const accept = () => {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+    }
     setConsent('accepted');
     setForceOpen(false);
   };
 
   const refuse = () => {
-    localStorage.setItem(CONSENT_KEY, 'refused');
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(CONSENT_KEY, 'refused');
+    }
     setConsent('refused');
     setForceOpen(false);
   };
 
+  const markInteraction = useCallback(() => {
+    setHasInteracted(true);
+  }, []);
+
+  useEffect(() => {
+    if (consent !== 'accepted') return undefined;
+
+    window.addEventListener('click', markInteraction, { once: true });
+    window.addEventListener('scroll', markInteraction, { once: true });
+    window.addEventListener('keydown', markInteraction, { once: true });
+
+    const fallbackTimer = window.setTimeout(() => {
+      markInteraction();
+    }, 500);
+
+    return () => {
+      window.removeEventListener('click', markInteraction);
+      window.removeEventListener('scroll', markInteraction);
+      window.removeEventListener('keydown', markInteraction);
+      window.clearTimeout(fallbackTimer);
+    };
+  }, [consent, markInteraction]);
+
+  useEffect(() => {
+    if (consent) {
+      console.log(`[Analytics] User consent: ${consent}`);
+    }
+  }, [consent]);
+
   return (
     <>
-      {consent === 'accepted' && (
+      {consent === 'accepted' && hasInteracted && (
         <Script
           src="https://t.contentsquare.net/uxa/134e75707d647.js"
           strategy="afterInteractive"
