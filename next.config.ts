@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { CONTENT_SECURITY_POLICY } from './lib/security';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -13,6 +14,7 @@ const nextConfig: NextConfig = {
       headers: [
         { key: 'X-Content-Type-Options', value: 'nosniff' },
         { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+        { key: 'Content-Security-Policy', value: CONTENT_SECURITY_POLICY },
       ],
     },
   ],
