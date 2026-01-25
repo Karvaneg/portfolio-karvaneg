@@ -6,6 +6,7 @@ const TRUSTED_SCRIPT_DOMAINS = [
   'https://vars.hotjar.com',
   'https://vitals.vercel-insights.com',
   'https://va.vercel-scripts.com',
+  'https://t.contentsquare.net/uxa',
 ];
 
 const TRUSTED_CONNECT_DOMAINS = [
