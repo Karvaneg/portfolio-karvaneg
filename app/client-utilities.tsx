@@ -10,10 +10,13 @@ const SpeedInsights = dynamic(
 const HotjarLoader = dynamic(() => import('./hotjar-loader'), { ssr: false });
 
 export default function ClientUtilities() {
+  
+  const isVercelProd = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
+
   return (
     <>
       <Toaster />
-      <SpeedInsights />
+      {isVercelProd && <SpeedInsights />}
       <HotjarLoader />
     </>
   );
