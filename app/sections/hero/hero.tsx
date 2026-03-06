@@ -21,7 +21,7 @@ export function Hero() {
           <HeroImageProfil />
           <div className={cn('space-y-8 flex-1')}>
             <HeroDescriptionProfil />
-            <SocialLinksGroup />
+            <SocialLinksGroup label="Navigation principale - Liens réseaux sociaux et contact" />
           </div>
         </div>
         <HeroTestimonial featuredTestimonial={featuredTestimonial} />

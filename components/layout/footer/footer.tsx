@@ -8,7 +8,7 @@ export function Footer() {
       <div className={cn('container mx-auto px-4')}>
         <div className={cn('flex flex-col md:flex-row items-center justify-between gap-4')}>
           <FooterBranding />
-          <SocialLinksGroup variant="footer" />
+          <SocialLinksGroup variant="footer" label="Navigation footer - Liens réseaux sociaux et contact" />
         </div>
       </div>
     </footer>

@@ -9,17 +9,19 @@ interface SocialLinksGroupProps {
   className?: string;
   iconClassName?: IconSize;
   variant?: SocialLinksGroupVariant;
+  label: string;
 }
 
 export function SocialLinksGroup({
   className,
   iconClassName,
   variant = 'hero',
-}: SocialLinksGroupProps = {}) {
+  label,
+}: SocialLinksGroupProps) {
   const socialLinks = getSocialLinks(iconClassName);
 
   return (
-    <nav className={cn('flex items-center gap-4')} aria-label="Liens réseaux sociaux et contact">
+    <nav className={cn('flex items-center gap-4')} aria-label={label}>
       {socialLinks.map((link) => (
         <SocialIconButton
           key={link.id}
