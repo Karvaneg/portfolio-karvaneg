@@ -28,9 +28,9 @@ export const Testimonial: React.FC<TestimonialComponentProps> = ({
     >
       <blockquote>“{text}”</blockquote>
       <figcaption className="flex flex-col items-end">
-        <span className="font-semibold">{author}</span>
+        <span className="font-semibold text-foreground">{author}</span>
         {(role || company) && (
-          <span className="text-sm">
+          <span className="text-sm text-foreground/80">
             {role && <span>{role}</span>}
             {role && company && <span>, </span>}
             {company && <span>{company}</span>}

@@ -19,7 +19,9 @@ export function ProjectLinks({ links }: ProjectLinksProps) {
           href={links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn('text-muted-foreground hover:text-foreground transition-colors')}
+          className={cn(
+            'text-foreground/80 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm',
+          )}
           aria-label={`Voir le code source de ${links.title} sur GitHub`}
         >
           <Github className={cn(dsTokens.size.iconLg)} aria-hidden="true" />
@@ -30,7 +32,9 @@ export function ProjectLinks({ links }: ProjectLinksProps) {
           href={links.live}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn('text-muted-foreground hover:text-foreground transition-colors')}
+          className={cn(
+            'text-foreground/80 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm',
+          )}
           aria-label={`Voir ${links.title} en ligne`}
         >
           <ExternalLink className={cn(dsTokens.size.iconLg)} aria-hidden="true" />

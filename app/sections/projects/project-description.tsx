@@ -6,6 +6,6 @@ interface ProjectDescriptionProps {
 
 export function ProjectDescription({ description }: ProjectDescriptionProps) {
   return (
-    <p className={cn('text-muted-foreground text-sm leading-relaxed text-pretty')}>{description}</p>
+    <p className={cn('text-sm leading-relaxed text-pretty text-foreground/80')}>{description}</p>
   );
 }

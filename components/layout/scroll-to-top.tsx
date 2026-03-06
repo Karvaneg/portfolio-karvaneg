@@ -33,7 +33,7 @@ export function ScrollToTop() {
       aria-label="Retour en haut de page"
       className={cn(
         dsTokens.radius.pill,
-        'fixed bottom-8 right-8 z-50 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110',
+        'fixed bottom-4 right-4 z-50 cursor-pointer shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus-visible:ring-offset-2 focus-visible:ring-offset-background',
       )}
     >
       <ArrowUp className={cn(dsTokens.size.iconLg)} aria-hidden="true" />

@@ -25,7 +25,7 @@ export function HeroImageProfilClient() {
         'flex items-end justify-center pb-4 group',
       )}
     >
-      <div className="rounded-full bg-black/70 px-3 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+      <div className="rounded-full border border-border bg-card/90 px-3 py-1 text-xs font-medium text-card-foreground opacity-0 shadow-sm backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100">
         Copier mon email
       </div>
     </div>

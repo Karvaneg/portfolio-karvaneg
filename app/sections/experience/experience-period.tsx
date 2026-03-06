@@ -6,6 +6,6 @@ interface ExperiencePeriodProps {
 
 export function ExperiencePeriod({ period }: ExperiencePeriodProps) {
   return (
-    <div className={cn('text-sm text-muted-foreground uppercase tracking-wide pt-1')}>{period}</div>
+    <div className={cn('pt-1 text-sm uppercase tracking-wide text-foreground/80')}>{period}</div>
   );
 }

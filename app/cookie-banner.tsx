@@ -42,7 +42,7 @@ export default function CookieBanner({
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-description"
       className={cn(
-        'fixed bottom-4 left-4 right-4 z-150 max-w-xl mx-auto bg-white text-black shadow-lg',
+        'fixed bottom-4 left-4 right-4 z-150 mx-auto max-w-xl border border-border bg-card text-card-foreground shadow-lg',
         dsTokens.space.lg,
         dsTokens.radius.xl,
         dsTokens.motion.fadeIn,
@@ -61,9 +61,8 @@ export default function CookieBanner({
         <button
           type="button"
           className={cn(
-            'px-3 py-1 text-sm bg-black hover:bg-black/80 focus-visible:outline focus-visible:outline-offset-2',
+            'px-3 py-1 text-sm border border-border bg-muted text-foreground hover:bg-muted/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card',
             dsTokens.radius.sm,
-            dsTokens.color.onPrimary,
           )}
           onClick={onRefuse}
         >
@@ -74,7 +73,7 @@ export default function CookieBanner({
           type="button"
           autoFocus
           className={cn(
-            'px-3 py-1 text-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-offset-2',
+            'px-3 py-1 text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card',
             dsTokens.color.bgPrimary,
             dsTokens.color.onPrimary,
             dsTokens.radius.sm,

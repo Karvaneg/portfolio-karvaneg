@@ -78,7 +78,7 @@ export default function HotjarLoader() {
         type="button"
         onClick={() => setForceOpen(true)}
         aria-label="Ouvrir le panneau de gestion des cookies"
-        className="fixed bottom-4 right-4 z-40 text-xs underline text-neutral-500 hover:text-neutral-700"
+        className="fixed bottom-4 right-20 z-40 rounded-md border border-border bg-background/90 px-3 py-1.5 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         Gérer les cookies
       </button>

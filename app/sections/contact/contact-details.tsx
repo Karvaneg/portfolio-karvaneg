@@ -19,7 +19,11 @@ export function ContactDetails() {
         <Phone className={cn(dsTokens.size.iconMd)} aria-hidden="true" />
         <a
           href={`tel:${contactData.phone}`}
-          className={cn(dsTokens.interaction.hoverTextPrimary, dsTokens.motion.base)}
+          className={cn(
+            'rounded-sm text-foreground/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+            dsTokens.interaction.hoverTextPrimary,
+            dsTokens.motion.base,
+          )}
         >
           {contactData.phoneDisplay}
         </a>

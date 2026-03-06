@@ -6,5 +6,5 @@ interface HintTextProps {
 }
 
 export function HintText({ children, className }: HintTextProps) {
-  return <p className={cn('text-xs text-muted-foreground/80 italic', className)}>{children}</p>;
+  return <p className={cn('text-xs text-muted-foreground italic', className)}>{children}</p>;
 }
