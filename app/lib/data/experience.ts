@@ -6,8 +6,8 @@ export const experiences: readonly Experience[] = [
     title: 'Développeuse Fullstack',
     company: 'Conservatoire Botanique National Sud-Atlantique',
     description:
-      'Développement de portails thématiques et refonte du site institutionnel. Conception d’interfaces web responsives accessibles (WCAG), optimisation SEO et performances. Modélisation et optimisation de bases PostgreSQL/PostGIS, développement Symfony et intégration d’API tierces. Rédaction de cahiers des charges techniques, tests fonctionnels et unitaires, documentation.',
-    technologies: ['Symfony', 'Twig', 'PostgreSQL', 'PostGIS', 'Docker', 'Sass', 'PHP', 'API REST'],
+      'Développement de portails thématiques et refonte du site institutionnel. Conception d’interfaces web responsives accessibles (WCAG), optimisation SEO et performances. Modélisation et optimisation de bases PostgreSQL, développement Symfony et intégration d’API tierces. Rédaction de cahiers des charges techniques, tests fonctionnels et unitaires, documentation.',
+    technologies: ['Symfony', 'Twig', 'PostgreSQL', 'Docker', 'Sass', 'PHP', 'API REST'],
     link: 'https://cbnsa.fr/',
   },
   {

@@ -51,7 +51,7 @@ export const projects: readonly Project[] = [
   {
     title: 'CBNSA - Site Institutionnel',
     description:
-      "Refonte complète du site institutionnel du Conservatoire Botanique National Sud-Atlantique. Développement avec Symfony, intégration d'interfaces responsives, optimisation du référencement SEO, respect des standards WCAG pour l'accessibilité, et gestion de bases de données PostgreSQL/PostGIS.",
+      "Refonte complète du site institutionnel du Conservatoire Botanique National Sud-Atlantique. Développement avec Symfony, intégration d'interfaces responsives, optimisation du référencement SEO, respect des standards WCAG pour l'accessibilité, et gestion de bases de données PostgreSQL.",
     image: '/images/screen-cbnsa.png',
     hint: null,
     technologies: [
@@ -59,7 +59,6 @@ export const projects: readonly Project[] = [
       'PHP',
       'Twig',
       'PostgreSQL',
-      'PostGIS',
       'Docker',
       'Sass',
       'API REST',
@@ -80,7 +79,6 @@ export const projects: readonly Project[] = [
       'PHP',
       'Twig',
       'PostgreSQL',
-      'PostGIS',
       'JavaScript',
       'TypeScript',
       'Docker',
