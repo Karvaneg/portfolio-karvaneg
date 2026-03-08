@@ -1,8 +1,15 @@
 import { cn } from '@/lib/utils';
 import { TechBadge } from './tech-badge';
 
+export interface TechBadgeItem {
+  label: string;
+  starred?: boolean;
+}
+
+type TechBadgeEntry = string | TechBadgeItem;
+
 interface TechBadgeListProps {
-  technologies: readonly string[];
+  technologies: readonly TechBadgeEntry[];
   size?: 'sm' | 'xs';
   className?: string;
   ariaLabel?: string;
@@ -16,9 +23,10 @@ export function TechBadgeList({
 }: TechBadgeListProps) {
   return (
     <div role="list" aria-label={ariaLabel} className={cn('flex flex-wrap gap-2', className)}>
-      {technologies.map((tech) => (
-        <TechBadge key={tech} label={tech} size={size} />
-      ))}
+      {technologies.map((tech, index) => {
+        const entry = typeof tech === 'string' ? { label: tech } : tech;
+        return <TechBadge key={`${entry.label}-${index}`} label={entry.label} size={size} starred={entry.starred} />;
+      })}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { dsTokens } from '@/design-system/tokens';
 import { cn } from '@/lib/utils';
+import { Star } from 'lucide-react';
 
 type TechBadgeSize = 'sm' | 'xs';
 
@@ -7,9 +8,10 @@ interface TechBadgeProps {
   label: string;
   size?: TechBadgeSize;
   className?: string;
+  starred?: boolean;
 }
 
-export function TechBadge({ label, size = 'sm', className }: TechBadgeProps) {
+export function TechBadge({ label, size = 'sm', className, starred = false }: TechBadgeProps) {
   return (
     <span
       role="listitem"
@@ -39,6 +41,16 @@ export function TechBadge({ label, size = 'sm', className }: TechBadgeProps) {
         className,
       )}
     >
+      {starred ? (
+        <Star
+          aria-hidden="true"
+          className={cn(
+            'mr-1.5 fill-current text-amber-400',
+            size === 'sm' && 'h-3.5 w-3.5',
+            size === 'xs' && 'h-3 w-3',
+          )}
+        />
+      ) : null}
       {label}
     </span>
   );
