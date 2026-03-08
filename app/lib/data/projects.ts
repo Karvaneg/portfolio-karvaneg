@@ -2,29 +2,28 @@ import type { Project } from '@/types/data';
 
 export const projects: readonly Project[] = [
   {
-    title: 'Crazee Burger - Application React Avancée',
+    title:
+      "InclusiShield | SaaS Founder & Lead Dev - Plateforme d'audit d'accessibilité automatisé par l'IA",
     description:
-      "Application React développée dans un cadre d'apprentissage orienté entreprise avec mise en situation professionnelle. Architecture avancée, gestion d'état avec Context API, composants réutilisables, hooks avancés et intégration Firebase pour l'authentification et la base de données temps réel.",
-    image: '/images/screen-crazee-burger-karvaneg.png',
-    hint: "Cliquez sur l'icône ci-dessus pour suivre l'évolution de ce projet",
+      "InclusiShield est une plateforme d’audit d’accessibilité numérique augmentée par l’intelligence artificielle, conçue pour transformer des diagnostics techniques en rapports stratégiques exploitables. J'ai développé un moteur de scan robuste s’appuyant sur les standards Axe-core et Playwright, capable de s’affranchir des contraintes de sécurité complexes comme les politiques CSP ou les certificats SSL tout en maximisant les performances en environnement Cloud. L'infrastructure repose sur une architecture orientée événement qui orchestre l’automatisation marketing via Loops et Resend, intégrant un monitoring de production en temps réel pour une fiabilité optimale. Le livrable final est assuré par un système de génération de rapports PDF « Print-Ready » offrant une hiérarchie visuelle premium et une gestion dynamique des scores de conformité.",
+    image: '/images/screen-inclusishield.png',
+    hint: null,
     technologies: [
-      'React',
-      'Firebase',
-      'Context API',
-      'React Router',
-      'Styled-components',
-      'Git/GitLab',
-      'Mirroring Git',
-      'Vercel',
-      'Agile',
+      'Next.js',
+      'TypeScript',
+      'Playwright (Browserless)',
+      'Groq AI',
+      'Redis (Upstash)',
+      'Stripe API',
+      'Tailwind CSS',
     ],
-    github: 'https://github.com/Karvaneg/crazee-burger',
-    live: 'https://crazee-burger-karvaneg-karvanegs-projects.vercel.app/',
+    github: null,
+    live: 'https://inclusishield.fr/',
   },
   {
     title: 'Karvaneg - Portfolio Professionnel',
     description:
-      "Développement complet d’un portfolio professionnel avec Next.js et TypeScript, intégrant animations fluides, interface responsive et accessibilité optimisée. Ce projet m'a permis de découvrir de nouvelles technologies et d’expérimenter le codage assisté par l’IA pour accélérer le développement et tester de nouvelles approches.",
+      "Conception et architecture d’une vitrine numérique haute performance utilisant Next.js et TypeScript. Ce projet démontre ma capacité à créer des interfaces fluides et responsives tout en respectant les standards les plus stricts d'accessibilité. J'ai optimisé le cycle de production par l'orchestration d'agents IA, une méthodologie que j'ai industrialisée pour accélérer le développement tout en garantissant une qualité de code irréprochable. ",
     image: '/images/screen-portfolio-karvaneg.png',
     hint: null,
     technologies: [
@@ -47,6 +46,26 @@ export const projects: readonly Project[] = [
     ],
     github: 'https://github.com/Karvaneg/portfolio-karvaneg',
     live: 'https://portfolio-karvaneg.vercel.app/',
+  },
+  {
+    title: 'Crazee Burger - Application React Avancée',
+    description:
+      "Application React développée dans un cadre d'apprentissage orienté entreprise avec mise en situation professionnelle. Architecture avancée, gestion d'état avec Context API, composants réutilisables, hooks avancés et intégration Firebase pour l'authentification et la base de données temps réel.",
+    image: '/images/screen-crazee-burger-karvaneg.png',
+    hint: "Cliquez sur l'icône ci-dessus pour suivre l'évolution de ce projet",
+    technologies: [
+      'React',
+      'Firebase',
+      'Context API',
+      'React Router',
+      'Styled-components',
+      'Git/GitLab',
+      'Mirroring Git',
+      'Vercel',
+      'Agile',
+    ],
+    github: 'https://github.com/Karvaneg/crazee-burger',
+    live: 'https://crazee-burger-karvaneg-karvanegs-projects.vercel.app/',
   },
   {
     title: 'CBNSA - Site Institutionnel',
