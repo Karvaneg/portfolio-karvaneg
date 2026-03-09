@@ -5,6 +5,7 @@ import type { SocialLink } from '@/types/ui-kit';
 
 const iconNameMap: Record<string, string> = {
   email: 'Mail',
+  inclusishield: 'ShieldCheck',
 };
 
 export function getSocialLinks(iconClassName?: IconSize): SocialLink[] {
