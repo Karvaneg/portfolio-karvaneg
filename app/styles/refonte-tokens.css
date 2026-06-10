@@ -18,19 +18,30 @@ REFONTE — Tokens scopés par surface
   --ivory-ghost: rgba(243, 237, 226, 0.16);
   --line: rgba(243, 237, 226, 0.13);
 
-  /* accents repris des deux éditions */
-  --accent: #34d399;
-  --accent-dim: #10b981;
+  /* accents repris de l'édition esquisses */
+  --paper: #f1ead8;
+  --paper-2: #ebe2cc;
+  --paper-shadow: #d6c8a4;
+  --graphite: #2c2a28;
+  --graphite-soft: #4a463f;
   --pencil-red: #c4392a;
+
+  /* accents repris de l'édition technique */
+  --term-bg: #0a0a0a;
+  --term-fg: #fafafa;
+  --term-fg3: #a1a1aa;
+  --emerald: #34d399;
+  --emerald-faint: rgba(52, 211, 153, 0.12);
+  --term-border: #27272a;
 
   --gutter: clamp(20px, 4vw, 64px);
   --cover-max: 1240px;
 
-  --font-display: var(--font-geist), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --sans: var(--font-geist), -apple-system, system-ui, sans-serif;
+  --mono: var(--font-geist-mono), ui-monospace, monospace;
   --hand: var(--font-caveat), cursive;
-  --hand-body: var(--font-patrick-hand), cursive;
-  --type: var(--font-special-elite), monospace;
+  --hand-body: var(--font-patrick-hand), var(--font-caveat), cursive;
+  --type: var(--font-special-elite), 'Courier New', monospace;
 }
 
 /* ===== Carnet d'esquisses — papier, manuscrit ===== */

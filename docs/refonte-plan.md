@@ -166,7 +166,7 @@ public/images/…           → 19 captures (depuis source/images/)
 - [x] Phase 0 — Fondations & nettoyage
 - [x] Phase 1 — Modèle de contenu unifié
 - [x] Phase 2 — Tokens, polices & thème
-- [ ] Phase 3 — Atrium
+- [x] Phase 3 — Atrium
 - [ ] Phase 4 — Carnet technique
 - [ ] Phase 5 — Carnet d'esquisses
 - [ ] Phase 6 — Playbook

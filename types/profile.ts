@@ -18,6 +18,8 @@ export interface Profile {
   roleShort: string;
   roleLong: string;
   location: string;
+  /** Localisation précise (colophon). */
+  geo: string;
   editionLabel: string;
   availability: Availability;
   email: string;

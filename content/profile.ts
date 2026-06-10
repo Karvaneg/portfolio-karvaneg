@@ -7,6 +7,7 @@ export const profile: Profile = {
   roleShort: 'Développeuse Web Fullstack',
   roleLong: 'Développeuse Fullstack & AI-Augmented Engineer',
   location: 'Sud-Ouest · Remote',
+  geo: 'Le Teich — 44.63°N · 1.02°W',
   editionLabel: 'N° 04 · Édition 2026',
   availability: {
     available: true,
