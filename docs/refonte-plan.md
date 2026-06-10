@@ -125,8 +125,12 @@ public/images/…           → 19 captures (depuis source/images/)
   → **Validation de la liste finale des projets avec Marie.**
 
 - **Phase 2 — Tokens, polices & thème**
-  7 polices via `next/font`. `globals.css` `@theme` (3 jeux de tokens). Accent switcher `next-themes`
-  + composant discret. Utilitaires partagés (crop marks, reveal animations).
+  7 polices via `next/font` (`app/lib/refonte-fonts.ts`). Tokens des 3 univers **scopés par
+  surface** (`app/styles/refonte-tokens.css`, `[data-surface=…]`) — zéro impact V1. Variants
+  d'accent `[data-accent=emerald|cyan|red]` en CSS.
+  > **Séquencement** : le **composant switcher** (next-themes) est monté en Phase 4 (il lui faut
+  > une surface) ; les **utilitaires partagés** (crop marks, animations `reveal`) sont créés en
+  > Phase 3 là où ils servent d'abord — pour éviter le code/CSS mort.
 
 - **Phase 3 — Atrium `/`**
   Crop marks · topbar · hero (« savoir-faire. » Caveat rouge) · diptyque éditions · bande Playbook
@@ -161,7 +165,7 @@ public/images/…           → 19 captures (depuis source/images/)
 
 - [x] Phase 0 — Fondations & nettoyage
 - [x] Phase 1 — Modèle de contenu unifié
-- [ ] Phase 2 — Tokens, polices & thème
+- [x] Phase 2 — Tokens, polices & thème
 - [ ] Phase 3 — Atrium
 - [ ] Phase 4 — Carnet technique
 - [ ] Phase 5 — Carnet d'esquisses

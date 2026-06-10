@@ -1,0 +1,97 @@
+/*
+====================================================
+REFONTE — Tokens scopés par surface
+- Confinés sous [data-surface=…] : aucun impact sur la V1 (qui n'a pas
+  d'attribut data-surface), même quand un nom de token se recoupe (--accent…).
+- Valeurs exactes issues du handoff design §7.
+- Polices : variables fournies par app/lib/refonte-fonts.ts.
+====================================================
+*/
+
+/* ===== Atrium — couverture (near-black chaud) ===== */
+[data-surface='atrium'] {
+  --cover: #15120d;
+  --cover-2: #1c1812;
+  --ivory: #f3ede2;
+  --ivory-dim: rgba(243, 237, 226, 0.66);
+  --ivory-faint: rgba(243, 237, 226, 0.4);
+  --ivory-ghost: rgba(243, 237, 226, 0.16);
+  --line: rgba(243, 237, 226, 0.13);
+
+  /* accents repris des deux éditions */
+  --accent: #34d399;
+  --accent-dim: #10b981;
+  --pencil-red: #c4392a;
+
+  --gutter: clamp(20px, 4vw, 64px);
+  --cover-max: 1240px;
+
+  --font-display: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --hand: var(--font-caveat), cursive;
+  --hand-body: var(--font-patrick-hand), cursive;
+  --type: var(--font-special-elite), monospace;
+}
+
+/* ===== Carnet d'esquisses — papier, manuscrit ===== */
+[data-surface='carnet'] {
+  --paper: #f1ead8;
+  --paper-2: #ebe2cc;
+  --paper-3: #e0d4b6;
+  --paper-shadow: #d6c8a4;
+
+  --graphite: #2c2a28;
+  --graphite-soft: #4a463f;
+  --graphite-light: #8a8275;
+
+  --pencil-red: #c4392a;
+  --pencil-red-deep: #8e2316;
+  --pencil-blue: #2c4878;
+  --pencil-green: #4d6038;
+
+  --gutter: clamp(20px, 4vw, 64px);
+
+  --hand: var(--font-caveat), cursive;
+  --hand-body: var(--font-patrick-hand), cursive;
+  --type: var(--font-special-elite), monospace;
+  --hand-italic: var(--font-shadows), cursive;
+}
+
+/* ===== Carnet technique — terminal sombre ===== */
+[data-surface='technique'] {
+  --bg: #0a0a0a;
+  --bg-1: #0f0f10;
+  --bg-2: #131316;
+  --bg-3: #18181b;
+
+  --border: #27272a;
+  --border-strong: #3f3f46;
+  --border-soft: #1f1f23;
+
+  --fg: #fafafa;
+  --fg-2: #d4d4d8;
+  --fg-3: #a1a1aa;
+  --fg-muted: #9a9aa2;
+  --fg-faint: #8a8a93;
+
+  /* accent par défaut : emerald (overridable via [data-accent]) */
+  --accent: #34d399;
+  --accent-dim: #10b981;
+
+  --container: 1180px;
+  --gutter: 32px;
+
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-jetbrains-mono), monospace;
+}
+
+/* ===== Accent thémable (technique + atrium) ===== */
+[data-accent='cyan'] {
+  --accent: #22d3ee;
+  --accent-dim: #06b6d4;
+}
+
+[data-accent='red'] {
+  --accent: #f87171;
+  --accent-dim: #ef4444;
+}
