@@ -4,6 +4,8 @@ import { TechniqueShell } from '@/components/technique/technique-shell';
 import { TechniqueNav } from '@/components/technique/technique-nav';
 import { TechniqueHero } from '@/components/technique/technique-hero';
 import { TechniqueShow } from '@/components/technique/technique-show';
+import { TechniqueWorkflow } from '@/components/technique/technique-workflow';
+import { TechniqueProjects } from '@/components/technique/technique-projects';
 
 export const metadata: Metadata = {
   title:
@@ -18,6 +20,8 @@ export default function TechniquePage() {
       <TechniqueNav />
       <TechniqueHero />
       <TechniqueShow />
+      <TechniqueWorkflow />
+      <TechniqueProjects />
     </TechniqueShell>
   );
 }

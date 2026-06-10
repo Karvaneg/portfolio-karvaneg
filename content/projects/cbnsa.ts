@@ -18,6 +18,7 @@ export const cbnsa: Project = {
   website: 'https://cbnsa.fr',
   stack: ['Symfony', 'PHP', 'Twig', 'TypeScript', 'PostgreSQL', 'Docker', 'GitLab CI'],
   labels: [{ text: 'fullstack' }, { text: 'refactor' }, { text: 'a11y', accent: true }],
+  metaLabel: 'Focus',
   summary:
     "Conservatoire Botanique National Sud-Atlantique. Refonte du site institutionnel et conception d'une suite de portails thématiques partageant un même design system Symfony/Twig — un socle, plusieurs visages.",
   description: [

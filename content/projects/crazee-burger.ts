@@ -16,6 +16,7 @@ export const crazeeBurger: Project = {
   duration: '4 mois',
   stack: ['React', 'TypeScript', 'Styled Components'],
   labels: [{ text: 'react' }, { text: 'typescript' }, { text: 'frontend', accent: true }],
+  metaLabel: 'Focus',
   summary:
     "Application complète de gestion de commandes pour fast-food, développée lors de ma montée en compétences React & TypeScript chez ViDev : mode admin / client, gestion de panier, persistance d'état et design system maison.",
   description: [

@@ -96,7 +96,9 @@ export interface Project {
   impact: string;
   /** Impact reformulé côté carnet, si différent. */
   impactCarnet?: string;
-  /** Rôle de l'IA dans le projet (texte). */
+  /** Libellé de la ligne méta (technique), ex. 'Focus' ; défaut 'AI Tooling'. */
+  metaLabel?: string;
+  /** Rôle de l'IA / focus du projet (texte). */
   aiTooling?: string;
   shots: ProjectShot[];
   caseStudy: ProjectCaseStudy;

@@ -18,6 +18,7 @@ export const portails: Project = {
   website: 'https://vsol-na.fr/',
   stack: ['Symfony', 'Twig', 'TypeScript', 'Sass'],
   labels: [{ text: 'fullstack' }, { text: 'design system' }, { text: 'a11y', accent: true }],
+  metaLabel: 'Focus',
   summary:
     "Suite de portails web scientifiques pour le CBNSA, chacun avec sa propre identité visuelle mais bâti sur un même socle Symfony/Twig. Premier mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine.",
   description: [

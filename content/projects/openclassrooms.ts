@@ -16,6 +16,7 @@ export const openclassrooms: Project = {
   duration: '9 mois',
   stack: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
   labels: [{ text: 'formation' }, { text: 'fullstack' }, { text: 'certifiée', accent: true }],
+  metaLabel: 'Focus',
   summary:
     'Formation intensive en développement web, six projets professionnalisants couvrant tout le stack, validée avec la certification Développeur Intégrateur Web (Niveau 5).',
   description: [

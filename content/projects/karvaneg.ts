@@ -16,6 +16,7 @@ export const karvaneg: Project = {
   duration: '2026',
   stack: ['Next.js', 'Tailwind CSS', 'Vercel'],
   labels: [{ text: 'portfolio' }, { text: 'design' }, { text: 'a11y', accent: true }],
+  metaLabel: 'Focus',
   summary:
     "Un portfolio pensé comme un objet en soi plutôt qu'un CV en ligne. Deux versions, un même socle : « Carnet d'esquisses » et « Carnet technique ».",
   description: [
