@@ -112,10 +112,12 @@ public/images/…           → 19 captures (depuis source/images/)
 
 > Une phase ≈ un (ou quelques) commit(s). Build + revue visuelle à chaque fin de phase.
 
-- **Phase 0 — Fondations & nettoyage**
-  Deps MDX (`@next/mdx`, `@mdx-js/*`) + config `next.config.ts`. Inventaire V1 (garder infra
-  réutilisable : `lib/utils`, metadata/viewport, robots/sitemap, analytics, configs ; retirer les
-  sections mono-page). Copier les 19 images → `public/images/`. Créer l'arborescence à vide.
+- **Phase 0 — Fondations (additif, build vert)**
+  Copier les 19 images → `public/images/projects/`. Créer l'arborescence cible à vide
+  (`content/**`, `components/{atrium,carnet,technique,playbook,shared}/`).
+  > **Séquencement** : le **nettoyage V1 est progressif** — chaque section mono-page est retirée
+  > au moment où la nouvelle surface la remplace (le build reste vert pour les previews Vercel).
+  > Le **setup MDX est reporté en Phase 6** (câblé quand le Playbook l'utilise, pas avant).
 
 - **Phase 1 — Modèle de contenu unifié** *(socle)*
   `content/projects.ts` (type `Project` fusionnant narratif + ticket/case-study, 7 projets
@@ -141,7 +143,8 @@ public/images/…           → 19 captures (depuis source/images/)
   (→ technique). Curseur custom (off tactile).
 
 - **Phase 6 — Playbook `/playbook` + `[slug]`**
-  Setup MDX (`content/playbook/*.mdx`, 001 live, 002/003 ébauches). Index + entrée. Composants MDX
+  Setup MDX ici (install `@next/mdx` + `@mdx-js/*`, config Turbopack). `content/playbook/*.mdx`
+  (001 live, 002/003 ébauches). Index + entrée. Composants MDX
   (terminal, étapes, code). Ajouter une entrée = ajouter un fichier.
 
 - **Phase 7 — Transverse : a11y, SEO, perf, analytics**
