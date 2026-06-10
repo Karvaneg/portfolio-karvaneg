@@ -1157,6 +1157,12 @@
 .repoNum {
   color: var(--accent);
 }
+.repoCta {
+  margin-top: 24px;
+}
+.repoFeatured {
+  color: var(--accent);
+}
 
 /* ===== Contact ===== */
 .contactLinks {

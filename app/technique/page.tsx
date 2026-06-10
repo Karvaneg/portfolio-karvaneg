@@ -6,6 +6,9 @@ import { TechniqueHero } from '@/components/technique/technique-hero';
 import { TechniqueShow } from '@/components/technique/technique-show';
 import { TechniqueWorkflow } from '@/components/technique/technique-workflow';
 import { TechniqueProjects } from '@/components/technique/technique-projects';
+import { TechniqueOpenSource } from '@/components/technique/technique-opensource';
+import { TechniqueContact } from '@/components/technique/technique-contact';
+import { TechniqueFooter } from '@/components/technique/technique-footer';
 
 export const metadata: Metadata = {
   title:
@@ -22,6 +25,9 @@ export default function TechniquePage() {
       <TechniqueShow />
       <TechniqueWorkflow />
       <TechniqueProjects />
+      <TechniqueOpenSource />
+      <TechniqueContact />
+      <TechniqueFooter />
     </TechniqueShell>
   );
 }
