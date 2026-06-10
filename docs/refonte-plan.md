@@ -159,8 +159,8 @@ public/images/…           → 19 captures (depuis source/images/)
 
 ## 6. Suivi
 
-- [ ] Phase 0 — Fondations & nettoyage
-- [ ] Phase 1 — Modèle de contenu unifié
+- [x] Phase 0 — Fondations & nettoyage
+- [x] Phase 1 — Modèle de contenu unifié
 - [ ] Phase 2 — Tokens, polices & thème
 - [ ] Phase 3 — Atrium
 - [ ] Phase 4 — Carnet technique
