@@ -1,0 +1,233 @@
+<ArticleHeader
+  entry={props.entry}
+  accent="Git Worktrees"
+  subtitle="— déléguer un refacto à un agent qui tourne en arrière-plan"
+  lede={
+    <>
+      Regarder son terminal défiler pendant que l'IA génère du code, c'est le syndrome de la barre de
+      chargement. Un développeur senior ne bloque pas son environnement de travail : il{' '}
+      <strong>parallélise</strong>. Grâce à l'intégration des <strong>Git Worktrees</strong> dans
+      Claude Code, on peut désormais déléguer un refactoring complexe à un agent qui tournera en
+      arrière-plan, dans un dossier et une branche isolés, pendant qu'on continue à développer des
+      features sur <code>main</code>.
+    </>
+  }
+  ledeEmphasis="L'IA n'est plus un assistant qui prend le contrôle de votre clavier. C'est un collaborateur asynchrone à qui l'on assigne un ticket."
+/>
+
+<Prereq tag="Le problème · L'explosion des tokens">
+
+Avant de lancer l'IA, parlons ingénierie financière. Demander à Claude de *« refactorer le module de
+paiement »* dans un gros monorepo en le laissant chercher les fichiers lui-même, c'est la garantie
+de :
+
+- **Polluer la fenêtre de contexte** — hallucinations garanties au bout de 5 itérations.
+- **Brûler votre quota de tokens** — lire 200 fichiers pour en modifier 3 coûte une fortune.
+
+<Callout tone="info" icon="✺">
+
+**La règle d'or du Lead Dev — Targeted Scoping :** on ne donne à l'IA que le *sous-graphe de
+dépendances* strictement nécessaire au refactoring. Pas plus, pas moins.
+
+</Callout>
+
+</Prereq>
+
+<Steps>
+
+<Step num={1} total={3} title="Préparer l'isolation (Token Economy)">
+
+Plutôt que de laisser Claude scanner tout le projet, on circonscrit son terrain de jeu. On crée une
+branche dédiée et on génère une carte exacte des fichiers concernés pour borner le contexte.
+
+<CopyInstruction>↓ Exécutez ces commandes dans votre terminal standard (pas dans Claude) :</CopyInstruction>
+
+<TerminalBlock
+  title="bash · terminal standard"
+  promptSymbol="$"
+  commands={[
+    '# 1. On crée une branche dédiée pour le refacto',
+    'git checkout -b ai/refactor-auth-module',
+    '',
+    '# 2. On vérifie la santé du module (dépendances circulaires)',
+    'npx madge --circular src/auth/',
+  ]}
+/>
+
+On reste volontairement dans le terminal : le but n'est pas de produire un joli graphe SVG (le flag
+`--image` exige Graphviz et plante dans la moitié des environnements), mais d'obtenir un **retour
+terminal direct**. Ce qu'on veut voir, c'est la coche verte — `✔ No circular dependency found!` —
+qui confirme que le module est sain avant de lâcher l'agent dessus.
+
+Si Madge remonte des cycles, on les casse *avant* le refacto IA : **l'IA ne remplace pas une
+architecture découplée.**
+
+</Step>
+
+<Step num={2} total={3} title="Lancer l'agent en Worktree">
+
+C'est ici que la magie opère. On ne lance pas Claude Code dans le dossier courant : on crée un **vrai
+Git Worktree**. Git matérialise notre branche dans un dossier voisin, totalement isolé de notre
+répertoire de travail, **sans toucher à nos fichiers ouverts ni à notre éditeur**.
+
+<CopyInstruction>↓ Créez le worktree, entrez dedans, puis lancez Claude :</CopyInstruction>
+
+<TerminalBlock
+  title="bash · terminal standard"
+  promptSymbol="$"
+  commands={[
+    '# 1. Git matérialise la branche dans un dossier voisin isolé',
+    'git worktree add ../ai-refactor-auth-module',
+    '',
+    '# 2. On se déplace dans ce dossier sandboxé',
+    'cd ../ai-refactor-auth-module',
+    '',
+    '# 3. On lance Claude en autonomie totale',
+    'claude --dangerously-skip-permissions',
+  ]}
+/>
+
+<Callout tone="warn" icon="⚠">
+
+**Pourquoi --dangerously-skip-permissions est ici INDISPENSABLE :** sans ce flag, Claude bloque le
+terminal toutes les 2 minutes pour vous demander l'autorisation d'écrire un fichier — ce qui tue
+l'asynchronisme. Le nom fait peur, mais le risque est neutralisé par le worktree : l'agent est
+enfermé dans un dossier jetable, sur une branche jetable. Au pire, on supprime le tout. **Ne jamais
+utiliser ce flag dans votre vrai répertoire de travail** — uniquement dans un worktree isolé.
+
+</Callout>
+
+Claude démarre maintenant dans un environnement sandboxé. Si l'agent casse tout, votre répertoire de
+travail actuel — votre éditeur, vos fichiers ouverts sur `main` — n'est absolument pas impacté.
+
+<CopyInstruction>↓ Copiez/collez ce prompt strict (Le Contrat de Refactoring) :</CopyInstruction>
+
+<PromptBlock label="Le Contrat de Refactoring">{`Tu es missionné pour refactorer le module \`src/auth/\`. Ton objectif est de migrer l'ancienne logique de validation vers le nouveau standard défini dans \`docs/conventions.md\`.
+
+Règles d'exécution (Strict) :
+1. Économie de tokens : Ne lis QUE les fichiers dans \`src/auth/\` et \`src/tests/auth/\`. Ne perds pas de temps à scanner le reste du projet.
+2. TDD : Lance la suite de tests (\`npm run test:auth\`) AVANT de modifier quoi que ce soit pour t'assurer que ça passe.
+3. Refactoring : Modifie le code étape par étape.
+4. Validation : Relance les tests après tes modifications. Si un test échoue, corrige ton code. Ne me demande pas mon avis, tu es autonome sur la réparation.
+
+Une fois que les tests passent, fais un commit conventionnel et mets-toi en pause.`}</PromptBlock>
+
+<Callout tone="info" icon="💡">
+
+**Le Move de Lead : Paralléliser l'agent IA**
+
+**👉 Si vous êtes dans un Terminal** (PowerShell / Bash avec Claude Code)
+
+La CLI est un **processus bloquant**. Exploitez le multi-onglets de votre terminal : laissez Claude
+travailler dans l'**Onglet 1** (positionné sur le worktree de la tâche IA), ouvrez simplement un
+**Onglet 2** (positionné sur `main`), et continuez à coder en parallèle. Deux environnements isolés,
+zéro temps d'attente.
+
+**👉 Si vous utilisez un IDE IA** (Cursor ou VS Code + Cline)
+
+Dès que l'agent commence à chercher ses fichiers et travailler, utilisez le raccourci de background
+(ex. `Ctrl + T` pour les *Pinned Background Sessions*). L'agent disparaît de votre interface pour
+bosser en tâche de fond, vous libérant l'IDE pour reprendre la main.
+
+</Callout>
+
+</Step>
+
+<Step num={3} total={3} title="Audit et merge">
+
+Pendant que vous travailliez, l'agent a terminé. Puisque Claude Code a utilisé un Git Worktree, son
+travail a été commité sur la branche `ai/refactor-auth-module`. Vous n'avez pas besoin de lire
+l'historique de conversation de l'IA (souvent long et fastidieux) : vous évaluez son travail de la
+seule manière qui compte pour un ingénieur — par le **diff**.
+
+<CopyInstruction>↓ Revenez sur votre branche principale et inspectez le diff :</CopyInstruction>
+
+<TerminalBlock
+  title="bash · terminal standard"
+  promptSymbol="$"
+  commands={[
+    "# Revenez sur votre branche principale (dans votre dossier d'origine)",
+    'cd ../mon-projet',
+    'git checkout main',
+    '',
+    "# Regardez le travail produit par l'IA",
+    'git diff main..ai/refactor-auth-module',
+  ]}
+/>
+
+<Callout tone="warn" icon="⚠">
+
+**Erreur classique à ce stade — « not something we can merge » :** si Git ne retrouve pas le nom de
+la branche une fois de retour sur `main`, deux échappatoires. Listez vos worktrees pour retrouver le
+bon chemin et le bon état :<br />
+`git worktree list`<br />
+…ou mergez directement le **hash du commit** généré par Claude (visible dans `git log` ou dans la
+sortie de l'agent) :<br />
+`git merge f069d42`
+
+</Callout>
+
+<SubStep marker="✓" title="La checklist de code review IA">
+
+- L'IA a-t-elle supprimé des commentaires ou de la documentation utile par accident ? *(Un biais fréquent des LLMs pour « nettoyer » le code.)*
+- Les imports ont-ils été mis à jour correctement ?
+- La complexité cyclomatique a-t-elle réellement baissé ?
+
+</SubStep>
+
+<DecisionGrid>
+
+<Callout tone="info" icon="✓">
+
+**Si le diff est propre :** `git merge ai/refactor-auth-module`. Le travail entre sur `main`.
+
+</Callout>
+
+<Callout tone="warn" icon="✕">
+
+**Si le diff est mauvais :** `git branch -D ai/refactor-auth-module`. Temps perdu : **0 minute** —
+l'IA bossait en asynchrone.
+
+</Callout>
+
+</DecisionGrid>
+
+Dans les deux cas, on n'oublie pas le ménage : un worktree laissé à l'abandon encombre le repo et
+garde un lock Git sur la branche. On démonte le dossier sandboxé proprement :
+
+<TerminalBlock
+  title="bash · terminal standard"
+  promptSymbol="$"
+  commands={[
+    '# Nettoyage : on démonte le worktree jetable',
+    'git worktree remove ../ai-refactor-auth-module',
+  ]}
+/>
+
+</Step>
+
+</Steps>
+
+<ResultBlock label="→ Pourquoi cette méthode change tout">
+
+<Callout tone="info" icon="💡">
+
+Pour une équipe de développement, cette approche résout le plus grand goulot d'étranglement de l'IA
+générative : **l'attention humaine**.
+
+Au lieu de faire du pair-programming passif en regardant un bot écrire des lignes, vous devenez un
+**manager technique d'agents virtuels**. Vous scopez les tâches, vous gérez les branches, vous
+limitez le budget (tokens), et vous faites la code review à la fin. *Vous ne codez plus la mécanique,
+vous garantissez l'architecture.*
+
+</Callout>
+
+</ResultBlock>
+
+<Wrapup>
+
+Playbook 003 — partie d'une série sur l'AI-augmented engineering. Le prochain volet abordera la
+sécurité : comment encadrer les agents autonomes avec des Hooks pour garantir qu'aucune action
+dangereuse ne passe en silence.
+
+</Wrapup>

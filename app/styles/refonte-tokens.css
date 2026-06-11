@@ -94,6 +94,12 @@ REFONTE — Tokens scopés par surface
   --container: 1180px;
   --gutter: 32px;
 
+  /* Noms consommés par les CSS Modules (cf. atrium/carnet) — sans eux, tous les
+     `var(--mono)`/`var(--sans)` de la surface technique + playbook sont indéfinis. */
+  --sans: var(--font-geist), system-ui, sans-serif;
+  --mono: var(--font-geist-mono), var(--font-jetbrains-mono), monospace;
+
+  /* Alias convention Tailwind (utilitaires font-sans/font-mono dans la surface). */
   --font-sans: var(--font-geist), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), var(--font-jetbrains-mono), monospace;
 }

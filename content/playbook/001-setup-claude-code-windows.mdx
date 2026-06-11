@@ -1,0 +1,116 @@
+<ArticleHeader
+  entry={props.entry}
+  accent="Claude Code"
+  subtitle="— 100% Prompt-Driven"
+  lede={
+    <>
+      En tant que développeur, optimiser ses outils est indispensable. Dans ce guide, nous n'allons{' '}
+      <em>pas</em> taper des dizaines de lignes de commandes complexes. Nous allons utiliser{' '}
+      <strong>Claude Code lui-même</strong> pour qu'il auto-configure son propre environnement sur
+      votre machine Windows.
+    </>
+  }
+  ledeEmphasis="C'est la puissance des agents IA : on définit l'intention, l'agent s'occupe de l'exécution."
+/>
+
+<Prereq tag="Prérequis · Lancer l'agent">
+
+Ouvrez PowerShell et placez-vous dans le dossier de configuration de Claude Code, puis lancez
+l'outil :
+
+<TerminalBlock commands={['cd ~\\.claude', 'claude']} />
+
+*(Acceptez les permissions si on vous le demande lors des étapes suivantes.)*
+
+</Prereq>
+
+<Steps>
+
+<Step num={1} total={3} title="Architecture et versionnage Git automatisés">
+
+Toute la configuration réside dans `~/.claude`. Nous allons demander à Claude de structurer les
+dossiers de skills, de faire la liaison symbolique (jonction Windows) et d'initialiser Git de
+manière sécurisée.
+
+<CopyInstruction />
+
+<PromptBlock>{`Je suis sur Windows. Fais les actions suivantes dans ce dossier :
+
+1. Initialise un dépôt Git (git init).
+2. Crée un dossier skills/.
+3. Crée une jonction de répertoire (symlink) nommée commands/ qui pointe vers skills/.
+4. Crée un .gitignore strict qui exclut tout (notamment le dossier commands/, le cache, l'historique et les tokens) SAUF le dossier skills/, settings.json et statusline-command.sh.
+5. Fais un premier commit avec le message 'Initial Claude Code setup'.`}</PromptBlock>
+
+<Callout tone="info" icon="💡">
+
+**Sécurité et PRA (Plan de Reprise d'Activité) :** L'initialisation de Git vous permet de versionner
+votre configuration et de la pousser ensuite sur un repository distant **strictement privé** (ex :
+GitHub). En cas de défaillance matérielle ou de changement de poste de travail, vous récupérez votre
+environnement de développement IA instantanément. *(Note : Ne rendez jamais ce repository public. Le
+`.gitignore` est strict, mais le principe de précaution prévaut toujours avec les dossiers de
+configuration locaux contenant des sessions.)*
+
+**La jonction** (`commands/` vers `skills/`) : Claude lit par défaut les skills dans le dossier
+système `commands/`. La jonction (symlink) permet à Git de versionner proprement vos scripts isolés
+dans le dossier `skills/`, sans risquer d'inclure la volumétrie et les fichiers temporaires de l'IA.
+
+</Callout>
+
+</Step>
+
+<Step num={2} total={3} title="Créer le raccourci d'exécution (alias)">
+
+Pour itérer rapidement sans valider chaque action de l'IA, nous allons demander à Claude de créer un
+alias dans PowerShell.
+
+<CopyInstruction />
+
+<PromptBlock>{`Je suis sur PowerShell. Ajoute un alias ccs dans mon $PROFILE PowerShell qui exécute la commande : claude --dangerously-skip-permissions. Si mon fichier de profil n'existe pas, crée-le. Explique-moi ensuite comment recharger ma session PowerShell pour que l'alias soit actif.`}</PromptBlock>
+
+<Callout tone="warn" icon="⚠️">
+
+**Note de sécurité :** `--dangerously-skip-permissions` permet à l'IA d'exécuter des commandes sans
+demander votre avis. *À utiliser sur vos dossiers projets en connaissance de cause.*
+
+</Callout>
+
+</Step>
+
+<Step num={3} total={3} title="Configurer la télémétrie (Status Line)">
+
+Savoir où en est la consommation de contexte de l'IA est crucial.
+
+<SubStep marker="1." title="Initialisez la base">
+
+Tapez la commande native dans Claude Code :
+
+<TerminalBlock title="Claude Code · slash command" commands={['/statusline']} />
+
+</SubStep>
+
+<SubStep marker="2." title="Ajoutez le monitoring et corrigez l'environnement Windows">
+
+Sur Windows, le script généré a souvent un conflit avec le chemin Python du Windows Store. Demandons
+à Claude d'ajouter notre jauge et de s'auto-déboguer.
+
+<CopyInstruction />
+
+<PromptBlock>{`Modifie ma status line actuelle. Ajoute ma consommation sur la session de 5 heures sur laquelle je suis actuellement. Affiche ça sous la forme d'une progress bar visuelle et d'un pourcentage. Ensuite, teste le script statusline-command.sh. S'il y a un conflit d'exécution avec Python sous Windows (comme avec le Windows Store), corrige le script pour qu'il s'affiche correctement.`}</PromptBlock>
+
+</SubStep>
+
+<ResultBlock label="→ Résultat attendu au prochain lancement">
+  <StatusLinePreview />
+</ResultBlock>
+
+</Step>
+
+</Steps>
+
+<Wrapup>
+
+Ce playbook fait partie de mes <a href="/technique#opensource">workflows publics</a>. Forkez,
+critiquez, améliorez — et écrivez-moi si vous l'avez utilisé.
+
+</Wrapup>
