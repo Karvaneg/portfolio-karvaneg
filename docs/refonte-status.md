@@ -86,8 +86,10 @@ Vérifié auto : `lint` + `build` + 24 tests verts ; renvois croisés cohérents
 
 - **Fix SSR critique** : `app/providers.tsx` ne charge pas le ThemeProvider en `ssr:false`.
   `<html suppressHydrationWarning>`. Ne pas réintroduire `ssr:false`.
-- **Fichiers V1 morts** : anciennes sections (`app/sections/*`, `components/layout/*`,
-  `components/ui-kit/*`, `app/lib/data/*`) non routées mais toujours présentes (nettoyage non fait).
+- **Nettoyage V1 fait** : sections, ui-kit, layout, data, hooks, ui, tests et images V1
+  supprimés (~96 fichiers). Restent câblés au `layout` : `app/lib/fonts.ts` (Inter/JetBrains/
+  Cinzel sur `<html>`), `providers`/`theme-provider`, `client-utilities`/`cookie-banner`,
+  `design-system/`, `lib/{utils,security}`.
 - **pnpm** : dans cet environnement, `pnpm` se résout en 10.x alors que `node_modules` vient de
   pnpm 11.5.3 → utiliser `corepack pnpm@11.5.3 …` (ou `node_modules/.bin/*` directement).
 - **Lint** : `react-hooks/set-state-in-effect` actif → pas de `setState` dans un effet
