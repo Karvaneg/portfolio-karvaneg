@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Karvaneg">
+  <rect width="512" height="512" rx="114" fill="#15120d"></rect>
+  <g stroke="#c4392a" stroke-width="48" stroke-linecap="round">
+    <line x1="256" y1="118" x2="256" y2="394"></line>
+    <line x1="136.5" y1="187" x2="375.5" y2="325"></line>
+    <line x1="375.5" y1="187" x2="136.5" y2="325"></line>
+  </g>
+</svg>

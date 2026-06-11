@@ -26,11 +26,8 @@ export const metadata: Metadata = {
     title: defaultTitle,
     description: defaultDescription,
   },
-  icons: {
-    icon: '/images/favicon.ico',
-    shortcut: '/images/favicon-16x16.png',
-    apple: '/images/apple-touch-icon.png',
-  },
+  // Favicons gérés par les fichiers app/icon.svg, app/apple-icon.png et
+  // app/manifest.ts (conventions Next.js) — pas de balises manuelles.
   robots: { index: true, follow: true },
 };
 
