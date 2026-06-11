@@ -11,7 +11,7 @@ export function EditionSketch() {
     >
       <span className={styles.tape} aria-hidden="true" />
       <span className={styles.doodle} aria-hidden="true">
-        ✺
+        *
       </span>
       <div className={styles.edTag}>
         <span className={styles.edNumber}>Édition 01</span>

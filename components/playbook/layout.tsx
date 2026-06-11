@@ -22,10 +22,18 @@ export function Steps({ children }: { children: ReactNode }) {
   return <div className={styles.steps}>{children}</div>;
 }
 
-/** Bloc « résultat attendu » avec label. */
-export function ResultBlock({ label, children }: { label: string; children: ReactNode }) {
+/** Bloc « résultat attendu » avec label. `spacious` = section autonome (plus d'air au-dessus). */
+export function ResultBlock({
+  label,
+  spacious = false,
+  children,
+}: {
+  label: string;
+  spacious?: boolean;
+  children: ReactNode;
+}) {
   return (
-    <div className={styles.resultBlock}>
+    <div className={`${styles.resultBlock} ${spacious ? styles.resultBlockSpacious : ''}`}>
       <p className={styles.resultLabel}>{label}</p>
       {children}
     </div>

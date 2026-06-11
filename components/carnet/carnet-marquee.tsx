@@ -4,11 +4,11 @@ import styles from './carnet.module.css';
 function Segment() {
   return (
     <span>
-      Code propre <span className={styles.star}>✺</span>
-      Design assumé <span className={styles.star}>✺</span>
-      Accessibilité non négociable <span className={styles.star}>✺</span>
-      Documentation aimée <span className={styles.star}>✺</span>
-      Bugs poursuivis avec entêtement <span className={styles.star}>✺</span>
+      Code propre <span className={styles.star}>*</span>
+      Design assumé <span className={styles.star}>*</span>
+      Accessibilité non négociable <span className={styles.star}>*</span>
+      Documentation aimée <span className={styles.star}>*</span>
+      Bugs poursuivis avec entêtement <span className={styles.star}>*</span>
     </span>
   );
 }

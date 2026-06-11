@@ -460,17 +460,32 @@
 .decisionGrid .callout {
   height: 100%;
 }
+/* Paragraphe de transition après la grille (ex. « Dans les deux cas… » du 003). */
+.decisionGrid + p {
+  margin-top: 20px;
+}
 
 /* ============ Bloc résultat ============ */
 .resultBlock {
   margin-top: 8px;
 }
-/* La maquette laisse `.step-body p` (15.5px / fg-2) l'emporter sur ce label :
-   on reproduit ce rendu en n'imposant que mono + letter-spacing (le reste hérite
-   de la prose de base `:where(.article) p`). */
+/* Section autonome (ex. clôture du 003) : plus d'air au-dessus. */
+.resultBlockSpacious {
+  margin-top: 72px;
+}
+/* Source : `.result-label` = 12px accent par défaut (cas autonome, ex. 003)…
+   …mais `.step-body p` (15.5px / fg-2) l'emporte dans une étape (ex. 001/002). */
 .resultLabel {
   font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
   letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+.stepBody .resultLabel {
+  font-size: 15.5px;
+  color: var(--fg-2);
+  margin: 0;
 }
 
 /* ============ Aperçu status line ============ */
@@ -647,7 +662,7 @@
 .index {
   max-width: 920px;
   margin: 0 auto;
-  padding: 96px var(--gutter) 0;
+  padding: 96px var(--gutter) 120px;
 }
 .indexHead {
   margin-bottom: 56px;

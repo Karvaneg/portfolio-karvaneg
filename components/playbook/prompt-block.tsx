@@ -14,7 +14,7 @@ export function PromptBlock({ children, label = 'Prompt à coller dans Claude Co
       <div className={styles.promptBar}>
         <span className={styles.promptTag}>
           <span className={styles.promptIcon} aria-hidden="true">
-            ✺
+            ❯
           </span>
           {label}
         </span>
