@@ -25,7 +25,7 @@ export const karvaneg: Project = {
     "Construit avec une attention particulière à la performance et à l'accessibilité — parce que prêcher l'a11y dans InclusiShield et avoir un portfolio inaccessible serait, disons, gênant.",
   ],
   impact: 'Lighthouse 100 / 100 / 100 / 100',
-  impactCarnet: 'Lighthouse 100/100/100/100. On a ses standards.',
+  impactEsquisses: 'Lighthouse 100/100/100/100. On a ses standards.',
   aiTooling:
     "Deux déclinaisons d'un même contenu — l'une chaleureuse façon atelier, l'autre sobre façon terminal — selon le public qui regarde.",
   shots: [
@@ -74,7 +74,7 @@ export const karvaneg: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '4deg',
     background: '#ebe3d4',
     accent: '#e0411b',

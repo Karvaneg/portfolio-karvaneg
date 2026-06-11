@@ -35,7 +35,7 @@ interface BuildMetadataOptions {
   /** Titre complet et auto-suffisant de la page. */
   title: string;
   description: string;
-  /** Chemin canonique relatif, ex. '/carnet'. */
+  /** Chemin canonique relatif, ex. '/esquisses'. */
   path: string;
 }
 

@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { about } from '@/content/about';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Hero manuscrit : titre « Marie Le Carvennec », easter-egg astérisque, méta. */
-export function CarnetHero() {
+export function EsquissesHero() {
   const [showEgg, setShowEgg] = useState(false);
 
   return (

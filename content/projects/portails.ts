@@ -27,7 +27,7 @@ export const portails: Project = {
     "Le tout est piloté depuis un back-office d'administration unique : une console qui donne accès à l'ensemble des portails (du Catalogue de la Végétation de France aux portails Hotspots, PNAEAL, PEENA, ECOLAG ou Forêts) et centralise leur gestion — actualités, agendas, carnet d'adresses, partenaires, ressources, cartes et système de design. Un seul outil pour administrer toute la galaxie de portails sans dupliquer les interfaces.",
   ],
   impact: 'Design system scalable & themable en production · VSOL, premier portail en ligne',
-  impactCarnet: 'Design system scalable & themable utilisé en production.',
+  impactEsquisses: 'Design system scalable & themable utilisé en production.',
   aiTooling:
     'Un design system partagé, thémé par portail — base commune robuste, thèmes différenciés et accessibilité WCAG sans concession.',
   shots: [
@@ -88,7 +88,7 @@ export const portails: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '-4deg',
     background: '#f3ede2',
     accent: '#e0411b',

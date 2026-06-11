@@ -1,4 +1,4 @@
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Un segment du bandeau (répété pour la boucle de défilement). */
 function Segment() {
@@ -14,7 +14,7 @@ function Segment() {
 }
 
 /** Bandeau manifeste défilant (décoratif). */
-export function CarnetMarquee() {
+export function EsquissesMarquee() {
   return (
     <div className={styles.marquee} aria-hidden="true">
       <div className={styles.marqueeTrack}>

@@ -31,9 +31,9 @@ describe('content/projects — intégrité du modèle unifié', () => {
     for (const project of projects) {
       const sources = [
         ...project.shots.map((shot) => shot.src),
-        project.carnet.cardImage,
-        project.carnet.heroImage,
-        ...project.carnet.gallery,
+        project.esquisses.cardImage,
+        project.esquisses.heroImage,
+        ...project.esquisses.gallery,
       ];
       for (const src of sources) {
         expect(existsSync(join(PUBLIC_DIR, src)), `${project.id} → ${src}`).toBe(true);

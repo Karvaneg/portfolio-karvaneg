@@ -26,7 +26,7 @@ export const openclassrooms: Project = {
   ],
   impact:
     'Certification Développeur Intégrateur Web (Niveau 5) · tous projets validés au 1er passage',
-  impactCarnet: 'Certification Développeur Intégrateur Web (Niveau 5).',
+  impactEsquisses: 'Certification Développeur Intégrateur Web (Niveau 5).',
   aiTooling:
     "Six projets pros — du front statique à l'API Node/MongoDB. Tous validés au premier passage.",
   shots: [
@@ -70,7 +70,7 @@ export const openclassrooms: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '2deg',
     background: '#ebe3d4',
     accent: '#1d2b5c',

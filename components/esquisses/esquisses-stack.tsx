@@ -1,8 +1,8 @@
 import { stack } from '@/content/stack';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Section « Stack » : catégories d'outils en boîtes esquissées. */
-export function CarnetStack() {
+export function EsquissesStack() {
   return (
     <section className={styles.stack} id="stack">
       <div className={styles.stackHeader}>

@@ -3,8 +3,8 @@
 import { useState, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects } from '@/content/projects';
-import { CarnetProjectDetail } from './carnet-project-detail';
-import styles from './carnet.module.css';
+import { EsquissesProjectDetail } from './esquisses-project-detail';
+import styles from './esquisses.module.css';
 
 const COUNT_WORDS = [
   'Zéro',
@@ -21,7 +21,7 @@ const COUNT_WORDS = [
 ];
 
 /** Section « Projets » : sommaire esquissé + aperçu flottant + overlay détail. */
-export function CarnetWork() {
+export function EsquissesWork() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [openId, setOpenId] = useState<string | null>(null);
   const count = COUNT_WORDS[projects.length] ?? String(projects.length);
@@ -51,7 +51,7 @@ export function CarnetWork() {
                 className={styles.projectRow}
                 data-cursor="large"
                 // Rotation propre au projet (donnée) → variable CSS dynamique.
-                style={{ '--rot': project.carnet.rotation } as CSSProperties}
+                style={{ '--rot': project.esquisses.rotation } as CSSProperties}
                 onClick={() => setOpenId(project.id)}
                 onMouseEnter={() => setHoveredId(project.id)}
                 onMouseLeave={() => setHoveredId(null)}
@@ -77,21 +77,21 @@ export function CarnetWork() {
             className={`${styles.projectPreview} ${
               hoveredId === project.id ? styles.projectPreviewActive : ''
             }`}
-            style={{ '--rot': project.carnet.rotation } as CSSProperties}
+            style={{ '--rot': project.esquisses.rotation } as CSSProperties}
             aria-hidden="true"
           >
             <div className={styles.projectPreviewMock}>
-              <Image src={project.carnet.cardImage} alt="" fill sizes="400px" />
+              <Image src={project.esquisses.cardImage} alt="" fill sizes="400px" />
             </div>
             <div className={styles.projectPreviewCaption}>
-              {project.carnet.caption ?? `${project.title} · ${project.period}`}
+              {project.esquisses.caption ?? `${project.title} · ${project.period}`}
             </div>
           </div>
         ))}
       </section>
 
       {openId && (
-        <CarnetProjectDetail
+        <EsquissesProjectDetail
           projectId={openId}
           onClose={() => setOpenId(null)}
           onNavigate={setOpenId}

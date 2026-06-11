@@ -16,7 +16,7 @@ export const inclusishield: Project = {
   role: 'Founder & Lead Dev',
   website: 'https://inclusishield.fr/',
   stack: ['Playwright', 'Browserless', 'Redis', 'Upstash', 'Vercel', 'LLM'],
-  stackCarnet: ['Next.js', 'TypeScript', 'Redis', 'Playwright', 'Stripe'],
+  stackEsquisses: ['Next.js', 'TypeScript', 'Redis', 'Playwright', 'Stripe'],
   labels: [{ text: 'saas' }, { text: 'fullstack' }, { text: 'ai-tooling', accent: true }],
   summary:
     "Plateforme SaaS d'audit d'accessibilité numérique automatisé : un crawler headless scanne un site, l'IA transforme les diagnostics techniques en recommandations stratégiques, le tout conforme WCAG 2.2 AA et RGAA 4.1.2. Conçu, monétisé et industrialisé en un sprint de 20 jours.",
@@ -25,7 +25,7 @@ export const inclusishield: Project = {
     "Marque ma transition vers l'écosystème Next.js, avec une infrastructure cloud complète (Redis pour le cache, Playwright pour le crawling, Stripe pour la facturation). L'IA générative est intégrée au cœur du workflow grâce à la certification Google Prompting Essentials.",
   ],
   impact: 'Produit complet, monétisé & en prod en 20 jours',
-  impactCarnet: 'Diagnostics techniques traduits en recommandations stratégiques actionnables.',
+  impactEsquisses: 'Diagnostics techniques traduits en recommandations stratégiques actionnables.',
   aiTooling:
     "Modèles LLM en cœur de produit — traduction des diagnostics techniques bruts en recommandations actionnables, + Claude Code pour l'industrialisation.",
   shots: [
@@ -72,7 +72,7 @@ export const inclusishield: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '-3deg',
     background: '#0c1730',
     accent: '#1d2b5c',

@@ -12,7 +12,7 @@ export const profile: Profile = {
   availability: {
     available: true,
     atrium: 'Disponible — Sud-Ouest / Remote',
-    carnet: 'Dispo — Sud-Ouest / Remote',
+    esquisses: 'Dispo — Sud-Ouest / Remote',
     technique: 'Disponible — opportunités fullstack & AI tooling · Q3 2026',
   },
   email: 'marie.lecarvennec@gmail.com',

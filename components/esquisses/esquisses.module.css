@@ -1,6 +1,6 @@
 /* Carnet d'esquisses — port de la maquette (source/styles-v2.css).
-   Tokens fournis par [data-surface='carnet'] (app/styles/refonte-tokens.css).
-   data-surface + polices sont posés sur .page (cf. carnet-shell.tsx). */
+   Tokens fournis par [data-surface='esquisses'] (app/styles/refonte-tokens.css).
+   data-surface + polices sont posés sur .page (cf. esquisses-shell.tsx). */
 
 .page {
   min-height: 100vh;

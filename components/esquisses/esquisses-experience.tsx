@@ -1,8 +1,8 @@
 import { experiences } from '@/content/experience';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Section « Parcours » : timeline en fiches esquissées. */
-export function CarnetExperience() {
+export function EsquissesExperience() {
   return (
     <section className={styles.experience} id="experience">
       <div className={styles.experienceHeader}>

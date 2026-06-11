@@ -4,11 +4,11 @@ import { ImageResponse } from 'next/og';
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = 'image/png';
 
-type Surface = 'atrium' | 'carnet' | 'technique';
+type Surface = 'atrium' | 'esquisses' | 'technique';
 
 const themes: Record<Surface, { bg: string; fg: string; accent: string; dim: string }> = {
   atrium: { bg: '#15120d', fg: '#f3ede2', accent: '#c4392a', dim: 'rgba(243,237,226,0.55)' },
-  carnet: { bg: '#f1ead8', fg: '#2c2a28', accent: '#c4392a', dim: 'rgba(44,42,40,0.55)' },
+  esquisses: { bg: '#f1ead8', fg: '#2c2a28', accent: '#c4392a', dim: 'rgba(44,42,40,0.55)' },
   technique: { bg: '#0a0a0a', fg: '#fafafa', accent: '#34d399', dim: 'rgba(161,161,170,0.85)' },
 };
 

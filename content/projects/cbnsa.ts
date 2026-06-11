@@ -26,7 +26,7 @@ export const cbnsa: Project = {
     "Mise en pratique des principes DevOps (pipelines GitLab CI/CD, conteneurisation Docker, automatisation des déploiements), respect des standards WCAG, suivi SEO. J'ai aussi participé à la mise en œuvre d'un design system pour harmoniser le visuel des portails thématiques.",
   ],
   impact: '~45% du trafic en recherche organique · 11,4k pages vues (2026)',
-  impactCarnet: 'Design system unifié et plusieurs portails thématiques en production.',
+  impactEsquisses: 'Design system unifié et plusieurs portails thématiques en production.',
   aiTooling:
     'SEO & accessibilité (WCAG), navigation fluidifiée et contenus sortis du code en dur — désormais éditables sans intervention technique.',
   shots: [
@@ -92,7 +92,7 @@ export const cbnsa: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '3deg',
     background: '#dbd0bb',
     accent: '#4a5d3a',

@@ -1,15 +1,15 @@
 import { buildMetadata } from '@/app/lib/metadata';
 import { refonteFontVariables } from '@/app/lib/refonte-fonts';
-import { CarnetShell } from '@/components/carnet/carnet-shell';
-import { CarnetNav } from '@/components/carnet/carnet-nav';
-import { CarnetHero } from '@/components/carnet/carnet-hero';
-import { CarnetMarquee } from '@/components/carnet/carnet-marquee';
-import { CarnetAbout } from '@/components/carnet/carnet-about';
-import { CarnetStack } from '@/components/carnet/carnet-stack';
-import { CarnetWork } from '@/components/carnet/carnet-work';
-import { CarnetExperience } from '@/components/carnet/carnet-experience';
-import { CarnetContact } from '@/components/carnet/carnet-contact';
-import { CarnetFooter } from '@/components/carnet/carnet-footer';
+import { EsquissesShell } from '@/components/esquisses/esquisses-shell';
+import { EsquissesNav } from '@/components/esquisses/esquisses-nav';
+import { EsquissesHero } from '@/components/esquisses/esquisses-hero';
+import { EsquissesMarquee } from '@/components/esquisses/esquisses-marquee';
+import { EsquissesAbout } from '@/components/esquisses/esquisses-about';
+import { EsquissesStack } from '@/components/esquisses/esquisses-stack';
+import { EsquissesWork } from '@/components/esquisses/esquisses-work';
+import { EsquissesExperience } from '@/components/esquisses/esquisses-experience';
+import { EsquissesContact } from '@/components/esquisses/esquisses-contact';
+import { EsquissesFooter } from '@/components/esquisses/esquisses-footer';
 
 export const metadata = buildMetadata({
   path: '/esquisses',
@@ -18,18 +18,18 @@ export const metadata = buildMetadata({
     "Le carnet d'esquisses de Marie Le Carvennec : un portfolio manuscrit et tactile — à propos, stack, projets et parcours racontés comme des pages de carnet.",
 });
 
-export default function CarnetPage() {
+export default function EsquissesPage() {
   return (
-    <CarnetShell fontClass={refonteFontVariables}>
-      <CarnetNav />
-      <CarnetHero />
-      <CarnetMarquee />
-      <CarnetAbout />
-      <CarnetStack />
-      <CarnetWork />
-      <CarnetExperience />
-      <CarnetContact />
-      <CarnetFooter />
-    </CarnetShell>
+    <EsquissesShell fontClass={refonteFontVariables}>
+      <EsquissesNav />
+      <EsquissesHero />
+      <EsquissesMarquee />
+      <EsquissesAbout />
+      <EsquissesStack />
+      <EsquissesWork />
+      <EsquissesExperience />
+      <EsquissesContact />
+      <EsquissesFooter />
+    </EsquissesShell>
   );
 }

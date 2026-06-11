@@ -1,8 +1,8 @@
 import { profile } from '@/content/profile';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Section « Contact » : titre massif, coordonnées et liens. */
-export function CarnetContact() {
+export function EsquissesContact() {
   const { github, linkedin } = profile.socials;
 
   return (

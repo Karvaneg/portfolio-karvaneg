@@ -25,7 +25,7 @@ export const astroBassin: Project = {
     'Conçue, développée et déployée seule, de A à Z, en deux mois. Front Astro, back Supabase, intégration continue GitLab et déploiement sur Vercel.',
   ],
   impact: '2 emails captés sur le coming-soon, avant lancement public',
-  impactCarnet: "2 premiers leads captés sur le coming-soon, avant même l'ouverture publique.",
+  impactEsquisses: "2 premiers leads captés sur le coming-soon, avant même l'ouverture publique.",
   aiTooling:
     'Claude Code — prompts chirurgicaux, optimisation des tokens, zéro hallucination en prod.',
   shots: [
@@ -86,7 +86,7 @@ export const astroBassin: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '-2.5deg',
     background: '#141029',
     accent: '#c9a24a',

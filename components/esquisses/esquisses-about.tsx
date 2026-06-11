@@ -1,8 +1,8 @@
 import { about } from '@/content/about';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Section « À propos » : narratif manuscrit + citation de recommandation. */
-export function CarnetAbout() {
+export function EsquissesAbout() {
   return (
     <section className={styles.about} id="about">
       <div className={styles.aboutGrid}>

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { profile } from '@/content/profile';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /** Pied de page du carnet — renvoi croisé vers le carnet technique. */
-export function CarnetFooter() {
+export function EsquissesFooter() {
   return (
     <footer className={styles.footer}>
       <span>

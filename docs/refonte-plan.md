@@ -18,12 +18,12 @@ seul site). L'ancien portfolio mono-page est **remplacé**.
 
 ### Les 4 surfaces
 
-| Route | Surface | Identité visuelle |
-|---|---|---|
-| `/` | **Atrium / Accueil** | Couverture de carnet, near-black chaud `#15120d`, crop marks, « N° 04 · Édition 2026 », choix entre 2 éditions + mise en avant Playbook |
-| `/carnet` | **Carnet d'esquisses** | Papier crème, manuscrit (Caveat / Patrick Hand), scotch, rotations, crayon rouge |
-| `/technique` | **Carnet technique** | Terminal `#0a0a0a`, accent émeraude, prompt `marie@karvaneg:~$`, tickets `KARV-00x` + études de cas |
-| `/playbook` `/playbook/[slug]` | **Playbook** | Long-form MDX (tutoriels IA), esthétique terminal, extensible dans le temps |
+| Route                          | Surface                | Identité visuelle                                                                                                                       |
+| ------------------------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                            | **Atrium / Accueil**   | Couverture de carnet, near-black chaud `#15120d`, crop marks, « N° 04 · Édition 2026 », choix entre 2 éditions + mise en avant Playbook |
+| `/esquisses`                   | **Carnet d'esquisses** | Papier crème, manuscrit (Caveat / Patrick Hand), scotch, rotations, crayon rouge                                                        |
+| `/technique`                   | **Carnet technique**   | Terminal `#0a0a0a`, accent émeraude, prompt `marie@karvaneg:~$`, tickets `KARV-00x` + études de cas                                     |
+| `/playbook` `/playbook/[slug]` | **Playbook**           | Long-form MDX (tutoriels IA), esthétique terminal, extensible dans le temps                                                             |
 
 Les deux carnets présentent **le même travail**, mis en page différemment, avec renvoi croisé.
 
@@ -46,6 +46,7 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
 ## 3. Règles de code (rigueur V1 à préserver)
 
 ### Style & formatage
+
 - **Prettier** : `semi: true`, `singleQuote: true`, `trailingComma: 'all'`,
   `printWidth: 100`, `tabWidth: 2`, `arrowParens: 'always'`.
 - **ESLint** : `next/core-web-vitals` + TS strict, `jsx-a11y`, `react-hooks` strict
@@ -53,6 +54,7 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
 - **Imports de type** explicites (`import type { … }`). Alias `@/…` (pas de chemins relatifs profonds).
 
 ### Architecture des composants
+
 - **Pas de CSS inline.** Styles via **Tailwind v4** (`@theme` / classes) et **CSS Modules**
   pour le très bespoke (carnet manuscrit, effets terminal). Jamais d'`style={{…}}` sauf
   valeur dynamique inévitable (ex. position curseur), et alors documentée.
@@ -66,6 +68,7 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
 - **Types** centralisés dans `types/**`. **Tokens** dans `globals.css` (`@theme`) + `design-system/`.
 
 ### Accessibilité & performance (exigences du positionnement)
+
 - Cible **Lighthouse 100 / 100 / 100 / 100**.
 - `next/image` (toutes images), `next/font/google` (toutes polices), SSG, **pas de Babel runtime**.
 - HTML sémantique (`nav`/`section`/`article`/`figure`/`footer`).
@@ -76,10 +79,12 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
 - Contrastes WCAG **AA** — revérifier les textes faibles (`--ivory-faint`, `--fg-faint`).
 
 ### Tests
+
 - **Vitest** (déjà en place). Test d'intégrité du modèle de contenu (ids uniques, images
   existantes) + tests de rendu sur les pages clés. Garder la suite verte.
 
 ### Git
+
 - Commits atomiques par étape, messages conventionnels. Push régulier sur `origin/feat/refonte`.
 - MR `feat/refonte` → `main` en fin de parcours, après validation.
 
@@ -91,13 +96,13 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
 app/
   layout.tsx              → <html>, fonts, metadata de base, providers (theme, analytics)
   page.tsx                → ATRIUM
-  carnet/page.tsx         → Carnet d'esquisses
+  esquisses/page.tsx         → Carnet d'esquisses
   technique/page.tsx      → Carnet technique
   playbook/page.tsx       → index Playbook
   playbook/[slug]/page.tsx→ une entrée (MDX)
   globals.css             → reset + tokens @theme partagés
 components/
-  atrium/…   carnet/…   technique/…   playbook/…   shared/…
+  atrium/…   esquisses/…   technique/…   playbook/…   shared/…
 content/
   projects.ts             → SOURCE DE VÉRITÉ UNIQUE
   experience.ts  stack.ts  profile.ts
@@ -114,12 +119,13 @@ public/images/…           → 19 captures (depuis source/images/)
 
 - **Phase 0 — Fondations (additif, build vert)**
   Copier les 19 images → `public/images/projects/`. Créer l'arborescence cible à vide
-  (`content/**`, `components/{atrium,carnet,technique,playbook,shared}/`).
+  (`content/**`, `components/{atrium,esquisses,technique,playbook,shared}/`).
+
   > **Séquencement** : le **nettoyage V1 est progressif** — chaque section mono-page est retirée
   > au moment où la nouvelle surface la remplace (le build reste vert pour les previews Vercel).
   > Le **setup MDX est reporté en Phase 6** (câblé quand le Playbook l'utilise, pas avant).
 
-- **Phase 1 — Modèle de contenu unifié** *(socle)*
+- **Phase 1 — Modèle de contenu unifié** _(socle)_
   `content/projects.ts` (type `Project` fusionnant narratif + ticket/case-study, 7 projets
   `KARV-001..007`), `experience.ts`, `stack.ts`, `profile.ts`. Emails/liens corrigés. Test d'intégrité.
   → **Validation de la liste finale des projets avec Marie.**
@@ -128,6 +134,7 @@ public/images/…           → 19 captures (depuis source/images/)
   7 polices via `next/font` (`app/lib/refonte-fonts.ts`). Tokens des 3 univers **scopés par
   surface** (`app/styles/refonte-tokens.css`, `[data-surface=…]`) — zéro impact V1. Variants
   d'accent `[data-accent=emerald|cyan|red]` en CSS.
+
   > **Séquencement** : le **composant switcher** (next-themes) est monté en Phase 4 (il lui faut
   > une surface) ; les **utilitaires partagés** (crop marks, animations `reveal`) sont créés en
   > Phase 3 là où ils servent d'abord — pour éviter le code/CSS mort.
@@ -139,9 +146,9 @@ public/images/…           → 19 captures (depuis source/images/)
 - **Phase 4 — Carnet technique `/technique`**
   Nav · Hero (variante verbose/minimal) · Show (vidéo **placeholder**) · Workflow · Projects (tickets) ·
   CaseStudy modal (métriques, carrousel clavier + lightbox, focus-trap) · OpenSource (stats **placeholder**) ·
-  Contact · Footer (→ carnet). Accent thémable.
+  Contact · Footer (→ esquisses). Accent thémable.
 
-- **Phase 5 — Carnet d'esquisses `/carnet`**
+- **Phase 5 — Carnet d'esquisses `/esquisses`**
   Nav (burger mobile) · Hero manuscrit (easter egg astérisque) · Marquee · About (+ citation) · Stack ·
   Work (aperçu flottant) · ProjectDetail overlay (galerie, focus-trap) · Experience · Contact · Footer
   (→ technique). Curseur custom (off tactile).

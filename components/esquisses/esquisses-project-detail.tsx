@@ -3,22 +3,22 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects, getProjectById } from '@/content/projects';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-interface CarnetProjectDetailProps {
+interface EsquissesProjectDetailProps {
   projectId: string;
   onClose: () => void;
   onNavigate: (id: string) => void;
 }
 
 /**
- * Overlay plein écran d'un projet (carnet) : récit, galerie, projet suivant.
+ * Overlay plein écran d'un projet (esquisses) : récit, galerie, projet suivant.
  * Verrou de scroll, fermeture Esc, focus-trap + restitution du focus (cf.
  * components/technique/case-study.tsx).
  */
-export function CarnetProjectDetail({ projectId, onClose, onNavigate }: CarnetProjectDetailProps) {
+export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: EsquissesProjectDetailProps) {
   const project = getProjectById(projectId);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -60,15 +60,15 @@ export function CarnetProjectDetail({ projectId, onClose, onNavigate }: CarnetPr
 
   if (!project) return null;
 
-  const { carnet, description } = project;
+  const { esquisses, description } = project;
   const index = projects.findIndex((item) => item.id === project.id);
   const next = projects[(index + 1) % projects.length];
-  const stackList = project.stackCarnet ?? project.stack;
-  const impact = project.impactCarnet ?? project.impact;
+  const stackList = project.stackEsquisses ?? project.stack;
+  const impact = project.impactEsquisses ?? project.impact;
   const num = String(project.order).padStart(2, '0');
   // Couleur de cadre pilotée par la donnée projet → variable CSS dynamique.
   const frameStyle = {
-    '--frame-bg': carnet.lightFrame ? 'var(--paper-2)' : carnet.background,
+    '--frame-bg': esquisses.lightFrame ? 'var(--paper-2)' : esquisses.background,
   } as CSSProperties;
 
   return (
@@ -117,7 +117,7 @@ export function CarnetProjectDetail({ projectId, onClose, onNavigate }: CarnetPr
         <div className={styles.detailImageFrame}>
           <div className={styles.detailImage} style={frameStyle}>
             <Image
-              src={carnet.heroImage}
+              src={esquisses.heroImage}
               alt={`${project.title} — aperçu principal`}
               fill
               sizes="(max-width: 960px) 100vw, 1100px"
@@ -137,9 +137,9 @@ export function CarnetProjectDetail({ projectId, onClose, onNavigate }: CarnetPr
         </div>
       </div>
 
-      {carnet.gallery.length > 0 && (
+      {esquisses.gallery.length > 0 && (
         <div className={`${styles.detailImageBlock} ${styles.detailGallery}`}>
-          {carnet.gallery.slice(0, 3).map((src) => (
+          {esquisses.gallery.slice(0, 3).map((src) => (
             <div className={styles.detailImageFrame} key={src}>
               <div className={styles.detailImage} style={frameStyle}>
                 <Image

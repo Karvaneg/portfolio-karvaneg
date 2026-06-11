@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { profile } from '@/content/profile';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 const LINKS = [
   { href: '#about', label: 'À propos' },
@@ -13,7 +13,7 @@ const LINKS = [
 ];
 
 /** Nav du carnet — liens ancrés + chip Playbook, avec tiroir mobile (burger). */
-export function CarnetNav() {
+export function EsquissesNav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export function CarnetNav() {
         karvaneg<span className={styles.star}>*</span>
       </a>
 
-      <div className={styles.navLinks} id="carnet-menu">
+      <div className={styles.navLinks} id="esquisses-menu">
         {LINKS.map((link) => (
           <a key={link.href} href={link.href} onClick={close}>
             {link.label}
@@ -45,7 +45,7 @@ export function CarnetNav() {
 
       <div className={styles.navStatus}>
         <span className={styles.statusDot} aria-hidden="true" />
-        <span className={styles.navStatusText}>{profile.availability.carnet}</span>
+        <span className={styles.navStatusText}>{profile.availability.esquisses}</span>
       </div>
 
       <button
@@ -53,7 +53,7 @@ export function CarnetNav() {
         className={styles.navToggle}
         aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
         aria-expanded={open}
-        aria-controls="carnet-menu"
+        aria-controls="esquisses-menu"
         onClick={() => setOpen((value) => !value)}
       >
         <svg viewBox="0 0 36 28" aria-hidden="true">

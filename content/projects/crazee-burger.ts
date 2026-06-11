@@ -24,7 +24,7 @@ export const crazeeBurger: Project = {
     "Mode admin / mode client, gestion de panier, persistance d'état, design system maison. Pas de pastiche fast-food kitsch — juste une interface qui fonctionne.",
   ],
   impact: 'Maîtrise consolidée de React/TypeScript en contexte production',
-  impactCarnet: 'Maîtrise consolidée de React/TypeScript en contexte production.',
+  impactEsquisses: 'Maîtrise consolidée de React/TypeScript en contexte production.',
   aiTooling:
     'Mode admin & client, panier persistant et un design system maison — une interface qui fonctionne, sans pastiche fast-food kitsch.',
   shots: [
@@ -57,7 +57,7 @@ export const crazeeBurger: Project = {
       },
     ],
   },
-  carnet: {
+  esquisses: {
     rotation: '-2deg',
     background: '#f3ede2',
     accent: '#4a5d3a',

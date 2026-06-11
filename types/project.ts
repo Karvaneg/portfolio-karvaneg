@@ -51,7 +51,7 @@ export interface ProjectCaseStudy {
 }
 
 /** Indices visuels propres au carnet d'esquisses (cartes pivotées, etc.). */
-export interface CarnetVisual {
+export interface EsquissesVisual {
   /** Rotation de la carte/aperçu, ex. '-3deg'. */
   rotation: string;
   background: string;
@@ -70,7 +70,7 @@ export interface Project {
   ticketId: string;
   /** Ordre d'affichage (1 = plus récent), commun aux deux éditions. */
   order: number;
-  /** Nom court / canonique (carnet). */
+  /** Nom court / canonique (esquisses). */
   title: string;
   /** Titre long (carnet technique). */
   headline: string;
@@ -86,21 +86,21 @@ export interface Project {
   /** Stack affichée côté technique. */
   stack: string[];
   /** Override carnet, uniquement si différent de `stack`. */
-  stackCarnet?: string[];
+  stackEsquisses?: string[];
   labels: ProjectLabel[];
   /** Résumé court (technique). */
   summary: string;
-  /** Narratif (carnet). */
+  /** Narratif (esquisses). */
   description: string[];
   /** Impact mesuré (technique). */
   impact: string;
   /** Impact reformulé côté carnet, si différent. */
-  impactCarnet?: string;
+  impactEsquisses?: string;
   /** Libellé de la ligne méta (technique), ex. 'Focus' ; défaut 'AI Tooling'. */
   metaLabel?: string;
   /** Rôle de l'IA / focus du projet (texte). */
   aiTooling?: string;
   shots: ProjectShot[];
   caseStudy: ProjectCaseStudy;
-  carnet: CarnetVisual;
+  esquisses: EsquissesVisual;
 }

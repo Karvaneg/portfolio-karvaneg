@@ -1,14 +1,14 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import styles from './carnet.module.css';
+import styles from './esquisses.module.css';
 
 /**
  * Curseur crayon custom — suit la souris et grossit au survol des éléments
  * interactifs. Affiché uniquement sur pointeur fin (`@media (pointer: fine)`).
  * La position est une valeur dynamique inévitable → `style.left/top` documenté.
  */
-export function CarnetCursor() {
+export function EsquissesCursor() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

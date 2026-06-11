@@ -12,23 +12,23 @@ Phases **0 → 5 terminées**. Prochaine étape : **Phase 6 — Playbook (`/play
 - Archive V1 : tag **`v1-portfolio`**. `main` protégée (pas de force-push), intouchée.
 - Build vert, lint 0 warning, 16 tests verts, tout en SSG (`/carnet` sort en `○ Static`).
 
-| Phase | État | Commit |
-|---|---|---|
-| 0 — Fondations (images, arbo) | ✅ | `7b4b4ee` |
-| 1 — Contenu unifié (projects/experience/stack/profile) | ✅ | `b132411`, `b304be1` |
-| 2 — Tokens + polices + accent CSS | ✅ | `6fd230c` |
-| 3 — Atrium `/` | ✅ | `fec3d4e` |
-| 4 — Carnet technique `/technique` | ✅ | `12c0bd4`, `7572bab`, `f25f0ca` |
-| 5 — Carnet d'esquisses `/carnet` | ✅ | `4b5ce55`, `6911d85`, `ab6b745` |
-| **6 — Playbook `/playbook` + `[slug]` (MDX)** | ⏳ **à faire** | — |
-| 7 — Transverse (a11y, SEO, perf, **réintégrer analytics**) | ⏳ | — |
-| 8 — QA finale + Lighthouse + déploiement Vercel | ⏳ | — |
+| Phase                                                      | État           | Commit                          |
+| ---------------------------------------------------------- | -------------- | ------------------------------- |
+| 0 — Fondations (images, arbo)                              | ✅             | `7b4b4ee`                       |
+| 1 — Contenu unifié (projects/experience/stack/profile)     | ✅             | `b132411`, `b304be1`            |
+| 2 — Tokens + polices + accent CSS                          | ✅             | `6fd230c`                       |
+| 3 — Atrium `/`                                             | ✅             | `fec3d4e`                       |
+| 4 — Carnet technique `/technique`                          | ✅             | `12c0bd4`, `7572bab`, `f25f0ca` |
+| 5 — Carnet d'esquisses `/esquisses`                        | ✅             | `4b5ce55`, `6911d85`, `ab6b745` |
+| **6 — Playbook `/playbook` + `[slug]` (MDX)**              | ⏳ **à faire** | —                               |
+| 7 — Transverse (a11y, SEO, perf, **réintégrer analytics**) | ⏳             | —                               |
+| 8 — QA finale + Lighthouse + déploiement Vercel            | ⏳             | —                               |
 
 ## Routes en place
 
 - `/` → Atrium (remplace la home V1). `app/page.tsx` + `components/atrium/*`.
 - `/technique` → Carnet technique. `app/technique/page.tsx` + `components/technique/*`.
-- `/carnet` → Carnet d'esquisses. `app/carnet/page.tsx` + `components/carnet/*`.
+- `/esquisses` → Carnet d'esquisses. `app/esquisses/page.tsx` + `components/esquisses/*`.
 - `/playbook` → **404 temporaire** (Phase 6).
 
 ## Décisions actées (rappel)
@@ -55,9 +55,9 @@ réintégrer proprement en Phase 7), projets affichés **du plus récent au plus
 
 ## Phase 5 — Carnet d'esquisses : FAIT
 
-`app/carnet/page.tsx` + `components/carnet/*` (shell, nav burger, hero easter-egg,
+`app/esquisses/page.tsx` + `components/esquisses/*` (shell, nav burger, hero easter-egg,
 marquee, curseur, about, stack, work, project-detail, experience, contact, footer ;
-CSS Module `carnet.module.css`). Narratif extrait en `content/about.ts` + `types/about.ts`
+CSS Module `esquisses.module.css`). Narratif extrait en `content/about.ts` + `types/about.ts`
 (paragraphes + citation Coralie Pradel + hero-meta). **Malt omis** (pas d'URL) ; email
 gmail unifié ; renvoi croisé footer → `/technique`.
 
@@ -79,7 +79,7 @@ calqué sur `case-study.tsx`.
 Setup MDX ici (Phase 0 l'avait reporté) : `@next/mdx` + `@mdx-js/*` + config Turbopack.
 `content/playbook/*.mdx` (001 live, 002/003 ébauches). Index + entrée `[slug]`. Esthétique
 terminal (réutiliser tokens `[data-surface='technique']`). Lien Playbook déjà câblé depuis
-les 3 surfaces (atrium, technique, carnet).
+les 3 surfaces (atrium, technique, esquisses).
 
 ## Gotchas / dettes connues
 
@@ -104,7 +104,7 @@ les 3 surfaces (atrium, technique, carnet).
 
 ```bash
 git switch feat/refonte                     # Phase 5 committée en local, pas encore poussée
-pnpm dev                                     # http://localhost:3000  (/, /technique, /carnet OK)
+pnpm dev                                     # http://localhost:3000  (/, /technique, /esquisses OK)
 node_modules/.bin/eslint . --ext .ts,.tsx --max-warnings=0
 node_modules/.bin/next build                 # vérifier ○ Static
 node_modules/.bin/vitest run                 # 16 tests
@@ -112,4 +112,4 @@ node_modules/.bin/vitest run                 # 16 tests
 
 Puis : pousser la Phase 5 si validée (`git push`), puis lire les sources Playbook +
 `tutorial.css`, attaquer la Phase 6 (setup MDX d'abord), en suivant les patterns de
-`components/technique/` et `components/carnet/` (shell, CSS Module, fidélité maquette).
+`components/technique/` et `components/esquisses/` (shell, CSS Module, fidélité maquette).

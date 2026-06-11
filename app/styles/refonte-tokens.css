@@ -45,7 +45,7 @@ REFONTE — Tokens scopés par surface
 }
 
 /* ===== Carnet d'esquisses — papier, manuscrit ===== */
-[data-surface='carnet'] {
+[data-surface='esquisses'] {
   --paper: #f1ead8;
   --paper-2: #ebe2cc;
   --paper-3: #e0d4b6;

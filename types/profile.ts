@@ -8,7 +8,7 @@ export interface SocialLink {
 export interface Availability {
   available: boolean;
   atrium: string;
-  carnet: string;
+  esquisses: string;
   technique: string;
 }
 

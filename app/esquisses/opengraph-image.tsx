@@ -6,7 +6,7 @@ export const alt = "Carnet d'esquisses — Marie Le Carvennec";
 
 export default function Image() {
   return ogImage({
-    surface: 'carnet',
+    surface: 'esquisses',
     eyebrow: "Carnet d'esquisses",
     title: 'Un portfolio manuscrit, tactile et raconté',
   });
