@@ -7,6 +7,9 @@ import { CarnetMarquee } from '@/components/carnet/carnet-marquee';
 import { CarnetAbout } from '@/components/carnet/carnet-about';
 import { CarnetStack } from '@/components/carnet/carnet-stack';
 import { CarnetWork } from '@/components/carnet/carnet-work';
+import { CarnetExperience } from '@/components/carnet/carnet-experience';
+import { CarnetContact } from '@/components/carnet/carnet-contact';
+import { CarnetFooter } from '@/components/carnet/carnet-footer';
 
 export const metadata: Metadata = {
   title: "Carnet d'esquisses — Marie Le Carvennec · Développeuse Web Fullstack",
@@ -23,6 +26,9 @@ export default function CarnetPage() {
       <CarnetAbout />
       <CarnetStack />
       <CarnetWork />
+      <CarnetExperience />
+      <CarnetContact />
+      <CarnetFooter />
     </CarnetShell>
   );
 }
