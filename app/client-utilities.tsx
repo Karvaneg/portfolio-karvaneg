@@ -7,7 +7,7 @@ const SpeedInsights = dynamic(
   () => import('@vercel/speed-insights/next').then((m) => m.SpeedInsights),
   { ssr: false },
 );
-const HotjarLoader = dynamic(() => import('./hotjar-loader'), { ssr: false });
+const CookieConsent = dynamic(() => import('@/components/consent/cookie-consent'), { ssr: false });
 
 export default function ClientUtilities() {
   
@@ -17,7 +17,7 @@ export default function ClientUtilities() {
     <>
       <Toaster />
       {isVercelProd && <SpeedInsights />}
-      <HotjarLoader />
+      <CookieConsent />
     </>
   );
 }

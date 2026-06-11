@@ -57,8 +57,9 @@ Surface MDX extensible, esthétique terminal réutilisée (`data-surface="techni
   (case-study, project-detail) vérifié (scroll lock, focus initial+restitution, Esc, piège Tab,
   `role=dialog`/`aria-modal`).
 - **perf** : images refonte en `fill` + `sizes`, aucune image LCP above-the-fold.
-- **analytics** : **déjà consent-gaté** (`HotjarLoader` monte `CookieBanner`, charge le script
-  ContentSquare sur consentement + interaction) — repris V1, fonctionnel.
+- **analytics** : consent-gaté — `components/consent/cookie-consent.tsx` monte `CookieBanner`,
+  charge le script Contentsquare sur consentement + interaction. Restylé aux tokens refonte
+  (couverture atrium, bas-gauche, CSS Module) ; ne dépend plus de la V1.
 - **favicons** : `app/icon.svg` + `app/apple-icon.png` + `app/favicon.ico` + `app/manifest.ts`
   (astérisque rouge, theme `#15120d`). Anciens assets OG/favicon V1 supprimés.
 
@@ -86,10 +87,10 @@ Vérifié auto : `lint` + `build` + 24 tests verts ; renvois croisés cohérents
 
 - **Fix SSR critique** : `app/providers.tsx` ne charge pas le ThemeProvider en `ssr:false`.
   `<html suppressHydrationWarning>`. Ne pas réintroduire `ssr:false`.
-- **Nettoyage V1 fait** : sections, ui-kit, layout, data, hooks, ui, tests et images V1
-  supprimés (~96 fichiers). Restent câblés au `layout` : `app/lib/fonts.ts` (Inter/JetBrains/
-  Cinzel sur `<html>`), `providers`/`theme-provider`, `client-utilities`/`cookie-banner`,
-  `design-system/`, `lib/{utils,security}`.
+- **Nettoyage V1 fait** : sections, ui-kit, layout, data, hooks, ui, `design-system/`,
+  `lib/utils.ts`, tests et images V1 supprimés (~100 fichiers). Restent câblés au `layout` :
+  `app/lib/fonts.ts` (Inter/JetBrains/Cinzel sur `<html>`), `providers`/`theme-provider`,
+  `client-utilities` + `components/consent/*`, `lib/security.ts`.
 - **pnpm** : dans cet environnement, `pnpm` se résout en 10.x alors que `node_modules` vient de
   pnpm 11.5.3 → utiliser `corepack pnpm@11.5.3 …` (ou `node_modules/.bin/*` directement).
 - **Lint** : `react-hooks/set-state-in-effect` actif → pas de `setState` dans un effet
