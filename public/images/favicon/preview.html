@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Favicon preview</title>
+<style>
+  body{margin:0;font-family:system-ui,sans-serif;background:#e9e6df;color:#222;padding:48px;display:flex;flex-direction:column;gap:40px}
+  .row{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+  .chip{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:12px;color:#666}
+  .tab{display:inline-flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:8px 8px 0 0;font-size:13px}
+  .tab.light{background:#fff;color:#333;border:1px solid #ddd;border-bottom:none}
+  .tab.dark{background:#202124;color:#e8eaed}
+  img{display:block;image-rendering:auto}
+  h2{font-size:14px;color:#888;font-weight:600;margin:0;text-transform:uppercase;letter-spacing:.06em}
+</style></head>
+<body>
+  <div><h2>Tailles réelles</h2></div>
+  <div class="row">
+    <div class="chip"><img src="icon.svg" width="16" height="16"><span>16</span></div>
+    <div class="chip"><img src="icon.svg" width="24" height="24"><span>24</span></div>
+    <div class="chip"><img src="icon.svg" width="32" height="32"><span>32</span></div>
+    <div class="chip"><img src="icon.svg" width="48" height="48"><span>48</span></div>
+    <div class="chip"><img src="icon.svg" width="64" height="64"><span>64</span></div>
+    <div class="chip"><img src="icon.svg" width="128" height="128"><span>128</span></div>
+  </div>
+  <div><h2>En situation (onglet)</h2></div>
+  <div class="row">
+    <div class="tab light"><img src="icon.svg" width="16" height="16">Karvaneg — Marie Le Carvennec</div>
+    <div class="tab dark"><img src="icon.svg" width="16" height="16">Karvaneg — Marie Le Carvennec</div>
+  </div>
+  <div><h2>App icon (arrondi iOS/Android)</h2></div>
+  <div class="row">
+    <img src="icon.svg" width="120" height="120" style="border-radius:26px">
+    <img src="icon.svg" width="180" height="180" style="border-radius:40px">
+  </div>
+</body></html>

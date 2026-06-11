@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { buildMetadata } from '@/app/lib/metadata';
 import { refonteFontVariables } from '@/app/lib/refonte-fonts';
 import { CropMarks } from '@/components/atrium/crop-marks';
 import { AtriumTopbar } from '@/components/atrium/atrium-topbar';
@@ -10,11 +10,12 @@ import { AtriumColophon } from '@/components/atrium/atrium-colophon';
 import { KeyboardShortcuts } from '@/components/atrium/keyboard-shortcuts';
 import styles from '@/components/atrium/atrium.module.css';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
+  path: '/',
   title: 'Karvaneg — Marie Le Carvennec · Développeuse Web Fullstack',
   description:
     "Portfolio de Marie Le Carvennec, développeuse web fullstack. Deux éditions — carnet d'esquisses ou carnet technique — et un playbook d'ingénierie augmentée par l'IA.",
-};
+});
 
 export default function AtriumPage() {
   return (

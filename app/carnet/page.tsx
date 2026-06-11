@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { buildMetadata } from '@/app/lib/metadata';
 import { refonteFontVariables } from '@/app/lib/refonte-fonts';
 import { CarnetShell } from '@/components/carnet/carnet-shell';
 import { CarnetNav } from '@/components/carnet/carnet-nav';
@@ -11,11 +11,12 @@ import { CarnetExperience } from '@/components/carnet/carnet-experience';
 import { CarnetContact } from '@/components/carnet/carnet-contact';
 import { CarnetFooter } from '@/components/carnet/carnet-footer';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
+  path: '/carnet',
   title: "Carnet d'esquisses — Marie Le Carvennec · Développeuse Web Fullstack",
   description:
     "Le carnet d'esquisses de Marie Le Carvennec : un portfolio manuscrit et tactile — à propos, stack, projets et parcours racontés comme des pages de carnet.",
-};
+});
 
 export default function CarnetPage() {
   return (

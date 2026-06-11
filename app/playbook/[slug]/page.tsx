@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { buildMetadata } from '@/app/lib/metadata';
 import { refonteFontVariables } from '@/app/lib/refonte-fonts';
 import { TechniqueShell } from '@/components/technique/technique-shell';
 import { TechniqueFooter } from '@/components/technique/technique-footer';
@@ -26,12 +27,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entry = getPlaybookEntry(slug);
   if (!entry) return {};
 
-  const title = `${entry.title} — Playbook · ${entry.num} · Marie Le Carvennec`;
-  return {
-    title,
+  return buildMetadata({
+    path: `/playbook/${entry.slug}`,
+    title: `${entry.title} — Playbook · ${entry.num} · Marie Le Carvennec`,
     description: entry.summary,
-    openGraph: { title, description: entry.summary },
-  };
+  });
 }
 
 export default async function PlaybookEntryPage({ params }: PageProps) {

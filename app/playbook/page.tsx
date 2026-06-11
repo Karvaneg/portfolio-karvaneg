@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildMetadata } from '@/app/lib/metadata';
 import { refonteFontVariables } from '@/app/lib/refonte-fonts';
 import { TechniqueShell } from '@/components/technique/technique-shell';
 import { TechniqueFooter } from '@/components/technique/technique-footer';
@@ -8,11 +8,12 @@ import { playbookEntries } from '@/content/playbook-index';
 import techStyles from '@/components/technique/technique.module.css';
 import styles from '@/components/playbook/playbook.module.css';
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
+  path: '/playbook',
   title: 'Playbook — Marie Le Carvennec · Ingénierie augmentée par l’IA',
   description:
     "Le playbook de Marie Le Carvennec : tutoriels long-form sur l'ingénierie augmentée par l'IA — setup Claude Code, skills sur-mesure, refactoring asynchrone en Git Worktrees.",
-};
+});
 
 export default function PlaybookIndexPage() {
   return (
