@@ -168,7 +168,7 @@ public/images/…           → 19 captures (depuis source/images/)
 - [x] Phase 2 — Tokens, polices & thème
 - [x] Phase 3 — Atrium
 - [x] Phase 4 — Carnet technique
-- [ ] Phase 5 — Carnet d'esquisses
+- [x] Phase 5 — Carnet d'esquisses
 - [ ] Phase 6 — Playbook
 - [ ] Phase 7 — Transverse (a11y / SEO / perf / analytics)
 - [ ] Phase 8 — QA finale & déploiement

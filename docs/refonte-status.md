@@ -5,11 +5,12 @@
 
 ## TL;DR — où on en est
 
-Phases **0 → 4 terminées et poussées**. Prochaine étape : **Phase 5 — Carnet d'esquisses (`/carnet`)**.
+Phases **0 → 5 terminées**. Prochaine étape : **Phase 6 — Playbook (`/playbook` + `[slug]`, MDX)**.
 
-- Branche : **`feat/refonte`** (synchro avec `origin/feat/refonte`, working tree propre).
+- Branche : **`feat/refonte`**. Phase 5 committée en local (`4b5ce55`, `6911d85`, `ab6b745`)
+  — **non encore poussée** sur `origin/feat/refonte` (push sur demande).
 - Archive V1 : tag **`v1-portfolio`**. `main` protégée (pas de force-push), intouchée.
-- Build vert, lint 0 warning, 16 tests verts, tout en SSG.
+- Build vert, lint 0 warning, 16 tests verts, tout en SSG (`/carnet` sort en `○ Static`).
 
 | Phase | État | Commit |
 |---|---|---|
@@ -18,8 +19,8 @@ Phases **0 → 4 terminées et poussées**. Prochaine étape : **Phase 5 — Car
 | 2 — Tokens + polices + accent CSS | ✅ | `6fd230c` |
 | 3 — Atrium `/` | ✅ | `fec3d4e` |
 | 4 — Carnet technique `/technique` | ✅ | `12c0bd4`, `7572bab`, `f25f0ca` |
-| **5 — Carnet d'esquisses `/carnet`** | ⏳ **à faire** | — |
-| 6 — Playbook `/playbook` + `[slug]` (MDX) | ⏳ | — |
+| 5 — Carnet d'esquisses `/carnet` | ✅ | `4b5ce55`, `6911d85`, `ab6b745` |
+| **6 — Playbook `/playbook` + `[slug]` (MDX)** | ⏳ **à faire** | — |
 | 7 — Transverse (a11y, SEO, perf, **réintégrer analytics**) | ⏳ | — |
 | 8 — QA finale + Lighthouse + déploiement Vercel | ⏳ | — |
 
@@ -27,7 +28,8 @@ Phases **0 → 4 terminées et poussées**. Prochaine étape : **Phase 5 — Car
 
 - `/` → Atrium (remplace la home V1). `app/page.tsx` + `components/atrium/*`.
 - `/technique` → Carnet technique. `app/technique/page.tsx` + `components/technique/*`.
-- `/carnet`, `/playbook` → **404 temporaires** (Phases 5–6).
+- `/carnet` → Carnet d'esquisses. `app/carnet/page.tsx` + `components/carnet/*`.
+- `/playbook` → **404 temporaire** (Phase 6).
 
 ## Décisions actées (rappel)
 
@@ -51,25 +53,33 @@ réintégrer proprement en Phase 7), projets affichés **du plus récent au plus
 - **SSR/SSG** : OK partout depuis le fix du ThemeProvider (cf. ci-dessous). Vérifier que
   les nouvelles pages sortent en `○ Static` au build.
 
-## Phase 5 — Carnet d'esquisses : plan d'attaque
+## Phase 5 — Carnet d'esquisses : FAIT
+
+`app/carnet/page.tsx` + `components/carnet/*` (shell, nav burger, hero easter-egg,
+marquee, curseur, about, stack, work, project-detail, experience, contact, footer ;
+CSS Module `carnet.module.css`). Narratif extrait en `content/about.ts` + `types/about.ts`
+(paragraphes + citation Coralie Pradel + hero-meta). **Malt omis** (pas d'URL) ; email
+gmail unifié ; renvoi croisé footer → `/technique`.
+
+Patterns réutilisables nés ici : **curseur custom** (`carnet-cursor.tsx`, `pointer: fine`,
+toggle de classe via `styles.large`) ; **isolation de stacking** sur `.page`
+(`isolation: isolate` + texture en `::before` z-index -1) pour que l'aperçu flottant et
+l'overlay se superposent aux sections ; **variables CSS dynamiques** pilotées par la donnée
+(`--rot`, `--frame-bg`) via `style={{ … } as CSSProperties}` (cast accepté par TS) ;
+overlay `CarnetProjectDetail` rendu en sibling de la section Work (fragment) avec focus-trap
+calqué sur `case-study.tsx`.
+
+## Phase 6 — Playbook : à attaquer
 
 **Sources (hors dépôt)** : `…/design_handoff_karvaneg_portfolio/source/` →
-`Karvaneg Portfolio v2 (carnet).html`, `app-v2.jsx` (734 l.), `styles-v2.css`.
+`Karvaneg Playbook.html`, `Karvaneg Playbook 001/002/003.md`, `ai-workflow-tutorial.jsx`,
+`playbook-002.jsx`, `playbook-003.jsx`, `tutorial.css`.
 (Chemin Windows : `/mnt/c/Users/marie/Documents/WebDevelopment/Projets/Perso/portFolioKarvaneg/Portfolio_Karvaneg_CD_2versions/`.)
 
-Sections (ordre DOM) : `Nav` (burger mobile a11y) → `Hero` (manuscrit, soulignés SVG,
-**easter egg astérisque** = origine celtique « karvaneg ») → `Marquee` → `About`
-(+ citation Coralie Pradel) → `Stack` (chips, `content/stack.ts`) → `Work` (lignes
-projets + aperçu flottant au survol) → `ProjectDetail` (overlay plein écran, galerie,
-focus-trap) → `Experience` (`content/experience.ts`) → `Contact` → `Footer`
-(renvoi → `/technique`). **Curseur custom** désactivé au tactile (`pointer: coarse`).
-
-Découpage suggéré (comme Phase 4) :
-1. **5A** : shell `/carnet` (data-surface=carnet + polices) + Nav + Hero + Marquee + curseur custom.
-2. **5B** : About (+ citation) + Stack + Work + overlay ProjectDetail (réutiliser `content/projects` champs carnet/description/gallery + focus-trap comme `case-study.tsx`).
-3. **5C** : Experience + Contact + Footer.
-
-Notes données : le carnet a `description[]` (narratif), `carnet.{rotation,background,accent,cardImage,heroImage,gallery,caption}`, `impactCarnet`, `stackCarnet` (InclusiShield only). La citation Coralie Pradel (DGS du CBNSA) est dans `app-v2.jsx` (section About) — à extraire ; pas encore en `content/` (l'ajouter, ex. `content/about.ts` ou champ profil).
+Setup MDX ici (Phase 0 l'avait reporté) : `@next/mdx` + `@mdx-js/*` + config Turbopack.
+`content/playbook/*.mdx` (001 live, 002/003 ébauches). Index + entrée `[slug]`. Esthétique
+terminal (réutiliser tokens `[data-surface='technique']`). Lien Playbook déjà câblé depuis
+les 3 surfaces (atrium, technique, carnet).
 
 ## Gotchas / dettes connues
 
@@ -93,12 +103,13 @@ Notes données : le carnet a `description[]` (narratif), `carnet.{rotation,backg
 ## Reprendre demain — commandes
 
 ```bash
-git switch feat/refonte && git pull        # repartir à jour (NE PAS pull sur main)
-pnpm dev                                    # http://localhost:3000  (/ et /technique OK)
+git switch feat/refonte                     # Phase 5 committée en local, pas encore poussée
+pnpm dev                                     # http://localhost:3000  (/, /technique, /carnet OK)
 node_modules/.bin/eslint . --ext .ts,.tsx --max-warnings=0
-node_modules/.bin/next build                # vérifier ○ Static
-node_modules/.bin/vitest run                # 16 tests
+node_modules/.bin/next build                 # vérifier ○ Static
+node_modules/.bin/vitest run                 # 16 tests
 ```
 
-Puis : lire `app-v2.jsx` + `styles-v2.css`, attaquer la Phase 5 (sous-commit 5A),
-en suivant les patterns de `components/technique/` (shell, CSS Module, fidélité maquette).
+Puis : pousser la Phase 5 si validée (`git push`), puis lire les sources Playbook +
+`tutorial.css`, attaquer la Phase 6 (setup MDX d'abord), en suivant les patterns de
+`components/technique/` et `components/carnet/` (shell, CSS Module, fidélité maquette).
