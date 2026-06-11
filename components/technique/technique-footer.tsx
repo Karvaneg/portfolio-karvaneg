@@ -10,7 +10,7 @@ export function TechniqueFooter() {
         <span>2026 — {profile.name} · Fullstack &amp; AI-Augmented Engineer</span>
       </div>
       <div className={styles.footerRight}>
-        <Link href="/carnet">↩ version carnet d'esquisses</Link>
+        <Link href="/esquisses">↩ version carnet d'esquisses</Link>
         <span>{profile.geo}</span>
       </div>
     </footer>

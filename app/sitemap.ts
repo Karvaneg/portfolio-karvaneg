@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const surfaces: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified, priority: 1 },
-    { url: `${SITE_URL}/carnet`, lastModified, priority: 0.8 },
+    { url: `${SITE_URL}/esquisses`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/technique`, lastModified, priority: 0.8 },
     { url: `${SITE_URL}/playbook`, lastModified, priority: 0.6 },
   ];

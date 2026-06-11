@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './atrium.module.css';
 
-/** Raccourcis : 1 → carnet, 2 → technique, P → playbook (+ rappel visuel). */
+/** Raccourcis : 1 → esquisses, 2 → technique, P → playbook (+ rappel visuel). */
 const ROUTES: Record<string, string> = {
-  '1': '/carnet',
+  '1': '/esquisses',
   '2': '/technique',
   p: '/playbook',
 };

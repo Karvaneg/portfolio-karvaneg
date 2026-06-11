@@ -5,7 +5,7 @@ import styles from './atrium.module.css';
 export function EditionSketch() {
   return (
     <Link
-      href="/carnet"
+      href="/esquisses"
       className={`${styles.edition} ${styles.edSketch} ${styles.reveal} ${styles.d3}`}
       aria-label="Entrer dans le carnet d'esquisses"
     >
