@@ -55,7 +55,7 @@ export function Wrapup({ children }: { children: ReactNode }) {
   return (
     <div className={styles.wrapup}>
       <div className={styles.wrapupDivider} />
-      <p className={styles.wrapupText}>{children}</p>
+      <div className={styles.wrapupText}>{children}</div>
     </div>
   );
 }

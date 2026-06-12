@@ -591,7 +591,8 @@
   background: var(--border-soft);
   margin-bottom: 16px;
 }
-.wrapupText {
+.wrapupText,
+.wrapupText p {
   font-size: 16px;
   color: var(--fg-3);
   line-height: 1.6;
