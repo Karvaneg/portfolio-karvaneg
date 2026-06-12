@@ -1,21 +1,14 @@
 import { profile } from '@/content/profile';
 import { GithubIcon, ArrowUpRightIcon } from './icons';
+import { getRepoData } from './repo-stats';
 import styles from './technique.module.css';
 import os from './opensource.module.css';
 
 const TOPICS = ['claude-code', 'custom-skills', 'git-worktrees', 'workflows', 'prompts', 'developer-tooling'];
 
-// Placeholders — à brancher sur les vraies valeurs du repo plus tard.
-const STATS = [
-  { label: 'Skills', value: '[N]' },
-  { label: 'Prompts', value: '[N]' },
-  { label: 'Stars', value: '[N]' },
-  { label: 'Last commit', value: '—' },
-];
-const FEATURED = ['./playbooks/001-setup-claude-code', './playbooks/002-skills-workflows', './playbooks/003-worktrees-refactoring'];
-
-export function TechniqueOpenSource() {
+export async function TechniqueOpenSource() {
   const repo = profile.openSourceRepo;
+  const { stats, featured } = await getRepoData();
   return (
     <section className={styles.section} id="opensource">
       <div className={styles.container}>
@@ -66,7 +59,7 @@ export function TechniqueOpenSource() {
           <aside className={os.repoSide}>
             <h4>Repo stats</h4>
             <ul>
-              {STATS.map((stat) => (
+              {stats.map((stat) => (
                 <li key={stat.label}>
                   <span>{stat.label}</span>
                   <span className={os.repoNum}>{stat.value}</span>
@@ -75,7 +68,7 @@ export function TechniqueOpenSource() {
             </ul>
             <h4>Featured</h4>
             <ul>
-              {FEATURED.map((item) => (
+              {featured.map((item) => (
                 <li key={item}>
                   <span className={os.repoFeatured}>{item}</span>
                 </li>
