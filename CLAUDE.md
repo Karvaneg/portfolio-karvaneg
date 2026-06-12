@@ -14,7 +14,7 @@ Les fichiers `source/*.jsx|.html` du handoff sont des **références visuelles**
 ## 🎯 Projet
 
 Portfolio de Marie Le Carvennec, en **refonte complète 2026** : système éditorial à
-**4 surfaces** — Atrium `/`, Carnet d'esquisses `/carnet`, Carnet technique `/technique`,
+**4 surfaces** — Atrium `/`, Carnet d'esquisses `/esquisses`, Carnet technique `/technique`,
 Playbook `/playbook`. Voir `docs/refonte-plan.md` §1.
 
 **Stack** : Next.js 16 (App Router, RSC), React 19, TypeScript strict, Tailwind v4
