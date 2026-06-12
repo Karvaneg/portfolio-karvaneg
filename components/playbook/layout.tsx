@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import techStyles from '@/components/technique/technique.module.css';
+import ui from '@/components/shared/ui.module.css';
 import styles from './playbook.module.css';
 
 /** Ligne d'instruction « ↓ Copiez/collez ce prompt… ». */
@@ -11,7 +11,7 @@ export function CopyInstruction({ children = '↓ Copiez/collez ce prompt dans C
 export function Prereq({ tag, children }: { tag: string; children: ReactNode }) {
   return (
     <section className={styles.prereq}>
-      <span className={techStyles.sectionTag}>{tag}</span>
+      <span className={ui.sectionTag}>{tag}</span>
       {children}
     </section>
   );

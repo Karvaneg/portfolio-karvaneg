@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { PlaybookEntry } from '@/types/playbook';
-import techStyles from '@/components/technique/technique.module.css';
+import ui from '@/components/shared/ui.module.css';
 import styles from './playbook.module.css';
 
 interface ArticleHeaderProps {
@@ -46,7 +46,7 @@ export function ArticleHeader({ entry, accent, subtitle, lede, ledeEmphasis }: A
       {ledeEmphasis ? <p className={`${styles.lede} ${styles.ledeEmphasis}`}>{ledeEmphasis}</p> : null}
       <div className={styles.tags}>
         {entry.tags.map((tag, i) => (
-          <span key={tag} className={`${techStyles.tag} ${i === 0 ? techStyles.tagAccent : ''}`}>
+          <span key={tag} className={`${ui.tag} ${i === 0 ? ui.tagAccent : ''}`}>
             {tag}
           </span>
         ))}

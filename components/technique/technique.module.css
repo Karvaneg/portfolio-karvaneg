@@ -104,22 +104,9 @@
 }
 
 /* ===== Section headers ===== */
+/* sectionTag → primitive partagée (components/shared/ui.module.css). */
 .sectionTag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--fg-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.sectionTag::before {
-  content: '';
-  width: 14px;
-  height: 1px;
-  background: var(--accent);
+  composes: sectionTag from '../shared/ui.module.css';
 }
 .sectionTitle {
   font-size: clamp(28px, 3.4vw, 42px);
@@ -218,49 +205,21 @@
   border-radius: 4px;
   border: 1px solid var(--border);
 }
+/* ctaRow + famille btn → primitives partagées (components/shared/ui.module.css). */
 .ctaRow {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  composes: ctaRow from '../shared/ui.module.css';
 }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.15s ease;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  composes: btn from '../shared/ui.module.css';
 }
-/* Sélecteurs composés (.btn.btnX, spécificité 0,2,0) pour l'emporter sur
-   `.page a { color: inherit }` quand un bouton est un lien (<a>). */
-.btn.btnPrimary {
-  background: var(--fg);
-  color: var(--bg);
+.btnPrimary {
+  composes: btnPrimary from '../shared/ui.module.css';
 }
-.btnPrimary:hover {
-  background: var(--accent);
-  transform: translateY(-1px);
+.btnSecondary {
+  composes: btnSecondary from '../shared/ui.module.css';
 }
-.btn.btnSecondary {
-  background: var(--bg-2);
-  color: var(--fg);
-  border-color: var(--border);
-}
-.btnSecondary:hover {
-  border-color: var(--border-strong);
-  background: var(--bg-3);
-}
-.btn.btnGhost {
-  color: var(--fg-3);
-  padding: 10px 4px;
-}
-.btnGhost:hover {
-  color: var(--fg);
+.btnGhost {
+  composes: btnGhost from '../shared/ui.module.css';
 }
 .icon {
   width: 14px;
@@ -534,20 +493,12 @@
   flex-wrap: wrap;
   gap: 6px;
 }
+/* tag + tagAccent → primitives partagées (components/shared/ui.module.css). */
 .tag {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--fg-3);
-  padding: 3px 8px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--bg-2);
-  text-transform: lowercase;
+  composes: tag from '../shared/ui.module.css';
 }
 .tagAccent {
-  color: var(--accent);
-  border-color: var(--accent-dim);
-  background: var(--accent-faint);
+  composes: tagAccent from '../shared/ui.module.css';
 }
 
 /* ===== Tickets / Projects ===== */

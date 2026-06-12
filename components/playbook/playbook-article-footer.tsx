@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { PlaybookEntry } from '@/types/playbook';
-import techStyles from '@/components/technique/technique.module.css';
+import ui from '@/components/shared/ui.module.css';
 import styles from './playbook.module.css';
 
 interface PlaybookArticleFooterProps {
@@ -41,11 +41,11 @@ export function PlaybookArticleFooter({ prev, next }: PlaybookArticleFooterProps
         )}
       </nav>
 
-      <div className={techStyles.ctaRow}>
-        <Link href="/technique#contact" className={`${techStyles.btn} ${techStyles.btnPrimary}`}>
+      <div className={ui.ctaRow}>
+        <Link href="/technique#contact" className={`${ui.btn} ${ui.btnPrimary}`}>
           <span>Discuter de votre setup</span>
         </Link>
-        <Link href="/" className={`${techStyles.btn} ${techStyles.btnSecondary}`}>
+        <Link href="/" className={`${ui.btn} ${ui.btnSecondary}`}>
           <span>← Retour au portfolio</span>
         </Link>
       </div>
