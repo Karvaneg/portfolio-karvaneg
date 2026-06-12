@@ -104,7 +104,7 @@ app/
 components/
   atrium/…   esquisses/…   technique/…   playbook/…   shared/…
 content/
-  projects.ts             → SOURCE DE VÉRITÉ UNIQUE
+  projects/*.ts           → SOURCE DE VÉRITÉ UNIQUE (un fichier par projet)
   experience.ts  stack.ts  profile.ts
   playbook/*.mdx
 types/…   design-system/…   lib/…
@@ -126,8 +126,9 @@ public/images/…           → 19 captures (depuis source/images/)
   > Le **setup MDX est reporté en Phase 6** (câblé quand le Playbook l'utilise, pas avant).
 
 - **Phase 1 — Modèle de contenu unifié** _(socle)_
-  `content/projects.ts` (type `Project` fusionnant narratif + ticket/case-study, 7 projets
-  `KARV-001..007`), `experience.ts`, `stack.ts`, `profile.ts`. Emails/liens corrigés. Test d'intégrité.
+  `content/projects/*.ts` (type `Project` fusionnant narratif + ticket/case-study, 7 projets
+  `KARV-001..007`, un fichier par projet), `experience.ts`, `stack.ts`, `profile.ts`. Emails/liens
+  corrigés. Test d'intégrité.
   → **Validation de la liste finale des projets avec Marie.**
 
 - **Phase 2 — Tokens, polices & thème**
