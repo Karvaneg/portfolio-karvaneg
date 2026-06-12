@@ -2,6 +2,9 @@
   "name": "portfolio-karvaneg",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "test": "vitest run",
@@ -33,7 +36,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/node": "^20.19.26",
+    "@types/node": "^22.10.10",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
