@@ -1,6 +1,7 @@
 import { profile } from '@/content/profile';
 import { ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
+import ct from './contact.module.css';
 
 export function TechniqueContact() {
   const { socials } = profile;
@@ -37,17 +38,17 @@ export function TechniqueContact() {
           Disponible pour des missions fullstack — particulièrement les contextes où l'AI tooling
           peut faire la différence.
         </p>
-        <div className={styles.contactLinks}>
+        <div className={ct.contactLinks}>
           {links.map((link) => (
             <a
               key={link.label}
-              className={styles.contactLink}
+              className={ct.contactLink}
               href={link.href}
               {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})}
             >
-              <span className={styles.contactLabel}>{link.label}</span>
-              <span className={styles.contactHandle}>{link.handle}</span>
-              <span className={`${styles.contactArrow} ${styles.mono}`}>
+              <span className={ct.contactLabel}>{link.label}</span>
+              <span className={ct.contactHandle}>{link.handle}</span>
+              <span className={`${ct.contactArrow} ${styles.mono}`}>
                 {link.cta} <ArrowUpRightIcon className={styles.icon} />
               </span>
             </a>

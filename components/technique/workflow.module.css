@@ -1,0 +1,69 @@
+/* Section « Workflow » (cartes) du carnet technique — extraite de
+   technique.module.css (audit CSS #1). Importée par technique-workflow.tsx. */
+
+.cardsGrid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card {
+  background: var(--bg-1);
+  padding: 32px 28px;
+  transition: background 0.2s;
+  position: relative;
+}
+.card:hover {
+  background: var(--bg-2);
+}
+.cardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-faint);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  margin-bottom: 24px;
+}
+.cardIcon svg {
+  width: 18px;
+  height: 18px;
+}
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.cardId {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-faint);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+.card p {
+  font-size: 14px;
+  color: var(--fg-3);
+  line-height: 1.55;
+  margin: 0 0 20px;
+}
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ----- Responsive (900px) ----- */
+@media (max-width: 900px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

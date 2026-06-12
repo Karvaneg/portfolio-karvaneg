@@ -434,65 +434,7 @@
 }
 
 /* ===== Workflow cards ===== */
-.cardsGrid {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border-soft);
-  border: 1px solid var(--border-soft);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.card {
-  background: var(--bg-1);
-  padding: 32px 28px;
-  transition: background 0.2s;
-  position: relative;
-}
-.card:hover {
-  background: var(--bg-2);
-}
-.cardIcon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  background: var(--accent-faint);
-  color: var(--accent);
-  border: 1px solid var(--accent-dim);
-  margin-bottom: 24px;
-}
-.cardIcon svg {
-  width: 18px;
-  height: 18px;
-}
-.card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--fg);
-  margin: 0 0 8px;
-  letter-spacing: -0.01em;
-}
-.cardId {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--fg-faint);
-  margin-bottom: 4px;
-  letter-spacing: 0.05em;
-}
-.card p {
-  font-size: 14px;
-  color: var(--fg-3);
-  line-height: 1.55;
-  margin: 0 0 20px;
-}
-.cardTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
+/* Styles extraits → workflow.module.css (co-localisé avec le composant). */
 /* tag + tagAccent → primitives partagées (components/shared/ui.module.css). */
 .tag {
   composes: tag from '../shared/ui.module.css';
@@ -652,50 +594,7 @@
 /* ===== Open Source ===== */
 /* Styles extraits → opensource.module.css (co-localisé avec le composant). */
 /* ===== Contact ===== */
-.contactLinks {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border-soft);
-  border: 1px solid var(--border-soft);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.contactLink {
-  background: var(--bg-1);
-  padding: 28px 24px;
-  transition: background 0.2s;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.contactLink:hover {
-  background: var(--bg-2);
-}
-.contactLabel {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--fg-faint);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.contactHandle {
-  font-size: 18px;
-  color: var(--fg);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-.contactArrow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--accent);
-}
-
+/* Styles extraits → contact.module.css (co-localisé avec le composant). */
 /* ===== Footer ===== */
 .footer {
   padding: 32px 0 48px;
@@ -733,14 +632,8 @@
   .hero {
     padding: 80px 0 64px;
   }
-  .cardsGrid {
-    grid-template-columns: 1fr;
-  }
   .ticketBody {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-  .contactLinks {
-    grid-template-columns: 1fr;
   }
 }
