@@ -1,16 +1,18 @@
 # Refonte — État & reprise
 
 > Point de situation pour reprendre la refonte. Lire aussi `docs/refonte-plan.md`
-> (feuille de route + règles) et `CLAUDE.md` (conventions). Dernière mise à jour : 2026-06-11.
+> (feuille de route + règles) et `CLAUDE.md` (conventions). Dernière mise à jour : 2026-06-12.
 
 ## TL;DR — où on en est
 
 Phases **0 → 7 terminées**. Reste la **Phase 8 — QA finale & déploiement** (Lighthouse,
 responsive, relecture copy, MR `feat/refonte` → `main`).
 
-- Branche : **`feat/refonte`**, poussée sur `origin` jusqu'à `f546b10`.
+- Branche : **`feat/refonte`**, poussée sur `origin` jusqu'à `caade86` ; 3 commits locaux
+  en avance (fix hydratation Playbook, migration Node 22, config) non encore poussés.
 - Archive V1 : tag **`v1-portfolio`**. `main` protégée (pas de force-push), intouchée.
-- Build vert, lint 0 warning, **24 tests verts**, tout en SSG/statique (19 routes).
+- Runtime **Node 22 (LTS)** : CI `node:22`, `engines.node "22.x"`, `.nvmrc`.
+- Build vert, lint 0 warning, **20 tests verts**, tout en SSG/statique (**22 pages générées**).
 
 | Phase                                                  | État           | Commit(s)                         |
 | ------------------------------------------------------ | -------------- | --------------------------------- |
@@ -65,8 +67,8 @@ Surface MDX extensible, esthétique terminal réutilisée (`data-surface="techni
 
 ## Phase 8 — QA finale : à finir
 
-Vérifié auto : `lint` + `build` + 24 tests verts ; renvois croisés cohérents ; breakpoints
-860/960 présents. **Reste (manuel / live)** :
+Vérifié auto : `lint` + `build` + 20 tests verts ; renvois croisés cohérents ; breakpoints
+860/960 présents ; page 404 « terminal » en place. **Reste (manuel / live)** :
 
 - **Lighthouse 100×4** sur preview Vercel (ou `next start` local).
 - Check visuel responsive 860/960px.
@@ -91,8 +93,9 @@ Vérifié auto : `lint` + `build` + 24 tests verts ; renvois croisés cohérents
   `lib/utils.ts`, tests et images V1 supprimés (~100 fichiers). Restent câblés au `layout` :
   `app/lib/fonts.ts` (Inter/JetBrains/Cinzel sur `<html>`), `providers`/`theme-provider`,
   `client-utilities` + `components/consent/*`, `lib/security.ts`.
-- **pnpm** : dans cet environnement, `pnpm` se résout en 10.x alors que `node_modules` vient de
-  pnpm 11.5.3 → utiliser `corepack pnpm@11.5.3 …` (ou `node_modules/.bin/*` directement).
+- **pnpm** : environnement aligné sur **pnpm 10.x** (`pnpm install`/`build`/`test` directs).
+  Builds natifs approuvés via `pnpm-workspace.yaml` → clé **`onlyBuiltDependencies`**
+  (`esbuild`, `sharp`, `unrs-resolver`) ; en cas de `ERR_PNPM_IGNORED_BUILDS`, relancer `pnpm install`.
 - **Lint** : `react-hooks/set-state-in-effect` actif → pas de `setState` dans un effet
   (cf. `components/technique/use-accent.ts`, `useSyncExternalStore`).
 
@@ -101,7 +104,7 @@ Vérifié auto : `lint` + `build` + 24 tests verts ; renvois croisés cohérents
 ```bash
 git switch feat/refonte
 pnpm dev                                     # / · /esquisses · /technique · /playbook
-node_modules/.bin/eslint . --ext .ts,.tsx --max-warnings=0
-node_modules/.bin/next build                 # 19 routes, ○ Static / ● SSG
-node_modules/.bin/vitest run                 # 24 tests
+pnpm lint                                    # eslint --max-warnings=0
+pnpm build                                   # lint + next build — 22 pages, ○ Static / ● SSG
+pnpm test                                    # vitest run — 20 tests
 ```

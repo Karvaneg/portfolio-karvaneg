@@ -38,7 +38,7 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
 - **Email unifié partout** : `marie.lecarvennec@gmail.com`.
 - **Liens réels partout** : GitHub `@Karvaneg`, LinkedIn `in/marielecarvennec`, Malt.
 - **Vidéo démo (« Show ») + repo stats (« Open Source »)** : construites avec **placeholders propres**, prêtes à brancher le vrai contenu.
-- **Analytics conservés** : cookie-banner + Hotjar repris de la V1.
+- **Analytics conservés** : cookie-banner + analyse d'expérience (Contentsquare, ex-Hotjar) repris de la V1.
 - **Données** : extraites des maquettes en Phase 1, **liste finale des projets validée avec Marie**.
 
 ---
@@ -160,7 +160,7 @@ public/images/…           → 19 captures (depuis source/images/)
 
 - **Phase 7 — Transverse : a11y, SEO, perf, analytics**
   `generateMetadata` par route, sitemap/robots (4 surfaces + slugs), canonical, OG. Focus-trap généralisé.
-  Contrastes AA. `prefers-reduced-motion` partout. `next/image` priority/lazy. Réintégrer cookie-banner + Hotjar.
+  Contrastes AA. `prefers-reduced-motion` partout. `next/image` priority/lazy. Réintégrer cookie-banner + Contentsquare.
 
 - **Phase 8 — QA finale & déploiement**
   `lint` + `build` + tests verts. Audit Lighthouse (100×4). Responsive (860/960px). Renvois croisés.
