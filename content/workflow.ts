@@ -5,25 +5,25 @@ export const workflowSkills: WorkflowSkill[] = [
   {
     id: 'SKL-01',
     icon: 'skill',
-    title: 'Custom Claude Skills',
+    title: 'Environnement versionné',
     description:
-      "Configuration JSON, injection de contexte, manipulation d'AST. Chaque skill est versionné, testé, et documenté dans le repo.",
-    tags: ['json-config', 'ast', 'context-injection', 'versioned'],
+      "Mon dossier ~/.claude est un repo Git : skills isolés, alias d'exécution, status line de télémétrie. Une config versionnée et reproductible, que je récupère sur n'importe quel poste en un git clone.",
+    tags: ['statusline', 'git', 'windows', 'powershell', 'telemetry'],
   },
   {
     id: 'SKL-02',
     icon: 'test',
-    title: 'AI-Driven TDD',
+    title: 'Custom Skills & Workflows',
     description:
-      "Génération des tests avant l'implémentation, boucle CI/CD locale jusqu'au build vert. Le code humain reste l'arbitre final.",
-    tags: ['tdd', 'ci-local', 'jest', 'playwright'],
+      "Une méthode répétée devient un skill versionné : un contrat invocable (nom, entrées, sorties) que toute l'équipe peut cloner. Smart scaffolding — l'agent génère l'outil qui lui fournit son contexte.",
+    tags: ['custom-skills', 'versioned', 'scaffolding', 'workflows'],
   },
   {
     id: 'SKL-03',
     icon: 'architecture',
     title: 'Architecture & Refactoring',
     description:
-      'Audit de code legacy, optimisation de performances, application de Clean Architecture. Live sur des bases de plusieurs années.',
-    tags: ['clean-arch', 'audit', 'perf', 'legacy'],
+      "Refactoring délégué à un agent en Git Worktree, sur une branche isolée : token economy, TDD dans le contrat, review par le diff. Je manage des agents, je garantis l'architecture.",
+    tags: ['git-worktrees', 'async-agents', 'tdd', 'token-economy'],
   },
 ];

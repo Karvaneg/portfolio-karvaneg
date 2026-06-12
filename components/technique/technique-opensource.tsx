@@ -3,7 +3,7 @@ import { GithubIcon, ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
 import os from './opensource.module.css';
 
-const TOPICS = ['claude-code', 'custom-skills', 'tdd', 'ast', 'prompts', 'developer-tooling'];
+const TOPICS = ['claude-code', 'custom-skills', 'git-worktrees', 'workflows', 'prompts', 'developer-tooling'];
 
 // Placeholders — à brancher sur les vraies valeurs du repo plus tard.
 const STATS = [
@@ -12,7 +12,7 @@ const STATS = [
   { label: 'Stars', value: '[N]' },
   { label: 'Last commit', value: '—' },
 ];
-const FEATURED = ['./skills/twig-to-react', './skills/tdd-loop', './prompts/a11y-audit'];
+const FEATURED = ['./playbooks/001-setup-claude-code', './playbooks/002-skills-workflows', './playbooks/003-worktrees-refactoring'];
 
 export function TechniqueOpenSource() {
   const repo = profile.openSourceRepo;
@@ -35,8 +35,7 @@ export function TechniqueOpenSource() {
               <span className={os.repoVisibility}>Public</span>
             </div>
             <p className={os.repoDesc}>
-              Custom Claude Skills, prompts système et scripts d'orchestration que j'utilise en
-              production. TDD, migration de stacks, audits d'accessibilité, refactoring legacy.
+              Mes playbooks et skills Claude Code, versionnés : setup d'un environnement reproductible, création de skills invocables, et refactoring asynchrone en Git Worktree.
             </p>
             <div className={os.repoTopics}>
               {TOPICS.map((topic, index) => (
