@@ -1,0 +1,413 @@
+/* Modale « étude de cas » du carnet technique — extraite de technique.module.css
+   (audit CSS #1 : découpage par composant). Importée par case-study.tsx.
+   Les classes partagées (statut, ticket, mono…) restent dans technique.module.css. */
+
+.caseOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 24px;
+  background: rgba(4, 6, 9, 0.74);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  animation: caseFade 0.2s ease;
+}
+@keyframes caseFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.caseModal {
+  width: min(940px, 100%);
+  background: var(--bg-1);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
+  animation: caseRise 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes caseRise {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.caseHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 26px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-2);
+}
+.caseHeadMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.caseTitle {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin: 0;
+}
+.caseTagline {
+  margin: 8px 0 0;
+  color: var(--fg-3);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.caseSiteLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-dim);
+  padding-bottom: 1px;
+  transition: opacity 0.15s;
+}
+.caseSiteLink:hover {
+  opacity: 0.75;
+}
+.caseSiteLink svg {
+  width: 13px;
+  height: 13px;
+}
+.caseClose {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--fg-3);
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+.caseClose:hover {
+  color: var(--fg);
+  border-color: var(--border-strong);
+  background: var(--bg);
+}
+.caseBody {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.caseFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.caseFact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg-2);
+  min-width: 120px;
+}
+.factK {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-faint);
+}
+.factV {
+  font-size: 14px;
+  color: var(--fg-2);
+}
+.caseMetrics {
+  border: 1px solid var(--accent-dim);
+  border-radius: 12px;
+  background: var(--accent-faint);
+  padding: 18px 20px 16px;
+}
+.caseMetricsHead {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.caseMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.caseMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.caseMetricV {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  line-height: 1.05;
+}
+.caseMetricK {
+  font-size: 13.5px;
+  color: var(--fg-2);
+  line-height: 1.3;
+}
+.caseMetricSub {
+  font-size: 10.5px;
+  color: var(--fg-faint);
+  margin-top: 1px;
+}
+.caseMetricsNote {
+  font-size: 12px;
+  color: var(--fg-3);
+  line-height: 1.5;
+  margin: 16px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--accent-dim);
+}
+.caseCarousel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.caseCarouselStage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.caseCarouselArrow {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--fg-2);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition:
+    color 0.15s,
+    border-color 0.15s,
+    background 0.15s;
+}
+.caseCarouselArrow:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: var(--bg-1);
+}
+.caseCarouselFig {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+.caseShotBtn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: clamp(220px, 44vh, 440px);
+  background: #0b0d12;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.caseShotBtn img {
+  object-fit: contain;
+}
+.caseShotZoom {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--fg-2);
+  background: rgba(8, 10, 14, 0.7);
+  border: 1px solid var(--border);
+  padding: 4px 9px;
+  border-radius: 5px;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.18s;
+  pointer-events: none;
+}
+.caseShotBtn:hover .caseShotZoom,
+.caseShotBtn:focus-visible .caseShotZoom {
+  opacity: 1;
+}
+.caseCarouselFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 54px;
+}
+.caseCarouselFoot figcaption {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--fg-3);
+}
+.caseCarouselMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.caseCarouselCount {
+  font-size: 11px;
+  color: var(--fg-faint);
+}
+.caseCarouselDots {
+  display: flex;
+  gap: 6px;
+}
+.caseDot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+.caseDot:hover {
+  background: var(--fg-3);
+}
+.caseDot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+.caseSection h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+.caseSection p {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--fg-2);
+  margin: 0 0 10px;
+  text-wrap: pretty;
+}
+.caseSection p:last-child {
+  margin-bottom: 0;
+}
+.caseStack {
+  margin-top: 2px;
+}
+.caseLightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 320;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(3, 4, 7, 0.9);
+  backdrop-filter: blur(10px);
+  cursor: zoom-out;
+  animation: caseFade 0.18s ease;
+}
+.caseLightboxFig {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  cursor: default;
+}
+.caseLightboxImg {
+  position: relative;
+  width: min(92vw, 1200px);
+  height: calc(100vh - 120px);
+}
+.caseLightboxImg img {
+  object-fit: contain;
+}
+.caseLightboxFig figcaption {
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--fg-3);
+}
+.caseLightboxClose {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--fg-2);
+  background: rgba(8, 10, 14, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  transition: all 0.15s;
+}
+.caseLightboxClose:hover {
+  color: var(--fg);
+  border-color: var(--border-strong);
+  background: var(--bg-1);
+}
+
+
+/* ----- Responsive ----- */
+@media (max-width: 560px) {
+  .caseMetricsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .caseCarouselFoot {
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+@media (max-width: 720px) {
+  .caseOverlay {
+    padding: 16px;
+  }
+  .caseHead {
+    padding: 18px;
+  }
+  .caseBody {
+    padding: 18px;
+    gap: 24px;
+  }
+}

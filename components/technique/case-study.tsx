@@ -5,6 +5,7 @@ import Image from 'next/image';
 import type { Project, ProjectShot } from '@/types/project';
 import { ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
+import cs from './case-study.module.css';
 
 const STATUS_CLASS: Record<Project['status'], string> = {
   shipped: styles.shipped,
@@ -69,29 +70,29 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
   }, [zoomed, shots.length, onClose]);
 
   return (
-    <div className={styles.caseOverlay} onClick={onClose}>
+    <div className={cs.caseOverlay} onClick={onClose}>
       <div
         ref={modalRef}
-        className={styles.caseModal}
+        className={cs.caseModal}
         role="dialog"
         aria-modal="true"
         aria-label={project.title}
         onClick={(event) => event.stopPropagation()}
       >
-        <header className={styles.caseHead}>
+        <header className={cs.caseHead}>
           <div>
-            <div className={styles.caseHeadMeta}>
+            <div className={cs.caseHeadMeta}>
               <span className={styles.ticketId}>{project.ticketId}</span>
               <span className={`${styles.ticketStatus} ${STATUS_CLASS[project.status]}`}>
                 <span className={styles.statusDot} /> {project.statusLabel}
               </span>
               <span className={styles.ticketPeriod}>{project.period}</span>
             </div>
-            <h3 className={styles.caseTitle}>{project.headline}</h3>
-            <p className={styles.caseTagline}>{caseStudy.tagline}</p>
+            <h3 className={cs.caseTitle}>{project.headline}</h3>
+            <p className={cs.caseTagline}>{caseStudy.tagline}</p>
             {project.website && (
               <a
-                className={`${styles.caseSiteLink} ${styles.mono}`}
+                className={`${cs.caseSiteLink} ${styles.mono}`}
                 href={project.website}
                 target="_blank"
                 rel="noreferrer"
@@ -101,71 +102,71 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
               </a>
             )}
           </div>
-          <button type="button" className={styles.caseClose} onClick={onClose} aria-label="Fermer">
+          <button type="button" className={cs.caseClose} onClick={onClose} aria-label="Fermer">
             ×
           </button>
         </header>
 
-        <div className={styles.caseBody}>
-          <div className={styles.caseFacts}>
+        <div className={cs.caseBody}>
+          <div className={cs.caseFacts}>
             {caseStudy.facts.map((fact) => (
-              <div className={styles.caseFact} key={fact.label}>
-                <span className={`${styles.factK} ${styles.mono}`}>{fact.label}</span>
-                <span className={styles.factV}>{fact.value}</span>
+              <div className={cs.caseFact} key={fact.label}>
+                <span className={`${cs.factK} ${styles.mono}`}>{fact.label}</span>
+                <span className={cs.factV}>{fact.value}</span>
               </div>
             ))}
           </div>
 
           {caseStudy.metrics && (
-            <div className={styles.caseMetrics}>
-              <div className={`${styles.caseMetricsHead} ${styles.mono}`}>
+            <div className={cs.caseMetrics}>
+              <div className={`${cs.caseMetricsHead} ${styles.mono}`}>
                 {caseStudy.metrics.label}
               </div>
-              <div className={styles.caseMetricsGrid}>
+              <div className={cs.caseMetricsGrid}>
                 {caseStudy.metrics.items.map((metric) => (
-                  <div className={styles.caseMetric} key={metric.label}>
-                    <span className={styles.caseMetricV}>{metric.value}</span>
-                    <span className={styles.caseMetricK}>{metric.label}</span>
+                  <div className={cs.caseMetric} key={metric.label}>
+                    <span className={cs.caseMetricV}>{metric.value}</span>
+                    <span className={cs.caseMetricK}>{metric.label}</span>
                     {metric.sub && (
-                      <span className={`${styles.caseMetricSub} ${styles.mono}`}>{metric.sub}</span>
+                      <span className={`${cs.caseMetricSub} ${styles.mono}`}>{metric.sub}</span>
                     )}
                   </div>
                 ))}
               </div>
               {caseStudy.metrics.note && (
-                <p className={`${styles.caseMetricsNote} ${styles.mono}`}>{caseStudy.metrics.note}</p>
+                <p className={`${cs.caseMetricsNote} ${styles.mono}`}>{caseStudy.metrics.note}</p>
               )}
             </div>
           )}
 
           {shot && (
-            <div className={styles.caseCarousel}>
-              <div className={styles.caseCarouselStage}>
+            <div className={cs.caseCarousel}>
+              <div className={cs.caseCarouselStage}>
                 {shots.length > 1 && (
                   <button
                     type="button"
-                    className={styles.caseCarouselArrow}
+                    className={cs.caseCarouselArrow}
                     onClick={() => setCurrent((c) => (c - 1 + shots.length) % shots.length)}
                     aria-label="Image précédente"
                   >
                     ‹
                   </button>
                 )}
-                <figure className={styles.caseCarouselFig}>
+                <figure className={cs.caseCarouselFig}>
                   <button
                     type="button"
-                    className={styles.caseShotBtn}
+                    className={cs.caseShotBtn}
                     onClick={() => setZoomed(shot)}
                     aria-label={`Agrandir : ${shot.caption}`}
                   >
                     <Image src={shot.src} alt={shot.alt} fill sizes="(max-width: 940px) 100vw, 880px" />
-                    <span className={`${styles.caseShotZoom} ${styles.mono}`}>⤢ zoom</span>
+                    <span className={`${cs.caseShotZoom} ${styles.mono}`}>⤢ zoom</span>
                   </button>
                 </figure>
                 {shots.length > 1 && (
                   <button
                     type="button"
-                    className={styles.caseCarouselArrow}
+                    className={cs.caseCarouselArrow}
                     onClick={() => setCurrent((c) => (c + 1) % shots.length)}
                     aria-label="Image suivante"
                   >
@@ -173,19 +174,19 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
                   </button>
                 )}
               </div>
-              <div className={styles.caseCarouselFoot}>
+              <div className={cs.caseCarouselFoot}>
                 <figcaption className={styles.mono}>{shot.caption}</figcaption>
                 {shots.length > 1 && (
-                  <div className={styles.caseCarouselMeta}>
-                    <span className={`${styles.caseCarouselCount} ${styles.mono}`}>
+                  <div className={cs.caseCarouselMeta}>
+                    <span className={`${cs.caseCarouselCount} ${styles.mono}`}>
                       {current + 1} / {shots.length}
                     </span>
-                    <div className={styles.caseCarouselDots}>
+                    <div className={cs.caseCarouselDots}>
                       {shots.map((item, index) => (
                         <button
                           key={item.src}
                           type="button"
-                          className={`${styles.caseDot} ${index === current ? styles.active : ''}`}
+                          className={`${cs.caseDot} ${index === current ? styles.active : ''}`}
                           onClick={() => setCurrent(index)}
                           aria-label={`Image ${index + 1} sur ${shots.length}`}
                         />
@@ -198,7 +199,7 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
           )}
 
           {caseStudy.sections.map((section) => (
-            <div className={styles.caseSection} key={section.title}>
+            <div className={cs.caseSection} key={section.title}>
               <h4>{section.title}</h4>
               {section.body.map((paragraph) => (
                 <p key={paragraph.slice(0, 24)}>{paragraph}</p>
@@ -206,9 +207,9 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
             </div>
           ))}
 
-          <div className={styles.caseSection}>
+          <div className={cs.caseSection}>
             <h4>Stack</h4>
-            <div className={`${styles.stack} ${styles.caseStack}`}>
+            <div className={`${styles.stack} ${cs.caseStack}`}>
               {project.stack.map((tech) => (
                 <span key={tech} className={`${styles.tag} ${styles.mono}`}>
                   {tech}
@@ -218,7 +219,7 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
           </div>
 
           {project.aiTooling && (
-            <div className={styles.caseSection}>
+            <div className={cs.caseSection}>
               <h4>{project.metaLabel ?? 'AI Tooling'}</h4>
               <p>{project.aiTooling}</p>
             </div>
@@ -228,7 +229,7 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
 
       {zoomed && (
         <div
-          className={styles.caseLightbox}
+          className={cs.caseLightbox}
           onClick={(event) => {
             event.stopPropagation();
             setZoomed(null);
@@ -236,14 +237,14 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
         >
           <button
             type="button"
-            className={styles.caseLightboxClose}
+            className={cs.caseLightboxClose}
             aria-label="Fermer le zoom"
             onClick={() => setZoomed(null)}
           >
             ×
           </button>
-          <figure className={styles.caseLightboxFig} onClick={(event) => event.stopPropagation()}>
-            <div className={styles.caseLightboxImg}>
+          <figure className={cs.caseLightboxFig} onClick={(event) => event.stopPropagation()}>
+            <div className={cs.caseLightboxImg}>
               <Image src={zoomed.src} alt={zoomed.alt} fill sizes="92vw" />
             </div>
             <figcaption className={styles.mono}>{zoomed.caption}</figcaption>
