@@ -1,3 +1,4 @@
+import { TerminalBar } from '@/components/shared/terminal-bar';
 import { CopyButton } from './copy-button';
 import styles from './playbook.module.css';
 
@@ -16,15 +17,7 @@ export function TerminalBlock({
 }: TerminalBlockProps) {
   return (
     <div className={styles.termBlock}>
-      <div className={styles.termBar}>
-        <div className={styles.termLights}>
-          <span />
-          <span />
-          <span />
-        </div>
-        <span className={styles.termTitle}>{title}</span>
-        <CopyButton text={commands.join('\n')} />
-      </div>
+      <TerminalBar title={title} trailing={<CopyButton text={commands.join('\n')} />} />
       <pre className={styles.termBody}>
         {commands.map((cmd, i) => {
           if (cmd.trim() === '') {

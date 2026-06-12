@@ -311,31 +311,8 @@
     0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
     0 30px 80px -30px rgba(0, 0, 0, 0.6);
 }
-.terminalBar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border-soft);
-  background: var(--bg-1);
-}
-.terminalLights {
-  display: flex;
-  gap: 6px;
-}
-.terminalLights span {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #3a3a3f;
-}
-.terminalTitle {
-  flex: 1;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--fg-muted);
-}
+/* Barre terminal mutualisée → components/shared/terminal-bar. Le badge « REC »
+   reste spécifique au carnet technique. */
 .terminalBadge {
   font-family: var(--mono);
   font-size: 11px;

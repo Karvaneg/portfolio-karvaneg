@@ -1,17 +1,11 @@
+import { TerminalBar } from '@/components/shared/terminal-bar';
 import styles from './playbook.module.css';
 
 /** Aperçu de la status line attendue en bas du terminal (résultat de l'étape 3). */
 export function StatusLinePreview() {
   return (
     <div className={styles.statusline}>
-      <div className={styles.termBar}>
-        <div className={styles.termLights}>
-          <span />
-          <span />
-          <span />
-        </div>
-        <span className={styles.termTitle}>Résultat attendu — bas du terminal</span>
-      </div>
+      <TerminalBar title="Résultat attendu — bas du terminal" />
       <div className={styles.statusLine}>
         <span className={styles.slPath}>~/mon-projet</span>
         <span className={styles.slSep}>|</span>

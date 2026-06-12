@@ -1,3 +1,4 @@
+import { TerminalBar } from '@/components/shared/terminal-bar';
 import { PlayIcon } from './icons';
 import styles from './technique.module.css';
 
@@ -36,17 +37,10 @@ export function TechniqueShow() {
         </div>
 
         <div className={styles.videoFrame}>
-          <div className={styles.terminalBar}>
-            <div className={styles.terminalLights}>
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className={`${styles.terminalTitle} ${styles.mono}`}>
-              claude-code-demo.mp4 · 3min12
-            </div>
-            <div className={`${styles.terminalBadge} ${styles.mono}`}>REC ●</div>
-          </div>
+          <TerminalBar
+            title="claude-code-demo.mp4 · 3min12"
+            trailing={<div className={`${styles.terminalBadge} ${styles.mono}`}>REC ●</div>}
+          />
           <div className={styles.videoArea}>
             <button type="button" className={styles.videoPlay} aria-label="Lire la démo (à venir)">
               <PlayIcon />
