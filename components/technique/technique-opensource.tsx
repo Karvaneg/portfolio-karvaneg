@@ -1,6 +1,7 @@
 import { profile } from '@/content/profile';
 import { GithubIcon, ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
+import os from './opensource.module.css';
 
 const TOPICS = ['claude-code', 'custom-skills', 'tdd', 'ast', 'prompts', 'developer-tooling'];
 
@@ -25,19 +26,19 @@ export function TechniqueOpenSource() {
           Forkable, critiquable, améliorable.
         </p>
 
-        <div className={styles.repoCard}>
-          <div className={styles.repoMain}>
-            <div className={`${styles.repoHeader} ${styles.mono}`}>
+        <div className={os.repoCard}>
+          <div className={os.repoMain}>
+            <div className={`${os.repoHeader} ${styles.mono}`}>
               <GithubIcon className={styles.icon} />
-              <span className={styles.repoOrg}>karvaneg /</span>
-              <span className={styles.repoName}>claude-code-dev-workflows</span>
-              <span className={styles.repoVisibility}>Public</span>
+              <span className={os.repoOrg}>karvaneg /</span>
+              <span className={os.repoName}>claude-code-dev-workflows</span>
+              <span className={os.repoVisibility}>Public</span>
             </div>
-            <p className={styles.repoDesc}>
+            <p className={os.repoDesc}>
               Custom Claude Skills, prompts système et scripts d'orchestration que j'utilise en
               production. TDD, migration de stacks, audits d'accessibilité, refactoring legacy.
             </p>
-            <div className={styles.repoTopics}>
+            <div className={os.repoTopics}>
               {TOPICS.map((topic, index) => (
                 <span
                   key={topic}
@@ -47,7 +48,7 @@ export function TechniqueOpenSource() {
                 </span>
               ))}
             </div>
-            <div className={`${styles.ctaRow} ${styles.repoCta}`}>
+            <div className={`${styles.ctaRow} ${os.repoCta}`}>
               <a href={repo} target="_blank" rel="noreferrer" className={`${styles.btn} ${styles.btnPrimary}`}>
                 <GithubIcon className={styles.icon} />
                 <span>View on GitHub</span>
@@ -63,13 +64,13 @@ export function TechniqueOpenSource() {
               </a>
             </div>
           </div>
-          <aside className={styles.repoSide}>
+          <aside className={os.repoSide}>
             <h4>Repo stats</h4>
             <ul>
               {STATS.map((stat) => (
                 <li key={stat.label}>
                   <span>{stat.label}</span>
-                  <span className={styles.repoNum}>{stat.value}</span>
+                  <span className={os.repoNum}>{stat.value}</span>
                 </li>
               ))}
             </ul>
@@ -77,7 +78,7 @@ export function TechniqueOpenSource() {
             <ul>
               {FEATURED.map((item) => (
                 <li key={item}>
-                  <span className={styles.repoFeatured}>{item}</span>
+                  <span className={os.repoFeatured}>{item}</span>
                 </li>
               ))}
             </ul>
