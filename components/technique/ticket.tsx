@@ -6,6 +6,7 @@ const STATUS_CLASS: Record<Project['status'], string> = {
   shipped: styles.shipped,
   'in-progress': styles.inProgress,
   certified: styles.certified,
+  growing: styles.growing,
 };
 
 interface TicketProps {

@@ -10,6 +10,7 @@ const STATUS_CLASS: Record<Project['status'], string> = {
   shipped: styles.shipped,
   'in-progress': styles.inProgress,
   certified: styles.certified,
+  growing: styles.growing,
 };
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';

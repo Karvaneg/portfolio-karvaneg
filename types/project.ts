@@ -5,7 +5,7 @@
  * Voir docs/refonte-plan.md §1 et le handoff §5.
  */
 
-export type ProjectStatus = 'shipped' | 'in-progress' | 'certified';
+export type ProjectStatus = 'shipped' | 'in-progress' | 'certified' | 'growing';
 
 export interface ProjectLabel {
   text: string;

@@ -613,22 +613,47 @@
   font-size: 11px;
   letter-spacing: 0.04em;
 }
-.ticketStatus.shipped,
+/* Statuts à couleur fixe (indépendante de l'accent thémable). */
+.ticketStatus.shipped {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
 .ticketStatus.certified {
-  color: var(--accent);
-  background: var(--accent-faint);
-  border: 1px solid var(--accent-dim);
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.4);
 }
 .ticketStatus.inProgress {
   color: #fbbf24;
   background: rgba(251, 191, 36, 0.12);
   border: 1px solid rgba(251, 191, 36, 0.4);
 }
+/* Statut « croissance » — vert fixe (indépendant de l'accent thémable). */
+.ticketStatus.growing {
+  color: #60a5fa;                                                                    
+  background: rgba(96, 165, 250, 0.12);                                              
+  border: 1px solid rgba(96, 165, 250, 0.4); 
+}
 .ticketStatus .statusDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: currentColor;
+}
+/* Pastille pulsatile pour « growing » : anneau qui se diffuse, point plein au
+   repos (animation coupée par le reset global prefers-reduced-motion). */
+.ticketStatus.growing .statusDot {
+  position: relative;
+}
+.ticketStatus.growing .statusDot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+  animation: pulse 2s ease-out infinite;
 }
 .ticketLabels {
   display: flex;
