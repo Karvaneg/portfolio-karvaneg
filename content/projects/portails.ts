@@ -4,8 +4,8 @@ const IMG = '/images/projects';
 
 export const portails: Project = {
   id: 'portails',
-  ticketId: 'KARV-004',
-  order: 6,
+  ticketId: 'KARV-003',
+  order: 5,
   title: 'Portails Thématiques',
   headline: 'Portails thématiques — un socle, plusieurs visages',
   tagline:
@@ -14,7 +14,7 @@ export const portails: Project = {
   statusLabel: 'SHIPPED',
   period: '2023 — 2025',
   role: 'Développeuse Fullstack',
-  duration: '12 mois',
+  duration: '24 mois',
   website: 'https://vsol-na.fr/',
   stack: ['Symfony', 'Twig', 'TypeScript', 'Sass'],
   labels: [{ text: 'fullstack' }, { text: 'design system' }, { text: 'a11y', accent: true }],
@@ -22,12 +22,13 @@ export const portails: Project = {
   summary:
     "Suite de portails web scientifiques pour le CBNSA, chacun avec sa propre identité visuelle mais bâti sur un même socle Symfony/Twig. Premier mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine.",
   description: [
-    'Conception et développement de plusieurs portails thématiques scientifiques pour le CBNSA, chacun avec sa propre identité visuelle mais reposant sur le même socle technique et le même design system.',
-    "Tout l'enjeu : une base partagée robuste, des thèmes différenciés, et une accessibilité WCAG sans concession sur chaque portail.",
-    "Le tout est piloté depuis un back-office d'administration unique : une console qui donne accès à l'ensemble des portails (du Catalogue de la Végétation de France aux portails Hotspots, PNAEAL, PEENA, ECOLAG ou Forêts) et centralise leur gestion — actualités, agendas, carnet d'adresses, partenaires, ressources, cartes et système de design. Un seul outil pour administrer toute la galaxie de portails sans dupliquer les interfaces.",
+    "Le CBNSA avait besoin de plusieurs portails thématiques scientifiques, chacun avec sa propre identité visuelle, sans pour autant multiplier les bases techniques. J'ai conçu un design system partagé sur socle Symfony/Twig, thémé par portail : composants communs, tokens et styles déclinables, pour que chaque portail garde son visage tout en reposant sur la même fondation.",
+    "Premier portail mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine, avec carnet d'adresses filtrable, rubriques éditoriales et cartographie des acteurs. Accessibilité conforme WCAG sur chaque portail, et un socle factorisé qui rend l'ajout d'un nouveau portail rapide et cohérent — sans repartir de zéro à chaque thème.",
+    "Le tout est piloté depuis une console d'administration unique : un seul outil qui donne accès à l'ensemble des portails (du Catalogue de la Végétation de France aux portails Hotspots, PNAEAL, PEENA, ECOLAG ou Forêts) et centralise leur gestion — actualités, agendas, carnet d'adresses, partenaires, ressources, cartes et système de design. Administrer toute la galaxie de portails sans dupliquer les interfaces.",
   ],
   impact: 'Design system scalable & themable en production · VSOL, premier portail en ligne',
-  impactEsquisses: 'Design system scalable & themable utilisé en production.',
+  impactEsquisses:
+    'Design system scalable & themable en production · VSOL, premier portail en ligne.',
   aiTooling:
     'Un design system partagé, thémé par portail — base commune robuste, thèmes différenciés et accessibilité WCAG sans concession.',
   shots: [
@@ -49,7 +50,7 @@ export const portails: Project = {
     {
       src: `${IMG}/vsol-3.png`,
       caption: 'VSOL · comprendre',
-      alt: "Portail VSOL, rubrique Comprendre — « Les végétaux locaux, une opportunité pour la Nouvelle-Aquitaine », article illustré et citation.",
+      alt: 'Portail VSOL, rubrique Comprendre — « Les végétaux locaux, une opportunité pour la Nouvelle-Aquitaine », article illustré et citation.',
     },
   ],
   caseStudy: {
@@ -70,7 +71,7 @@ export const portails: Project = {
       {
         title: "Ce que j'ai construit",
         body: [
-          "Un design system partagé sur socle Symfony/Twig, thémé par portail : composants communs, tokens et styles déclinables, pour que chaque portail garde son visage tout en reposant sur la même fondation.",
+          'Un design system partagé sur socle Symfony/Twig, thémé par portail : composants communs, tokens et styles déclinables, pour que chaque portail garde son visage tout en reposant sur la même fondation.',
           "Premier portail mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine, avec carnet d'adresses filtrable, rubriques éditoriales et cartographie des acteurs.",
         ],
       },

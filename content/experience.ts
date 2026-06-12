@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     company: 'OpenClassrooms',
     description:
       "Formation intensive en développement web — 6 projets professionnalisants couvrant l'ensemble du stack. Certification Développeur Intégrateur Web (Niveau 5). Tous les projets validés au premier passage.",
-    tags: ['HTML/CSS', 'JS', 'React', 'Node', 'MongoDB'],
+    tags: ['HTML/CSS', 'JS', 'React', 'Node', 'MongoDB', 'SEO', 'a11y'],
   },
   {
     period: 'Mai 2018 — Janvier 2021',

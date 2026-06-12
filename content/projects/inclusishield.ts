@@ -4,13 +4,13 @@ const IMG = '/images/projects';
 
 export const inclusishield: Project = {
   id: 'inclusishield',
-  ticketId: 'KARV-002',
-  order: 1,
+  ticketId: 'KARV-006',
+  order: 2,
   title: 'InclusiShield',
   headline: "InclusiShield — SaaS d'audit d'accessibilité piloté par l'IA",
   tagline: "SaaS d'audit d'accessibilité numérique automatisé par l'IA.",
-  status: 'shipped',
-  statusLabel: 'SHIPPED',
+  status: 'growing',
+  statusLabel: 'GROWING · Vn → Vn+1',
   statusNote: 'V1 livrée en 20 j · V2 en cours',
   period: '2026',
   role: 'Founder & Lead Dev',
@@ -54,8 +54,8 @@ export const inclusishield: Project = {
       {
         title: "Ce que j'ai construit",
         body: [
-          "Une architecture cloud orchestrant Playwright via Browserless pour le crawl headless des pages, Redis (Upstash) pour la file de traitement et le cache, le tout déployé sur Vercel.",
-          "Le moteur automatise la vérification de conformité aux normes WCAG 2.2 AA et RGAA 4.1.2, puis génère des rapports priorisés — du diagnostic brut à la feuille de route de remédiation.",
+          'Une architecture cloud orchestrant Playwright via Browserless pour le crawl headless des pages, Redis (Upstash) pour la file de traitement et le cache, le tout déployé sur Vercel.',
+          'Le moteur automatise la vérification de conformité aux normes WCAG 2.2 AA et RGAA 4.1.2, puis génère des rapports priorisés — du diagnostic brut à la feuille de route de remédiation.',
         ],
       },
       {

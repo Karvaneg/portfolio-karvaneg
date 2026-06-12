@@ -4,18 +4,18 @@ const IMG = '/images/projects';
 
 export const openclassrooms: Project = {
   id: 'openclassrooms',
-  ticketId: 'KARV-007',
+  ticketId: 'KARV-001',
   order: 7,
   title: 'Formation OpenClassrooms',
   headline: 'Formation OpenClassrooms — fondations fullstack',
   tagline: 'Six projets professionnalisants — fondations fullstack solides.',
   status: 'certified',
-  statusLabel: 'CERTIFIÉE',
+  statusLabel: 'CERTIFIED',
   period: 'Mars — Nov. 2022',
   role: 'Développeuse en Formation',
   duration: '9 mois',
   stack: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
-  labels: [{ text: 'formation' }, { text: 'fullstack' }, { text: 'certifiée', accent: true }],
+  labels: [{ text: 'formation' }, { text: 'fullstack' }, { text: 'certified', accent: true }],
   metaLabel: 'Focus',
   summary:
     'Formation intensive en développement web, six projets professionnalisants couvrant tout le stack, validée avec la certification Développeur Intégrateur Web (Niveau 5).',

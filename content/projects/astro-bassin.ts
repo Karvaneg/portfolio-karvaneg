@@ -4,15 +4,15 @@ const IMG = '/images/projects';
 
 export const astroBassin: Project = {
   id: 'astro-bassin',
-  ticketId: 'KARV-003',
-  order: 2,
+  ticketId: 'KARV-007',
+  order: 1,
   title: 'Astro Bassin',
   headline: 'Astro Bassin — Site vitrine & plateforme de booking',
   tagline:
     'Site vitrine & plateforme de réservation pour une astrologue — booking, paiement et back-office, livrés en solo.',
   status: 'in-progress',
   statusLabel: 'IN PROGRESS',
-  period: '2026 —',
+  period: '2026',
   role: 'Conception & Dev Fullstack',
   duration: '2 mois · 2026',
   website: 'https://astrobassin.fr',
@@ -68,7 +68,7 @@ export const astroBassin: Project = {
       {
         title: "Ce que j'ai construit",
         body: [
-          "Un front Astro (vitrine + tunnel de réservation), un back Supabase pour les créneaux, commandes et abonnés, le paiement géré par Stripe, et des emails transactionnels automatiques via Resend (confirmations, rappels).",
+          'Un front Astro (vitrine + tunnel de réservation), un back Supabase pour les créneaux, commandes et abonnés, le paiement géré par Stripe, et des emails transactionnels automatiques via Resend (confirmations, rappels).',
           'Côté coulisses, un dashboard admin complet : pilotage des réservations et des commandes boutique, gestion des produits, tirages, planning, témoignages, et une page de lancement. Le tout déployé sur Vercel avec une CI GitLab.',
         ],
       },

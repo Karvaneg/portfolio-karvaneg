@@ -4,12 +4,12 @@ const IMG = '/images/projects';
 
 export const cbnsa: Project = {
   id: 'cbnsa',
-  ticketId: 'KARV-001',
-  order: 5,
+  ticketId: 'KARV-002',
+  order: 6,
   title: 'CBNSA',
   headline: 'CBNSA — Refonte institutionnelle & portails thématiques',
   tagline:
-    'Refonte du site institutionnel et portails thématiques du Conservatoire Botanique.',
+    'Refonte du site institutionnel, un vent de modernité souffle sur le Conservatoire Botanique National Sud-Atlantique.',
   status: 'shipped',
   statusLabel: 'SHIPPED',
   period: '2023 — 2025',
@@ -22,11 +22,12 @@ export const cbnsa: Project = {
   summary:
     "Conservatoire Botanique National Sud-Atlantique. Refonte du site institutionnel et conception d'une suite de portails thématiques partageant un même design system Symfony/Twig — un socle, plusieurs visages.",
   description: [
-    'Deux ans au Conservatoire Botanique National Sud-Atlantique : développement de plusieurs portails thématiques et refonte complète du site institutionnel. Backend PHP/Symfony, frontend Twig + JavaScript/TypeScript, bases PostgreSQL optimisées.',
-    "Mise en pratique des principes DevOps (pipelines GitLab CI/CD, conteneurisation Docker, automatisation des déploiements), respect des standards WCAG, suivi SEO. J'ai aussi participé à la mise en œuvre d'un design system pour harmoniser le visuel des portails thématiques.",
+    'Le Conservatoire Botanique National Sud-Atlantique avait un site institutionnel vieillissant et le besoin de portails thématiques distincts, sans pour autant multiplier les bases techniques. Surtout, ses contenus étaient figés dans le code : la moindre mise à jour passait par un développeur.',
+    "J'ai refondu le site et conçu une suite de portails bâtis sur un même socle Symfony/Twig — un design system partagé, décliné en plusieurs visages. Les contenus, jusque-là en dur dans les templates, ont été sortis du code pour devenir éditables : l'équipe fait désormais évoluer le site en autonomie, sans toucher au code.",
+    "Trois gains nets à l'arrivée : un SEO consolidé (structure sémantique, métadonnées, performances), une accessibilité conforme WCAG, et une navigation bien plus fluide. Aujourd'hui près d'un visiteur sur deux arrive via la recherche organique, et les pages les plus consultées sont des contenus de fond — la structure éditoriale sortie du code est réellement exploitée.",
   ],
   impact: '~45% du trafic en recherche organique · 11,4k pages vues (2026)',
-  impactEsquisses: 'Design system unifié et plusieurs portails thématiques en production.',
+  impactEsquisses: 'Autonomie éditoriale complète · ~45% du trafic en recherche organique (2026).',
   aiTooling:
     'SEO & accessibilité (WCAG), navigation fluidifiée et contenus sortis du code en dur — désormais éditables sans intervention technique.',
   shots: [
@@ -56,10 +57,14 @@ export const cbnsa: Project = {
     ],
     metrics: {
       label: 'Résultats mesurés · 2026 (à date)',
-      note: "Pas de mesure avant refonte — ces chiffres reflètent le trafic post-refonte, pas un taux de croissance.",
+      note: 'Pas de mesure avant refonte — ces chiffres reflètent le trafic post-refonte, pas un taux de croissance.',
       items: [
         { value: '4k', label: 'visiteurs uniques', sub: '11,4k pages vues' },
-        { value: '~45%', label: 'via la recherche organique', sub: 'Google · Bing · Ecosia · Qwant' },
+        {
+          value: '~45%',
+          label: 'via la recherche organique',
+          sub: 'Google · Bing · Ecosia · Qwant',
+        },
         { value: '2,7', label: 'pages par visite', sub: '~1 min 40 s par session' },
       ],
     },
@@ -80,7 +85,7 @@ export const cbnsa: Project = {
       {
         title: 'SEO, accessibilité & navigation',
         body: [
-          'La refonte a permis un gain net sur trois axes : un SEO consolidé (structure sémantique, métadonnées, performances), une accessibilité conforme aux normes WCAG, et une navigation nettement plus fluide pour l\'utilisateur final.',
+          "La refonte a permis un gain net sur trois axes : un SEO consolidé (structure sémantique, métadonnées, performances), une accessibilité conforme aux normes WCAG, et une navigation nettement plus fluide pour l'utilisateur final.",
         ],
       },
       {

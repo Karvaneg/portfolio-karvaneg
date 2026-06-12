@@ -4,14 +4,14 @@ const IMG = '/images/projects';
 
 export const crazeeBurger: Project = {
   id: 'crazee-burger',
-  ticketId: 'KARV-005',
+  ticketId: 'KARV-004',
   order: 4,
   title: 'Crazee-Burger',
   headline: 'Crazee-Burger — application React avancée',
   tagline: 'Application React avancée — montée en compétences React & TypeScript chez ViDev.',
   status: 'shipped',
   statusLabel: 'SHIPPED',
-  period: '2024',
+  period: '2025 — 2026',
   role: 'Dev Frontend',
   duration: '4 mois',
   stack: ['React', 'TypeScript', 'Styled Components'],
@@ -20,7 +20,7 @@ export const crazeeBurger: Project = {
   summary:
     "Application complète de gestion de commandes pour fast-food, développée lors de ma montée en compétences React & TypeScript chez ViDev : mode admin / client, gestion de panier, persistance d'état et design system maison.",
   description: [
-    "Application complète de gestion de commandes pour fast-food, développée dans le cadre de ma montée en compétences React & TypeScript en entreprise avec ViDev.",
+    'Application complète de gestion de commandes pour fast-food, développée dans le cadre de ma montée en compétences React & TypeScript en entreprise avec ViDev.',
     "Mode admin / mode client, gestion de panier, persistance d'état, design system maison. Pas de pastiche fast-food kitsch — juste une interface qui fonctionne.",
   ],
   impact: 'Maîtrise consolidée de React/TypeScript en contexte production',
