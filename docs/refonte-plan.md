@@ -60,7 +60,9 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
   valeur dynamique inévitable (ex. position curseur), et alors documentée.
 - **Petits composants, une seule responsabilité.** Référence V1 : une section = un dossier,
   découpée en sous-composants (`about.tsx` compose `about-description.tsx` +
-  `about-technologies.tsx`). Viser **< ~80 lignes** par fichier ; au-delà, découper.
+  `about-technologies.tsx`). Viser **< ~80 lignes** par fichier ; au-delà, découper
+  **à une vraie couture** (jamais pour le seul chiffre). Exceptions assumées :
+  registres d'icônes/SVG (`icons.tsx`), overlays/vues cohérents d'une responsabilité.
 - **Nommage** : fichiers en **kebab-case**, composants en `PascalCase`, **export nommé**.
 - **RSC par défaut** (`app/**`) ; `'use client'` uniquement quand nécessaire (interactivité),
   isolé dans `components/**`.

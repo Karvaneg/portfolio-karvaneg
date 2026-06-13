@@ -37,8 +37,11 @@ pnpm format   # prettier --write
 
 - **Pas de CSS inline** → Tailwind v4 / CSS Modules. `style={{}}` seulement pour une
   valeur dynamique inévitable, documentée.
-- **Petits composants**, une seule responsabilité, **viser < ~80 lignes/fichier** ;
-  au-delà, découper en sous-composants (cf. pattern `about.tsx`).
+- **Petits composants**, une seule responsabilité, **viser < ~80 lignes/fichier** :
+  au-delà, découper **à une vraie couture** (cf. `about.tsx`, ou `case-study.tsx`
+  → head/facts/carousel/sections/lightbox + hook `useFocusTrap`) — jamais pour le
+  seul chiffre. Exceptions assumées : registres d'icônes/SVG (`icons.tsx`) et
+  overlays/vues cohérents d'une seule responsabilité peuvent dépasser.
 - Fichiers **kebab-case**, composants `PascalCase`, **export nommé**, imports `@/…`.
 - **RSC par défaut** (`app/**`) ; `'use client'` seulement si interactivité, isolé dans `components/**`.
 - **Données séparées du rendu** : tout le contenu typé dans `content/**`, types dans `types/**`.
