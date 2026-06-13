@@ -1,12 +1,11 @@
 'use client';
 
-import { useEffect, useRef, type CSSProperties } from 'react';
+import { type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects, getProjectById } from '@/content/projects';
+import { useFocusTrap } from '@/components/shared/use-focus-trap';
 import styles from './esquisses-project-detail.module.css';
 import base from './esquisses-base.module.css';
-
-const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 interface EsquissesProjectDetailProps {
   projectId: string;
@@ -21,43 +20,8 @@ interface EsquissesProjectDetailProps {
  */
 export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: EsquissesProjectDetailProps) {
   const project = getProjectById(projectId);
-  const ref = useRef<HTMLDivElement>(null);
-
-  // Montage : verrou du scroll + focus initial + restitution du focus.
-  useEffect(() => {
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    document.body.style.overflow = 'hidden';
-    ref.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
-    return () => {
-      document.body.style.overflow = '';
-      previouslyFocused?.focus();
-    };
-  }, []);
-
-  // Clavier : Esc + piège à focus (Tab).
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose();
-        return;
-      }
-      if (event.key === 'Tab' && ref.current) {
-        const items = Array.from(ref.current.querySelectorAll<HTMLElement>(FOCUSABLE));
-        if (items.length === 0) return;
-        const first = items[0];
-        const last = items[items.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
+  // Overlay accessible mutualisé : scroll-lock, focus-trap, Échap, restitution.
+  const ref = useFocusTrap<HTMLDivElement>(onClose);
 
   if (!project) return null;
 
