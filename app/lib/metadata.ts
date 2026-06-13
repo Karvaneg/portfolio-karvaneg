@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { profile } from '@/content/profile';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_LOCAL_SITE_URL;
+import { siteUrl } from '@/app/lib/site-url';
 
 const siteName = `${profile.name} · ${profile.brand}`;
 const defaultTitle = `${profile.name} — ${profile.roleLong}`;
@@ -10,7 +9,7 @@ const defaultDescription =
 
 /** Métadonnées racine (défauts + assets globaux). Les surfaces utilisent `buildMetadata`. */
 export const metadata: Metadata = {
-  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+  metadataBase: new URL(siteUrl),
   title: defaultTitle,
   description: defaultDescription,
   alternates: { canonical: '/' },
