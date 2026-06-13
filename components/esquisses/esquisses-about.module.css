@@ -1,0 +1,82 @@
+/* Carnet d'esquisses — section « À propos » (narratif manuscrit + citation). */
+
+.about {
+  padding: 100px var(--gutter);
+  position: relative;
+}
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+.aboutLabel {
+  position: sticky;
+  top: 100px;
+}
+.aboutText {
+  font-family: var(--hand-body);
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.45;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+.aboutText .accent {
+  font-family: var(--hand);
+  color: var(--pencil-red);
+  font-weight: 600;
+  font-size: 1.15em;
+  display: inline-block;
+  transform: rotate(-1deg);
+}
+.aboutQuote {
+  margin-top: 56px;
+  padding: 32px 32px 32px 80px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(-1deg);
+}
+.aboutQuote::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 200' preserveAspectRatio='none'><path d='M4,6 Q250,2 496,6 Q494,100 498,194 Q250,198 4,194 Q6,100 4,6 Z' stroke='%232c2a28' stroke-width='1.5' fill='none' stroke-linejoin='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+.aboutQuoteMark {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-family: var(--hand);
+  font-size: 120px;
+  line-height: 1;
+  color: var(--pencil-red);
+  font-weight: 700;
+}
+.aboutQuoteText {
+  font-family: var(--hand-italic);
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.aboutQuoteAuthor {
+  font-family: var(--type);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+}
+
+@media (max-width: 960px) {
+  .about {
+    padding: 60px var(--gutter);
+  }
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .aboutLabel {
+    position: static;
+  }
+}

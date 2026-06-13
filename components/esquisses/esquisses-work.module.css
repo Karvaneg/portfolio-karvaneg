@@ -1,0 +1,190 @@
+/* Carnet d'esquisses — section « Projets » (sommaire esquissé + aperçu flottant). */
+
+.work {
+  padding: 100px var(--gutter);
+  position: relative;
+}
+.workHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+.workList {
+  position: relative;
+  padding-top: 16px;
+  margin: 0;
+  list-style: none;
+}
+.workList::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14px;
+  background: var(--sketch-rule) no-repeat center / 100% 100%;
+}
+.projectRow {
+  display: grid;
+  grid-template-columns: 70px 1.4fr 2fr 1fr 40px;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 28px 0;
+  cursor: pointer;
+  position: relative;
+  transition: padding 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+.projectRow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+  background: var(--sketch-rule-thin) no-repeat center / 100% 100%;
+}
+.projectRow:hover {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.projectNum {
+  font-family: var(--type);
+  font-size: 14px;
+  color: var(--graphite-light);
+  letter-spacing: 0.06em;
+}
+.projectTitle {
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 72px);
+  line-height: 0.95;
+  color: var(--graphite);
+  transform: rotate(-0.5deg);
+  transform-origin: left center;
+  transition:
+    color 0.2s,
+    transform 0.3s;
+}
+.projectRow:hover .projectTitle {
+  color: var(--pencil-red);
+  transform: rotate(-1.2deg);
+}
+.projectTagline {
+  font-family: var(--hand-body);
+  font-size: 18px;
+  color: var(--graphite-soft);
+  line-height: 1.35;
+}
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--type);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--graphite-soft);
+  text-transform: uppercase;
+}
+.projectArrow {
+  font-family: var(--hand);
+  font-size: 32px;
+  text-align: right;
+  color: var(--graphite);
+  transition:
+    transform 0.3s,
+    color 0.2s;
+}
+.projectRow:hover .projectArrow {
+  transform: translateX(10px) rotate(-10deg);
+  color: var(--pencil-red);
+}
+.projectPreview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%) scale(0.9) rotate(var(--rot, -3deg));
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 5;
+  background: var(--paper);
+  padding: 16px 16px 18px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 20px 40px -10px rgba(60, 50, 30, 0.4),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+.projectPreviewActive {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(var(--rot, -3deg));
+}
+.projectPreview::before,
+.projectPreview::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 60px;
+  height: 22px;
+  background: rgba(245, 220, 130, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.projectPreview::before {
+  left: 30px;
+  transform: rotate(-4deg);
+}
+.projectPreview::after {
+  right: 30px;
+  transform: rotate(4deg);
+}
+.projectPreviewMock {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-2);
+  filter: contrast(1.05) saturate(0.85);
+}
+.projectPreviewMock img {
+  object-fit: contain;
+}
+.projectPreviewCaption {
+  margin-top: 14px;
+  font-family: var(--hand);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--graphite);
+  transform: rotate(-1deg);
+}
+
+@media (max-width: 960px) {
+  .work {
+    padding: 60px var(--gutter);
+  }
+  .workHeader {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .projectRow {
+    grid-template-columns: 40px 1fr 30px;
+    gap: 12px;
+    padding: 20px 0;
+  }
+  .projectRow:hover {
+    padding: 20px 0;
+  }
+  .projectTagline,
+  .projectMeta {
+    display: none;
+  }
+  .projectPreview {
+    display: none;
+  }
+}

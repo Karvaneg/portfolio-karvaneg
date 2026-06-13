@@ -1,0 +1,40 @@
+/* Atrium — colophon (coordonnées, liens sociaux, méta). */
+
+.colophon {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ivory-faint);
+}
+.colophonLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.colophonLinks a {
+  color: var(--ivory-dim);
+  transition: color 0.2s;
+}
+.colophonLinks a:hover {
+  color: var(--ivory);
+}
+.colophonMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+@media (max-width: 520px) {
+  .colophon {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,122 @@
+/* =================================================================
+   Bandeau de consentement cookies — esthétique couverture atrium
+   (near-black + ivoire + accent émeraude). Le wrapper porte
+   data-surface="atrium" + les polices refonte pour que les tokens résolvent.
+   Placé en bas-gauche pour ne pas gêner le switcher d'accent / les toasts (bas-droite).
+   ================================================================= */
+
+.banner {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 120;
+  width: min(360px, calc(100vw - 36px));
+  padding: 18px 20px 20px;
+  background: var(--cover);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.85);
+  color: var(--ivory);
+  font-family: var(--sans);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+}
+.dot {
+  color: var(--pencil-red);
+  font-size: 14px;
+}
+
+.text {
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ivory-dim);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    filter 0.15s ease;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 2px;
+}
+.refuse {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ivory-dim);
+}
+.refuse:hover {
+  border-color: var(--ivory-faint);
+  color: var(--ivory);
+}
+.accept {
+  background: var(--emerald);
+  color: #0a0a0a;
+  font-weight: 500;
+}
+.accept:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Pastille « Cookies » quand le bandeau est refermé. */
+.manage {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 120;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(21, 18, 13, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ivory-faint);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.manage:hover {
+  border-color: var(--ivory-faint);
+  color: var(--ivory);
+}
+.manage:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 2px;
+}
+.manageDot {
+  color: var(--pencil-red);
+  font-size: 13px;
+}

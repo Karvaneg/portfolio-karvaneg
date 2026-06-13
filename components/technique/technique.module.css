@@ -1,0 +1,497 @@
+/* Carnet technique — port de la maquette (source/styles.css).
+   Tokens fournis par [data-surface='technique'] (app/styles/refonte-tokens.css).
+   data-surface + data-accent sont posés sur .page (cf. technique-shell.tsx). */
+
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 800px 400px at 50% -100px, var(--accent-faint), transparent 60%),
+    var(--bg);
+  color: var(--fg-2);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.page a {
+  color: inherit;
+  text-decoration: none;
+}
+.page button {
+  font-family: inherit;
+  cursor: pointer;
+}
+.page ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.mono {
+  font-family: var(--mono);
+}
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.sectionLast {
+  border-bottom: none;
+}
+
+/* ===== Nav ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.7);
+  border-bottom: 1px solid var(--border-soft);
+}
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.navBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.navDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg-3);
+}
+.navLinks a {
+  transition: color 0.15s;
+}
+.navLinks a:hover {
+  color: var(--fg);
+}
+.navCta {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--fg);
+  transition: all 0.15s;
+}
+.navCta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ===== Section headers ===== */
+/* sectionTag → primitive partagée (components/shared/ui.module.css). */
+.sectionTag {
+  composes: sectionTag from '../shared/ui.module.css';
+}
+.sectionTitle {
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  max-width: 720px;
+}
+.sectionLede {
+  font-size: 17px;
+  color: var(--fg-3);
+  max-width: 640px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 120px 0 100px;
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+  overflow: hidden;
+}
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-3);
+  padding: 5px 12px 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-2);
+  margin-bottom: 28px;
+}
+.pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: relative;
+}
+.pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+  animation: pulse 2s ease-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.heroTitle {
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin: 0 0 28px;
+  max-width: 920px;
+}
+.accent {
+  color: var(--accent);
+}
+.monoInline {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.85em;
+  letter-spacing: -0.02em;
+}
+.heroSub {
+  font-size: 19px;
+  color: var(--fg-3);
+  max-width: 640px;
+  line-height: 1.55;
+  margin: 0 0 40px;
+}
+.heroSub code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  color: var(--fg);
+  background: var(--bg-3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+/* ctaRow + famille btn → primitives partagées (components/shared/ui.module.css). */
+.ctaRow {
+  composes: ctaRow from '../shared/ui.module.css';
+}
+.btn {
+  composes: btn from '../shared/ui.module.css';
+}
+.btnPrimary {
+  composes: btnPrimary from '../shared/ui.module.css';
+}
+.btnSecondary {
+  composes: btnSecondary from '../shared/ui.module.css';
+}
+.btnGhost {
+  composes: btnGhost from '../shared/ui.module.css';
+}
+.icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+.heroMeta {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+.heroMetaLabel {
+  display: block;
+  color: var(--fg-faint);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 10.5px;
+}
+.heroMetaValue {
+  color: var(--fg-2);
+  font-size: 13px;
+}
+.heroMinimal .heroEyebrow,
+.heroMinimal .heroMeta,
+.heroMinimal .heroSub {
+  display: none;
+}
+.heroMinimal {
+  padding: 200px 0 160px;
+}
+.heroMinimal .heroTitle {
+  margin-bottom: 48px;
+}
+
+/* ===== Show ===== */
+/* Styles extraits → show.module.css (co-localisé avec le composant). */
+/* ===== Accent switcher (remplace le panneau Tweaks de proto) ===== */
+.accentSwitcher {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 60;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.accentSwatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  padding: 0;
+  transition: transform 0.15s;
+}
+.accentSwatch:hover {
+  transform: scale(1.15);
+}
+.accentSwatch[data-accent-value='emerald'] {
+  background: #34d399;
+  color: #34d399;
+}
+.accentSwatch[data-accent-value='cyan'] {
+  background: #22d3ee;
+  color: #22d3ee;
+}
+.accentSwatch[data-accent-value='red'] {
+  background: #f87171;
+  color: #f87171;
+}
+.accentActive {
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px currentColor;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+  .navLinks {
+    display: none;
+  }
+  .heroMeta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Workflow cards ===== */
+/* Styles extraits → workflow.module.css (co-localisé avec le composant). */
+/* tag + tagAccent → primitives partagées (components/shared/ui.module.css). */
+.tag {
+  composes: tag from '../shared/ui.module.css';
+}
+.tagAccent {
+  composes: tagAccent from '../shared/ui.module.css';
+}
+
+/* ===== Tickets / Projects ===== */
+.tickets {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ticket {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-1);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.ticket:hover {
+  border-color: var(--border-strong);
+}
+.ticketHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-2);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.ticketId {
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+.ticketStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+/* Statuts à couleur fixe (indépendante de l'accent thémable). */
+.ticketStatus.shipped {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+.ticketStatus.certified {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+.ticketStatus.inProgress {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+/* Statut « croissance » — vert fixe (indépendant de l'accent thémable). */
+.ticketStatus.growing {
+  color: #60a5fa;                                                                    
+  background: rgba(96, 165, 250, 0.12);                                              
+  border: 1px solid rgba(96, 165, 250, 0.4); 
+}
+.ticketStatus .statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+/* Pastille pulsatile pour « growing » : anneau qui se diffuse, point plein au
+   repos (animation coupée par le reset global prefers-reduced-motion). */
+.ticketStatus.growing .statusDot {
+  position: relative;
+}
+.ticketStatus.growing .statusDot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+  animation: pulse 2s ease-out infinite;
+}
+.ticketLabels {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.ticketPeriod {
+  color: var(--fg-faint);
+}
+.ticketBody {
+  padding: 28px 24px 24px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+}
+.ticketBody h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
+}
+.summary {
+  font-size: 15px;
+  color: var(--fg-3);
+  margin: 0 0 20px;
+  line-height: 1.55;
+}
+.ticketMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ticketMetaRow {
+  border-left: 2px solid var(--border);
+  padding-left: 14px;
+}
+.metaKey {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.metaValue {
+  font-size: 14px;
+  color: var(--fg-2);
+  line-height: 1.5;
+}
+.ticketMetaRow.impact {
+  border-left-color: var(--accent);
+}
+.ticketMetaRow.impact .metaValue {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+/* ===== Étude de cas (modale) ===== */
+/* Styles extraits → case-study.module.css (co-localisé avec le composant). */
+/* ===== Open Source ===== */
+/* Styles extraits → opensource.module.css (co-localisé avec le composant). */
+/* ===== Contact ===== */
+/* Styles extraits → contact.module.css (co-localisé avec le composant). */
+/* ===== Footer ===== */
+/* Styles extraits → footer.module.css (co-localisé avec le composant). */
+/* ===== Responsive (900px) ===== */
+@media (max-width: 900px) {
+  .page {
+    --gutter: 20px;
+  }
+  .section {
+    padding: 64px 0;
+  }
+  .hero {
+    padding: 80px 0 64px;
+  }
+  .ticketBody {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

@@ -18,15 +18,25 @@ include:
   - template: Security/Secret-Detection.gitlab-ci.yml
 
 variables:
-  SECRET_DETECTION_ENABLED: "true"
+  SECRET_DETECTION_ENABLED: 'true'
 
-# Job de déploiement vers Vercel
+# Template partagé : image Node 22 + activation de pnpm (corepack) + store local.
 .default_node_job:
-  image: node:20
+  image: node:22
   before_script:
     - corepack enable
-    - corepack prepare pnpm@latest --activate
+    - corepack prepare pnpm@10.24.0 --activate
     - pnpm config set store-dir .pnpm-store
+
+# Gate qualité : lint + tests unitaires Vitest. S'exécute sur toutes les branches
+# et MR. Le stage `test` précède build/deploy → un échec ici bloque le déploiement.
+test:
+  stage: test
+  extends: .default_node_job
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm lint
+    - pnpm test
 
 build:
   stage: build
@@ -40,7 +50,7 @@ build:
 deploy:
   stage: deploy
   extends: .default_node_job
-  needs: ["build"]
+  needs: ['build']
   script:
     - pnpm install --frozen-lockfile
     - pnpm dlx vercel --prod --confirm --token $VERCEL_TOKEN
@@ -57,7 +67,7 @@ cache:
 
 # Job de mirroring optimisé
 mirror_to_github:
-  needs: ["deploy"]
+  needs: ['deploy']
   stage: mirror
   image: debian:stable
   before_script:

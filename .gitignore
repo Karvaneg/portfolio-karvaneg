@@ -33,3 +33,6 @@ id_rsa
 
 # Documentation files
 setup.local.md
+
+# Claude AI
+.claude

@@ -1,0 +1,66 @@
+/* Playbook — pied d'article (pager prev/next). Co-localisé avec
+   playbook-article-footer.tsx. Le CTA réutilise .ctaRow/.btn de shared/ui.module.css.
+   Tokens de la surface terminal ([data-surface='technique']). */
+
+.articleFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+  padding-bottom: 120px;
+}
+
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-family: var(--mono);
+}
+.pagerLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-1);
+  transition: all 0.15s;
+  color: inherit;
+}
+.pagerLink:not(.pagerDisabled):hover {
+  border-color: var(--accent-dim);
+  background: var(--bg-2);
+}
+.pagerNext {
+  text-align: right;
+  align-items: flex-end;
+}
+.pagerDisabled {
+  opacity: 0.45;
+  cursor: default;
+  background: transparent;
+  border-style: dashed;
+}
+.pagerDir {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.pagerDisabled .pagerDir {
+  color: var(--fg-faint);
+}
+.pagerTitle {
+  font-size: 13px;
+  color: var(--fg);
+}
+
+@media (max-width: 720px) {
+  .pager {
+    grid-template-columns: 1fr;
+  }
+  .pagerNext {
+    text-align: left;
+    align-items: flex-start;
+  }
+}

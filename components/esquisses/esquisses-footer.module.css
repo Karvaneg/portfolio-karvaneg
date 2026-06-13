@@ -1,0 +1,29 @@
+/* Carnet d'esquisses — pied de page (renvoi croisé vers le carnet technique). */
+
+.footer {
+  padding: 32px var(--gutter);
+  border-top: 1px dashed var(--graphite-light);
+  font-family: var(--type);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--graphite-soft);
+}
+.footerAltLink {
+  color: var(--pencil-red);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.footerAltLink:hover {
+  border-bottom-color: var(--pencil-red);
+}
+
+@media (max-width: 960px) {
+  .footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

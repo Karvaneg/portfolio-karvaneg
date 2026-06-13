@@ -1,0 +1,337 @@
+/* =================================================================
+   Page 404 — couverture atrium + panneau terminal + annotations.
+   Tokens fournis par [data-surface='atrium'] (cover, ivory, term-*, emerald,
+   pencil-red, sans, mono, hand). Port de la maquette Karvaneg 404.html.
+   ================================================================= */
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  overflow-x: hidden;
+  background: radial-gradient(120% 90% at 50% -10%, var(--cover-2), var(--cover));
+  color: var(--ivory);
+  font-family: var(--sans);
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* ----- wordmark coin ----- */
+.mark {
+  position: absolute;
+  top: -34px;
+  left: 2px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ivory-faint);
+}
+.markStar {
+  color: var(--pencil-red);
+}
+
+/* ----- panneau terminal ----- */
+.term {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--term-border);
+  border-radius: 12px;
+  background: radial-gradient(120% 120% at 50% -20%, var(--emerald-faint), transparent 55%),
+    var(--term-bg);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85);
+}
+.termBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--term-border);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--term-fg3);
+}
+.lights {
+  display: flex;
+  gap: 7px;
+  margin-right: 8px;
+}
+.lights i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #2a2a2e;
+}
+.file {
+  margin-left: auto;
+  opacity: 0.8;
+}
+.termBody {
+  padding: 30px 30px 34px;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.ln {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.u {
+  color: var(--emerald);
+}
+.p {
+  color: var(--term-fg3);
+}
+.cmd {
+  color: var(--term-fg);
+}
+.err {
+  color: #f0816f;
+}
+.muted {
+  color: var(--term-fg3);
+}
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 16px;
+  margin-left: 3px;
+  background: var(--emerald);
+  transform: translateY(3px);
+  animation: blink 1.1s step-end infinite;
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ----- le grand 4*4 ----- */
+.bigWrap {
+  position: relative;
+  width: max-content;
+  margin: 26px auto 22px;
+}
+.big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: 1;
+}
+.bigD {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(96px, 18vw, 168px);
+  letter-spacing: -0.04em;
+  color: var(--term-fg);
+}
+.bigStar {
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: clamp(120px, 22vw, 210px);
+  line-height: 0.8;
+  color: var(--pencil-red);
+  transform: rotate(-8deg) translateY(0.2em);
+}
+
+.verdict {
+  text-align: center;
+}
+.t1 {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--term-fg);
+}
+.t2 {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--term-fg3);
+}
+.restore {
+  margin-top: 24px;
+}
+
+/* ----- actions ----- */
+.actions {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.actionsTop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 28px 36px;
+}
+.homeWrap {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 48px;
+}
+.btnHome {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 9px;
+  background: var(--emerald);
+  color: #0a0a0a;
+  font-weight: 500;
+  transition:
+    transform 0.22s,
+    box-shadow 0.22s;
+}
+.btnHome:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -12px rgba(52, 211, 153, 0.7);
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 11px;
+  color: var(--ivory-faint);
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.2s;
+}
+.links a:hover {
+  color: var(--ivory);
+}
+.sym {
+  color: var(--emerald);
+}
+
+.hint {
+  margin-top: 26px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--ivory-ghost);
+}
+.hint kbd {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--ivory-faint);
+}
+
+/* ----- annotations manuscrites ----- */
+.ann {
+  position: absolute;
+  color: var(--pencil-red);
+  font-family: var(--hand);
+  pointer-events: none;
+}
+.oups {
+  top: -14px;
+  right: 6px;
+  font-size: 36px;
+  font-weight: 700;
+  transform: rotate(8deg);
+}
+.margin {
+  left: -30px;
+  top: 36%;
+  font-size: 23px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.92;
+  transform: rotate(-90deg);
+  transform-origin: left center;
+}
+.tohome {
+  position: absolute;
+  left: 16px;
+  top: calc(100% + 9px);
+  font-size: 25px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.92;
+  transform: rotate(-3deg);
+}
+.note {
+  left: calc(100% + 14px);
+  top: 18px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.05;
+  white-space: nowrap;
+  opacity: 0.94;
+  transform: rotate(-7deg);
+}
+.noteSub {
+  display: block;
+  margin-top: 2px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* ----- reveal / typing ----- */
+.step {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.shown {
+  opacity: 1;
+}
+.ann {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.annOn .ann {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step,
+  .ann {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .margin {
+    display: none;
+  }
+  .oups {
+    right: 0;
+  }
+  .note {
+    position: static;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    transform: rotate(-3deg);
+  }
+  .termBody {
+    padding: 24px 20px 28px;
+  }
+}

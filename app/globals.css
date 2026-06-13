@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import './styles/refonte-tokens.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -259,4 +260,18 @@ DESIGN SYSTEM – GLOBAL CONTRACT
 .animate-gradient {
   animation: var(--anim-gradient);
   background-size: 200% 200%;
+}
+
+/* Reset reduced-motion global : neutralise toute animation/transition quand
+   l'utilisateur a demandé moins de mouvement (état de repos final visible).
+   Couvre les 4 surfaces et tout ce qui ne serait pas déjà gaté explicitement. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

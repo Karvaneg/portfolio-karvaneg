@@ -1,0 +1,28 @@
+/* Section « Footer » du carnet technique — extraite de technique.module.css
+   (audit CSS #1). Importée par technique-footer.tsx. */
+
+.footer {
+  padding: 32px 0 48px;
+  border-top: 1px solid var(--border-soft);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-faint);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer a:hover {
+  color: var(--accent);
+}
+

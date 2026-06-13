@@ -15,7 +15,11 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="fr" className={[inter.variable, jetbrainsMono.variable, cinzel.variable].join(' ')}>
+    <html
+      lang="fr"
+      suppressHydrationWarning
+      className={[inter.variable, jetbrainsMono.variable, cinzel.variable].join(' ')}
+    >
       <body className="font-sans antialiased">
         <ThemeProvider>
           {children}

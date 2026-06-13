@@ -1,0 +1,114 @@
+/* Playbook — page index /playbook (liste des entrées). Co-localisé avec
+   app/playbook/page.tsx. Tokens de la surface terminal ([data-surface='technique']). */
+
+.index {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 96px var(--gutter) 120px;
+}
+.indexHead {
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.indexTitle {
+  font-size: clamp(32px, 4.4vw, 52px);
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 16px 0 20px;
+}
+.indexTitle em {
+  color: var(--accent);
+  font-style: normal;
+}
+.indexLede {
+  font-size: 18px;
+  color: var(--fg-2);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 620px;
+}
+.indexList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.entry {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: start;
+  padding: 24px 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-1);
+  transition: all 0.15s ease;
+}
+a.entry:hover {
+  border-color: var(--accent-dim);
+  background: var(--bg-2);
+  transform: translateY(-1px);
+}
+.entrySoon {
+  opacity: 0.55;
+}
+.entryNum {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.entryMain {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.entryTitle {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.entryMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--fg-muted);
+}
+.entryMetaSep {
+  color: var(--fg-faint);
+}
+.entrySummary {
+  font-size: 14.5px;
+  color: var(--fg-3);
+  line-height: 1.6;
+  margin: 0;
+}
+.entryStatus {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.entryLive {
+  color: var(--accent);
+}
+.entrySoonTag {
+  color: var(--fg-faint);
+}
+
+@media (max-width: 720px) {
+  .entry {
+    grid-template-columns: auto 1fr;
+  }
+  .entryStatus {
+    grid-column: 2;
+  }
+}

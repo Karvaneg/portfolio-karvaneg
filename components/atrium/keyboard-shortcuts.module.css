@@ -1,0 +1,16 @@
+/* Atrium — rappel visuel des raccourcis clavier (1 / 2 / P). */
+
+.kbdHint {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ivory-ghost);
+  letter-spacing: 0.04em;
+}
+.kbdHint kbd {
+  color: var(--ivory-faint);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 10.5px;
+}

@@ -1,0 +1,184 @@
+<ArticleHeader
+  entry={props.entry}
+  accent="Skills & Workflows"
+  subtitle="— automatiser ses méthodes pour les rendre réutilisables"
+  lede={
+    <>
+      Un prompt qu'on recopie est un prompt qui dérive. Structurer ses méthodes en{' '}
+      <strong>skills</strong> versionnés permet de transformer un échange jetable en outil
+      d'ingénierie : invocable, testable, partageable. La discipline est la même que pour n'importe
+      quelle abstraction logicielle — on isole le contrat, on documente l'usage, on supprime la
+      duplication.
+    </>
+  }
+  ledeEmphasis="Un skill bien conçu transforme une suite d'opérations manuelles en une commande système invocable par n'importe quel membre de l'équipe."
+/>
+
+<Prereq tag="Prérequis · Setup de base">
+
+Avant de commencer, votre dossier `~/.claude` doit être correctement initialisé et versionné. Si ce
+n'est pas le cas, lisez d'abord [Playbook 001 — Le setup ultime de Claude Code sur
+Windows](/playbook/001-setup-claude-code-windows).
+
+<TerminalBlock commands={['cd ~\\.claude', 'ls skills/', 'claude']} />
+
+</Prereq>
+
+<Steps>
+
+<Step num={1} total={4} title="Anatomie d'un skill">
+
+Un skill Claude Code, c'est un prompt système optimisé, versionné sous forme de fichier `.md` dans
+`~/.claude/skills/`. Chaque skill expose un **contrat** : un nom invocable, une description d'usage,
+un comportement déterministe. Le moteur consomme le contenu du fichier comme prompt système enrichi
+quand on l'invoque via `/skill <nom>` ou via une référence directe.
+
+La structure minimale d'un skill tient en trois éléments :
+
+- **Le nom du fichier** — il sert d'identifiant d'invocation (`init-ai-workspace.md` → invocable sous `init-ai-workspace`).
+- **Un front-matter ou bloc d'en-tête** — objectif, entrées attendues, sorties produites.
+- **Le corps** — instructions précises, contraintes, format de réponse attendu.
+
+<Callout tone="info" icon="💡">
+
+**Principe directeur :** si tu dois copier-coller un prompt système plus de deux fois sur des
+projets différents, c'est que ça doit devenir un skill. La règle est binaire — pas de demi-mesure,
+pas de *« je verrai plus tard »*.
+
+</Callout>
+
+<CopyInstruction />
+
+<PromptBlock>{`Prépare le dossier ~/.claude/skills/ pour accueillir mes skills versionnés.
+
+1. Vérifie que le dossier skills/ existe (créé au Playbook 001). Sinon, crée-le.
+2. Crée un fichier README.md dans skills/ qui servira d'index. Il doit lister automatiquement chaque skill avec son nom, son objectif et un exemple d'invocation. Pour l'instant, laisse une section "Skills" vide — elle sera remplie au fur et à mesure.
+3. Crée un template skills/_template.md qui décrit la structure standard d'un skill : nom, objectif, entrées, sorties, contraintes, corps. C'est la référence que je copierai à chaque nouveau skill.
+4. Commit ces ajouts avec le message 'Initialise structure skills/ — index + template'.`}</PromptBlock>
+
+</Step>
+
+<Step num={2} total={4} title="Créer un skill concret : init-ai-workspace">
+
+Le cas pratique. On crée un skill qui, invoqué dans n'importe quel projet, génère le contexte dont
+l'IA a besoin pour travailler efficacement sur ce projet : arborescence, dépendances, conventions.
+C'est du **Smart Scaffolding** — l'IA construit l'outil qui va ensuite lui fournir son propre
+contexte.
+
+Le skill ne contient pas le script en dur. Il *instruit* Claude de générer un script adapté à
+l'environnement détecté (Node, Python, Rust, etc.). C'est ce qui fait la différence entre un snippet
+et un skill : la généralité.
+
+<CopyInstruction />
+
+<PromptBlock>{`Crée un nouveau skill dans ~/.claude/skills/init-ai-workspace.md.
+
+Ce skill, quand il est invoqué dans un projet, doit faire deux choses :
+
+1. Générer un script generate-ai-context.js (ou .py, .sh selon l'environnement détecté via les fichiers présents : package.json → Node, pyproject.toml → Python, etc.). Le script scanne :
+   - l'arborescence du projet (en excluant node_modules, .git, dist, build),
+   - les dépendances déclarées (package.json, requirements.txt, Cargo.toml…),
+   - les fichiers de configuration racine (tsconfig, eslintrc, prettier, etc.).
+   Il produit en sortie un fichier project-context.md à la racine du projet.
+
+2. Modifier — ou créer s'il n'existe pas — le fichier CLAUDE.md du projet. Ajoute une règle stricte en tête : "Si project-context.md est absent ou date de plus de 24h, exécute generate-ai-context avant toute autre action."
+
+Le corps du skill doit être déclaratif (instructions à Claude), pas impératif (script en dur). C'est Claude qui adapte le code au langage du projet courant. Documente le contrat en haut du fichier : nom, objectif, entrées, sorties, contraintes.`}</PromptBlock>
+
+<Callout tone="warn" icon="⚠️">
+
+**Piège à éviter :** ne code pas le script `generate-ai-context.js` en dur dans le prompt du skill.
+Un skill qui ne sait s'exécuter qu'en Node devient un skill mort dès qu'on travaille en Python ou en
+Rust. Laisse Claude générer le script à partir de l'environnement détecté — c'est exactement le rôle
+que tu lui délègues.
+
+</Callout>
+
+</Step>
+
+<Step num={3} total={4} title="Orchestration — chaîner les actions">
+
+<SubStep marker="1." title="L'inversion de contrôle">
+
+Le skill `init-ai-workspace` est intéressant pour une raison précise : il **construit l'outil qui va
+ensuite lui fournir son propre contexte**. C'est de l'inversion de contrôle appliquée aux agents IA.
+
+<ProsePre>{`Claude  →  crée  →  generate-ai-context.js
+                          ↓ produit
+                    project-context.md
+                          ↓ consommé par
+                    Claude (prochaines sessions)`}</ProsePre>
+
+Au lieu d'expliquer le projet à l'IA à chaque session — toujours imparfaitement, toujours
+différemment — on délègue cette explication à un script déterministe que l'IA elle-même a écrit. Le
+résultat : un contexte reproductible, qu'on peut diff et versionner.
+
+</SubStep>
+
+<SubStep marker="2." title="L'automatisation">
+
+Une fois le skill installé, l'invocation devient triviale et le workflow s'auto-entretient. La règle
+injectée dans `CLAUDE.md` du projet force Claude à régénérer le contexte si celui-ci est obsolète —
+l'humain n'a plus à y penser.
+
+<CopyInstruction />
+
+<PromptBlock>{`Exécute le skill init-ai-workspace sur mon projet actuel.
+
+Étapes attendues :
+1. Détecte l'environnement (Node, Python, autre).
+2. Génère le script generate-ai-context approprié à la racine du projet.
+3. Exécute-le et vérifie que project-context.md est bien produit et non vide.
+4. Modifie le CLAUDE.md du projet pour injecter la règle de fraîcheur (24h).
+5. Affiche un résumé : fichiers créés, lignes scannées, dépendances détectées, taille du contexte généré.
+
+Si une étape échoue, arrête-toi et explique l'erreur — ne continue pas en silence.`}</PromptBlock>
+
+</SubStep>
+
+</Step>
+
+<Step num={4} total={4} title="Versionner et partager">
+
+Ce skill réside dans `~/.claude/skills/` — c'est-à-dire dans le dossier qu'on a transformé en repo
+Git au [Playbook 001](/playbook/001-setup-claude-code-windows). À ce stade, le travail
+d'industrialisation consiste à :
+
+- **Commiter** le nouveau skill et son éventuel template,
+- **Mettre à jour** l'index `skills/README.md` pour que toute personne qui clone le repo découvre immédiatement ce qui est disponible,
+- **Pousser** vers le repository privé pour synchroniser les machines et l'équipe.
+
+<CopyInstruction />
+
+<PromptBlock>{`Dans le repo ~/.claude (versionné au Playbook 001) :
+
+1. Stage init-ai-workspace.md et toute modification du template/index.
+2. Régénère skills/README.md pour qu'il liste automatiquement chaque skill présent dans skills/, avec : nom, objectif (extrait de l'en-tête du fichier), exemple d'invocation. Le README sert d'index pour l'équipe.
+3. Commit avec un message conventionnel : "feat(skills): add init-ai-workspace — smart scaffolding pour contexte projet".
+4. Affiche le diff staged avant le commit. Je veux vérifier qu'aucun fichier de session, cache ou token n'a échappé au .gitignore.
+5. Une fois validé, propose la commande git push correspondante (sans l'exécuter).`}</PromptBlock>
+
+<ResultBlock label="→ Résultat attendu">
+
+<Callout tone="info" icon="*">
+
+Votre repo `~/.claude` contient désormais un dossier `skills/` versionné, un `README.md` d'index qui
+se régénère, et au moins un skill opérationnel (`init-ai-workspace`). N'importe quel poste qui clone
+ce repo récupère votre librairie de méthodes en un `git clone`. Le coût marginal du prochain skill
+tombe à zéro.
+
+</Callout>
+
+</ResultBlock>
+
+</Step>
+
+</Steps>
+
+<Wrapup>
+
+Playbook 002 — partie d'une série sur l'AI-augmented engineering. Les prochains volets couvriront
+l'écriture de skills d'audit (accessibilité, perfs), l'orchestration multi-skills, et la mesure du
+ROI d'un workflow IA en équipe.
+
+</Wrapup>

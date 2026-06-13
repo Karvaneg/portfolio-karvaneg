@@ -1,0 +1,59 @@
+/* Atrium — repères de coupe décoratifs aux 4 coins (masqués < 860px). */
+
+.crop {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.crop::before,
+.crop::after {
+  content: '';
+  position: absolute;
+  background: var(--ivory-ghost);
+}
+.crop::before {
+  width: 22px;
+  height: 1px;
+}
+.crop::after {
+  width: 1px;
+  height: 22px;
+}
+.tl {
+  top: 22px;
+  left: 22px;
+}
+.tr {
+  top: 22px;
+  right: 22px;
+}
+.tr::before,
+.tr::after {
+  right: 0;
+}
+.bl {
+  bottom: 22px;
+  left: 22px;
+}
+.bl::before,
+.bl::after {
+  bottom: 0;
+}
+.br {
+  bottom: 22px;
+  right: 22px;
+}
+.br::before,
+.br::after {
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 860px) {
+  .crop {
+    display: none;
+  }
+}

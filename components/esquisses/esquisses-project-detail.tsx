@@ -1,0 +1,139 @@
+'use client';
+
+import { type CSSProperties } from 'react';
+import Image from 'next/image';
+import { projects, getProjectById } from '@/content/projects';
+import { useFocusTrap } from '@/components/shared/use-focus-trap';
+import styles from './esquisses-project-detail.module.css';
+import base from './esquisses-base.module.css';
+
+interface EsquissesProjectDetailProps {
+  projectId: string;
+  onClose: () => void;
+  onNavigate: (id: string) => void;
+}
+
+/**
+ * Overlay plein écran d'un projet (esquisses) : récit, galerie, projet suivant.
+ * Verrou de scroll, fermeture Esc, focus-trap + restitution du focus (cf.
+ * components/technique/case-study.tsx).
+ */
+export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: EsquissesProjectDetailProps) {
+  const project = getProjectById(projectId);
+  // Overlay accessible mutualisé : scroll-lock, focus-trap, Échap, restitution.
+  const ref = useFocusTrap<HTMLDivElement>(onClose);
+
+  if (!project) return null;
+
+  const { esquisses, description } = project;
+  const index = projects.findIndex((item) => item.id === project.id);
+  const next = projects[(index + 1) % projects.length];
+  const stackList = project.stackEsquisses ?? project.stack;
+  const impact = project.impactEsquisses ?? project.impact;
+  const num = String(project.order).padStart(2, '0');
+  // Couleur de cadre pilotée par la donnée projet → variable CSS dynamique.
+  const frameStyle = {
+    '--frame-bg': esquisses.lightFrame ? 'var(--paper-2)' : esquisses.background,
+  } as CSSProperties;
+
+  return (
+    <div
+      className={styles.projectDetail}
+      role="dialog"
+      aria-modal="true"
+      aria-label={project.title}
+      ref={ref}
+    >
+      <button type="button" className={styles.detailClose} onClick={onClose}>
+        <span aria-hidden="true">✕</span> Fermer
+      </button>
+
+      <div className={styles.detailHero}>
+        <div className={styles.detailEyebrow}>
+          {num} / {project.period} · {project.role}
+        </div>
+        <h1 className={styles.detailTitle}>
+          {project.title}
+          <span className={styles.it}>.</span>
+        </h1>
+        <p className={styles.detailTagline}>{project.tagline}</p>
+
+        <div className={styles.detailMetaGrid}>
+          <div>
+            <span className={styles.detailMetaLabel}>Rôle</span>
+            <div className={styles.detailMetaValue}>{project.role}</div>
+          </div>
+          <div>
+            <span className={styles.detailMetaLabel}>Période</span>
+            <div className={styles.detailMetaValue}>{project.duration ?? project.period}</div>
+          </div>
+          <div>
+            <span className={styles.detailMetaLabel}>Stack</span>
+            <div className={styles.detailMetaStack}>{stackList.join(' · ')}</div>
+          </div>
+          <div>
+            <span className={styles.detailMetaLabel}>Impact</span>
+            <div className={styles.detailMetaRed}>{impact}</div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.detailImageBlock}>
+        <div className={styles.detailImageFrame}>
+          <div className={styles.detailImage} style={frameStyle}>
+            <Image
+              src={esquisses.heroImage}
+              alt={`${project.title} — aperçu principal`}
+              fill
+              sizes="(max-width: 960px) 100vw, 1100px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.detailBody}>
+        <div>
+          <h3>Le projet —</h3>
+        </div>
+        <div>
+          {description.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      {esquisses.gallery.length > 0 && (
+        <div className={`${styles.detailImageBlock} ${styles.detailGallery}`}>
+          {esquisses.gallery.slice(0, 3).map((src) => (
+            <div className={styles.detailImageFrame} key={src}>
+              <div className={styles.detailImage} style={frameStyle}>
+                <Image
+                  src={src}
+                  alt={`${project.title} — illustration`}
+                  fill
+                  sizes="(max-width: 960px) 100vw, 380px"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className={styles.detailNext}>
+        <div>
+          <div className={styles.detailNextLabel}>Projet suivant</div>
+          <button
+            type="button"
+            className={styles.detailNextTitle}
+            onClick={() => onNavigate(next.id)}
+          >
+            {next.title} →
+          </button>
+        </div>
+        <button type="button" className={base.cta} onClick={onClose}>
+          Retour à l&apos;index <span className={base.arrow}>↑</span>
+        </button>
+      </div>
+    </div>
+  );
+}

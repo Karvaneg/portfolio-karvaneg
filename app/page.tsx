@@ -1,30 +1,39 @@
-import { Footer } from '@/components/layout/footer/footer';
-import { Header } from '@/components/layout/header/header';
-import { ScrollToTop } from '@/components/layout/scroll-to-top';
-import { Hero } from './sections/hero/hero';
-import { About } from './sections/about/about';
-import { Skills } from './sections/skills/skills';
-import { Experience } from './sections/experience/experience';
-import { Projects } from './sections/projects/projects';
-import { Contact } from './sections/contact/contact';
-import { cn } from '@/lib/utils';
-import { ThemeToggle } from '@/components/ui-kit/theme-toggle';
+import { buildMetadata } from '@/app/lib/metadata';
+import { refonteFontVariables } from '@/app/lib/refonte-fonts';
+import { CropMarks } from '@/components/atrium/crop-marks';
+import { AtriumTopbar } from '@/components/atrium/atrium-topbar';
+import { AtriumHero } from '@/components/atrium/atrium-hero';
+import { EditionSketch } from '@/components/atrium/edition-sketch';
+import { EditionTechnical } from '@/components/atrium/edition-technical';
+import { PlaybookFeature } from '@/components/atrium/playbook-feature';
+import { AtriumColophon } from '@/components/atrium/atrium-colophon';
+import { KeyboardShortcuts } from '@/components/atrium/keyboard-shortcuts';
+import styles from '@/components/atrium/atrium-base.module.css';
 
-export default function Home() {
+export const metadata = buildMetadata({
+  path: '/',
+  title: 'Karvaneg — Marie Le Carvennec · Développeuse Web Fullstack',
+  description:
+    "Portfolio de Marie Le Carvennec, développeuse web fullstack. Deux éditions — carnet d'esquisses ou carnet technique — et un playbook d'ingénierie augmentée par l'IA.",
+});
+
+export default function AtriumPage() {
   return (
-    <>
-      <main className={cn('min-h-screen pt-16')}>
-        <Header />
-        <ThemeToggle />
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </>
+    <div data-surface="atrium" className={`${refonteFontVariables} ${styles.page}`}>
+      <CropMarks />
+      <div className={styles.cover}>
+        <header className={styles.masthead}>
+          <AtriumTopbar />
+          <AtriumHero />
+        </header>
+        <main className={styles.editions}>
+          <EditionSketch />
+          <EditionTechnical />
+        </main>
+        <PlaybookFeature />
+        <AtriumColophon />
+        <KeyboardShortcuts />
+      </div>
+    </div>
   );
 }

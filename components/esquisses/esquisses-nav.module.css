@@ -1,0 +1,238 @@
+/* Carnet d'esquisses — nav (liens ancrés + chip Playbook, tiroir mobile burger). */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px var(--gutter);
+  pointer-events: none;
+}
+.nav > * {
+  pointer-events: auto;
+}
+
+.navBrand {
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  transform: rotate(-2deg);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.navBrand .star {
+  color: var(--pencil-red);
+  font-size: 24px;
+  transform: translateY(-4px);
+}
+
+.navLinks {
+  display: flex;
+  gap: 28px;
+  font-family: var(--type);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.navLinks a {
+  padding: 6px 12px;
+  position: relative;
+  transition: transform 0.2s;
+}
+.navLinks a:nth-child(1) {
+  transform: rotate(-1deg);
+}
+.navLinks a:nth-child(2) {
+  transform: rotate(0.5deg);
+}
+.navLinks a:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+.navLinks a:nth-child(4) {
+  transform: rotate(1deg);
+}
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 2px;
+  height: 6px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'><path d='M2,3 Q25,1 50,4 T98,3' stroke='%23c4392a' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>")
+    no-repeat center / 100% 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.navLinks a:hover::after {
+  opacity: 1;
+}
+
+/* Playbook — chip « terminal » qui évoque le carnet technique */
+.navLinks a.navPlaybook {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #34d399;
+  background: #14151a;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 5px;
+  transform: none;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.navLinks a.navPlaybook::after {
+  display: none;
+}
+.navPlaybookPrompt {
+  color: #10b981;
+  opacity: 0.9;
+}
+.navLinks a.navPlaybook:hover {
+  background: #0c0d10;
+  border-color: rgba(52, 211, 153, 0.7);
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.16);
+}
+
+.navStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--type);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  transform: rotate(-1.5deg);
+}
+.statusDot {
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'><circle cx='7' cy='7' r='5' stroke='%234d6038' stroke-width='1.5' fill='%234d6038' fill-opacity='0.4'/></svg>")
+    no-repeat center / contain;
+}
+
+/* Hamburger — masqué sur desktop, visible en mobile */
+.navToggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--graphite);
+  transform: rotate(-2deg);
+}
+.navToggle svg {
+  width: 32px;
+  height: 26px;
+  display: block;
+}
+.navToggle:hover {
+  color: var(--pencil-red);
+}
+
+/* ===== Animation (gated) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .statusDot {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .nav {
+    padding: 14px var(--gutter);
+    gap: 12px;
+  }
+  .navToggle {
+    display: inline-flex;
+    position: relative;
+    z-index: 51;
+  }
+  .navBrand {
+    font-size: 26px;
+  }
+
+  .navStatus {
+    margin-left: auto;
+    margin-right: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    gap: 6px;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(82vw, 360px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 96px 28px 32px;
+    background: var(--paper);
+    box-shadow: -8px 0 40px rgba(20, 17, 13, 0.12);
+    font-family: var(--hand);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 49;
+    border-left: 1px solid rgba(20, 17, 13, 0.08);
+  }
+  .navLinks a {
+    padding: 12px 0;
+  }
+  .navLinks a:nth-child(1) {
+    transform: rotate(-1.5deg);
+  }
+  .navLinks a:nth-child(2) {
+    transform: rotate(1deg);
+  }
+  .navLinks a:nth-child(3) {
+    transform: rotate(-1deg);
+  }
+  .navLinks a:nth-child(4) {
+    transform: rotate(1.5deg);
+  }
+  .navOpen .navLinks {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .navStatusText {
+    display: none;
+  }
+  .navStatus::after {
+    content: 'Dispo';
+    font-family: var(--type);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--graphite-soft);
+  }
+}

@@ -1,8 +1,11 @@
 import type { NextConfig } from 'next';
+import createMDX from '@next/mdx';
 import { CONTENT_SECURITY_POLICY } from './lib/security';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // `mdx` reste hors `pageExtensions` : le contenu du Playbook est *importé*
+  // (content/playbook/*.mdx via un registre), pas routé par fichier.
   images: {
     formats: ['image/avif', 'image/webp'],
   },
@@ -20,4 +23,7 @@ const nextConfig: NextConfig = {
   ],
 };
 
-export default nextConfig;
+/** Compile les imports `.mdx` au build (loader natif, aucun impact runtime/CSP). */
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

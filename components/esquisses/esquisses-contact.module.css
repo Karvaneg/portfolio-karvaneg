@@ -1,0 +1,94 @@
+/* Carnet d'esquisses — section « Contact » (titre massif, coordonnées, liens). */
+
+.contact {
+  padding: 100px var(--gutter) 60px;
+  position: relative;
+}
+.contactMassive {
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: clamp(100px, 18vw, 280px);
+  line-height: 0.9;
+  color: var(--graphite);
+  margin-top: 20px;
+}
+.contactMassive .it {
+  font-family: var(--hand-italic);
+  color: var(--pencil-red);
+  font-weight: 400;
+  display: inline-block;
+  transform: rotate(-4deg);
+}
+.contactIntro {
+  max-width: 640px;
+  margin-top: 96px;
+  font-family: var(--hand-body);
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.45;
+}
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+  padding-top: 32px;
+  position: relative;
+}
+.contactGrid::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14px;
+  background: var(--sketch-rule-thin) no-repeat center / 100% 100%;
+}
+.contactLabel {
+  font-family: var(--type);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+  margin-bottom: 8px;
+}
+.contactValue {
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.1;
+  color: var(--graphite);
+  display: inline-block;
+}
+a.contactValue:hover {
+  color: var(--pencil-red);
+  transform: rotate(-1deg);
+}
+.contactLocation {
+  font-style: italic;
+}
+.contactGroup {
+  margin-top: 32px;
+}
+.contactGroupWide {
+  margin-top: 40px;
+}
+.contactElsewhere {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.contactElsewhere a {
+  font-size: 26px;
+}
+
+@media (max-width: 960px) {
+  .contact {
+    padding: 60px var(--gutter) 40px;
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 24px;
+  }
+}

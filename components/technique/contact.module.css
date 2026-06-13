@@ -1,0 +1,54 @@
+/* Section « Contact » du carnet technique — extraite de technique.module.css
+   (audit CSS #1). Importée par technique-contact.tsx. */
+
+.contactLinks {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.contactLink {
+  background: var(--bg-1);
+  padding: 28px 24px;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contactLink:hover {
+  background: var(--bg-2);
+}
+.contactLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.contactHandle {
+  font-size: 18px;
+  color: var(--fg);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.contactArrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+}
+
+
+/* ----- Responsive (900px) ----- */
+@media (max-width: 900px) {
+  .contactLinks {
+    grid-template-columns: 1fr;
+  }
+}

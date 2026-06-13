@@ -1,0 +1,87 @@
+/* Playbook — en-tête d'une entrée (méta, titre, lede, tags). Co-localisé avec
+   article-header.tsx. Les tags réutilisent les primitives de shared/ui.module.css.
+   Tokens de la surface terminal ([data-surface='technique']). */
+
+.header {
+  margin-bottom: 80px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-bottom: 28px;
+}
+.metaTag {
+  color: var(--accent);
+  background: var(--accent-faint);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.metaSep {
+  color: var(--fg-faint);
+}
+.title {
+  font-size: clamp(32px, 4.4vw, 52px);
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+.title em {
+  color: var(--accent);
+  font-style: normal;
+}
+.titleSub {
+  display: block;
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--fg-muted);
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-top: 12px;
+}
+.lede {
+  font-size: 18px;
+  color: var(--fg-2);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+.lede strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+.lede em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+.ledeEmphasis {
+  font-style: italic;
+  color: var(--fg-3);
+  border-left: 2px solid var(--accent);
+  padding-left: 16px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 28px;
+}
+
+@media (max-width: 720px) {
+  .header {
+    margin-bottom: 56px;
+    padding-bottom: 28px;
+  }
+}

@@ -1,0 +1,76 @@
+/* Atrium — base partagée : layout racine, couverture, masthead, grille éditions
+   et utilitaires d'animation d'entrée. Importée par app/page.tsx et les sections.
+   Tokens fournis par [data-surface='atrium'] (app/styles/refonte-tokens.css). */
+
+.page {
+  min-height: 100vh;
+  background: var(--cover);
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.page ::selection {
+  background: var(--pencil-red);
+  color: var(--ivory);
+}
+
+.cover {
+  max-width: var(--cover-max);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 56px) var(--gutter) clamp(40px, 5vw, 72px);
+  position: relative;
+}
+
+.masthead {
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.editions {
+  margin-top: clamp(40px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 2.4vw, 30px);
+}
+
+/* ===== Entrée (animations) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .d1 {
+    animation-delay: 0.05s;
+  }
+  .d2 {
+    animation-delay: 0.14s;
+  }
+  .d3 {
+    animation-delay: 0.22s;
+  }
+  .d4 {
+    animation-delay: 0.3s;
+  }
+  .d5 {
+    animation-delay: 0.4s;
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .editions {
+    grid-template-columns: 1fr;
+  }
+}

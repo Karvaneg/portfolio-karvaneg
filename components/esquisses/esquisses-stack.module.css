@@ -1,0 +1,94 @@
+/* Carnet d'esquisses — section « Stack » (catégories en boîtes esquissées). */
+
+.stack {
+  padding: 100px var(--gutter);
+  position: relative;
+}
+.stackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+.stackList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.stackCat {
+  padding: 28px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+}
+.stackCat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' preserveAspectRatio='none'><path d='M4,6 Q200,2 396,8 Q393,150 397,294 Q200,298 4,293 Q6,150 4,6 Z' stroke='%232c2a28' stroke-width='1.5' fill='none' stroke-linejoin='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+.stackCat:nth-child(odd) {
+  transform: rotate(-0.6deg);
+}
+.stackCat:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+.stackCat:nth-child(3n) {
+  transform: rotate(-0.3deg);
+}
+.stackCat .num {
+  font-family: var(--type);
+  font-size: 12px;
+  color: var(--graphite-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.stackCat .name {
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: clamp(28px, 2.5vw, 40px);
+  color: var(--pencil-red);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.stackCat ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.stackCat li {
+  font-family: var(--hand-body);
+  font-size: 16px;
+  padding: 2px 12px;
+  position: relative;
+  display: inline-block;
+}
+.stackCat li::before {
+  content: '';
+  position: absolute;
+  inset: -2px -2px;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 36' preserveAspectRatio='none'><path d='M14,4 Q60,2 108,5 Q116,18 110,32 Q60,34 12,31 Q4,18 14,4 Z' stroke='%232c2a28' stroke-width='1' fill='none' stroke-linejoin='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+
+@media (max-width: 960px) {
+  .stack {
+    padding: 60px var(--gutter);
+  }
+  .stackHeader {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .stackList {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
