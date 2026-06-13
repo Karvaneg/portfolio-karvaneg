@@ -1,9 +1,5 @@
 import type { MetadataRoute } from 'next';
-
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_LOCAL_SITE_URL!).replace(
-  /\/+$/,
-  '',
-);
+import { siteUrl } from '@/app/lib/site-url';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -14,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
