@@ -3,7 +3,7 @@
 **Développeuse Fullstack & AI-Augmented Engineer**  
 Next.js · TypeScript · Symfony · Orchestration LLM
 
-🌐 [karvaneg.vercel.app](https://portfolio-karvaneg.vercel.app) ·
+🌐 [Portfolio Karvaneg](https://portfolio-karvaneg.vercel.app) ·
 [LinkedIn](https://linkedin.com/in/marielecarvennec) ·
 [Playbook IA](https://portfolio-karvaneg.vercel.app/playbook)
 
