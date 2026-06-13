@@ -1,0 +1,150 @@
+/* Carnet d'esquisses — base partagée : surface (.page + texture papier),
+   utilitaires typographiques, en-têtes de section et CTA esquissé. Importée par
+   esquisses-shell.tsx et les sections qui réutilisent ces primitives.
+   Tokens fournis par [data-surface='esquisses'] (app/styles/refonte-tokens.css). */
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(214, 200, 164, 0.25) 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 70%, rgba(214, 200, 164, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 20%, rgba(180, 160, 110, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 95% 85%, rgba(140, 100, 60, 0.06) 0%, transparent 8%);
+  color: var(--graphite);
+  font-family: var(--hand-body);
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/* Texture papier (bruit SVG) en overlay fixe. */
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.15 0 0 0 0.12 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+}
+.page a {
+  color: inherit;
+  text-decoration: none;
+}
+.page ::selection {
+  background: var(--pencil-red);
+  color: var(--paper);
+}
+
+/* ============================================
+   TYPO UTILITIES
+   ============================================ */
+.hand {
+  font-family: var(--hand);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.005em;
+}
+.h1 {
+  font-size: clamp(80px, 16vw, 280px);
+  font-weight: 700;
+}
+.h2 {
+  font-size: clamp(56px, 9vw, 140px);
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-family: var(--type);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================
+   SECTIONS — en-têtes partagés
+   ============================================ */
+.eyebrowRed {
+  color: var(--pencil-red);
+}
+.sectionIntro {
+  max-width: 320px;
+  font-family: var(--hand-body);
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--graphite-soft);
+  text-align: right;
+}
+.sectionTitle {
+  font-family: var(--hand);
+  font-weight: 700;
+  font-size: clamp(56px, 9vw, 140px);
+  margin-top: 12px;
+  line-height: 0.95;
+}
+.scriptAccent {
+  font-family: var(--hand-italic);
+  font-style: normal;
+  color: var(--pencil-red);
+  display: inline-block;
+  transform: rotate(-3deg);
+}
+
+/* CTA esquissé (bouton encadré crayon) — partagé contact / project-detail. */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  font-family: var(--hand);
+  font-weight: 600;
+  font-size: 22px;
+  position: relative;
+  transition: transform 0.2s;
+  transform: rotate(-1.5deg);
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 70' preserveAspectRatio='none'><path d='M8,8 Q140,4 272,10 Q276,35 270,62 Q140,66 10,62 Q4,35 8,8 Z' stroke='%23c4392a' stroke-width='2' fill='none' stroke-linejoin='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+.cta:hover {
+  transform: rotate(-3deg) translateY(-2px);
+}
+.cta .arrow {
+  display: inline-block;
+  font-size: 28px;
+  color: var(--pencil-red);
+  transition: transform 0.3s;
+}
+.cta:hover .arrow {
+  transform: translateX(6px) rotate(-15deg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .sectionIntro {
+    text-align: left;
+  }
+}

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { profile } from '@/content/profile';
-import styles from './esquisses.module.css';
+import styles from './esquisses-nav.module.css';
 
 const LINKS = [
   { href: '#about', label: 'À propos' },

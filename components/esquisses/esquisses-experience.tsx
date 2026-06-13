@@ -1,16 +1,17 @@
 import { experiences } from '@/content/experience';
-import styles from './esquisses.module.css';
+import styles from './esquisses-experience.module.css';
+import base from './esquisses-base.module.css';
 
 /** Section « Parcours » : timeline en fiches esquissées. */
 export function EsquissesExperience() {
   return (
     <section className={styles.experience} id="experience">
       <div className={styles.experienceHeader}>
-        <span className={`${styles.eyebrow} ${styles.eyebrowRed}`}>§ 04 — Parcours</span>
-        <h2 className={styles.sectionTitle}>
+        <span className={`${base.eyebrow} ${base.eyebrowRed}`}>§ 04 — Parcours</span>
+        <h2 className={base.sectionTitle}>
           Du diagnostic matériel
           <br />
-          <em className={styles.scriptAccent}>au code propre.</em>
+          <em className={base.scriptAccent}>au code propre.</em>
         </h2>
       </div>
 

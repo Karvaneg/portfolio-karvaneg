@@ -4,7 +4,8 @@ import { useState, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects } from '@/content/projects';
 import { EsquissesProjectDetail } from './esquisses-project-detail';
-import styles from './esquisses.module.css';
+import styles from './esquisses-work.module.css';
+import base from './esquisses-base.module.css';
 
 const COUNT_WORDS = [
   'Zéro',
@@ -31,14 +32,14 @@ export function EsquissesWork() {
       <section className={styles.work} id="work">
         <div className={styles.workHeader}>
           <div>
-            <span className={`${styles.eyebrow} ${styles.eyebrowRed}`}>§ 03 — Sélection</span>
-            <h2 className={styles.sectionTitle}>
+            <span className={`${base.eyebrow} ${base.eyebrowRed}`}>§ 03 — Sélection</span>
+            <h2 className={base.sectionTitle}>
               {count} projets,
               <br />
-              <em className={styles.scriptAccent}>chacun son histoire.</em>
+              <em className={base.scriptAccent}>chacun son histoire.</em>
             </h2>
           </div>
-          <p className={styles.sectionIntro}>
+          <p className={base.sectionIntro}>
             De l&apos;API minimaliste à la plateforme SaaS. Cliquer pour ouvrir le carnet.
           </p>
         </div>

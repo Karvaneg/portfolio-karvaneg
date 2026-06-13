@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 import { EsquissesCursor } from './esquisses-cursor';
-import styles from './esquisses.module.css';
+import styles from './esquisses-base.module.css';
 
 interface EsquissesShellProps {
   /** Classe des variables de police (next/font), fournie par le serveur. */

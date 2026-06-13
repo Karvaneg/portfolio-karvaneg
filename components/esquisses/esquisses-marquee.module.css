@@ -1,0 +1,41 @@
+/* Carnet d'esquisses — bandeau manifeste défilant (décoratif). */
+
+.marquee {
+  padding: 32px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-top: 1px dashed var(--graphite-light);
+  border-bottom: 1px dashed var(--graphite-light);
+}
+.marqueeTrack {
+  display: inline-flex;
+  gap: 60px;
+  font-family: var(--hand);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 600;
+  color: var(--graphite);
+  font-style: italic;
+}
+.marqueeTrack span {
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+}
+.marqueeTrack .star {
+  color: var(--pencil-red);
+  font-style: normal;
+  font-size: 0.7em;
+  transform: rotate(20deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marqueeTrack {
+    animation: marquee 50s linear infinite;
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}

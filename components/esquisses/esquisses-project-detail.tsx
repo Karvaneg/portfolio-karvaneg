@@ -3,7 +3,8 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects, getProjectById } from '@/content/projects';
-import styles from './esquisses.module.css';
+import styles from './esquisses-project-detail.module.css';
+import base from './esquisses-base.module.css';
 
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -165,8 +166,8 @@ export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: Esqui
             {next.title} →
           </button>
         </div>
-        <button type="button" className={styles.cta} onClick={onClose}>
-          Retour à l&apos;index <span className={styles.arrow}>↑</span>
+        <button type="button" className={base.cta} onClick={onClose}>
+          Retour à l&apos;index <span className={base.arrow}>↑</span>
         </button>
       </div>
     </div>

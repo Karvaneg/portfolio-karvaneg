@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { profile } from '@/content/profile';
-import styles from './esquisses.module.css';
+import styles from './esquisses-footer.module.css';
 
 /** Pied de page du carnet — renvoi croisé vers le carnet technique. */
 export function EsquissesFooter() {

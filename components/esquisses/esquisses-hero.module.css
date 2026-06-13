@@ -1,0 +1,280 @@
+/* Carnet d'esquisses — hero manuscrit (titre, easter-egg astérisque, méta). */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 130px var(--gutter) 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroMarquee {
+  font-family: var(--type);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+  padding-bottom: 16px;
+  position: relative;
+}
+.heroMarquee > span {
+  white-space: nowrap;
+}
+.heroMarquee > span:nth-child(1) {
+  text-align: left;
+}
+.heroMarquee > span:nth-child(2) {
+  text-align: center;
+  justify-self: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--graphite);
+}
+.heroMarquee > span:nth-child(3) {
+  text-align: right;
+}
+.heroMarquee::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14' preserveAspectRatio='none'><path d='M0,8 Q60,3 120,8 T240,6 T360,9 T480,5 T600,8 T720,7 T840,9 T960,6 T1080,8 T1200,7' stroke='%232c2a28' stroke-width='1.2' fill='none' stroke-linecap='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+.marqueeDev {
+  font-size: 27px;
+}
+.marqueeWeb {
+  font-family: var(--hand-italic);
+  font-style: normal;
+  color: var(--pencil-red);
+  text-transform: none;
+  font-size: 1.8em;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  transform: rotate(-10deg) translateY(-0.06em);
+  transform-origin: center bottom;
+  margin: 0 0.02em 0 0.05em;
+  vertical-align: baseline;
+  line-height: 0.9;
+}
+.marqueeFull {
+  color: var(--pencil-red);
+  font-size: 26px;
+  font-family: var(--hand-italic);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.heroTitle {
+  position: relative;
+  font-family: var(--hand);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.heroTitle .line {
+  display: block;
+  position: relative;
+}
+.heroTitle .marie {
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+.carvennecLine {
+  display: block;
+  width: fit-content;
+  margin-top: 0.05em;
+  position: relative;
+}
+.leParticule {
+  font-family: var(--hand-italic);
+  font-weight: 400;
+  font-size: 0.62em;
+  color: var(--pencil-red);
+  display: inline-block;
+  transform: rotate(-4deg) translateY(-0.12em);
+  margin-right: 0.09em;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+.leUnderline {
+  position: absolute;
+  left: -0.06em;
+  right: -0.08em;
+  bottom: -0.08em;
+  width: calc(100% + 0.14em);
+  height: 0.22em;
+  color: var(--pencil-red);
+  overflow: visible;
+  pointer-events: none;
+}
+.carvennecWord {
+  display: inline-block;
+}
+
+.heroAsterisk {
+  position: absolute;
+  top: -30px;
+  right: 8%;
+  font-family: var(--hand);
+  font-size: clamp(80px, 14vw, 220px);
+  color: var(--pencil-red);
+  font-weight: 700;
+  user-select: none;
+  transform: rotate(15deg);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.heroAnnotation {
+  position: absolute;
+  top: 15%;
+  right: 4%;
+  font-family: var(--hand);
+  font-size: 24px;
+  color: var(--pencil-red);
+  transform: rotate(-4deg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 200px;
+  line-height: 1.1;
+  pointer-events: none;
+}
+
+/* Easter egg — note manuscrite « karvaneg » */
+.egg {
+  position: absolute;
+  top: 30%;
+  right: 6%;
+  max-width: 320px;
+  padding: 28px 24px;
+  font-family: var(--hand-body);
+  font-size: 18px;
+  line-height: 1.45;
+  transform: rotate(-3deg);
+  z-index: 4;
+  background: var(--paper);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.egg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' preserveAspectRatio='none'><path d='M4,6 Q200,2 396,8 Q393,100 397,194 Q200,198 4,193 Q6,100 4,6 Z' stroke='%232c2a28' stroke-width='1.8' fill='none' stroke-linejoin='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+.eggTape {
+  position: absolute;
+  top: -12px;
+  left: 40%;
+  width: 70px;
+  height: 22px;
+  background: rgba(245, 220, 130, 0.7);
+  transform: rotate(-3deg);
+}
+.eggLabel {
+  font-family: var(--type);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pencil-red);
+  margin-bottom: 12px;
+  position: relative;
+}
+.eggText {
+  font-family: var(--hand-italic);
+  font-size: 22px;
+  line-height: 1.3;
+  position: relative;
+}
+
+.heroMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 30px;
+  position: relative;
+}
+.heroMeta::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14' preserveAspectRatio='none'><path d='M0,8 Q60,3 120,8 T240,6 T360,9 T480,5 T600,8 T720,7 T840,9 T960,6 T1080,8 T1200,7' stroke='%232c2a28' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>")
+    no-repeat center / 100% 100%;
+}
+.heroMetaBlock:nth-child(1) {
+  transform: rotate(-0.5deg);
+}
+.heroMetaBlock:nth-child(2) {
+  transform: rotate(0.3deg);
+}
+.heroMetaBlock:nth-child(3) {
+  transform: rotate(-0.3deg);
+}
+.heroMetaLabel {
+  display: block;
+  font-family: var(--type);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+  margin-bottom: 12px;
+}
+.heroMetaValue {
+  font-family: var(--hand-body);
+  font-size: clamp(22px, 1.8vw, 28px);
+  line-height: 1.3;
+  color: var(--graphite);
+}
+.heroMetaValue em {
+  font-family: var(--hand);
+  font-style: normal;
+  color: var(--pencil-red);
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+  }
+  .heroMarquee {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+  }
+  .heroMarquee > span:nth-child(1),
+  .heroMarquee > span:nth-child(3) {
+    text-align: center;
+  }
+  .heroMeta {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 24px;
+  }
+  .heroAsterisk,
+  .heroAnnotation,
+  .egg {
+    display: none;
+  }
+}

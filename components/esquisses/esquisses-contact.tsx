@@ -1,5 +1,6 @@
 import { profile } from '@/content/profile';
-import styles from './esquisses.module.css';
+import styles from './esquisses-contact.module.css';
+import base from './esquisses-base.module.css';
 
 /** Section « Contact » : titre massif, coordonnées et liens. */
 export function EsquissesContact() {
@@ -7,7 +8,7 @@ export function EsquissesContact() {
 
   return (
     <section className={styles.contact} id="contact">
-      <span className={styles.eyebrow}>§ 05 — Contact</span>
+      <span className={base.eyebrow}>§ 05 — Contact</span>
       <h2 className={styles.contactMassive}>
         On <span className={styles.it}>parle ?</span>
       </h2>
@@ -31,9 +32,9 @@ export function EsquissesContact() {
             </div>
           </div>
           <div className={styles.contactGroupWide}>
-            <a href={`mailto:${profile.email}`} className={styles.cta}>
+            <a href={`mailto:${profile.email}`} className={base.cta}>
               <span>Démarrer un projet</span>
-              <span className={styles.arrow}>→</span>
+              <span className={base.arrow}>→</span>
             </a>
           </div>
         </div>

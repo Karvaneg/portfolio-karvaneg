@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { about } from '@/content/about';
-import styles from './esquisses.module.css';
+import styles from './esquisses-hero.module.css';
+import base from './esquisses-base.module.css';
 
 /** Hero manuscrit : titre « Marie Le Carvennec », easter-egg astérisque, méta. */
 export function EsquissesHero() {
@@ -20,7 +21,7 @@ export function EsquissesHero() {
         <span>n°4</span>
       </div>
 
-      <h1 className={`${styles.heroTitle} ${styles.hand} ${styles.h1}`}>
+      <h1 className={`${styles.heroTitle} ${base.hand} ${base.h1}`}>
         <span className={`${styles.line} ${styles.marie}`}>Marie</span>
         <span className={`${styles.line} ${styles.carvennecLine}`}>
           <span className={styles.leParticule}>

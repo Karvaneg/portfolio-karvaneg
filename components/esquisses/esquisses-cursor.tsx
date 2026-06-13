@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import styles from './esquisses.module.css';
+import styles from './esquisses-cursor.module.css';
 
 /**
  * Curseur crayon custom — suit la souris et grossit au survol des éléments

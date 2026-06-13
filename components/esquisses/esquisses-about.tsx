@@ -1,5 +1,6 @@
 import { about } from '@/content/about';
-import styles from './esquisses.module.css';
+import styles from './esquisses-about.module.css';
+import base from './esquisses-base.module.css';
 
 /** Section « À propos » : narratif manuscrit + citation de recommandation. */
 export function EsquissesAbout() {
@@ -7,7 +8,7 @@ export function EsquissesAbout() {
     <section className={styles.about} id="about">
       <div className={styles.aboutGrid}>
         <div className={styles.aboutLabel}>
-          <span className={`${styles.eyebrow} ${styles.eyebrowRed}`}>§ 01 — À propos</span>
+          <span className={`${base.eyebrow} ${base.eyebrowRed}`}>§ 01 — À propos</span>
         </div>
         <div>
           {about.paragraphs.map((paragraph) => (

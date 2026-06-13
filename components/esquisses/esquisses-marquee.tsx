@@ -1,4 +1,4 @@
-import styles from './esquisses.module.css';
+import styles from './esquisses-marquee.module.css';
 
 /** Un segment du bandeau (répété pour la boucle de défilement). */
 function Segment() {
