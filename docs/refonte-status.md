@@ -1,15 +1,16 @@
 # Refonte — État & reprise
 
 > Point de situation pour reprendre la refonte. Lire aussi `docs/refonte-plan.md`
-> (feuille de route + règles) et `CLAUDE.md` (conventions). Dernière mise à jour : 2026-06-12.
+> (feuille de route + règles) et `CLAUDE.md` (conventions). Dernière mise à jour : 2026-06-13.
 
 ## TL;DR — où on en est
 
 Phases **0 → 7 terminées**. Reste la **Phase 8 — QA finale & déploiement** (Lighthouse,
 responsive, relecture copy, MR `feat/refonte` → `main`).
 
-- Branche : **`feat/refonte`**, poussée sur `origin` jusqu'à `caade86` ; 3 commits locaux
-  en avance (fix hydratation Playbook, migration Node 22, config) non encore poussés.
+- Branche : **`feat/refonte`**, poussée sur `origin` jusqu'à `b13d8cb` ; **13 commits locaux
+  en avance non poussés** — la série « audit CSS » (extraction des primitives partagées puis
+  éclatement des 4 monolithes, cf. plus bas) + branchement des stats repo open source.
 - Archive V1 : tag **`v1-portfolio`**. `main` protégée (pas de force-push), intouchée.
 - Runtime **Node 22 (LTS)** : CI `node:22`, `engines.node "22.x"`, `.nvmrc`.
 - Build vert, lint 0 warning, **20 tests verts**, tout en SSG/statique (**22 pages générées**).
@@ -28,6 +29,24 @@ responsive, relecture copy, MR `feat/refonte` → `main`).
 
 Post-phases : renommage `/carnet` → `/esquisses` (`218fd6c`) puis cohérence interne
 `carnet` → `esquisses` dans tout le code (`f546b10`).
+
+## Audit CSS — modules co-localisés (FAIT, 2026-06-13)
+
+Convention actée et appliquée : **1 module CSS co-localisé par composant** + un module
+`*-base.module.css` pour le partagé, au lieu d'un gros module par surface. Détail et règles de
+scoping en mémoire `[[portfolio-css-modules-convention]]`.
+
+- **Primitives partagées** extraites vers `components/shared/` : chrome terminal (`terminal-bar`),
+  UI mutualisée (`ui.module.css` via `composes`) — `b626df7`, `a11a2b4`.
+- **Technique** déjà éclaté section par section (case-study, open-source, workflow, contact, show,
+  footer) — `41747eb` → `69d8e66`.
+- **4 monolithes éclatés** : atrium 649 l. → 8 modules (`7946a8b`) ; esquisses 1602 l. → 12 modules
+  (`46bcf58`) ; playbook 787 l. → 8 modules (`7a35aa3`). Exception playbook : cœur `.article`
+  (prose MDX couplée) gardé groupé, seuls les blocs autonomes extraits.
+- **Vérif port iso** (sans navigateur — chromium WSL bloqué, `libnss3` manquante) : 5 routes
+  HTTP 200, **0 `className="undefined"`**, chaque classe câblée au bon module, et **diff
+  déclaration-par-déclaration ancien↔nouveau** = identique (aux fix `box-sizing`/scission de
+  règles multi-sélecteurs près).
 
 ## Routes en place (toutes SSG/statique)
 
