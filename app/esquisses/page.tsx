@@ -22,13 +22,15 @@ export default function EsquissesPage() {
   return (
     <EsquissesShell fontClass={refonteFontVariables}>
       <EsquissesNav />
-      <EsquissesHero />
-      <EsquissesMarquee />
-      <EsquissesAbout />
-      <EsquissesStack />
-      <EsquissesWork />
-      <EsquissesExperience />
-      <EsquissesContact />
+      <main>
+        <EsquissesHero />
+        <EsquissesMarquee />
+        <EsquissesAbout />
+        <EsquissesStack />
+        <EsquissesWork />
+        <EsquissesExperience />
+        <EsquissesContact />
+      </main>
       <EsquissesFooter />
     </EsquissesShell>
   );
