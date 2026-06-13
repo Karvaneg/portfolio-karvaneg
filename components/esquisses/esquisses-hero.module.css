@@ -46,8 +46,7 @@
   right: 0;
   bottom: 0;
   height: 14px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14' preserveAspectRatio='none'><path d='M0,8 Q60,3 120,8 T240,6 T360,9 T480,5 T600,8 T720,7 T840,9 T960,6 T1080,8 T1200,7' stroke='%232c2a28' stroke-width='1.2' fill='none' stroke-linecap='round'/></svg>")
-    no-repeat center / 100% 100%;
+  background: var(--sketch-rule-thin) no-repeat center / 100% 100%;
 }
 .marqueeDev {
   font-size: 27px;
@@ -217,8 +216,7 @@
   right: 0;
   top: 0;
   height: 14px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 14' preserveAspectRatio='none'><path d='M0,8 Q60,3 120,8 T240,6 T360,9 T480,5 T600,8 T720,7 T840,9 T960,6 T1080,8 T1200,7' stroke='%232c2a28' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>")
-    no-repeat center / 100% 100%;
+  background: var(--sketch-rule) no-repeat center / 100% 100%;
 }
 .heroMetaBlock:nth-child(1) {
   transform: rotate(-0.5deg);
