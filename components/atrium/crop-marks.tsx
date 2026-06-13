@@ -1,4 +1,4 @@
-import styles from './atrium.module.css';
+import styles from './crop-marks.module.css';
 
 /** Repères de coupe aux 4 coins (décoratifs, masqués < 860px). */
 export function CropMarks() {

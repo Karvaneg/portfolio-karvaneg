@@ -1,0 +1,63 @@
+/* Atrium — barre de tête (wordmark, statut de disponibilité, label d'édition). */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ivory);
+  display: inline-flex;
+  align-items: baseline;
+}
+.star {
+  color: var(--pencil-red);
+  margin-left: 1px;
+}
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--ivory-faint);
+  text-transform: uppercase;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ivory-dim);
+}
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+}
+.topbarIssue {
+  color: var(--ivory-faint);
+}
+
+@media (max-width: 860px) {
+  .topbarRight {
+    gap: 14px;
+  }
+  .topbarIssue {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+}

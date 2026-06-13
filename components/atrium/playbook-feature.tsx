@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { playbookEntries } from '@/content/playbook-index';
-import styles from './atrium.module.css';
+import styles from './atrium-playbook.module.css';
+import base from './atrium-base.module.css';
 
 /** Bande Playbook : teaser cliquable (→ /playbook) + index des entrées. */
 export function PlaybookFeature() {
   return (
-    <section className={`${styles.playbook} ${styles.reveal} ${styles.d5}`} aria-labelledby="pb-title">
+    <section className={`${styles.playbook} ${base.reveal} ${base.d5}`} aria-labelledby="pb-title">
       <Link href="/playbook" className={styles.pbLink} aria-label="Lire le playbook">
         <div>
           <span className={styles.pbBadge}>

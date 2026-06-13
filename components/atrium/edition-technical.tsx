@@ -1,12 +1,13 @@
 import Link from 'next/link';
-import styles from './atrium.module.css';
+import styles from './atrium-editions.module.css';
+import base from './atrium-base.module.css';
 
 /** Carte « Édition 02 — Carnet technique » → /technique. */
 export function EditionTechnical() {
   return (
     <Link
       href="/technique"
-      className={`${styles.edition} ${styles.edTech} ${styles.reveal} ${styles.d4}`}
+      className={`${styles.edition} ${styles.edTech} ${base.reveal} ${base.d4}`}
       aria-label="Entrer dans le carnet technique"
     >
       <span className={styles.lights} aria-hidden="true">

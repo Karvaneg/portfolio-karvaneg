@@ -8,7 +8,7 @@ import { EditionTechnical } from '@/components/atrium/edition-technical';
 import { PlaybookFeature } from '@/components/atrium/playbook-feature';
 import { AtriumColophon } from '@/components/atrium/atrium-colophon';
 import { KeyboardShortcuts } from '@/components/atrium/keyboard-shortcuts';
-import styles from '@/components/atrium/atrium.module.css';
+import styles from '@/components/atrium/atrium-base.module.css';
 
 export const metadata = buildMetadata({
   path: '/',

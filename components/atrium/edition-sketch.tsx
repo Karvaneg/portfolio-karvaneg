@@ -1,12 +1,13 @@
 import Link from 'next/link';
-import styles from './atrium.module.css';
+import styles from './atrium-editions.module.css';
+import base from './atrium-base.module.css';
 
 /** Carte « Édition 01 — Carnet d'esquisses » → /carnet. */
 export function EditionSketch() {
   return (
     <Link
       href="/esquisses"
-      className={`${styles.edition} ${styles.edSketch} ${styles.reveal} ${styles.d3}`}
+      className={`${styles.edition} ${styles.edSketch} ${base.reveal} ${base.d3}`}
       aria-label="Entrer dans le carnet d'esquisses"
     >
       <span className={styles.tape} aria-hidden="true" />

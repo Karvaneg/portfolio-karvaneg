@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './atrium.module.css';
+import styles from './keyboard-shortcuts.module.css';
 
 /** Raccourcis : 1 → esquisses, 2 → technique, P → playbook (+ rappel visuel). */
 const ROUTES: Record<string, string> = {

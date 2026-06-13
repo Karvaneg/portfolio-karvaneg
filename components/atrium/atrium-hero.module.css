@@ -1,0 +1,47 @@
+/* Atrium — hero (eyebrow, titre éditorial, accent manuscrit, lede). */
+
+.hero {
+  margin-top: clamp(40px, 6vw, 88px);
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--pencil-red);
+}
+.heroTitle {
+  margin-top: 26px;
+  font-size: clamp(40px, 6.6vw, 92px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.alt {
+  font-family: var(--hand);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--pencil-red);
+  display: inline-block;
+  transform: rotate(-2.5deg);
+  padding: 0 0.08em;
+}
+.lede {
+  margin-top: 30px;
+  max-width: 54ch;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.6;
+  color: var(--ivory-dim);
+  text-wrap: pretty;
+}

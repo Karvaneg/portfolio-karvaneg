@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { profile } from '@/content/profile';
-import styles from './atrium.module.css';
+import styles from './atrium-topbar.module.css';
+import base from './atrium-base.module.css';
 
 export function AtriumTopbar() {
   return (
-    <div className={`${styles.topbar} ${styles.reveal} ${styles.d1}`}>
+    <div className={`${styles.topbar} ${base.reveal} ${base.d1}`}>
       <Link href="/" className={styles.wordmark} aria-label="Karvaneg, accueil">
         {profile.brand}
         <span className={styles.star}>*</span>

@@ -1,5 +1,5 @@
 import { profile } from '@/content/profile';
-import styles from './atrium.module.css';
+import styles from './atrium-colophon.module.css';
 
 export function AtriumColophon() {
   const { socials } = profile;
