@@ -70,6 +70,11 @@ mirror_to_github:
   needs: ['deploy']
   stage: mirror
   image: debian:stable
+  variables:
+    # Clone complet : le miroir doit transmettre TOUT l'historique + les tags à
+    # GitHub. Un clone shallow (défaut GitLab) casse le push --force avec
+    # « did not receive expected object / index-pack failed ».
+    GIT_DEPTH: '0'
   before_script:
     - apt-get update && apt-get install -y git openssh-client
     - mkdir -p ~/.ssh
@@ -80,7 +85,7 @@ mirror_to_github:
 
     # IMPORTANT : GitLab CI ne crée pas la branche main → on la recrée
     - git config --global --add safe.directory "$CI_PROJECT_DIR"
-    - git fetch origin main
+    - git fetch origin main --tags
     - git checkout -B main origin/main
 
     # Remote GitHub
