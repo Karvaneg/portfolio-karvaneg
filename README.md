@@ -43,6 +43,7 @@ public sur ma façon de travailler avec les agents IA.
 
 ### Pipeline DevOps (GitLab CI/CD → Vercel)
 
+- Lint + tests unitaires (Vitest) — gate qualité avant build & déploiement
 - Build automatisé + analyse SAST
 - Détection de secrets exposés
 - Mirroring GitLab → GitHub (ce repo = miroir lecture seule)
