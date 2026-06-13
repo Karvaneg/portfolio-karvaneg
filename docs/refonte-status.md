@@ -5,8 +5,8 @@
 
 ## TL;DR — où on en est
 
-Phases **0 → 7 terminées**. Reste la **Phase 8 — QA finale & déploiement** (Lighthouse,
-responsive, relecture copy, MR `feat/refonte` → `main`).
+Phases **0 → 7 terminées**, **refonte mergée sur `main` et déployée** (Vercel, pipeline CI
+complet vert). Reste de la **Phase 8** : Lighthouse 100×4, check responsive + relecture copy.
 
 - Branche : **`feat/refonte`**, poussée sur `origin` jusqu'à `b13d8cb` ; **13 commits locaux
   en avance non poussés** — la série « audit CSS » (extraction des primitives partagées puis
@@ -84,16 +84,22 @@ Surface MDX extensible, esthétique terminal réutilisée (`data-surface="techni
 - **favicons** : `app/icon.svg` + `app/apple-icon.png` + `app/favicon.ico` + `app/manifest.ts`
   (astérisque rouge, theme `#15120d`). Anciens assets OG/favicon V1 supprimés.
 
-## Phase 8 — QA finale : à finir
+## Phase 8 — QA finale : en cours
 
 Vérifié auto : `lint` + `build` + 20 tests verts ; renvois croisés cohérents ; breakpoints
-860/960 présents ; page 404 « terminal » en place. **Reste (manuel / live)** :
+860/960 présents ; page 404 « terminal » en place.
 
+**Fait :**
+- **MR `feat/refonte` → `main` mergée** puis déployée sur Vercel. Pipeline CI complet vert
+  (test → build → deploy → mirror GitHub) après correction de 3 bugs d'env CI remontés par la
+  gate (pnpm épinglé, défaut d'URL site, clone complet du mirror).
+- **Audit contraste AA des textes faibles** : `--ivory-faint` 0.40 → 0.55 (3.47 → 5.45:1) et
+  `--graphite-light` #8a8275 → #6b6458 (3.16 → 4.88:1) ; `--fg-faint` audité, déjà conforme
+  (5.18–5.79:1). Tous les textes faibles passent désormais WCAG AA.
+
+**Reste (manuel / live) :**
 - **Lighthouse 100×4** sur preview Vercel (ou `next start` local).
-- Check visuel responsive 860/960px.
-- Relecture copy finale + **audit contraste AA** des textes faibles (`--ivory-faint`, `--fg-faint`,
-  `--graphite-light`).
-- **MR `feat/refonte` → `main`** (action de validation, `main` protégée GitLab).
+- Check visuel responsive 860/960px + relecture copy finale.
 
 ## Décisions / points ouverts
 

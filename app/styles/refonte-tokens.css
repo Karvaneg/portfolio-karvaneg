@@ -14,7 +14,9 @@ REFONTE — Tokens scopés par surface
   --cover-2: #1c1812;
   --ivory: #f3ede2;
   --ivory-dim: rgba(243, 237, 226, 0.66);
-  --ivory-faint: rgba(243, 237, 226, 0.4);
+  /* 0.55 (et non 0.4) : ~5.45:1 sur --cover → texte 11-12px conforme WCAG AA.
+     Utilisé comme couleur de texte (topbar, colophon, cookie, 404…). */
+  --ivory-faint: rgba(243, 237, 226, 0.55);
   --ivory-ghost: rgba(243, 237, 226, 0.16);
   --line: rgba(243, 237, 226, 0.13);
 
@@ -53,7 +55,9 @@ REFONTE — Tokens scopés par surface
 
   --graphite: #2c2a28;
   --graphite-soft: #4a463f;
-  --graphite-light: #8a8275;
+  /* #6b6458 (et non #8a8275) : ~4.88:1 sur --paper → texte 12-14px conforme
+     WCAG AA (n° de catégorie stack, n° de projet). Reste plus clair que -soft. */
+  --graphite-light: #6b6458;
 
   --pencil-red: #c4392a;
   --pencil-red-deep: #8e2316;
