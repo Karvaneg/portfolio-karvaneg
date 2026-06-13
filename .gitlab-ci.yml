@@ -25,7 +25,7 @@ variables:
   image: node:22
   before_script:
     - corepack enable
-    - corepack prepare pnpm@latest --activate
+    - corepack prepare pnpm@10.24.0 --activate
     - pnpm config set store-dir .pnpm-store
 
 # Gate qualité : lint + tests unitaires Vitest. S'exécute sur toutes les branches
