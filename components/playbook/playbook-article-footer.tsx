@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { PlaybookEntry } from '@/types/playbook';
 import ui from '@/components/shared/ui.module.css';
-import styles from './playbook.module.css';
+import styles from './playbook-article-footer.module.css';
 
 interface PlaybookArticleFooterProps {
   prev: PlaybookEntry | null;

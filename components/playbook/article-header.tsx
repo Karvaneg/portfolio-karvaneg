@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { PlaybookEntry } from '@/types/playbook';
 import ui from '@/components/shared/ui.module.css';
-import styles from './playbook.module.css';
+import styles from './playbook-article-header.module.css';
 
 interface ArticleHeaderProps {
   /** Source unique des métadonnées (num, titre, catégorie, temps, tags). */

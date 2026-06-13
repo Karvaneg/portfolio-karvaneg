@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import styles from './playbook.module.css';
+import styles from './copy-button.module.css';
 
 interface CopyButtonProps {
   text: string;

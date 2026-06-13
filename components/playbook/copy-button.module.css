@@ -1,0 +1,37 @@
+/* Playbook — bouton « copier » avec retour visuel inline. Co-localisé avec
+   copy-button.tsx. Tokens de la surface terminal ([data-surface='technique']). */
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--fg-2);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.copyBtn:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+  background: var(--bg-3);
+}
+.copyBtnCopied {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-faint);
+}
+.copyBtnError {
+  color: #f87171;
+  border-color: #f87171;
+}
+.copyBtn svg {
+  width: 13px;
+  height: 13px;
+  flex: none;
+}

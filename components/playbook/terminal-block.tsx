@@ -1,6 +1,6 @@
 import { TerminalBar } from '@/components/shared/terminal-bar';
 import { CopyButton } from './copy-button';
-import styles from './playbook.module.css';
+import styles from './terminal-block.module.css';
 
 interface TerminalBlockProps {
   commands: string[];

@@ -6,7 +6,7 @@ import { TechniqueFooter } from '@/components/technique/technique-footer';
 import { PlaybookNav } from '@/components/playbook/playbook-nav';
 import { playbookEntries } from '@/content/playbook-index';
 import techStyles from '@/components/technique/technique.module.css';
-import styles from '@/components/playbook/playbook.module.css';
+import styles from '@/components/playbook/playbook-index.module.css';
 
 export const metadata = buildMetadata({
   path: '/playbook',

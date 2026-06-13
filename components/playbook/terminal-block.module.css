@@ -1,0 +1,45 @@
+/* Playbook — bloc terminal (look PowerShell/bash). Co-localisé avec
+   terminal-block.tsx. La barre (.termBar/.termLights/.termTitle) vient de
+   shared/terminal-bar. Tokens de la surface terminal ([data-surface='technique']). */
+
+.termBlock {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #050507;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+.termBody {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.75;
+  padding: 16px 18px;
+  margin: 0;
+  color: var(--fg);
+}
+.termLine {
+  display: flex;
+  gap: 10px;
+}
+.termPrompt {
+  color: var(--accent);
+  flex: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.termCmd {
+  color: var(--fg);
+}
+.termComment {
+  color: var(--fg-faint);
+  font-style: italic;
+}
+.termBlank {
+  min-height: 0.5em;
+}
+
+@media (max-width: 720px) {
+  .termBody {
+    font-size: 12.5px;
+  }
+}

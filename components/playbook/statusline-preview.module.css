@@ -1,0 +1,67 @@
+/* Playbook — aperçu de la status line (résultat attendu de l'étape 3). Co-localisé
+   avec statusline-preview.tsx. La barre vient de shared/terminal-bar.
+   Tokens de la surface terminal ([data-surface='technique']). */
+
+.statusline {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #050507;
+}
+.statusLine {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg-2);
+}
+.slPath {
+  color: var(--accent);
+}
+.slSep {
+  color: var(--fg-faint);
+}
+.slModel {
+  color: var(--fg-3);
+}
+.slCtx strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+.slFive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.slFive strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+.slBar {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 140px;
+  height: 8px;
+  background: var(--bg-3);
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.slBarFill {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+@media (max-width: 720px) {
+  .slBar {
+    width: 100px;
+  }
+}

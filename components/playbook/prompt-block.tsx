@@ -1,5 +1,5 @@
 import { CopyButton } from './copy-button';
-import styles from './playbook.module.css';
+import styles from './prompt-block.module.css';
 
 interface PromptBlockProps {
   /** Texte du prompt (passé en string pour une copie propre). */

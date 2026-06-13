@@ -1,5 +1,5 @@
 import { TerminalBar } from '@/components/shared/terminal-bar';
-import styles from './playbook.module.css';
+import styles from './statusline-preview.module.css';
 
 /** Aperçu de la status line attendue en bas du terminal (résultat de l'étape 3). */
 export function StatusLinePreview() {
