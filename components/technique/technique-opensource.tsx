@@ -56,8 +56,8 @@ export async function TechniqueOpenSource() {
               </a>
             </div>
           </div>
-          <aside className={os.repoSide}>
-            <h4>Repo stats</h4>
+          <aside className={os.repoSide} aria-labelledby="repo-stats">
+            <h4 id="repo-stats">Repo stats</h4>
             <ul>
               {stats.map((stat) => (
                 <li key={stat.label}>

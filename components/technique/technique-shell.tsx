@@ -22,7 +22,9 @@ export function TechniqueShell({ fontClass, children }: TechniqueShellProps) {
   return (
     <div data-surface="technique" data-accent={accent} className={`${fontClass} ${styles.page}`}>
       {children}
-      <AccentSwitcher value={accent} onChange={setAccent} />
+      <aside aria-label="Préférences d'affichage">
+        <AccentSwitcher value={accent} onChange={setAccent} />
+      </aside>
     </div>
   );
 }

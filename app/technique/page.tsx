@@ -21,12 +21,14 @@ export default function TechniquePage() {
   return (
     <TechniqueShell fontClass={refonteFontVariables}>
       <TechniqueNav />
-      <TechniqueHero />
-      <TechniqueShow />
-      <TechniqueWorkflow />
-      <TechniqueProjects />
-      <TechniqueOpenSource />
-      <TechniqueContact />
+      <main>
+        <TechniqueHero />
+        <TechniqueShow />
+        <TechniqueWorkflow />
+        <TechniqueProjects />
+        <TechniqueOpenSource />
+        <TechniqueContact />
+      </main>
       <TechniqueFooter />
     </TechniqueShell>
   );
