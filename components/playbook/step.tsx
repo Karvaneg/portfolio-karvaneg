@@ -37,7 +37,7 @@ export function SubStep({ marker, title, children }: SubStepProps) {
     <div className={styles.substep}>
       <div className={styles.substepNum}>{marker}</div>
       <div className={styles.substepBody}>
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         {children}
       </div>
     </div>

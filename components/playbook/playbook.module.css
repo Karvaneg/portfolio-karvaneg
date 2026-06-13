@@ -156,7 +156,7 @@
   flex-direction: column;
   gap: 14px;
 }
-.substepBody h4 {
+.substepBody h3 {
   font-size: 17px;
   font-weight: 600;
   color: var(--fg);
