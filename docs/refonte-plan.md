@@ -37,7 +37,7 @@ Les deux carnets présentent **le même travail**, mis en page différemment, av
   (`[data-accent]`), défaut émeraude `#34d399`. Pas de panneau Tweaks de proto.
 - **Email unifié partout** : `marie.lecarvennec@gmail.com`.
 - **Liens réels partout** : GitHub `@Karvaneg`, LinkedIn `in/marielecarvennec`, Malt.
-- **Vidéo démo (« Show ») + repo stats (« Open Source »)** : construites avec **placeholders propres**, prêtes à brancher le vrai contenu.
+- **« Show » + repo stats (« Open Source »)** : construites avec **placeholders propres**, prêtes à brancher le vrai contenu. La « Show » est désormais branchée sur un **aperçu terminal animé** (reconstitution honnête du Playbook 003) ; **prévu : la remplacer par une véritable démo filmée** une fois tournée. Repo stats encore en placeholder.
 - **Analytics conservés** : cookie-banner + analyse d'expérience (Contentsquare, ex-Hotjar) repris de la V1.
 - **Données** : extraites des maquettes en Phase 1, **liste finale des projets validée avec Marie**.
 
@@ -147,7 +147,7 @@ public/images/…           → 19 captures (depuis source/images/)
   cliquable · colophon · raccourcis clavier `1`/`2`/`P`. Reveal en cascade.
 
 - **Phase 4 — Carnet technique `/technique`**
-  Nav · Hero (variante verbose/minimal) · Show (vidéo **placeholder**) · Workflow · Projects (tickets) ·
+  Nav · Hero (variante verbose/minimal) · Show (**aperçu terminal animé** ; démo filmée à venir) · Workflow · Projects (tickets) ·
   CaseStudy modal (métriques, carrousel clavier + lightbox, focus-trap) · OpenSource (stats **placeholder**) ·
   Contact · Footer (→ esquisses). Accent thémable.
 

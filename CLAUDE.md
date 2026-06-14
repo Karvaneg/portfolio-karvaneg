@@ -53,8 +53,9 @@ pnpm format   # prettier --write
 
 ## 🌿 Git
 
-- Travail sur la branche **`feat/refonte`**. **`main` est protégée** (GitLab) — pas de force-push,
-  pas de commit direct dessus pendant la refonte.
+- Refonte **mergée sur `main`** (déployée sur Vercel). Nouveau travail en **branches dédiées**
+  (`feat/*`, `fix/*`) mergées sur `main` ; les petits correctifs ponctuels peuvent aller
+  directement sur `main`. **Pas de force-push sur `main`.**
 - Archive de la V1 : tag **`v1-portfolio`**.
 - Commits atomiques, messages conventionnels. Ne commiter/pusher que sur demande.
 - Repo GitLab + **miroir GitHub**.

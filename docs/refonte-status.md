@@ -1,17 +1,18 @@
 # Refonte — État & reprise
 
 > Point de situation pour reprendre la refonte. Lire aussi `docs/refonte-plan.md`
-> (feuille de route + règles) et `CLAUDE.md` (conventions). Dernière mise à jour : 2026-06-13.
+> (feuille de route + règles) et `CLAUDE.md` (conventions). Dernière mise à jour : 2026-06-14.
 
 ## TL;DR — où on en est
 
 Phases **0 → 7 terminées**, **refonte mergée sur `main` et déployée** (Vercel, pipeline CI
 complet vert). Reste de la **Phase 8** : Lighthouse 100×4, check responsive + relecture copy.
 
-- Branche : **`feat/refonte`**, poussée sur `origin` jusqu'à `b13d8cb` ; **13 commits locaux
-  en avance non poussés** — la série « audit CSS » (extraction des primitives partagées puis
-  éclatement des 4 monolithes, cf. plus bas) + branchement des stats repo open source.
-- Archive V1 : tag **`v1-portfolio`**. `main` protégée (pas de force-push), intouchée.
+- Branche : refonte **intégralement mergée sur `main`** (origin), déployée. La série « audit CSS »
+  (extraction des primitives partagées puis éclatement des 4 monolithes) et les stats repo open
+  source sont mergées. Développement courant en **branches dédiées** mergées sur `main` — ex. série
+  a11y (contraste raccourcis, landmarks 404, heading-order) + `feat/terminal-demo` (aperçu « Show »).
+- Archive V1 : tag **`v1-portfolio`**. Pas de force-push sur `main`.
 - Runtime **Node 22 (LTS)** : CI `node:22`, `engines.node "22.x"`, `.nvmrc`.
 - Build vert, lint 0 warning, **20 tests verts**, tout en SSG/statique (**22 pages générées**).
 
@@ -96,6 +97,11 @@ Vérifié auto : `lint` + `build` + 20 tests verts ; renvois croisés cohérents
 - **Audit contraste AA des textes faibles** : `--ivory-faint` 0.40 → 0.55 (3.47 → 5.45:1) et
   `--graphite-light` #8a8275 → #6b6458 (3.16 → 4.88:1) ; `--fg-faint` audité, déjà conforme
   (5.18–5.79:1). Tous les textes faibles passent désormais WCAG AA.
+- **a11y post-merge (2026-06-14)** : rappel des raccourcis Atrium recontrasté (`--ivory-dim` /
+  `--ivory`), page 404 enveloppée dans `<main>` (règle axe « region »), sauts de niveau de titre
+  corrigés (heading-order), `<main>` esquisses/technique + `<aside>` nommés (landmarks).
+- **« Show » du carnet technique** : placeholder vidéo remplacé par un **aperçu terminal animé**
+  (reconstitution Playbook 003) — démo filmée à venir (cf. points ouverts).
 
 **Reste (manuel / live) :**
 - **Lighthouse 100×4** sur preview Vercel (ou `next start` local).
@@ -104,7 +110,12 @@ Vérifié auto : `lint` + `build` + 20 tests verts ; renvois croisés cohérents
 ## Décisions / points ouverts
 
 - Voir mémoire `[[portfolio-refonte-decisions]]`. Accent switcher discret (emerald/cyan/rouge),
-  email unifié, vidéo démo + repo stats en **placeholders**, projets du plus récent au plus ancien.
+  email unifié, **repo stats en placeholder**, projets du plus récent au plus ancien.
+- **Démo « Show » (carnet technique)** : le placeholder vidéo a été remplacé par un **aperçu
+  terminal animé** — reconstitution honnête de la session du Playbook 003 (composant
+  `components/technique/terminal-demo.tsx`, script `content/terminal-demo-script.ts`, libellé
+  « aperçu animé · reconstitution », chiffres neutralisés). **Prévu : le remplacer par une
+  véritable démo filmée** une fois tournée. Voir mémoire `[[portfolio-show-demo-filmee]]`.
 - **À trancher** : la marque des nav esquisses/technique pointe vers `#top` (scroll), pas vers
   l'atrium `/`. Le brancher sur `/` ou laisser ?
 - **Naming** : `carnet` → `esquisses` partout dans le code ; la **copie affichée** « carnet
