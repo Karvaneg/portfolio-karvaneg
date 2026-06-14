@@ -27,7 +27,7 @@ export function NotFoundScreen() {
   const step = (n: number) => `${styles.step} ${revealed >= n ? styles.shown : ''}`;
 
   return (
-    <div className={`${styles.scene} ${annOn ? styles.annOn : ''}`}>
+    <main className={`${styles.scene} ${annOn ? styles.annOn : ''}`}>
       <Link href="/" className={styles.mark}>
         karvaneg<span className={styles.markStar}>*</span>
       </Link>
@@ -68,6 +68,6 @@ export function NotFoundScreen() {
       <p className={`${styles.hint} ${step(4)}`}>
         Appuie sur <kbd>↵ Entrée</kbd> ou <kbd>H</kbd> pour rentrer.
       </p>
-    </div>
+    </main>
   );
 }
