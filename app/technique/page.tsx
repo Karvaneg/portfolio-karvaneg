@@ -17,6 +17,10 @@ export const metadata = buildMetadata({
     "Le carnet technique de Marie Le Carvennec : workflow d'ingénierie augmentée par l'IA, projets en format ticket, études de cas et open source.",
 });
 
+// ISR : la page reste statique mais se régénère en arrière-plan toutes les 24 h,
+// rafraîchissant les stats du repo open source (getRepoData) sans rebuild manuel.
+export const revalidate = 86400;
+
 export default function TechniquePage() {
   return (
     <TechniqueShell fontClass={refonteFontVariables}>

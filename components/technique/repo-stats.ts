@@ -4,9 +4,14 @@
 
 const REPO = 'Karvaneg/claude-code-dev-workflows';
 const API = `https://api.github.com/repos/${REPO}`;
-const HEADERS = {
+// Authentifié si GITHUB_TOKEN_PORTFOLIO est défini (5 000 req/h au lieu de 60) → vraies valeurs
+// au build/ISR au lieu du FALLBACK. Variable serveur, jamais exposée au client.
+const HEADERS: Record<string, string> = {
   Accept: 'application/vnd.github+json',
   'User-Agent': 'portfolio-karvaneg',
+  ...(process.env.GITHUB_TOKEN_PORTFOLIO
+    ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN_PORTFOLIO}` }
+    : {}),
 };
 
 export interface RepoStat {
