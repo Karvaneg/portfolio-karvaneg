@@ -1,0 +1,143 @@
+/* Carnet technique — reconstitution terminal animée (section « Show, don't tell »).
+   Co-localisé avec terminal-demo.tsx. Tokens de la surface technique
+   ([data-surface='technique']). Posé dans le cadre .videoFrame (show.module.css). */
+
+.demo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 50%, var(--bg-3) 0%, var(--bg-1) 70%);
+  font-family: var(--mono);
+}
+.body {
+  position: absolute;
+  inset: 0;
+  padding: 22px 26px 40px;
+  overflow: hidden;
+  font-size: clamp(11px, 1.15vw, 14px);
+  line-height: 1.72;
+  -webkit-mask-image: linear-gradient(transparent 0, #000 28px);
+  mask-image: linear-gradient(transparent 0, #000 28px);
+}
+
+.row {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--fg-2);
+}
+.gap {
+  line-height: 0.9;
+}
+.prompt {
+  color: var(--accent);
+}
+.cmd {
+  color: var(--fg);
+}
+.out {
+  color: var(--fg-muted);
+}
+.comment {
+  color: var(--fg-faint);
+  font-style: italic;
+}
+.step {
+  color: var(--fg-3);
+  padding-left: 14px;
+}
+.ok {
+  color: var(--accent);
+  padding-left: 14px;
+}
+.agent {
+  color: var(--accent);
+}
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: tl-blink 1s steps(2, start) infinite;
+}
+@keyframes tl-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: var(--fg);
+  color: var(--bg);
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  box-shadow:
+    0 20px 60px -10px var(--accent-glow),
+    0 0 0 8px rgba(255, 255, 255, 0.04);
+}
+.play:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: var(--accent);
+}
+.play svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
+}
+
+.tag {
+  position: absolute;
+  bottom: 12px;
+  left: 26px;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--fg-3);
+  background: rgba(0, 0, 0, 0.45);
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(6px);
+}
+.toggle {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--fg-3);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+.toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}

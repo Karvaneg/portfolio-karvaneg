@@ -1,9 +1,11 @@
 import { TerminalBar } from '@/components/shared/terminal-bar';
-import { PlayIcon } from './icons';
+import { TERMINAL_DEMO_003 } from '@/content/terminal-demo-script';
+import { TerminalDemo } from './terminal-demo';
 import styles from './technique.module.css';
 import sh from './show.module.css';
 
-/** Section « Show, don't tell ». La vidéo est un placeholder (à brancher plus tard). */
+/** Section « Show, don't tell » : aperçu animé (reconstitution honnête) d'une
+    session de refactoring asynchrone en git worktree — cf. Playbook 003. */
 export function TechniqueShow() {
   return (
     <section className={styles.section} id="show">
@@ -36,19 +38,8 @@ export function TechniqueShow() {
         </div>
 
         <div className={sh.videoFrame}>
-          <TerminalBar
-            title="claude-code-demo.mp4 · 3min12"
-            trailing={<div className={`${sh.terminalBadge} ${styles.mono}`}>REC ●</div>}
-          />
-          <div className={sh.videoArea}>
-            <button type="button" className={sh.videoPlay} aria-label="Lire la démo (à venir)">
-              <PlayIcon />
-            </button>
-            <div className={`${sh.videoCaption} ${styles.mono}`}>
-              <span className={styles.accent}>$</span> claude --skill twig-to-react ./templates
-            </div>
-            <div className={`${sh.videoTimer} ${styles.mono}`}>00:00 / 03:12</div>
-          </div>
+          <TerminalBar title="bash · refactoring asynchrone en git worktree" />
+          <TerminalDemo lines={TERMINAL_DEMO_003} />
         </div>
       </div>
     </section>
