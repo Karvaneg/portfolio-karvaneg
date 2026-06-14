@@ -4,12 +4,12 @@
   margin-top: 18px;
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--ivory-ghost);
+  color: var(--ivory-dim);
   letter-spacing: 0.04em;
 }
 .kbdHint kbd {
-  color: var(--ivory-faint);
-  border: 1px solid var(--line);
+  color: var(--ivory);
+  border: 1px solid var(--ivory-faint);
   border-radius: 4px;
   padding: 1px 6px;
   font-size: 10.5px;
