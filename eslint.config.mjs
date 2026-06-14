@@ -58,6 +58,7 @@ export default defineConfig([
     "build/**",
     "node_modules/**",
     "next-env.d.ts",
+    "docs/**", // références de handoff (Markdown, .jsx à recréer) — pas du code applicatif
   ]),
 
   eslintConfigPrettier,
