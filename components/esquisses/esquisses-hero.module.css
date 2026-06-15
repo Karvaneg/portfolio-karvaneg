@@ -270,9 +270,28 @@
     gap: 24px;
     padding-top: 24px;
   }
-  .heroAsterisk,
-  .heroAnnotation,
-  .egg {
+  /* L'annotation manuscrite déborde sur mobile → masquée, mais l'étoile
+     cliquable et sa note easter-egg restent disponibles. */
+  .heroAnnotation {
     display: none;
+  }
+  .heroAsterisk {
+    font-size: clamp(56px, 16vw, 110px);
+    top: -16px;
+    right: 4%;
+  }
+  .egg {
+    right: 4%;
+    max-width: min(300px, 84vw);
+  }
+}
+
+/* Écran étroit : « Web Fullstack » repasse sous « Développeuse ». */
+@media (max-width: 480px) {
+  .heroMarquee > span:nth-child(2) {
+    white-space: normal;
+  }
+  .marqueeDev {
+    display: block;
   }
 }
