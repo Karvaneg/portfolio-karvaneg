@@ -1,6 +1,6 @@
 'use client';
 
-import { type CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects, getProjectById } from '@/content/projects';
 import { useFocusTrap } from '@/components/shared/use-focus-trap';
@@ -22,6 +22,12 @@ export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: Esqui
   const project = getProjectById(projectId);
   // Overlay accessible mutualisé : scroll-lock, focus-trap, Échap, restitution.
   const ref = useFocusTrap<HTMLDivElement>(onClose);
+
+  // Au passage au projet suivant (le conteneur ne se démonte pas), on revient
+  // en haut de l'overlay → au niveau du titre du nouveau projet.
+  useEffect(() => {
+    ref.current?.scrollTo({ top: 0 });
+  }, [projectId, ref]);
 
   if (!project) return null;
 

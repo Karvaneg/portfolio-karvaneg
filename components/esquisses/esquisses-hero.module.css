@@ -276,3 +276,13 @@
     display: none;
   }
 }
+
+/* Écran étroit : « Web Fullstack » repasse sous « Développeuse ». */
+@media (max-width: 480px) {
+  .heroMarquee > span:nth-child(2) {
+    white-space: normal;
+  }
+  .marqueeDev {
+    display: block;
+  }
+}
