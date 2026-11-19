@@ -10,8 +10,8 @@ export const astroBassin: Project = {
   headline: 'Astro Bassin — Site vitrine & plateforme de booking',
   tagline:
     'Site vitrine & plateforme de réservation pour une astrologue — booking, paiement et back-office, livrés en solo.',
-  status: 'in-progress',
-  statusLabel: 'IN PROGRESS',
+  status: 'shipped',
+  statusLabel: 'SHIPPED',
   period: '2026',
   role: 'Conception & Dev Fullstack',
   duration: '2 mois · 2026',
@@ -42,7 +42,7 @@ export const astroBassin: Project = {
     {
       src: `${IMG}/astrobassin-admin.png`,
       caption: 'dashboard admin · preprod',
-      alt: 'Dashboard admin Astro Bassin — preprod : KPIs boutique & consultations, dernières commandes et réservations.',
+      alt: 'Dashboard admin Astro Bassin, preprod : KPIs boutique & consultations, dernières commandes et réservations.',
     },
     {
       src: `${IMG}/astrobassin-coming-soon.png`,
@@ -55,7 +55,7 @@ export const astroBassin: Project = {
     facts: [
       { label: 'Délai', value: '2 mois' },
       { label: 'Équipe', value: 'Solo · de A à Z' },
-      { label: 'Statut', value: 'Preprod' },
+      { label: 'Statut', value: 'En production' },
       { label: 'Rôle', value: 'Conception, dev & déploiement' },
     ],
     sections: [
@@ -81,7 +81,7 @@ export const astroBassin: Project = {
       {
         title: 'Résultat',
         body: [
-          "La plateforme tourne en preprod et la page coming-soon est en ligne. Avant même l'ouverture publique, elle a déjà capté ses 2 premiers leads — une validation concrète de l'intérêt, livrée seule et de bout en bout en 2 mois.",
+          "La plateforme est en production sur astrobassin.fr. Avant même l'ouverture publique, la page coming-soon avait déjà capté ses 2 premiers leads, ce qui validait l'intérêt pour le service. Le tout a été livré seule et de bout en bout en 2 mois.",
         ],
       },
     ],
@@ -90,7 +90,7 @@ export const astroBassin: Project = {
     rotation: '-2.5deg',
     background: '#141029',
     accent: '#c9a24a',
-    cardImage: `${IMG}/astrobassin-coming-soon.png`,
+    cardImage: `${IMG}/astrobassin-hero.png`,
     heroImage: `${IMG}/astrobassin-admin.png`,
     gallery: [`${IMG}/astrobassin-hero.png`, `${IMG}/astrobassin-tirages.png`],
   },
