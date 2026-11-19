@@ -20,10 +20,10 @@ export const portails: Project = {
   labels: [{ text: 'fullstack' }, { text: 'design system' }, { text: 'a11y', accent: true }],
   metaLabel: 'Focus',
   summary:
-    "Suite de portails web scientifiques pour le CBNSA, chacun avec sa propre identité visuelle mais bâti sur un même socle Symfony/Twig. Premier mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine.",
+    "Suite de portails web scientifiques pour le CBNSA, chacun avec sa propre identité visuelle mais bâti sur un même socle Symfony/Twig. Premier mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine, suivi de Plantes exotiques en Nouvelle-Aquitaine.",
   description: [
     "Le CBNSA avait besoin de plusieurs portails thématiques scientifiques, chacun avec sa propre identité visuelle, sans pour autant multiplier les bases techniques. J'ai conçu un design system partagé sur socle Symfony/Twig, thémé par portail : composants communs, tokens et styles déclinables, pour que chaque portail garde son visage tout en reposant sur la même fondation.",
-    "Premier portail mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine, avec carnet d'adresses filtrable, rubriques éditoriales et cartographie des acteurs. Accessibilité conforme WCAG sur chaque portail, et un socle factorisé qui rend l'ajout d'un nouveau portail rapide et cohérent — sans repartir de zéro à chaque thème.",
+    "Premier portail mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine, avec carnet d'adresses filtrable, rubriques éditoriales et cartographie des acteurs. Il a été suivi par Plantes exotiques en Nouvelle-Aquitaine, qui aide à reconnaître près de 800 espèces exotiques de la région, avec liste filtrable, fiches espèces et réglementation. Accessibilité conforme WCAG sur chaque portail, et un socle factorisé qui rend l'ajout d'un nouveau portail rapide et cohérent — sans repartir de zéro à chaque thème.",
     "Le tout est piloté depuis une console d'administration unique : un seul outil qui donne accès à l'ensemble des portails (du Catalogue de la Végétation de France aux portails Hotspots, PNAEAL, PEENA, ECOLAG ou Forêts) et centralise leur gestion — actualités, agendas, carnet d'adresses, partenaires, ressources, cartes et système de design. Administrer toute la galaxie de portails sans dupliquer les interfaces.",
   ],
   impact: 'Design system scalable & themable en production · VSOL, premier portail en ligne',
@@ -39,18 +39,33 @@ export const portails: Project = {
     },
     {
       src: `${IMG}/vsol-1.png`,
-      caption: "VSOL · carnet d'adresses",
-      alt: "Portail VSOL — carnet d'adresses des professionnels en Nouvelle-Aquitaine : tableau filtrable par organisme, territoire et catégorie d'acteurs.",
-    },
-    {
-      src: `${IMG}/vsol-2.png`,
       caption: 'VSOL · accueil',
       alt: "Page d'accueil du portail VSOL — « Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine », navigation Comprendre / Localiser / Agir / Consulter.",
     },
     {
-      src: `${IMG}/vsol-3.png`,
+      src: `${IMG}/vsol-2.png`,
       caption: 'VSOL · comprendre',
       alt: 'Portail VSOL, rubrique Comprendre — « Les végétaux locaux, une opportunité pour la Nouvelle-Aquitaine », article illustré et citation.',
+    },
+    {
+      src: `${IMG}/vsol-3.png`,
+      caption: "VSOL · carnet d'adresses",
+      alt: "Portail VSOL — carnet d'adresses des professionnels en Nouvelle-Aquitaine : tableau filtrable par organisme, territoire et catégorie d'acteurs.",
+    },
+    {
+      src: `${IMG}/pee-na-accueil.png`,
+      caption: 'Plantes exotiques · accueil',
+      alt: "Page d'accueil du portail « Plantes exotiques en Nouvelle-Aquitaine » : présentation des près de 800 espèces exotiques de la région et accroche « Belles mais parfois envahissantes ».",
+    },
+    {
+      src: `${IMG}/pee-na-comprendre.png`,
+      caption: 'Plantes exotiques · comprendre',
+      alt: 'Portail Plantes exotiques, rubrique Comprendre : page « Vous avez dit plantes exotiques envahissantes ? » avec définitions et chiffre clé.',
+    },
+    {
+      src: `${IMG}/pee-na-liste.png`,
+      caption: 'Plantes exotiques · liste des espèces naturalisées',
+      alt: 'Portail Plantes exotiques, liste des plantes exotiques naturalisées en Nouvelle-Aquitaine : recherche rapide, filtres et fiches espèces avec niveau d’impact et réglementation.',
     },
   ],
   caseStudy: {
@@ -59,7 +74,7 @@ export const portails: Project = {
       { label: 'Période', value: '2023 — 2025' },
       { label: 'Rôle', value: 'Développeuse fullstack' },
       { label: 'Statut', value: 'En production' },
-      { label: 'Premier portail', value: 'VSOL' },
+      { label: 'Portails en ligne', value: 'VSOL · Plantes exotiques' },
     ],
     sections: [
       {
@@ -73,6 +88,7 @@ export const portails: Project = {
         body: [
           'Un design system partagé sur socle Symfony/Twig, thémé par portail : composants communs, tokens et styles déclinables, pour que chaque portail garde son visage tout en reposant sur la même fondation.',
           "Premier portail mis en ligne : VSOL — Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine, avec carnet d'adresses filtrable, rubriques éditoriales et cartographie des acteurs.",
+          "Deuxième portail en ligne : Plantes exotiques en Nouvelle-Aquitaine, qui aide à reconnaître près de 800 espèces exotiques présentes dans la région. On y trouve une liste d'espèces filtrable (impact, réglementation, type), des fiches d'identification et des rubriques pour comprendre et agir.",
         ],
       },
       {
@@ -96,6 +112,13 @@ export const portails: Project = {
     caption: 'VSOL · 2023 — 2025',
     cardImage: `${IMG}/vsol-1.png`,
     heroImage: `${IMG}/portail-admin.png`,
-    gallery: [`${IMG}/vsol-2.png`, `${IMG}/vsol-1.png`, `${IMG}/vsol-3.png`],
+    gallery: [
+      `${IMG}/vsol-2.png`,
+      `${IMG}/vsol-1.png`,
+      `${IMG}/vsol-3.png`,
+      `${IMG}/pee-na-accueil.png`,
+      `${IMG}/pee-na-comprendre.png`,
+      `${IMG}/pee-na-liste.png`,
+    ],
   },
 };
