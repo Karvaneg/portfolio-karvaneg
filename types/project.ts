@@ -37,9 +37,16 @@ export interface ProjectMetrics {
   items: ProjectMetric[];
 }
 
+/** Lien externe affiché sous un texte, ex. un appel à contact. */
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface CaseStudySection {
   title: string;
   body: string[];
+  link?: ProjectLink;
 }
 
 /** Étude de cas détaillée (carnet technique · modal CaseStudy). */
@@ -92,6 +99,8 @@ export interface Project {
   summary: string;
   /** Narratif (esquisses). */
   description: string[];
+  /** Lien affiché sous le narratif (esquisses). */
+  descriptionLink?: ProjectLink;
   /** Impact mesuré (technique). */
   impact: string;
   /** Impact reformulé côté carnet, si différent. */

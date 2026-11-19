@@ -109,6 +109,16 @@ export function EsquissesProjectDetail({
           {description.map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}
+          {project.descriptionLink && (
+            <a
+              className={styles.detailLink}
+              href={project.descriptionLink.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↗ {project.descriptionLink.label}
+            </a>
+          )}
         </div>
       </div>
 
