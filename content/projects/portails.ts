@@ -39,18 +39,18 @@ export const portails: Project = {
     },
     {
       src: `${IMG}/vsol-1.png`,
-      caption: "VSOL · carnet d'adresses",
-      alt: "Portail VSOL — carnet d'adresses des professionnels en Nouvelle-Aquitaine : tableau filtrable par organisme, territoire et catégorie d'acteurs.",
+      caption: 'VSOL · accueil',
+      alt: "Page d'accueil du portail VSOL, « Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine », avec la navigation Comprendre / Localiser / Agir / Consulter.",
     },
     {
       src: `${IMG}/vsol-2.png`,
-      caption: 'VSOL · accueil',
-      alt: "Page d'accueil du portail VSOL — « Végétal Sauvage d'Origine Locale en Nouvelle-Aquitaine », navigation Comprendre / Localiser / Agir / Consulter.",
+      caption: 'VSOL · comprendre',
+      alt: "Portail VSOL, rubrique Comprendre : article « Les végétaux locaux, une opportunité pour la Nouvelle-Aquitaine », illustré d'une photo de semis et d'une citation.",
     },
     {
       src: `${IMG}/vsol-3.png`,
-      caption: 'VSOL · comprendre',
-      alt: 'Portail VSOL, rubrique Comprendre — « Les végétaux locaux, une opportunité pour la Nouvelle-Aquitaine », article illustré et citation.',
+      caption: "VSOL · carnet d'adresses",
+      alt: "Portail VSOL, carnet d'adresses des professionnels en Nouvelle-Aquitaine : tableau filtrable par organisme, territoire et catégorie d'acteurs.",
     },
   ],
   caseStudy: {
