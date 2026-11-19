@@ -6,8 +6,8 @@ import { projects, getProjectById } from '@/content/projects';
 const PUBLIC_DIR = join(process.cwd(), 'public');
 
 describe('content/projects — intégrité du modèle unifié', () => {
-  it('contient les 8 projets', () => {
-    expect(projects).toHaveLength(8);
+  it('contient les 9 projets', () => {
+    expect(projects).toHaveLength(9);
   });
 
   it("n'a que des id uniques", () => {
