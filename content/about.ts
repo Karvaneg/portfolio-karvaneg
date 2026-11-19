@@ -7,31 +7,38 @@ import type { AboutContent } from '@/types/about';
 export const about: AboutContent = {
   paragraphs: [
     [
-      { text: "Développeuse web passionnée par la conception d'" },
-      { text: 'applications performantes, bien structurées et durables.', accent: true },
-      { text: ' Mes premières lignes de code remontent à la fin des années 2000, en autodidacte.' },
+      { text: 'Développeuse agentique fullstack et ' },
+      { text: 'Forward Deployed Engineer', accent: true },
+      {
+        text: " : je travaille au plus près du métier, du cadrage jusqu'à la mise en production, et je livre des applications robustes, testées et maintenables en m'appuyant sur des workflows d'agents IA.",
+      },
     ],
     [
       { text: 'Deux ans au ' },
       { text: 'Conservatoire Botanique National Sud-Atlantique', accent: true },
       {
-        text: ' — développement de portails thématiques, refonte du site institutionnel, backend Symfony et frontend Twig/TypeScript, optimisation PostgreSQL, pipelines GitLab CI/CD, conteneurisation Docker, standards WCAG, et participation à un design system pour harmoniser le visuel.',
+        text: " : refonte du site institutionnel et suite de portails scientifiques sur un socle Symfony/Twig commun, design system décliné par portail, console d'administration unique, PostgreSQL, Docker, GitLab CI/CD et accessibilité WCAG.",
       },
     ],
     [
+      { text: 'Depuis, je conçois mes propres produits de bout en bout : ' },
+      { text: 'Opportune,', accent: true },
       {
-        text: 'Depuis, montée en compétences React & TypeScript chez ViDev (Crazee-Burger), exploration de React Native — et fondation d’',
-      },
-      { text: 'InclusiShield,', accent: true },
-      {
-        text: " SaaS d'audit d'accessibilité automatisé par l'IA, avec une infra cloud complète (Redis, Playwright, Stripe).",
+        text: " application de bureau open-source où une IA locale aide à suivre ses candidatures sans qu'aucune donnée ne quitte la machine ; Kommit, un daily standup guidé par une IA ; InclusiShield, un SaaS d'audit d'accessibilité ; et Astro Bassin, une plateforme de réservation pour une cliente.",
       },
     ],
     [
-      { text: 'Le moteur : ' },
-      { text: 'la ténacité.', accent: true },
+      { text: 'Ma méthode : ' },
+      { text: 'des agents IA encadrés par des tests.', accent: true },
       {
-        text: " J'accorde une grande importance à la lisibilité du code, à la clarté des interfaces, et à la qualité de la documentation. Le travail en équipe et l'envie d'apprendre sont au cœur de ma démarche.",
+        text: " Avec Claude Code, je versionne des skills, des règles et des agents spécialisés qui planifient les tests, les écrivent avant le code et relisent chaque ticket. L'IA accélère la livraison, mais l'architecture, les tests et la revue restent sous mon contrôle.",
+      },
+    ],
+    [
+      { text: 'Avant le code, dix ans de diététique et trois ans à diriger une production : ' },
+      { text: "l'écoute et la rigueur", accent: true },
+      {
+        text: " que j'apporte aujourd'hui à chaque projet. J'accorde une grande importance à l'accessibilité, à la lisibilité du code et à la documentation (ADR, guides de contribution) pour que l'équipe puisse reprendre le travail sans moi.",
       },
     ],
   ],
@@ -42,16 +49,19 @@ export const about: AboutContent = {
   },
   heroMeta: [
     {
-      label: '001 — Discipline',
+      label: '001 — Méthode',
       parts: [
-        { text: 'Le ' },
-        { text: 'clean code', emphasis: true },
-        { text: ', même quand personne ne regarde.' },
+        { text: 'Des agents IA, ' },
+        { text: 'encadrés par des tests', emphasis: true },
+        { text: ' écrits avant le code.' },
       ],
     },
     {
       label: '002 — Cœur de stack',
-      parts: [{ text: 'Symfony', emphasis: true }, { text: ', React et PostgreSQL.' }],
+      parts: [
+        { text: 'TypeScript', emphasis: true },
+        { text: ', React, Node.js, Python et Symfony.' },
+      ],
     },
     {
       label: '003 — Promesse',

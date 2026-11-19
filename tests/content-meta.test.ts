@@ -4,8 +4,8 @@ import { stack } from '@/content/stack';
 import { profile } from '@/content/profile';
 
 describe('content/experience', () => {
-  it('contient les 3 postes', () => {
-    expect(experiences).toHaveLength(3);
+  it('contient les 5 postes', () => {
+    expect(experiences).toHaveLength(5);
   });
 
   it('a des champs non vides', () => {
