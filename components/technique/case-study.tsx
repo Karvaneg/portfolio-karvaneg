@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { Project, ProjectShot } from '@/types/project';
+import type { Project } from '@/types/project';
 import { useFocusTrap } from '@/components/shared/use-focus-trap';
 import { CaseStudyHead } from './case-study-head';
 import { CaseStudyFacts } from './case-study-facts';
@@ -19,7 +19,7 @@ interface CaseStudyProps {
 export function CaseStudy({ project, onClose }: CaseStudyProps) {
   const { caseStudy, shots } = project;
   const [current, setCurrent] = useState(0);
-  const [zoomed, setZoomed] = useState<ProjectShot | null>(null);
+  const [zoomed, setZoomed] = useState(false);
   // Overlay accessible (scroll-lock, focus-trap, restitution). Échap est géré
   // ici car il doit d'abord fermer le zoom, pas la modale.
   const modalRef = useFocusTrap<HTMLDivElement>();
@@ -27,11 +27,11 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        if (zoomed) setZoomed(null);
+        if (zoomed) setZoomed(false);
         else onClose();
         return;
       }
-      if (zoomed || shots.length < 2) return;
+      if (shots.length < 2) return;
       if (event.key === 'ArrowLeft') setCurrent((c) => (c - 1 + shots.length) % shots.length);
       if (event.key === 'ArrowRight') setCurrent((c) => (c + 1) % shots.length);
     };
@@ -58,14 +58,21 @@ export function CaseStudy({ project, onClose }: CaseStudyProps) {
               shots={shots}
               current={current}
               onSelect={setCurrent}
-              onZoom={setZoomed}
+              onZoom={() => setZoomed(true)}
             />
           )}
           <CaseStudySections project={project} />
         </div>
       </div>
 
-      {zoomed && <CaseStudyLightbox shot={zoomed} onClose={() => setZoomed(null)} />}
+      {zoomed && (
+        <CaseStudyLightbox
+          shots={shots}
+          current={current}
+          onSelect={setCurrent}
+          onClose={() => setZoomed(false)}
+        />
+      )}
     </div>
   );
 }

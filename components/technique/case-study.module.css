@@ -384,6 +384,18 @@
   border-radius: 9px;
   transition: all 0.15s;
 }
+.caseLightboxArrow {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  margin-top: -21px;
+}
+.caseLightboxPrev {
+  left: 20px;
+}
+.caseLightboxNext {
+  right: 20px;
+}
 .caseLightboxClose:hover {
   color: var(--fg);
   border-color: var(--border-strong);
@@ -393,6 +405,11 @@
 
 /* ----- Responsive ----- */
 @media (max-width: 560px) {
+  .caseLightboxArrow {
+    top: auto;
+    bottom: 24px;
+    margin-top: 0;
+  }
   .caseMetricsGrid {
     grid-template-columns: 1fr;
     gap: 16px;
