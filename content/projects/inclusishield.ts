@@ -6,7 +6,7 @@ const IMG = '/images/projects';
 export const inclusishield: Project = {
   id: 'inclusishield',
   ticketId: 'KARV-006',
-  order: 3,
+  order: 4,
   title: 'InclusiShield',
   headline: "InclusiShield — SaaS d'audit d'accessibilité piloté par l'IA",
   tagline: "SaaS d'audit d'accessibilité numérique automatisé par l'IA.",

@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const astroBassin: Project = {
   id: 'astro-bassin',
   ticketId: 'KARV-007',
-  order: 2,
+  order: 3,
   title: 'Astro Bassin',
   headline: 'Astro Bassin — Site vitrine & plateforme de booking',
   tagline:

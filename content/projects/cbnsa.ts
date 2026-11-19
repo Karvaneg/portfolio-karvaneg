@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const cbnsa: Project = {
   id: 'cbnsa',
   ticketId: 'KARV-002',
-  order: 7,
+  order: 8,
   title: 'CBNSA',
   headline: 'CBNSA — Refonte du site institutionnel',
   tagline:

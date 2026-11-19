@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const crazeeBurger: Project = {
   id: 'crazee-burger',
   ticketId: 'KARV-004',
-  order: 5,
+  order: 6,
   title: 'Crazee-Burger',
   headline: 'Crazee-Burger — application React avancée',
   tagline: 'Application React avancée — montée en compétences React & TypeScript chez ViDev.',
