@@ -53,7 +53,7 @@ deploy:
   needs: ['build']
   script:
     - pnpm install --frozen-lockfile
-    - pnpm dlx vercel --prod --confirm --token $VERCEL_TOKEN
+    - pnpm dlx vercel --prod --yes --token $VERCEL_TOKEN
 
   only:
     - main
