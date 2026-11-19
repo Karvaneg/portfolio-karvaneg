@@ -15,7 +15,7 @@ export function EsquissesHero() {
         <span>Carnet d&apos;esquisses · 2026</span>
         <span>
           <span className={styles.marqueeDev}>Développeuse</span>{' '}
-          <em className={styles.marqueeWeb}>Web</em>{' '}
+          <em className={styles.marqueeWeb}>Agentique</em>{' '}
           <span className={styles.marqueeFull}>Fullstack</span>
         </span>
         <span>n°4</span>

@@ -3,10 +3,10 @@ import { PlayIcon, GithubIcon, ArrowIcon } from './icons';
 import styles from './technique.module.css';
 
 const META = [
-  { label: 'Localisation', value: 'Le Teich, FR · remote-first' },
-  { label: 'Stack principale', value: 'TS · React · Next · Symfony' },
-  { label: 'AI tooling', value: 'Claude Code · Custom Skills' },
-  { label: 'Expérience', value: '3+ ans · OpenClassrooms certif.' },
+  { label: 'Localisation', value: 'Gironde, FR · remote / hybride' },
+  { label: 'Stack principale', value: 'TS · React · Node · Python' },
+  { label: 'AI tooling', value: 'Claude Code · agents · MCP' },
+  { label: 'Expérience', value: '3+ ans de dev · Bac+5' },
 ];
 
 export function TechniqueHero() {
@@ -19,15 +19,15 @@ export function TechniqueHero() {
         </div>
 
         <h1 className={styles.heroTitle}>
-          Développeuse <span className={styles.accent}>Fullstack</span>
+          Développeuse <span className={styles.accent}>Agentique Fullstack</span>
           <br />
-          &amp; <span className={styles.monoInline}>AI-Augmented Engineer</span>
+          &amp; <span className={styles.monoInline}>Forward Deployed Engineer</span>
         </h1>
 
         <p className={styles.heroSub}>
-          J&rsquo;allie l&rsquo;ingénierie logicielle classique à la puissance de{' '}
-          <code>Claude Code</code> pour livrer des architectures robustes, testées et scalables — au
-          quotidien, sur du code réel.
+          Je travaille au plus près du métier, du cadrage à la mise en production, et je livre des
+          applications robustes et testées en orchestrant des agents IA avec{' '}
+          <code>Claude Code</code>.
         </p>
 
         <div className={styles.ctaRow}>

@@ -12,7 +12,7 @@ import { TechniqueFooter } from '@/components/technique/technique-footer';
 
 export const metadata = buildMetadata({
   path: '/technique',
-  title: 'Carnet technique — Marie Le Carvennec · Développeuse Fullstack & AI-Augmented Engineer',
+  title: 'Carnet technique — Marie Le Carvennec · Développeuse Agentique Fullstack & Forward Deployed Engineer',
   description:
     "Le carnet technique de Marie Le Carvennec : workflow d'ingénierie augmentée par l'IA, projets en format ticket, études de cas et open source.",
 });
