@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const karvaneg: Project = {
   id: 'karvaneg',
   ticketId: 'KARV-005',
-  order: 3,
+  order: 4,
   title: 'Karvaneg',
   headline: 'Karvaneg — le portfolio que vous regardez',
   tagline: "Portfolio professionnel — l'objet que vous regardez actuellement.",

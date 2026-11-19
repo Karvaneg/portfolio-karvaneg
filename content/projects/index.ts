@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project';
+import { opportune } from './opportune';
 import { inclusishield } from './inclusishield';
 import { astroBassin } from './astro-bassin';
 import { karvaneg } from './karvaneg';
@@ -9,6 +10,7 @@ import { openclassrooms } from './openclassrooms';
 
 /** Tous les projets, triés du plus récent au plus ancien (champ `order`). */
 export const projects: Project[] = [
+  opportune,
   inclusishield,
   astroBassin,
   karvaneg,

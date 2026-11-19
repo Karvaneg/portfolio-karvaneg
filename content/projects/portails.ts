@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const portails: Project = {
   id: 'portails',
   ticketId: 'KARV-003',
-  order: 5,
+  order: 6,
   title: 'Portails Thématiques',
   headline: 'Portails thématiques — un socle, plusieurs visages',
   tagline:
