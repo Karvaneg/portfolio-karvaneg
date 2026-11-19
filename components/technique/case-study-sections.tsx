@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project';
+import { ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
 import cs from './case-study.module.css';
 
@@ -16,6 +17,17 @@ export function CaseStudySections({ project }: CaseStudySectionsProps) {
           {section.body.map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}
+          {section.link && (
+            <a
+              className={`${cs.caseSiteLink} ${styles.mono}`}
+              href={section.link.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {section.link.label}
+              <ArrowUpRightIcon />
+            </a>
+          )}
         </div>
       ))}
 
