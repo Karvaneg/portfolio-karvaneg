@@ -59,7 +59,7 @@ export function ogImage({ surface, eyebrow, title }: OgImageOptions) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
             <div style={{ fontSize: '30px', fontWeight: 600 }}>Marie Le Carvennec</div>
             <div style={{ fontSize: '24px', color: t.dim }}>
-              Développeuse fullstack &amp; AI-augmented engineer
+              Développeuse agentique fullstack &amp; Forward Deployed Engineer
             </div>
           </div>
           <div style={{ fontSize: '30px', color: t.accent }}>karvaneg*</div>

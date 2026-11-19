@@ -5,7 +5,7 @@ import { siteUrl } from '@/app/lib/site-url';
 const siteName = `${profile.name} · ${profile.brand}`;
 const defaultTitle = `${profile.name} — ${profile.roleLong}`;
 const defaultDescription =
-  "Portfolio éditorial de Marie Le Carvennec, développeuse fullstack & AI-augmented engineer. Deux éditions — carnet d'esquisses et carnet technique — et un playbook d'ingénierie augmentée par l'IA.";
+  "Portfolio éditorial de Marie Le Carvennec, développeuse agentique fullstack et Forward Deployed Engineer. Deux éditions — carnet d'esquisses et carnet technique — et un playbook d'ingénierie augmentée par l'IA.";
 
 /** Métadonnées racine (défauts + assets globaux). Les surfaces utilisent `buildMetadata`. */
 export const metadata: Metadata = {

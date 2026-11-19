@@ -8,7 +8,7 @@ export function TechniqueFooter() {
     <footer className={`${ft.footer} ${styles.container}`}>
       <div className={ft.footerLeft}>
         <span className={styles.accent}>●</span>
-        <span>2026 — {profile.name} · Fullstack &amp; AI-Augmented Engineer</span>
+        <span>2026 — {profile.name} · {profile.roleLong}</span>
       </div>
       <div className={ft.footerRight}>
         <Link href="/esquisses">↩ version carnet d'esquisses</Link>

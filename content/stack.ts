@@ -4,32 +4,40 @@ import type { StackCategory } from '@/types/stack';
 export const stack: StackCategory[] = [
   {
     num: '01',
-    name: 'Frontend',
-    items: ['React', 'TypeScript', 'Next.js', 'HTML5', 'Sass', 'Tailwind', 'Framer Motion'],
+    name: 'IA & Agents',
+    items: [
+      'Claude Code',
+      'Skills · rules · subagents',
+      'Orchestration multi-agents',
+      'MCP',
+      'RAG',
+      'LLM locaux (Ollama)',
+      'Groq',
+    ],
   },
   {
     num: '02',
-    name: 'Backend',
-    items: ['PHP', 'Symfony', 'Twig', 'Node.js', 'Express', 'PostgreSQL', 'MySQL'],
+    name: 'Frontend',
+    items: ['React', 'TypeScript', 'Next.js', 'Vite', 'Astro', 'Tailwind', 'Tauri (desktop)'],
   },
   {
     num: '03',
-    name: 'DevOps & Outils',
-    items: ['Git', 'GitLab CI/CD', 'Docker', 'Vercel', 'Mirroring GitLab→GitHub', 'Trello'],
+    name: 'Backend & Données',
+    items: ['Node.js', 'Express', 'Python', 'Symfony', 'PostgreSQL', 'SQLite', 'Prisma', 'Redis'],
   },
   {
     num: '04',
-    name: 'UX, Qualité & Design',
-    items: ['WCAG / A11y', 'Design System', 'SEO', 'Dark / Light', 'Figma', 'Canva'],
+    name: 'Qualité & Tests',
+    items: ['Test-first (TDD)', 'Vitest', 'Playwright', 'pytest', 'WCAG 2.2 AA / RGAA', 'ADR'],
   },
   {
     num: '05',
-    name: 'IA & Workflow',
-    items: ['Prompting (Google)', 'IA générative', 'Redis', 'Playwright', 'Stripe'],
+    name: 'DevOps',
+    items: ['Git', 'Docker', 'GitLab CI/CD', 'GitHub Actions', 'Vercel', 'Render', 'Neon'],
   },
   {
     num: '06',
     name: 'Posture',
-    items: ['Clean Code', 'Apprentissage continu', 'Ténacité', 'Communication', 'Travail en équipe'],
+    items: ['Cadrage & écoute métier', 'Vision produit', 'Clean Code', 'Transmission', 'Ténacité'],
   },
 ];

@@ -12,9 +12,9 @@ import styles from '@/components/atrium/atrium-base.module.css';
 
 export const metadata = buildMetadata({
   path: '/',
-  title: 'Karvaneg — Marie Le Carvennec · Développeuse Web Fullstack',
+  title: 'Karvaneg — Marie Le Carvennec · Développeuse Agentique Fullstack',
   description:
-    "Portfolio de Marie Le Carvennec, développeuse web fullstack. Deux éditions — carnet d'esquisses ou carnet technique — et un playbook d'ingénierie augmentée par l'IA.",
+    "Portfolio de Marie Le Carvennec, développeuse agentique fullstack et Forward Deployed Engineer. Deux éditions — carnet d'esquisses ou carnet technique — et un playbook d'ingénierie augmentée par l'IA.",
 });
 
 export default function AtriumPage() {

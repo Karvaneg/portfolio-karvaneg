@@ -35,8 +35,8 @@ export function TechniqueContact() {
         <span className={styles.sectionTag}>06 · Contact</span>
         <h2 className={styles.sectionTitle}>On en parle ?</h2>
         <p className={styles.sectionLede}>
-          Disponible pour des missions fullstack — particulièrement les contextes où l'AI tooling
-          peut faire la différence.
+          Disponible pour un poste de développeuse agentique fullstack ou de Forward Deployed
+          Engineer, en remote ou en hybride depuis la Gironde.
         </p>
         <div className={ct.contactLinks}>
           {links.map((link) => (

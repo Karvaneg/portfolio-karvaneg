@@ -13,7 +13,7 @@ import { EsquissesFooter } from '@/components/esquisses/esquisses-footer';
 
 export const metadata = buildMetadata({
   path: '/esquisses',
-  title: "Carnet d'esquisses — Marie Le Carvennec · Développeuse Web Fullstack",
+  title: "Carnet d'esquisses — Marie Le Carvennec · Développeuse Agentique Fullstack",
   description:
     "Le carnet d'esquisses de Marie Le Carvennec : un portfolio manuscrit et tactile — à propos, stack, projets et parcours racontés comme des pages de carnet.",
 });
