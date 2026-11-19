@@ -54,8 +54,11 @@ pnpm format   # prettier --write
 ## 🌿 Git
 
 - Refonte **mergée sur `main`** (déployée sur Vercel). Nouveau travail en **branches dédiées**
-  (`feat/*`, `fix/*`) mergées sur `main` ; les petits correctifs ponctuels peuvent aller
-  directement sur `main`. **Pas de force-push sur `main`.**
+  (`feat/*`, `fix/*`) mergées sur `preprod`. **Seule `preprod` se merge sur `main`** : aucune
+  autre branche, aucun commit direct sur `main`, même pour un petit correctif.
+  **Pas de force-push sur `main`.**
+- **Toute nouvelle branche se crée à partir de `preprod` à jour** (`git fetch` puis
+  `git pull` sur `preprod` avant de brancher).
 - Archive de la V1 : tag **`v1-portfolio`**.
 - Commits atomiques, messages conventionnels. Ne commiter/pusher que sur demande.
 - Repo GitLab + **miroir GitHub**.
