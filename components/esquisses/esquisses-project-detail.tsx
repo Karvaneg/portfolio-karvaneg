@@ -4,6 +4,7 @@ import { useEffect, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { projects, getProjectById } from '@/content/projects';
 import { useFocusTrap } from '@/components/shared/use-focus-trap';
+import { EsquissesProjectGallery } from './esquisses-project-gallery';
 import styles from './esquisses-project-detail.module.css';
 import base from './esquisses-base.module.css';
 
@@ -14,7 +15,7 @@ interface EsquissesProjectDetailProps {
 }
 
 /**
- * Overlay plein écran d'un projet (esquisses) : récit, galerie, projet suivant.
+ * Overlay plein écran d'un projet (esquisses) : récit, galerie (avec lightbox), projet suivant.
  * Verrou de scroll, fermeture Esc, focus-trap + restitution du focus (cf.
  * components/technique/case-study.tsx).
  */
@@ -122,22 +123,7 @@ export function EsquissesProjectDetail({
         </div>
       </div>
 
-      {esquisses.gallery.length > 0 && (
-        <div className={`${styles.detailImageBlock} ${styles.detailGallery}`}>
-          {esquisses.gallery.map((src) => (
-            <div className={styles.detailImageFrame} key={src}>
-              <div className={styles.detailImage} style={frameStyle}>
-                <Image
-                  src={src}
-                  alt={`${project.title} — illustration`}
-                  fill
-                  sizes="(max-width: 960px) 100vw, 380px"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      <EsquissesProjectGallery project={project} frameStyle={frameStyle} />
 
       <div className={styles.detailNext}>
         <div>

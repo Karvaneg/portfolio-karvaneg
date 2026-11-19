@@ -1,0 +1,15 @@
+.zoomButton {
+  display: block;
+  width: 100%;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+.zoomButton > span {
+  display: block;
+}
+.zoomButton:focus-visible {
+  outline: 2px solid var(--pencil-red);
+  outline-offset: 6px;
+}
