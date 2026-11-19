@@ -18,7 +18,11 @@ interface EsquissesProjectDetailProps {
  * Verrou de scroll, fermeture Esc, focus-trap + restitution du focus (cf.
  * components/technique/case-study.tsx).
  */
-export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: EsquissesProjectDetailProps) {
+export function EsquissesProjectDetail({
+  projectId,
+  onClose,
+  onNavigate,
+}: EsquissesProjectDetailProps) {
   const project = getProjectById(projectId);
   // Overlay accessible mutualisé : scroll-lock, focus-trap, Échap, restitution.
   const ref = useFocusTrap<HTMLDivElement>(onClose);
@@ -110,7 +114,7 @@ export function EsquissesProjectDetail({ projectId, onClose, onNavigate }: Esqui
 
       {esquisses.gallery.length > 0 && (
         <div className={`${styles.detailImageBlock} ${styles.detailGallery}`}>
-          {esquisses.gallery.slice(0, 3).map((src) => (
+          {esquisses.gallery.map((src) => (
             <div className={styles.detailImageFrame} key={src}>
               <div className={styles.detailImage} style={frameStyle}>
                 <Image
