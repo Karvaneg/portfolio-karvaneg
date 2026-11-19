@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const openclassrooms: Project = {
   id: 'openclassrooms',
   ticketId: 'KARV-001',
-  order: 7,
+  order: 8,
   title: 'Formation OpenClassrooms',
   headline: 'Formation OpenClassrooms — fondations fullstack',
   tagline: 'Six projets professionnalisants — fondations fullstack solides.',
