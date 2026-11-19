@@ -6,7 +6,7 @@ const IMG = '/images/projects';
 export const inclusishield: Project = {
   id: 'inclusishield',
   ticketId: 'KARV-006',
-  order: 3,
+  order: 4,
   title: 'InclusiShield',
   headline: "InclusiShield — SaaS d'audit d'accessibilité piloté par l'IA",
   tagline: "SaaS d'audit d'accessibilité numérique automatisé par l'IA.",
@@ -15,7 +15,7 @@ export const inclusishield: Project = {
   statusNote: 'V1 (PoC) livrée en 20 j · V2 en cours',
   period: '2026',
   role: 'Founder & Lead Dev',
-  website: 'https://inclusishield.fr/',
+  websites: ['https://inclusishield.fr/'],
   stack: ['Playwright', 'Browserless', 'Redis', 'Upstash', 'Vercel', 'LLM'],
   stackEsquisses: ['Next.js', 'TypeScript', 'Redis', 'Playwright', 'Stripe'],
   labels: [{ text: 'saas' }, { text: 'fullstack' }, { text: 'ai-tooling', accent: true }],

@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const cbnsa: Project = {
   id: 'cbnsa',
   ticketId: 'KARV-002',
-  order: 7,
+  order: 8,
   title: 'CBNSA',
   headline: 'CBNSA — Refonte du site institutionnel',
   tagline:
@@ -15,7 +15,7 @@ export const cbnsa: Project = {
   period: '2023 — 2025',
   role: 'Développeuse Fullstack',
   duration: '24 mois',
-  website: 'https://cbnsa.fr',
+  websites: ['https://cbnsa.fr'],
   stack: ['Symfony', 'PHP', 'Twig', 'TypeScript', 'PostgreSQL', 'Docker', 'GitLab CI'],
   labels: [{ text: 'fullstack' }, { text: 'refactor' }, { text: 'a11y', accent: true }],
   metaLabel: 'Focus',

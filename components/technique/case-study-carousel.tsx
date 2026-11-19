@@ -7,7 +7,7 @@ interface CaseStudyCarouselProps {
   shots: ProjectShot[];
   current: number;
   onSelect: (index: number) => void;
-  onZoom: (shot: ProjectShot) => void;
+  onZoom: () => void;
 }
 
 /** Carrousel d'aperçus de la modale : flèches, vignette zoomable, pagination + points. */
@@ -33,7 +33,7 @@ export function CaseStudyCarousel({ shots, current, onSelect, onZoom }: CaseStud
           <button
             type="button"
             className={cs.caseShotBtn}
-            onClick={() => onZoom(shot)}
+            onClick={onZoom}
             aria-label={`Agrandir : ${shot.caption}`}
           >
             <Image src={shot.src} alt={shot.alt} fill sizes="(max-width: 940px) 100vw, 880px" />

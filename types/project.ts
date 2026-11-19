@@ -89,7 +89,8 @@ export interface Project {
   period: string;
   role: string;
   duration?: string;
-  website?: string;
+  /** Sites du projet (production, dépôt…), affichés dans les deux éditions. */
+  websites?: string[];
   /** Stack affichée côté technique. */
   stack: string[];
   /** Override carnet, uniquement si différent de `stack`. */

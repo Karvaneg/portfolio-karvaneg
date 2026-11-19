@@ -1,0 +1,105 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 88px;
+  background: rgba(28, 25, 21, 0.92);
+  cursor: zoom-out;
+}
+.figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  cursor: default;
+}
+.image {
+  position: relative;
+  width: min(100vw - 176px, 1400px);
+  height: calc(100vh - 170px);
+}
+.image img {
+  object-fit: contain;
+}
+.counter {
+  font-family: var(--hand);
+  font-size: 22px;
+  color: var(--paper);
+}
+.close,
+.arrow {
+  box-sizing: border-box;
+  font-family: var(--hand);
+  color: var(--paper);
+  background: transparent;
+  border: 1.5px solid currentColor;
+  cursor: pointer;
+}
+.close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  padding: 6px 14px;
+  font-size: 20px;
+}
+.arrow {
+  position: fixed;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  margin-top: -26px;
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  /* La police manuscrite place les flèches sous le centre optique : on recentre. */
+  display: grid;
+  place-items: center;
+  padding: 0 0 1px;
+}
+.arrowPrev {
+  left: 20px;
+}
+.arrowNext {
+  right: 20px;
+}
+.close:hover,
+.arrow:hover {
+  color: var(--pencil-red);
+  background: var(--paper);
+  border-color: var(--paper);
+}
+.close:focus-visible,
+.arrow:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox {
+    animation: lightboxFade 0.18s ease;
+  }
+}
+@keyframes lightboxFade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .lightbox {
+    padding: 64px 16px 96px;
+  }
+  .image {
+    width: calc(100vw - 32px);
+    height: calc(100vh - 200px);
+  }
+  .arrow {
+    top: auto;
+    bottom: 24px;
+    margin-top: 0;
+  }
+}

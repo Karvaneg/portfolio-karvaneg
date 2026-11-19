@@ -204,6 +204,12 @@
   line-height: 1.5;
   margin-bottom: 20px;
 }
+.detailLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  margin: -36px 0 48px;
+}
 .detailLink {
   font-family: var(--hand);
   font-weight: 600;

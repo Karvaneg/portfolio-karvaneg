@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const astroBassin: Project = {
   id: 'astro-bassin',
   ticketId: 'KARV-007',
-  order: 2,
+  order: 3,
   title: 'Astro Bassin',
   headline: 'Astro Bassin — Site vitrine & plateforme de booking',
   tagline:
@@ -15,7 +15,7 @@ export const astroBassin: Project = {
   period: '2026',
   role: 'Conception & Dev Fullstack',
   duration: '2 mois · 2026',
-  website: 'https://astrobassin.fr',
+  websites: ['https://astrobassin.fr'],
   stack: ['Astro', 'Supabase', 'Stripe', 'Resend', 'Vercel', 'GitLab CI'],
   labels: [{ text: 'client' }, { text: 'fullstack' }, { text: 'ai-tooling', accent: true }],
   summary:

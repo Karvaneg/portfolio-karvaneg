@@ -5,7 +5,7 @@ const IMG = '/images/projects';
 export const portails: Project = {
   id: 'portails',
   ticketId: 'KARV-003',
-  order: 6,
+  order: 7,
   title: 'Portails Thématiques',
   headline: 'Portails thématiques — un socle, plusieurs visages',
   tagline:
@@ -15,7 +15,7 @@ export const portails: Project = {
   period: '2023 — 2025',
   role: 'Développeuse Fullstack',
   duration: '24 mois',
-  website: 'https://vsol-na.fr/',
+  websites: ['https://vsol-na.fr/', 'https://plantes-exotiques-envahissantes-na.fr/'],
   stack: ['Symfony', 'Twig', 'TypeScript', 'Sass'],
   labels: [{ text: 'fullstack' }, { text: 'design system' }, { text: 'a11y', accent: true }],
   metaLabel: 'Focus',
