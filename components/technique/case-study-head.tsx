@@ -1,4 +1,5 @@
 import type { Project, ProjectStatus } from '@/types/project';
+import { displayUrl } from '@/lib/display-url';
 import { ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
 import cs from './case-study.module.css';
@@ -30,17 +31,22 @@ export function CaseStudyHead({ project, tagline, onClose }: CaseStudyHeadProps)
         </div>
         <h3 className={cs.caseTitle}>{project.headline}</h3>
         <p className={cs.caseTagline}>{tagline}</p>
-        {project.website && (
-          <a
-            className={`${cs.caseSiteLink} ${styles.mono}`}
-            href={project.website}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {project.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
-            <ArrowUpRightIcon />
-          </a>
-        )}
+        {project.websites?.length ? (
+          <div className={cs.caseSiteLinks}>
+            {project.websites.map((url) => (
+              <a
+                key={url}
+                className={`${cs.caseSiteLink} ${styles.mono}`}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {displayUrl(url)}
+                <ArrowUpRightIcon />
+              </a>
+            ))}
+          </div>
+        ) : null}
       </div>
       <button type="button" className={cs.caseClose} onClick={onClose} aria-label="Fermer">
         ×

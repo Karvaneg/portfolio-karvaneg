@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { projects, getProjectById } from '@/content/projects';
 import { useFocusTrap } from '@/components/shared/use-focus-trap';
 import { EsquissesProjectGallery } from './esquisses-project-gallery';
+import { EsquissesProjectLinks } from './esquisses-project-links';
 import styles from './esquisses-project-detail.module.css';
 import base from './esquisses-base.module.css';
 
@@ -68,6 +69,7 @@ export function EsquissesProjectDetail({
           <span className={styles.it}>.</span>
         </h1>
         <p className={styles.detailTagline}>{project.tagline}</p>
+        <EsquissesProjectLinks websites={project.websites} />
 
         <div className={styles.detailMetaGrid}>
           <div>

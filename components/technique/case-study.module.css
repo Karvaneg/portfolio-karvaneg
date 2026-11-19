@@ -73,6 +73,11 @@
   font-size: 15px;
   line-height: 1.5;
 }
+.caseSiteLinks {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 18px;
+}
 .caseSiteLink {
   display: inline-flex;
   align-items: center;
