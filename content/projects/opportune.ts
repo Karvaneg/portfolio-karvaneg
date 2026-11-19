@@ -14,7 +14,7 @@ export const opportune: Project = {
   statusLabel: 'SHIPPED · v1.1.0',
   period: 'Oct. – nov. 2026',
   role: 'Conception & Dev',
-  website: 'https://github.com/Karvaneg/Opportune',
+  websites: ['https://github.com/Karvaneg/Opportune'],
   stack: ['Tauri', 'React', 'TypeScript', 'Python', 'SQLite', 'Ollama', 'GitHub Actions'],
   stackEsquisses: ['React', 'Tauri', 'Python', 'SQLite', 'Ollama'],
   labels: [{ text: 'desktop' }, { text: 'open-source' }, { text: 'local-first', accent: true }],

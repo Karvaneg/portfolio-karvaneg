@@ -15,7 +15,7 @@ export const cbnsa: Project = {
   period: '2023 — 2025',
   role: 'Développeuse Fullstack',
   duration: '24 mois',
-  website: 'https://cbnsa.fr',
+  websites: ['https://cbnsa.fr'],
   stack: ['Symfony', 'PHP', 'Twig', 'TypeScript', 'PostgreSQL', 'Docker', 'GitLab CI'],
   labels: [{ text: 'fullstack' }, { text: 'refactor' }, { text: 'a11y', accent: true }],
   metaLabel: 'Focus',

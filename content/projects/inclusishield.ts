@@ -15,7 +15,7 @@ export const inclusishield: Project = {
   statusNote: 'V1 (PoC) livrée en 20 j · V2 en cours',
   period: '2026',
   role: 'Founder & Lead Dev',
-  website: 'https://inclusishield.fr/',
+  websites: ['https://inclusishield.fr/'],
   stack: ['Playwright', 'Browserless', 'Redis', 'Upstash', 'Vercel', 'LLM'],
   stackEsquisses: ['Next.js', 'TypeScript', 'Redis', 'Playwright', 'Stripe'],
   labels: [{ text: 'saas' }, { text: 'fullstack' }, { text: 'ai-tooling', accent: true }],
