@@ -33,4 +33,6 @@ export interface Profile {
   };
   /** Repo open-source mis en avant (carnet technique). */
   openSourceRepo: string;
+  /** CV PDF téléchargeable, généré depuis cv/cv.html (pnpm cv). */
+  cvUrl: string;
 }

@@ -48,6 +48,14 @@ export function EsquissesContact() {
             <a className={styles.contactValue} href={linkedin.url} target="_blank" rel="noreferrer">
               ↗ {linkedin.label}
             </a>
+            <a
+              className={styles.contactValue}
+              href={profile.cvUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↓ Mon CV (PDF)
+            </a>
           </div>
         </div>
       </div>

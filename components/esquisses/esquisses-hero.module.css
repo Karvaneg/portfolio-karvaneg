@@ -138,13 +138,16 @@
   top: 15%;
   right: 4%;
   font-family: var(--hand);
-  font-size: 24px;
+  font-size: 28px;
+  /* Le titre parent est en gras : Caveat devenait illisible (« cl » lu « d »). */
+  letter-spacing: 0.01em;
+  font-weight: 500;
   color: var(--pencil-red);
   transform: rotate(-4deg);
   display: flex;
   align-items: center;
   gap: 8px;
-  max-width: 200px;
+  max-width: 240px;
   line-height: 1.1;
   pointer-events: none;
 }
@@ -286,7 +289,7 @@
   }
 }
 
-/* Écran étroit : « Web Fullstack » repasse sous « Développeuse ». */
+/* Écran étroit : « Agentique Fullstack » repasse sous « Développeuse ». */
 @media (max-width: 480px) {
   .heroMarquee > span:nth-child(2) {
     white-space: normal;

@@ -27,6 +27,13 @@ export function TechniqueContact() {
       cta: 'code & skills',
       external: true,
     },
+    {
+      label: 'CV',
+      handle: 'PDF · 1 page A4',
+      href: profile.cvUrl,
+      cta: 'télécharger',
+      external: true,
+    },
   ];
 
   return (

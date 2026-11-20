@@ -31,4 +31,5 @@ export const profile: Profile = {
     },
   },
   openSourceRepo: 'https://github.com/Karvaneg/claude-code-dev-workflows',
+  cvUrl: '/cv/Marie_Le_Carvennec_CV.pdf',
 };

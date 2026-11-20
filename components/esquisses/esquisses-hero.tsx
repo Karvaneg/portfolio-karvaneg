@@ -62,7 +62,7 @@ export function EsquissesHero() {
           *
         </button>
         <span className={styles.heroAnnotation} aria-hidden="true">
-          ← clique sur l&apos;étoile
+          clique sur l&apos;étoile ↖
         </span>
       </h1>
 

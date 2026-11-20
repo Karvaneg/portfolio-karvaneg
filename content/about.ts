@@ -24,7 +24,7 @@ export const about: AboutContent = {
       { text: 'Depuis, je conçois mes propres produits de bout en bout : ' },
       { text: 'Opportune,', accent: true },
       {
-        text: " application de bureau open-source où une IA locale aide à suivre ses candidatures sans qu'aucune donnée ne quitte la machine ; Kommit, un daily standup guidé par une IA ; InclusiShield, un SaaS d'audit d'accessibilité ; et Astro Bassin, une plateforme de réservation pour une cliente.",
+        text: " application de bureau open-source où une IA locale aide à suivre ses candidatures sans qu'aucune donnée ne quitte la machine ; Kommit, un daily standup guidé par une IA ; InclusiShield, un SaaS d'audit d'accessibilité ; et Astro Bassin, une plateforme de réservation pour une activité réelle d'astrologue.",
       },
     ],
     [
