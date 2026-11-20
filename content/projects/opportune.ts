@@ -15,6 +15,7 @@ export const opportune: Project = {
   period: 'Oct. – nov. 2026',
   role: 'Conception & Dev',
   websites: ['https://github.com/Karvaneg/Opportune'],
+  demoVideo: 'https://www.loom.com/share/c4b4d30a14e848b695438cccfa7f7ea2',
   stack: ['Tauri', 'React', 'TypeScript', 'Python', 'SQLite', 'Ollama', 'GitHub Actions'],
   stackEsquisses: ['React', 'Tauri', 'Python', 'SQLite', 'Ollama'],
   labels: [{ text: 'desktop' }, { text: 'open-source' }, { text: 'local-first', accent: true }],

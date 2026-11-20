@@ -91,6 +91,8 @@ export interface Project {
   duration?: string;
   /** Sites du projet (production, dépôt…), affichés dans les deux éditions. */
   websites?: string[];
+  /** Vidéo de démo (Loom…), affichée avec un libellé dans les deux éditions. */
+  demoVideo?: string;
   /** Stack affichée côté technique. */
   stack: string[];
   /** Override carnet, uniquement si différent de `stack`. */

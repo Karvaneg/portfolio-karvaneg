@@ -5,9 +5,9 @@ export const experiences: Experience[] = [
   {
     period: '2025 — Aujourd’hui',
     role: 'Développeuse Agentique Fullstack',
-    company: 'Projets clients & produits',
+    company: 'Projets personnels & montée en compétences IA',
     description:
-      "Conception et livraison de produits de bout en bout, du cadrage avec le métier à la mise en production : Opportune (application de bureau open-source avec IA locale), Kommit (daily standup guidé par une IA), InclusiShield (SaaS d'audit d'accessibilité) et Astro Bassin (plateforme de réservation pour une cliente). Chaque projet est développé en test-first avec des workflows d'agents IA versionnés : planification des tests, écriture des tests avant le code, review automatisée.",
+      "Conception et livraison de produits de bout en bout, du cadrage avec le métier à la mise en production : Opportune (application de bureau open-source avec IA locale), Kommit (daily standup guidé par une IA), InclusiShield (SaaS d'audit d'accessibilité) et Astro Bassin (plateforme de réservation pour une activité réelle d'astrologue). Chaque projet est développé en test-first avec des workflows d'agents IA versionnés : planification des tests, écriture des tests avant le code, review automatisée.",
     tags: ['Claude Code', 'Agents IA', 'TypeScript', 'React', 'Python', 'TDD'],
   },
   {

@@ -14,6 +14,9 @@ export function AtriumColophon() {
         <a href={socials.linkedin.url} target="_blank" rel="noreferrer">
           LinkedIn ↗
         </a>
+        <a href={profile.cvUrl} target="_blank" rel="noreferrer">
+          CV (PDF) ↓
+        </a>
         {socials.malt && (
           <a href={socials.malt.url} target="_blank" rel="noreferrer">
             Malt ↗
