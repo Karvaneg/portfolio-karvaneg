@@ -69,7 +69,7 @@ export function EsquissesProjectDetail({
           <span className={styles.it}>.</span>
         </h1>
         <p className={styles.detailTagline}>{project.tagline}</p>
-        <EsquissesProjectLinks websites={project.websites} />
+        <EsquissesProjectLinks project={project} />
 
         <div className={styles.detailMetaGrid}>
           <div>

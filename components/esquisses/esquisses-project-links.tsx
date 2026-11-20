@@ -1,15 +1,22 @@
 import type { Project } from '@/types/project';
-import { displayUrl } from '@/lib/display-url';
+import { projectLinks } from '@/lib/project-links';
 import styles from './esquisses-project-detail.module.css';
 
-/** Liens vers les sites du projet, sous le sous-titre du détail (esquisses). */
-export function EsquissesProjectLinks({ websites }: Pick<Project, 'websites'>) {
-  if (!websites?.length) return null;
+/** Liens du projet (sites, vidéo de démo), sous le sous-titre du détail (esquisses). */
+export function EsquissesProjectLinks({ project }: { project: Project }) {
+  const links = projectLinks(project);
+  if (links.length === 0) return null;
   return (
     <div className={styles.detailLinks}>
-      {websites.map((url) => (
-        <a key={url} className={styles.detailLink} href={url} target="_blank" rel="noreferrer">
-          ↗ {displayUrl(url)}
+      {links.map((link) => (
+        <a
+          key={link.url}
+          className={styles.detailLink}
+          href={link.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {link.kind === 'video' ? '▶' : '↗'} {link.label}
         </a>
       ))}
     </div>

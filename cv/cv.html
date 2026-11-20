@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marie Le Carvennec — CV — Développeuse Agentique Fullstack & Forward Deployed Engineer</title>
+    <meta name="author" content="Marie Le Carvennec" />
+    <meta
+      name="description"
+      content="CV de Marie Le Carvennec, Développeuse Agentique Fullstack et Forward Deployed Engineer."
+    />
+    <!--
+      Source du CV PDF publié dans public/cv/. Mise en page à une colonne, sans tableau ni
+      image porteuse d'information, pour rester lisible par les ATS. Régénérer avec
+      scripts/build-cv.sh après chaque modification.
+    -->
+    <style>
+      @page {
+        size: A4;
+        margin: 11mm 13mm;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, 'Liberation Sans', Helvetica, sans-serif;
+        font-size: 9.1pt;
+        line-height: 1.42;
+        color: #1d1d22;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      header {
+        border-bottom: 1.5pt solid #3b3486;
+        padding-bottom: 8pt;
+        margin-bottom: 4pt;
+      }
+      h1 {
+        font-size: 20pt;
+        line-height: 1.1;
+        color: #15131f;
+      }
+      .title {
+        font-size: 11.5pt;
+        font-weight: bold;
+        color: #3b3486;
+        margin-top: 2pt;
+      }
+      .contact {
+        margin-top: 4pt;
+        font-size: 8.6pt;
+        color: #33323a;
+      }
+      h2 {
+        font-size: 9.6pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #3b3486;
+        border-bottom: 0.6pt solid #c9c6e0;
+        padding-bottom: 1.5pt;
+        margin: 11pt 0 5pt;
+      }
+      p + p {
+        margin-top: 2pt;
+      }
+      .skills li {
+        list-style: none;
+        margin-bottom: 2.5pt;
+      }
+      .job {
+        margin-bottom: 8pt;
+      }
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 8pt;
+        font-weight: bold;
+        color: #15131f;
+      }
+      .job-head .date {
+        white-space: nowrap;
+        font-weight: normal;
+        color: #3b3486;
+      }
+      .job ul {
+        margin: 3pt 0 0 11pt;
+      }
+      .job li {
+        margin-bottom: 3pt;
+      }
+      strong {
+        color: #15131f;
+      }
+      .stack .link {
+        color: #3b3486;
+      }
+      .stack {
+        display: block;
+        font-size: 8.2pt;
+        color: #66647a;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Marie Le Carvennec</h1>
+      <p class="title">Développeuse Agentique Fullstack &amp; Forward Deployed Engineer</p>
+      <p class="contact">
+        Gironde (Le Teich) · Remote / Hybride · 06 77 84 86 53 ·
+        <a href="mailto:marie.lecarvennec@gmail.com">marie.lecarvennec@gmail.com</a><br />
+        <a href="https://portfolio-karvaneg.vercel.app">portfolio-karvaneg.vercel.app</a> ·
+        <a href="https://www.linkedin.com/in/marielecarvennec/">linkedin.com/in/marielecarvennec</a>
+        · <a href="https://github.com/Karvaneg">github.com/Karvaneg</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Profil</h2>
+      <p>
+        Développeuse fullstack avec plus de 3 ans d'expérience, je fais le lien entre le métier et
+        le code : je cadre le besoin, puis je livre vite des applications fiables grâce à des
+        <strong>workflows d'agents IA encadrés par des tests</strong>. Dix ans d'accompagnement de
+        patients m'ont appris à écouter et à reformuler un besoin.
+      </p>
+    </section>
+
+    <section>
+      <h2>Compétences</h2>
+      <ul class="skills">
+        <li>
+          <strong>IA &amp; agents :</strong> Claude Code (skills, subagents, hooks), multi-agents,
+          MCP, RAG, Ollama, Groq
+        </li>
+        <li>
+          <strong>Développement :</strong> TypeScript, React, Next.js, Node.js, Express, Python,
+          Symfony, PostgreSQL, SQLite, Prisma
+        </li>
+        <li>
+          <strong>Qualité &amp; DevOps :</strong> TDD, Vitest, Playwright, pytest, Docker, GitLab
+          CI/CD, GitHub Actions, Vercel
+        </li>
+        <li>
+          <strong>Produit :</strong> cadrage et recueil des besoins, agile, accessibilité WCAG 2.2
+          AA / RGAA, SEO, ADR
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Expérience professionnelle</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <span>Projets personnels — Développement agentique &amp; montée en compétences IA</span>
+          <span class="date">2025 – aujourd'hui</span>
+        </div>
+        <ul>
+          <li>
+            <strong>Opportune</strong> : application de bureau open source (<strong>v1.1.0</strong>,
+            MIT) qui suit les candidatures avec une IA 100&nbsp;% locale ; aucune donnée ne quitte la
+            machine. Code et installeurs publics sur GitHub.
+            <span class="stack">React, Python, SQLite, Ollama, Tauri (Windows / Linux), GitHub Actions ·
+              <a class="link" href="https://github.com/Karvaneg/Opportune">github.com/Karvaneg/Opportune</a>
+              · <a class="link" href="https://www.loom.com/share/c4b4d30a14e848b695438cccfa7f7ea2">vidéo de démo</a></span>
+          </li>
+          <li>
+            <strong>Kommit</strong> (en cours) : daily standup mené par un LLM qui produit un récap
+            structuré, développé en test-first avec mon workflow d'agents Claude Code ; démo en
+            ligne.
+            <span class="stack">React, Express, Prisma, PostgreSQL (Neon), BetterAuth, Groq, Vercel, Render ·
+              <a class="link" href="https://kommit-frontend-dev-karvaneg.vercel.app/">kommit-frontend-dev-karvaneg.vercel.app</a></span>
+          </li>
+          <li>
+            <strong>InclusiShield</strong> : SaaS d'audit d'accessibilité piloté par l'IA, V1 livrée
+            en <strong>20&nbsp;jours</strong> ; V2 en cours, centrée sur des correctifs de code fiables.
+            <span class="stack">Next.js, Playwright, Redis, Stripe ·
+              <a class="link" href="https://inclusishield.fr/">inclusishield.fr</a></span>
+          </li>
+          <li>
+            <strong>Astro Bassin</strong> : plateforme de réservation et de paiement en ligne pour une
+            activité réelle d'astrologue, du cadrage du besoin au back-office, livrée seule en
+            <strong>2&nbsp;mois</strong>.
+            <span class="stack">Astro, Supabase, Stripe, Resend ·
+              <a class="link" href="https://astrobassin.fr">astrobassin.fr</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span>Développeuse Fullstack — Conservatoire Botanique National Sud-Atlantique</span>
+          <span class="date">08/2023 – 08/2025</span>
+        </div>
+        <ul>
+          <li>
+            Traduction des besoins des équipes métier en cahiers des charges techniques.
+          </li>
+          <li>
+            Refonte du site institutionnel ; contenus sortis du code pour rendre l'équipe
+            <strong>autonome</strong> sur ses mises à jour.
+          </li>
+          <li>
+            Suite de portails scientifiques sur un socle commun, avec un design system décliné par
+            portail et une console d'administration unique.
+          </li>
+          <li>
+            Accessibilité WCAG et SEO : <strong>~45&nbsp;% du trafic</strong> issu de la recherche
+            organique.
+            <span class="stack">Symfony, Twig, TypeScript, PostgreSQL, Docker, GitLab CI/CD</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span>Responsable Production &amp; Qualité — Beephone</span>
+          <span class="date">05/2018 – 01/2021</span>
+        </div>
+        <ul>
+          <li>
+            Encadrement d'une équipe de 3 personnes dans le reconditionnement d'iPhone : procédures
+            qualité, tests, gestion des stocks, SAV technique.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span>Diététicienne Nutritionniste &amp; premiers sites web</span>
+          <span class="date">2008 – 2018</span>
+        </div>
+        <ul>
+          <li>
+            Écoute, reformulation et accompagnement de patients vers un objectif concret.
+          </li>
+          <li>
+            Premiers pas en développement web en autodidacte (HTML / CSS, PHP).
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formation</h2>
+      <p>
+        <strong>Développeur Intégrateur Web</strong> — OpenClassrooms, titre RNCP niveau 5
+        (formation 2022, certification 2023)
+      </p>
+      <p><strong>Master Recherche en Nutrition</strong> — Université de Bordeaux (2008)</p>
+    </section>
+
+    <section>
+      <h2>Langues</h2>
+      <p>Français : langue maternelle · Anglais : technique (B1–B2)</p>
+    </section>
+  </body>
+</html>

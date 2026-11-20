@@ -11,6 +11,7 @@ const LINKS = [
   { href: '#stack', label: 'Stack' },
   { href: '#work', label: 'Projets' },
   { href: '#experience', label: 'Parcours' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 /** Nav du carnet — liens ancrés + chip Playbook, avec tiroir mobile (burger). */

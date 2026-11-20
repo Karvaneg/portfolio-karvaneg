@@ -1,5 +1,5 @@
 import type { Project, ProjectStatus } from '@/types/project';
-import { displayUrl } from '@/lib/display-url';
+import { projectLinks } from '@/lib/project-links';
 import { ArrowUpRightIcon } from './icons';
 import styles from './technique.module.css';
 import cs from './case-study.module.css';
@@ -19,6 +19,7 @@ interface CaseStudyHeadProps {
 
 /** En-tête de la modale étude de cas : méta (ticket/statut/période), titre, lien site. */
 export function CaseStudyHead({ project, tagline, onClose }: CaseStudyHeadProps) {
+  const links = projectLinks(project);
   return (
     <header className={cs.caseHead}>
       <div>
@@ -31,22 +32,23 @@ export function CaseStudyHead({ project, tagline, onClose }: CaseStudyHeadProps)
         </div>
         <h3 className={cs.caseTitle}>{project.headline}</h3>
         <p className={cs.caseTagline}>{tagline}</p>
-        {project.websites?.length ? (
+        {links.length > 0 && (
           <div className={cs.caseSiteLinks}>
-            {project.websites.map((url) => (
+            {links.map((link) => (
               <a
-                key={url}
+                key={link.url}
                 className={`${cs.caseSiteLink} ${styles.mono}`}
-                href={url}
+                href={link.url}
                 target="_blank"
                 rel="noreferrer"
               >
-                {displayUrl(url)}
+                {link.kind === 'video' && '▶ '}
+                {link.label}
                 <ArrowUpRightIcon />
               </a>
             ))}
           </div>
-        ) : null}
+        )}
       </div>
       <button type="button" className={cs.caseClose} onClick={onClose} aria-label="Fermer">
         ×
